@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { useParams } from 'next/navigation';
 import Button from '@/components/Button';
 
 // Mock data - in a real app, this would come from a database
@@ -141,14 +142,10 @@ const getListingData = (id: string) => {
   return listings[id as keyof typeof listings] || null;
 };
 
-interface ListingDetailsPageProps {
-  params: {
-    id: string;
-  };
-}
-
-const ListingDetailsPage: React.FC<ListingDetailsPageProps> = ({ params }) => {
-  const listing = getListingData(params.id);
+const ListingDetailsPage = () => {
+  const params = useParams();
+  const id = (params?.id ?? '') as string;
+  const listing = getListingData(id);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   if (!listing) {
