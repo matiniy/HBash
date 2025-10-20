@@ -34,14 +34,14 @@ const Navbar: React.FC = () => {
               <Image
                 src={logoSources[logoIndex]}
                 alt="H Bashash"
-                width={160}
-                height={40}
+                width={320}
+                height={80}
                 priority
-                className="h-8 w-auto"
+                className="h-16 w-auto"
                 onError={handleLogoError}
               />
             ) : (
-              <span className="text-xl font-semibold text-white">H Bashash</span>
+              <span className="text-2xl font-semibold text-white">H Bashash</span>
             )}
             <span className="sr-only">H Bashash</span>
           </Link>
