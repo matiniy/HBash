@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import Button from './Button';
 
 const Navbar: React.FC = () => {
@@ -16,8 +17,16 @@ const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href="/" className="text-2xl font-bold text-white hover:text-aqua-neon transition-colors">
-            H Bashash
+          <Link href="/" className="flex items-center gap-2">
+            <Image
+              src="/images/Logo/logo.svg"
+              alt="H Bashash"
+              width={140}
+              height={32}
+              priority
+              className="h-8 w-auto"
+            />
+            <span className="sr-only">H Bashash</span>
           </Link>
 
           {/* Desktop Navigation */}
