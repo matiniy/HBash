@@ -1,90 +1,70 @@
-# 🏠 H Bashash Realtor Website – Dallas, TX
+# H Bashash Realtor – Dallas, TX
 
-A modern realtor portfolio website built to showcase luxury listings, services, and a consultation booking system.
+A modern, premium realtor website for showcasing luxury listings, client trust signals, and consultation CTAs.
 
-## ✨ Features
-- Hero section with dual CTA
-- Scrolling marquee banner
-- Contact form with validation
-- Responsive listings grid
-- Partner logo showcase
-- Primary & secondary buttons styled via Tailwind
-- Mobile-responsive design
-- Modern dark theme with aqua neon accents
+## Features
+- Hero with glass effect, stats, and full‑width marquee (slow animation)
+- Dark theme with Aqua Neon accents; responsive half‑screen hero image with parallax
+- Listings grid with taller dark cards; dynamic details route `/listings/[id]`
+- About section with background image, refined CTAs, and testimonials
+- Credentials section with license/brokerage info and TREC disclosure CTA
+- Contact form; mobile‑first, accessible, optimized UI
 
-## 🎨 Color Palette
-| Role | HEX | Example |
-|------|------|----------|
-| Background | `#042222` | Deep Forest |
-| Accent | `#00FFA3` | Aqua Neon |
-| Text | `#FFFFFF` | White |
-| Text Secondary | `#B3B3B3` | Grey Light |
-| Border | `#00FFA3` | Accent border |
+## Tech Stack
+- Next.js 15 (App Router)
+- React 18 + TypeScript
+- Tailwind CSS
+- Google Fonts: Space Grotesk, Sora (via `next/font`)
 
-## 📁 Folder Structure
+## Color Palette
+- Deep Forest: `#021212`
+- Aqua Neon: `#00FFA3`
+- Grey Light: `#B3B3B3`
+- Black 70%: `rgba(0,0,0,0.7)`
+
+## Project Structure (key paths)
 ```
-/components
-  Navbar.tsx
-  Hero.tsx
-  Stats.tsx
-  Marquee.tsx
-  PartnerLogos.tsx
-  About.tsx
-  ListingCard.tsx
-  Listings.tsx
-  ContactForm.tsx
-  Footer.tsx
-  Button.tsx
-/pages
-  index.tsx
-  about.tsx
-  services.tsx
-  listings.tsx
-  contact.tsx
-/public/images
-  placeholder.html (for generating placeholder images)
-/styles
-  globals.css
+src/
+  app/
+    page.tsx                # Home
+    listings/
+      page.tsx              # Listings index
+      [id]/page.tsx         # Listing details (dynamic)
+  components/
+    Navbar.tsx Hero.tsx About.tsx Listings.tsx ListingCard.tsx
+    ContactForm.tsx Credentials.tsx PartnerLogos.tsx Footer.tsx Button.tsx
+public/
+  images/hero/              # Hero background (upload here)
+  images/Realtor/           # Realtor photo + about background
+  images/Listings/          # Listing images
 ```
 
-## 🧰 Tech Stack
-- Next.js 15
-- TypeScript
-- TailwindCSS
-- React 18
-- Vercel (Deployment ready)
+## Getting Started
+1) Install
+```
+npm install
+```
+2) Dev server
+```
+npm run dev
+```
+3) Open `http://localhost:3000`
 
-## 🚀 Getting Started
-1. Clone this repo
-2. Run `npm install`
-3. Start dev server with `npm run dev`
-4. Open [http://localhost:3000](http://localhost:3000)
+Note: If you prefer a different port: `npm run dev -- --port 3002`.
 
-## 🧩 Components Overview
-- `Navbar` – Navigation with contact button and mobile menu
-- `Hero` – Main heading & CTA buttons with split layout
-- `Stats` – Trust indicators and achievements
-- `Marquee` – Scrolling vision text banner
-- `Listings` – Property cards with hover effects
-- `ContactForm` – Simple inquiry submission with validation
-- `About` – Company story and values
-- `Services` – Service offerings and process
-- `Footer` – Contact info and links
+## Scripts
+- `npm run dev` – start dev server
+- `npm run build` – production build
+- `npm run start` – start production server
+- `npm run lint` – lint
 
-## 📱 Responsive Design
-- Mobile-first approach
-- Breakpoints: sm (640px), md (768px), lg (1024px), xl (1280px)
-- Touch-friendly navigation
-- Optimized images and layouts
+## Assets
+- Hero background: place at `public/images/hero/hero-background.jpg` (or replace URL fallback in `Hero.tsx`)
+- Realtor photo: `public/images/Realtor/realtor-photo.png`
+- Listing images: `public/images/Listings/*`
 
-## 🎯 Key Features
-- **Modern Design**: Dark theme with vibrant aqua accents
-- **Performance**: Optimized for speed and SEO
-- **Accessibility**: WCAG compliant components
-- **Mobile Ready**: Fully responsive across all devices
-- **Form Handling**: Contact form with validation and feedback
-- **Interactive Elements**: Hover effects and smooth transitions
+## Legal
+Licensed Texas Realtor (TREC) under HomeSmart Stars Realty. See credentials section for license/brokerage details.
 
----
-
-© 2025 H Bashash Realtor. Designed by Metamatn Interactive.
+—
+© 2025 H Bashash Realtor
