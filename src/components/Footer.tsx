@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo and Description */}
           <div className="col-span-1 md:col-span-2">
-            <h3 className="text-2xl font-bold text-white mb-4">H Bashash</h3>
+            <h3 className="text-2xl font-bold text-white mb-4">Haideh Bashash</h3>
             <p className="text-grey-light mb-6 max-w-md">
               Your trusted real estate partner in Dallas. Helping you find the perfect home with years of experience and personal attention.
             </p>
@@ -87,7 +87,7 @@ const Footer: React.FC = () => {
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center">
           <p className="text-grey-light">
-            © 2025 H Bashash Realtor. All rights reserved. | Designed by Metamatn Interactive.
+            © 2025 Haideh Bashash Realtor. All rights reserved. | Designed by Metamatn Interactive.
           </p>
         </div>
       </div>

@@ -15,8 +15,16 @@ const sora = Sora({
 })
 
 export const metadata: Metadata = {
-  title: 'H Bashash Realtor - Dallas, TX',
+  title: 'Haideh Bashash Realtor - Dallas, TX',
   description: 'Professional real estate services in Dallas, TX. Luxury listings, consultation booking, and expert guidance.',
+  icons: {
+    icon: [
+      { url: '/images/Logo/logo.svg', type: 'image/svg+xml' },
+      { url: '/images/Logo/logo.png', type: 'image/png' }
+    ],
+    shortcut: ['/images/Logo/logo.png'],
+    apple: ['/images/Logo/logo.png']
+  }
 }
 
 export default function RootLayout({
