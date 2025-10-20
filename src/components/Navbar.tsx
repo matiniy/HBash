@@ -40,12 +40,13 @@ const Navbar: React.FC = () => {
   const navClasses = [
     'fixed z-50 transition-all duration-500 ease-[cubic-bezier(0.22,0.61,0.36,1)] will-change-transform will-change-opacity',
     isFloating
-      ? 'top-4 left-1/2 -translate-x-1/2 w-[92%] md:w-[80%] rounded-full border border-aqua-neon/20 bg-deep-forest/80 backdrop-blur-xl shadow-xl ring-1 ring-black/10 translate-y-0 opacity-100'
+      ? 'top-[max(1rem,env(safe-area-inset-top))] left-1/2 -translate-x-1/2 w-[94%] sm:w-[92%] md:w-[84%] rounded-full border border-aqua-neon/20 bg-deep-forest/80 backdrop-blur-xl shadow-xl ring-1 ring-black/10 translate-y-0 opacity-100'
       : 'top-0 left-0 w-full translate-x-0 bg-deep-forest/95 backdrop-blur-sm border-b border-aqua-neon/20 opacity-100'
   ].join(' ');
 
-  const innerPadding = isFloating ? 'px-3 sm:px-4' : 'px-4 sm:px-6 lg:px-8';
-  const barHeight = isFloating ? 'h-14' : 'h-16';
+  const innerPadding = isFloating ? 'px-3 sm:px-4' : 'px-3 sm:px-4 lg:px-8';
+  const barHeight = isFloating ? 'h-12 sm:h-14' : 'h-14 sm:h-16';
+  const logoHeightClass = isFloating ? 'h-10 sm:h-12' : 'h-12 sm:h-16';
 
   return (
     <nav className={navClasses}>
@@ -60,17 +61,17 @@ const Navbar: React.FC = () => {
                 width={320}
                 height={80}
                 priority
-                className={isFloating ? 'h-12 w-auto transition-all duration-500' : 'h-16 w-auto transition-all duration-500'}
+                className={`${logoHeightClass} w-auto transition-all duration-500`}
                 onError={handleLogoError}
               />
             ) : (
-              <span className="text-2xl font-semibold text-white">Haideh Bashash</span>
+              <span className="text-xl sm:text-2xl font-semibold text-white">Haideh Bashash</span>
             )}
             <span className="sr-only">Haideh Bashash</span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
             <Link href="/about" className="text-white hover:text-aqua-neon transition-colors">
               About
             </Link>
@@ -89,7 +90,8 @@ const Navbar: React.FC = () => {
           <div className="md:hidden">
             <button
               onClick={toggleMenu}
-              className="text-white hover:text-aqua-neon focus:outline-none focus:text-aqua-neon"
+              className="p-3 text-white hover:text-aqua-neon focus:outline-none focus:text-aqua-neon"
+              aria-label="Open navigation menu"
             >
               <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 {isMenuOpen ? (
@@ -108,21 +110,21 @@ const Navbar: React.FC = () => {
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-deep-forest/98 backdrop-blur-sm border-t border-aqua-neon/20 rounded-b-2xl">
               <Link
                 href="/about"
-                className="block px-3 py-2 text-white hover:text-aqua-neon transition-colors"
+                className="block px-3 py-3 text-white hover:text-aqua-neon transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 About
               </Link>
               <Link
                 href="/services"
-                className="block px-3 py-2 text-white hover:text-aqua-neon transition-colors"
+                className="block px-3 py-3 text-white hover:text-aqua-neon transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Services
               </Link>
               <Link
                 href="/listings"
-                className="block px-3 py-2 text-white hover:text-aqua-neon transition-colors"
+                className="block px-3 py-3 text-white hover:text-aqua-neon transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Listings
