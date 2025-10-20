@@ -191,8 +191,7 @@ const ListingDetailsPage = () => {
           style={{ 
             backgroundImage: `url(${listing.images[currentImageIndex]})`,
             backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            imageRendering: 'high-quality'
+            backgroundPosition: 'center'
           }}
         >
           <div className="absolute inset-0 bg-black/30"></div>
