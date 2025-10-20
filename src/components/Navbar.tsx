@@ -7,9 +7,21 @@ import Button from './Button';
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [logoIndex, setLogoIndex] = useState(0);
+
+  const logoSources = [
+    '/images/Logo/logo.svg',
+    '/images/Logo/logo.png',
+    '/images/Logo/HBash.svg',
+    '/images/Logo/HBash.png'
+  ];
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const handleLogoError = () => {
+    setLogoIndex((prev) => (prev + 1 < logoSources.length ? prev + 1 : prev));
   };
 
   return (
@@ -18,14 +30,19 @@ const Navbar: React.FC = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            <Image
-              src="/images/Logo/logo.svg"
-              alt="H Bashash"
-              width={140}
-              height={32}
-              priority
-              className="h-8 w-auto"
-            />
+            {logoIndex < logoSources.length ? (
+              <Image
+                src={logoSources[logoIndex]}
+                alt="H Bashash"
+                width={160}
+                height={40}
+                priority
+                className="h-8 w-auto"
+                onError={handleLogoError}
+              />
+            ) : (
+              <span className="text-xl font-semibold text-white">H Bashash</span>
+            )}
             <span className="sr-only">H Bashash</span>
           </Link>
 
