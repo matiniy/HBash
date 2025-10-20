@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Button from './Button';
@@ -8,6 +8,23 @@ import Button from './Button';
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [logoIndex, setLogoIndex] = useState(0);
+  const [isFloating, setIsFloating] = useState(false);
+  const [lastY, setLastY] = useState(0);
+
+  useEffect(() => {
+    const onScroll = () => {
+      const y = window.scrollY;
+      const scrollingDown = y > lastY;
+      if (y > 80 && scrollingDown) {
+        setIsFloating(true);
+      } else if (y < lastY - 4 || y <= 10) {
+        setIsFloating(false);
+      }
+      setLastY(y);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, [lastY]);
 
   const logoSources = [
     '/images/Logo/logo.svg',
@@ -24,10 +41,20 @@ const Navbar: React.FC = () => {
     setLogoIndex((prev) => (prev + 1 < logoSources.length ? prev + 1 : prev));
   };
 
+  const navClasses = [
+    'fixed z-50 transition-all duration-300 ease-out',
+    isFloating
+      ? 'top-4 left-1/2 -translate-x-1/2 w-[92%] md:w-[80%] rounded-full border border-aqua-neon/20 bg-deep-forest/80 backdrop-blur-xl shadow-lg'
+      : 'top-0 left-0 w-full translate-x-0 bg-deep-forest/95 backdrop-blur-sm border-b border-aqua-neon/20'
+  ].join(' ');
+
+  const innerPadding = isFloating ? 'px-3 sm:px-4' : 'px-4 sm:px-6 lg:px-8';
+  const barHeight = isFloating ? 'h-14' : 'h-16';
+
   return (
-    <nav className="bg-deep-forest/95 backdrop-blur-sm fixed w-full top-0 z-50 border-b border-aqua-neon/20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+    <nav className={navClasses}>
+      <div className={`max-w-7xl mx-auto ${innerPadding}`}>
+        <div className={`flex justify-between items-center ${barHeight}`}>
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2" style={{ padding: '5px' }}>
             {logoIndex < logoSources.length ? (
@@ -37,7 +64,7 @@ const Navbar: React.FC = () => {
                 width={320}
                 height={80}
                 priority
-                className="h-16 w-auto"
+                className={isFloating ? 'h-12 w-auto' : 'h-16 w-auto'}
                 onError={handleLogoError}
               />
             ) : (
@@ -82,7 +109,7 @@ const Navbar: React.FC = () => {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-deep-forest/98 backdrop-blur-sm border-t border-aqua-neon/20">
+            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-deep-forest/98 backdrop-blur-sm border-t border-aqua-neon/20 rounded-b-2xl">
               <Link
                 href="/about"
                 className="block px-3 py-2 text-white hover:text-aqua-neon transition-colors"
