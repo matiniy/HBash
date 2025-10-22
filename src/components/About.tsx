@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import Button from './Button';
 
 const About: React.FC = () => {
@@ -15,10 +16,16 @@ const About: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start bg-deep-forest/20 rounded-tl-3xl rounded-tr-3xl p-8 lg:p-12">
           {/* Left Content - Realtor Image and CTA */}
           <div className="relative">
-            <img
-              src="/images/Realtor/realtor-photo.png"
+            <Image
+              src="/images/Realtor/realtor-photo.JPG"
               alt="H Bashash - Dallas Realtor"
+              width={600}
+              height={800}
               className="w-[calc(100%-60px)] mx-auto h-[350px] xs:h-[400px] sm:h-[470px] md:h-[520px] lg:h-[620px] object-cover object-top rounded-2xl shadow-2xl"
+              priority
+              quality={85}
+              placeholder="blur"
+              blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
             />
                 {/* Buttons - Responsive: Stacked on mobile, horizontal on desktop */}
                 <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-full max-w-[calc(100%-60px)] flex flex-col sm:flex-row gap-3 items-center justify-center">
