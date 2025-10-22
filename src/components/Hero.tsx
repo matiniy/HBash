@@ -17,10 +17,26 @@ const Hero: React.FC = () => {
   const scale = Math.max(0.8, 1 - scrollY * 0.0005);
   return (
     <section className="min-h-screen flex items-center relative overflow-hidden">
-      {/* Background Image - Extends under glass effect with parallax */}
-      <div className="absolute inset-0">
+      {/* Mobile: Full Background Image */}
+      <div className="absolute inset-0 lg:hidden">
         <div 
-          className="absolute right-0 top-0 w-full sm:w-3/4 md:w-2/3 lg:w-[65%] h-[120%] bg-cover bg-center bg-no-repeat transition-transform duration-75 ease-out"
+          className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat transition-transform duration-75 ease-out"
+          style={{
+            backgroundImage: `url('/images/hero/hero-background.jpg'), url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            transform: `scale(${scale})`,
+            transformOrigin: 'center center'
+          }}
+        ></div>
+        {/* Dark overlay for mobile text readability */}
+        <div className="absolute inset-0 bg-black/50"></div>
+      </div>
+
+      {/* Desktop: Side-by-side layout */}
+      <div className="absolute inset-0 hidden lg:block">
+        <div 
+          className="absolute right-0 top-0 w-[65%] h-[120%] bg-cover bg-center bg-no-repeat transition-transform duration-75 ease-out"
           style={{
             backgroundImage: `url('/images/hero/hero-background.jpg'), url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')`,
             backgroundSize: 'cover',
@@ -29,17 +45,17 @@ const Hero: React.FC = () => {
             transformOrigin: 'center center'
           }}
         ></div>
-        {/* Dark overlay for left side - responsive to allow image to show through on mobile */}
-        <div className="absolute left-0 top-0 w-2/3 sm:w-1/2 md:w-1/2 lg:w-[35%] h-full bg-deep-forest"></div>
+        {/* Dark overlay for left side on desktop */}
+        <div className="absolute left-0 top-0 w-[35%] h-full bg-deep-forest"></div>
       </div>
 
       <div className="w-full px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center min-h-screen py-12">
-            {/* Left Content - Text with Glass Effect - Responsive */}
-            <div className="w-2/3 sm:w-1/2 md:w-1/2 lg:w-[50%] lg:max-w-[950px]">
-              {/* Glass Effect Background - Positioned over extending image */}
-              <div className="bg-black/40 backdrop-blur-lg rounded-2xl p-6 sm:p-8 shadow-2xl">
+            {/* Content - Full width on mobile, half width on desktop */}
+            <div className="w-full lg:w-[50%] lg:max-w-[950px]">
+              {/* Glass Effect Background - Full width on mobile, positioned over extending image on desktop */}
+              <div className="bg-black/40 backdrop-blur-lg rounded-2xl p-4 xs:p-6 sm:p-8 shadow-2xl">
                 <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-normal text-white leading-tight font-space-grotesk">
                   Find Your Dream Home In The Heart Of{' '}
                   <span className="text-aqua-neon">Dallas</span>
@@ -92,8 +108,8 @@ const Hero: React.FC = () => {
               </div>
             </div>
 
-            {/* Right Content - Empty space for image to show through - Responsive */}
-            <div className="w-1/3 sm:w-1/2 md:w-1/2 lg:flex-1 h-full min-h-[600px]">
+            {/* Desktop: Right Content - Empty space for image to show through */}
+            <div className="hidden lg:block lg:flex-1 h-full min-h-[600px]">
               {/* This space allows the background image to show through */}
             </div>
           </div>
