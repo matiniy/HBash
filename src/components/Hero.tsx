@@ -29,15 +29,15 @@ const Hero: React.FC = () => {
             transformOrigin: 'center center'
           }}
         ></div>
-        {/* Dark overlay for left side - smaller to allow image to show through */}
-        <div className="absolute left-0 top-0 w-full lg:w-[35%] h-full bg-deep-forest"></div>
+        {/* Dark overlay for left side - responsive to allow image to show through on mobile */}
+        <div className="absolute left-0 top-0 w-full sm:w-3/4 lg:w-[35%] h-full bg-deep-forest"></div>
       </div>
 
       <div className="w-full px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center min-h-screen py-12">
             {/* Left Content - Text with Glass Effect - Responsive */}
-            <div className="w-full lg:w-[50%] lg:max-w-[950px]">
+            <div className="w-full sm:w-3/4 lg:w-[50%] lg:max-w-[950px]">
               {/* Glass Effect Background - Positioned over extending image */}
               <div className="bg-black/40 backdrop-blur-lg rounded-2xl p-6 sm:p-8 shadow-2xl">
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal text-white leading-tight font-space-grotesk">
@@ -93,7 +93,7 @@ const Hero: React.FC = () => {
             </div>
 
             {/* Right Content - Empty space for image to show through - Responsive */}
-            <div className="hidden lg:block lg:flex-1 h-full min-h-[600px]">
+            <div className="hidden sm:block sm:flex-1 h-full min-h-[600px]">
               {/* This space allows the background image to show through */}
             </div>
           </div>
