@@ -18,7 +18,7 @@ const About: React.FC = () => {
             <img
               src="/images/Realtor/realtor-photo.png"
               alt="H Bashash - Dallas Realtor"
-              className="w-[calc(100%-60px)] mx-auto h-[470px] sm:h-[620px] object-cover object-top rounded-2xl shadow-2xl"
+              className="w-[calc(100%-60px)] mx-auto h-[350px] xs:h-[400px] sm:h-[470px] md:h-[520px] lg:h-[620px] object-cover object-top rounded-2xl shadow-2xl"
             />
                 {/* Buttons - Centered and Overlapping */}
                 <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-full max-w-[calc(100%-60px)] flex flex-row gap-3 items-center justify-center">
@@ -41,31 +41,31 @@ const About: React.FC = () => {
           {/* Right Content - Glass Effect Box and Testimonials */}
           <div className="space-y-8">
             {/* Glass Effect Box - Positioned 150px to the left, overlapping image */}
-            <div className="relative -ml-[150px] w-[120%] h-[200px] bg-black/40 backdrop-blur-lg rounded-tr-2xl rounded-bl-2xl rounded-br-2xl rounded-tl-none p-4 text-white z-20 flex items-center">
-              <p className="text-[20px] font-sora font-normal leading-normal text-left">
+            <div className="relative -ml-[50px] sm:-ml-[100px] lg:-ml-[150px] w-[110%] sm:w-[115%] lg:w-[120%] h-[180px] sm:h-[200px] lg:h-[220px] bg-black/40 backdrop-blur-lg rounded-tr-2xl rounded-bl-2xl rounded-br-2xl rounded-tl-none p-3 sm:p-4 text-white z-20 flex items-center">
+              <p className="text-sm xs:text-base sm:text-lg lg:text-[20px] font-sora font-normal leading-normal text-left">
                 With a deep passion for helping people find the perfect home, H Bashash brings years of experience, market insight, and personal attention to every client relationship.
               </p>
             </div>
             
             {/* Testimonials - Under the glass effect box */}
-            <div className="space-y-6">
-              <div className="flex items-start space-x-4">
-                <div className="flex-shrink-0 text-aqua-neon text-4xl font-bold">"</div>
-                <p className="text-grey-light text-lg leading-relaxed">
+            <div className="space-y-4 sm:space-y-6">
+              <div className="flex items-start space-x-2 sm:space-x-4">
+                <div className="flex-shrink-0 text-aqua-neon text-2xl sm:text-3xl lg:text-4xl font-bold">"</div>
+                <p className="text-grey-light text-sm xs:text-base sm:text-lg leading-relaxed">
                   From Luxury Estates To Family-Friendly Neighborhoods, Discover Homes That Fit Your Lifestyle - Guided By A Trusted Expert Who Knows Dallas Inside Out.
                 </p>
               </div>
 
-              <div className="flex items-start space-x-4">
-                <div className="flex-shrink-0 text-aqua-neon text-4xl font-bold">"</div>
-                <p className="text-grey-light text-lg leading-relaxed">
+              <div className="flex items-start space-x-2 sm:space-x-4">
+                <div className="flex-shrink-0 text-aqua-neon text-2xl sm:text-3xl lg:text-4xl font-bold">"</div>
+                <p className="text-grey-light text-sm xs:text-base sm:text-lg leading-relaxed">
                   From Luxury Estates To Family-Friendly Neighborhoods, Discover Homes That Fit Your Lifestyle - Guided By A Trusted Expert Who Knows Dallas Inside Out.
                 </p>
               </div>
 
-              <div className="flex items-start space-x-4">
-                <div className="flex-shrink-0 text-aqua-neon text-4xl font-bold">"</div>
-                <p className="text-grey-light text-lg leading-relaxed">
+              <div className="flex items-start space-x-2 sm:space-x-4">
+                <div className="flex-shrink-0 text-aqua-neon text-2xl sm:text-3xl lg:text-4xl font-bold">"</div>
+                <p className="text-grey-light text-sm xs:text-base sm:text-lg leading-relaxed">
                   From Luxury Estates To Family-Friendly Neighborhoods, Discover Homes That Fit Your Lifestyle - Guided By A Trusted Expert Who Knows Dallas Inside Out.
                 </p>
               </div>

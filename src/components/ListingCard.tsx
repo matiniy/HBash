@@ -36,16 +36,16 @@ const ListingCard: React.FC<ListingCardProps> = ({
         </div>
         
         {/* Price Badge */}
-        <div className="absolute top-4 left-4 bg-aqua-neon text-deep-forest px-3 py-1 rounded-full text-sm font-semibold">
-          Price: {price}
+        <div className="absolute top-2 xs:top-4 left-2 xs:left-4 bg-aqua-neon text-deep-forest px-2 xs:px-3 py-1 rounded-full text-xs xs:text-sm font-semibold">
+          {price}
         </div>
 
         {/* Dark Overlay with Content */}
-        <div className="absolute inset-0 bg-black/40 flex flex-col justify-end p-4">
+        <div className="absolute inset-0 bg-black/40 flex flex-col justify-end p-3 xs:p-4">
           <div className="text-white">
-            <h3 className="text-lg font-bold mb-1">{title}</h3>
-            <p className="text-sm text-grey-light mb-2">Location: {location}</p>
-            <div className="text-sm text-grey-light">
+            <h3 className="text-sm xs:text-base sm:text-lg font-bold mb-1">{title}</h3>
+            <p className="text-xs xs:text-sm text-grey-light mb-1 xs:mb-2">{location}</p>
+            <div className="text-xs xs:text-sm text-grey-light">
               {beds} Beds • {baths} Baths • {sqft}
             </div>
           </div>

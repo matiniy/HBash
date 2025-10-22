@@ -50,20 +50,20 @@ const ContactForm: React.FC = () => {
   return (
     <section className="py-20 bg-deep-forest">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
+        <div className="text-center mb-8 sm:mb-12">
+          <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6">
             Schedule a <span className="text-aqua-neon">Consultation</span>
           </h2>
-          <p className="text-lg text-grey-light max-w-2xl mx-auto">
+          <p className="text-sm xs:text-base sm:text-lg lg:text-xl text-grey-light max-w-2xl mx-auto">
             Ready to find your dream home? Let's discuss your needs and start your journey to homeownership.
           </p>
         </div>
 
-        <div className="bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-aqua-neon/20">
-          <form onSubmit={handleSubmit} className="space-y-6">
+        <div className="bg-white/5 backdrop-blur-sm rounded-3xl p-4 sm:p-6 lg:p-8 border border-aqua-neon/20">
+          <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label htmlFor="fullName" className="block text-sm font-medium text-white mb-2">
+                <label htmlFor="fullName" className="block text-xs xs:text-sm font-medium text-white mb-1 xs:mb-2">
                   Full Name *
                 </label>
                 <input
@@ -73,13 +73,13 @@ const ContactForm: React.FC = () => {
                   value={formData.fullName}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-white/10 border border-aqua-neon/30 rounded-lg text-white placeholder-grey-light focus:outline-none focus:ring-2 focus:ring-aqua-neon focus:border-transparent transition-all duration-300"
+                  className="w-full px-3 xs:px-4 py-2.5 xs:py-3 bg-white/10 border border-aqua-neon/30 rounded-lg text-white placeholder-grey-light focus:outline-none focus:ring-2 focus:ring-aqua-neon focus:border-transparent transition-all duration-300 text-sm xs:text-base"
                   placeholder="Enter your full name"
                 />
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-white mb-2">
+                <label htmlFor="email" className="block text-xs xs:text-sm font-medium text-white mb-1 xs:mb-2">
                   Email Address *
                 </label>
                 <input
@@ -89,14 +89,14 @@ const ContactForm: React.FC = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-white/10 border border-aqua-neon/30 rounded-lg text-white placeholder-grey-light focus:outline-none focus:ring-2 focus:ring-aqua-neon focus:border-transparent transition-all duration-300"
+                  className="w-full px-3 xs:px-4 py-2.5 xs:py-3 bg-white/10 border border-aqua-neon/30 rounded-lg text-white placeholder-grey-light focus:outline-none focus:ring-2 focus:ring-aqua-neon focus:border-transparent transition-all duration-300 text-sm xs:text-base"
                   placeholder="Enter your email"
                 />
               </div>
             </div>
 
             <div>
-              <label htmlFor="phone" className="block text-sm font-medium text-white mb-2">
+              <label htmlFor="phone" className="block text-xs xs:text-sm font-medium text-white mb-1 xs:mb-2">
                 Phone Number
               </label>
               <input
@@ -105,13 +105,13 @@ const ContactForm: React.FC = () => {
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
-                className="w-full px-4 py-3 bg-white/10 border border-aqua-neon/30 rounded-lg text-white placeholder-grey-light focus:outline-none focus:ring-2 focus:ring-aqua-neon focus:border-transparent transition-all duration-300"
+                className="w-full px-3 xs:px-4 py-2.5 xs:py-3 bg-white/10 border border-aqua-neon/30 rounded-lg text-white placeholder-grey-light focus:outline-none focus:ring-2 focus:ring-aqua-neon focus:border-transparent transition-all duration-300 text-sm xs:text-base"
                 placeholder="Enter your phone number"
               />
             </div>
 
             <div>
-              <label htmlFor="message" className="block text-sm font-medium text-white mb-2">
+              <label htmlFor="message" className="block text-xs xs:text-sm font-medium text-white mb-1 xs:mb-2">
                 Message *
               </label>
               <textarea
@@ -120,8 +120,8 @@ const ContactForm: React.FC = () => {
                 value={formData.message}
                 onChange={handleChange}
                 required
-                rows={5}
-                className="w-full px-4 py-3 bg-white/10 border border-aqua-neon/30 rounded-lg text-white placeholder-grey-light focus:outline-none focus:ring-2 focus:ring-aqua-neon focus:border-transparent transition-all duration-300 resize-none"
+                rows={4}
+                className="w-full px-3 xs:px-4 py-2.5 xs:py-3 bg-white/10 border border-aqua-neon/30 rounded-lg text-white placeholder-grey-light focus:outline-none focus:ring-2 focus:ring-aqua-neon focus:border-transparent transition-all duration-300 resize-none text-sm xs:text-base"
                 placeholder="Tell us about your dream home and any specific requirements..."
               />
             </div>

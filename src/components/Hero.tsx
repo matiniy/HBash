@@ -40,12 +40,12 @@ const Hero: React.FC = () => {
             <div className="w-full sm:w-3/4 lg:w-[50%] lg:max-w-[950px]">
               {/* Glass Effect Background - Positioned over extending image */}
               <div className="bg-black/40 backdrop-blur-lg rounded-2xl p-6 sm:p-8 shadow-2xl">
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal text-white leading-tight font-space-grotesk">
+                <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-normal text-white leading-tight font-space-grotesk">
                   Find Your Dream Home In The Heart Of{' '}
                   <span className="text-aqua-neon">Dallas</span>
                 </h1>
                 
-                <p className="text-base sm:text-lg md:text-xl text-grey-light leading-relaxed mt-4 sm:mt-6">
+                <p className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl text-grey-light leading-relaxed mt-4 sm:mt-6">
                   From luxury estates to family-friendly neighborhoods, discover homes that fit your lifestyle - guided by a trusted expert who knows Dallas inside out.
                 </p>
 
@@ -63,28 +63,28 @@ const Hero: React.FC = () => {
                 </div>
 
                 {/* Stats Row - Directly under hero content */}
-                <div className="grid grid-cols-3 gap-4 sm:gap-6 mt-8 sm:mt-12">
+                <div className="grid grid-cols-3 gap-2 xs:gap-4 sm:gap-6 mt-6 sm:mt-8 lg:mt-12">
                   <div className="text-center">
-                    <div className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-1">
+                    <div className="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-1">
                       20%
                     </div>
-                    <div className="text-grey-light text-xs sm:text-sm">
+                    <div className="text-grey-light text-xs xs:text-sm sm:text-base">
                       Trusted By Companies
                     </div>
                   </div>
                   <div className="text-center">
-                    <div className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-1">
+                    <div className="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-1">
                       13K
                     </div>
-                    <div className="text-grey-light text-xs sm:text-sm">
+                    <div className="text-grey-light text-xs xs:text-sm sm:text-base">
                       Projects Completed
                     </div>
                   </div>
                   <div className="text-center">
-                    <div className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-1">
+                    <div className="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-1">
                       9+
                     </div>
-                    <div className="text-grey-light text-xs sm:text-sm">
+                    <div className="text-grey-light text-xs xs:text-sm sm:text-base">
                       Years Helping
                     </div>
                   </div>

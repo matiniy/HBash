@@ -8,8 +8,8 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo and Description */}
           <div className="col-span-1 md:col-span-2">
-            <h3 className="text-2xl font-bold text-white mb-4">Haideh Bashash</h3>
-            <p className="text-grey-light mb-6 max-w-md">
+            <h3 className="text-xl xs:text-2xl font-bold text-white mb-3 xs:mb-4">Haideh Bashash</h3>
+            <p className="text-sm xs:text-base text-grey-light mb-4 xs:mb-6 max-w-md">
               Your trusted real estate partner in Dallas. Helping you find the perfect home with years of experience and personal attention.
             </p>
             <div className="flex items-center space-x-4">
@@ -40,25 +40,25 @@ const Footer: React.FC = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold text-white mb-4">Quick Links</h4>
-            <ul className="space-y-2">
+            <h4 className="text-base xs:text-lg font-semibold text-white mb-3 xs:mb-4">Quick Links</h4>
+            <ul className="space-y-1 xs:space-y-2">
               <li>
-                <Link href="/about" className="text-grey-light hover:text-aqua-neon transition-colors">
+                <Link href="/about" className="text-sm xs:text-base text-grey-light hover:text-aqua-neon transition-colors">
                   About
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="text-grey-light hover:text-aqua-neon transition-colors">
+                <Link href="/services" className="text-sm xs:text-base text-grey-light hover:text-aqua-neon transition-colors">
                   Services
                 </Link>
               </li>
               <li>
-                <Link href="/listings" className="text-grey-light hover:text-aqua-neon transition-colors">
+                <Link href="/listings" className="text-sm xs:text-base text-grey-light hover:text-aqua-neon transition-colors">
                   Listings
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-grey-light hover:text-aqua-neon transition-colors">
+                <Link href="/contact" className="text-sm xs:text-base text-grey-light hover:text-aqua-neon transition-colors">
                   Contact
                 </Link>
               </li>
@@ -67,29 +67,29 @@ const Footer: React.FC = () => {
 
           {/* Contact Info */}
           <div>
-            <h4 className="text-lg font-semibold text-white mb-4">Contact Info</h4>
-            <div className="space-y-3 text-grey-light">
-              <p className="flex items-start">
-                <svg className="w-4 h-4 mr-2 mt-1 text-aqua-neon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <h4 className="text-base xs:text-lg font-semibold text-white mb-3 xs:mb-4">Contact Info</h4>
+            <div className="space-y-2 xs:space-y-3 text-grey-light">
+              <p className="flex items-start text-xs xs:text-sm">
+                <svg className="w-3 h-3 xs:w-4 xs:h-4 mr-1 xs:mr-2 mt-0.5 xs:mt-1 text-aqua-neon flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
                 5717 Legacy Dr Suite 250, Plano, TX 75024, United States
               </p>
-              <p className="flex items-center">
-                <svg className="w-4 h-4 mr-2 text-aqua-neon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <p className="flex items-center text-xs xs:text-sm">
+                <svg className="w-3 h-3 xs:w-4 xs:h-4 mr-1 xs:mr-2 text-aqua-neon flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
                 +1 214-916-9778
               </p>
-              <p className="flex items-center">
-                <svg className="w-4 h-4 mr-2 text-aqua-neon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <p className="flex items-center text-xs xs:text-sm">
+                <svg className="w-3 h-3 xs:w-4 xs:h-4 mr-1 xs:mr-2 text-aqua-neon flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
                 HaidehRealtor@gmail.com
               </p>
-              <p className="flex items-center">
-                <img src="/images/icons/zillow.svg" alt="Zillow" className="w-5 h-5 mr-2" />
+              <p className="flex items-center text-xs xs:text-sm">
+                <img src="/images/icons/zillow.svg" alt="Zillow" className="w-4 h-4 xs:w-5 xs:h-5 mr-1 xs:mr-2 flex-shrink-0" />
                 <a
                   href="https://www.zillow.com/profile/HaidehBashash"
                   target="_blank"
@@ -103,8 +103,8 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-8 pt-8 text-center">
-          <p className="text-grey-light">
+        <div className="border-t border-gray-800 mt-6 xs:mt-8 pt-6 xs:pt-8 text-center">
+          <p className="text-xs xs:text-sm text-grey-light">
             © 2025 Haideh Bashash Realtor. All rights reserved. | Designed by Metamatn Interactive.
           </p>
         </div>
