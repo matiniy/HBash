@@ -196,35 +196,35 @@ const ListingDetailsPage = () => {
         >
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
           
-          {/* Enhanced Price and Property Info Overlay */}
-          <div className="absolute top-6 right-6 z-20">
-            <div className="bg-black/40 backdrop-blur-lg rounded-2xl p-6 border border-white/10">
+          {/* Enhanced Price and Property Info Overlay - Responsive */}
+          <div className="absolute top-4 right-4 sm:top-6 sm:right-6 z-20">
+            <div className="bg-black/40 backdrop-blur-lg rounded-xl sm:rounded-2xl p-3 sm:p-4 lg:p-6 border border-white/10 max-w-[280px] sm:max-w-none">
               {/* Price */}
-              <div className="text-right mb-4">
-                <div className="text-3xl xs:text-4xl sm:text-5xl font-bold text-aqua-neon mb-1">
+              <div className="text-right mb-3 sm:mb-4">
+                <div className="text-xl xs:text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-aqua-neon mb-1">
                   {listing.price}
                 </div>
-                <div className="text-sm text-grey-light">Asking Price</div>
+                <div className="text-xs sm:text-sm text-grey-light">Asking Price</div>
               </div>
               
               {/* Property Type & Status */}
-              <div className="flex flex-col xs:flex-row gap-2">
-                <div className="bg-aqua-neon/20 text-aqua-neon px-3 py-1.5 rounded-full text-sm font-semibold border border-aqua-neon/30">
+              <div className="flex flex-col sm:flex-row gap-1.5 sm:gap-2 mb-3 sm:mb-4">
+                <div className="bg-aqua-neon/20 text-aqua-neon px-2 sm:px-3 py-1 sm:py-1.5 rounded-full text-xs sm:text-sm font-semibold border border-aqua-neon/30 text-center">
                   {listing.type}
                 </div>
-                <div className="bg-white/20 text-white px-3 py-1.5 rounded-full text-sm font-semibold border border-white/30">
+                <div className="bg-white/20 text-white px-2 sm:px-3 py-1 sm:py-1.5 rounded-full text-xs sm:text-sm font-semibold border border-white/30 text-center">
                   {listing.status}
                 </div>
               </div>
               
-              {/* Quick Stats */}
-              <div className="mt-4 grid grid-cols-2 gap-3 text-center">
-                <div className="bg-white/10 rounded-lg p-2">
-                  <div className="text-lg font-bold text-white">{listing.beds}</div>
+              {/* Quick Stats - Hidden on very small screens, shown on larger mobile */}
+              <div className="hidden xs:grid grid-cols-2 gap-2 sm:gap-3 text-center">
+                <div className="bg-white/10 rounded-lg p-1.5 sm:p-2">
+                  <div className="text-sm sm:text-lg font-bold text-white">{listing.beds}</div>
                   <div className="text-xs text-grey-light">Beds</div>
                 </div>
-                <div className="bg-white/10 rounded-lg p-2">
-                  <div className="text-lg font-bold text-white">{listing.baths}</div>
+                <div className="bg-white/10 rounded-lg p-1.5 sm:p-2">
+                  <div className="text-sm sm:text-lg font-bold text-white">{listing.baths}</div>
                   <div className="text-xs text-grey-light">Baths</div>
                 </div>
               </div>
@@ -237,9 +237,9 @@ const ListingDetailsPage = () => {
               {/* Previous Button */}
               <button
                 onClick={prevImage}
-                className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-black/50 hover:bg-black/70 rounded-full flex items-center justify-center transition-all duration-300"
+                className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-black/50 hover:bg-black/70 rounded-full flex items-center justify-center transition-all duration-300"
               >
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                 </svg>
               </button>
@@ -247,25 +247,25 @@ const ListingDetailsPage = () => {
               {/* Next Button */}
               <button
                 onClick={nextImage}
-                className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-black/50 hover:bg-black/70 rounded-full flex items-center justify-center transition-all duration-300"
+                className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-black/50 hover:bg-black/70 rounded-full flex items-center justify-center transition-all duration-300"
               >
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </button>
 
               {/* Image Counter */}
-              <div className="absolute bottom-8 left-1/2 -translate-x-1/2 bg-black/50 text-white px-4 py-2 rounded-full text-sm">
+              <div className="absolute bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2 bg-black/50 text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm">
                 {currentImageIndex + 1} / {listing.images.length}
               </div>
 
               {/* Thumbnail Navigation */}
-              <div className="absolute bottom-8 right-8 flex gap-2">
+              <div className="absolute bottom-4 sm:bottom-8 right-4 sm:right-8 flex gap-1 sm:gap-2 overflow-x-auto max-w-[200px] sm:max-w-none">
                 {listing.images.map((image, index) => (
                   <button
                     key={index}
                     onClick={() => setCurrentImageIndex(index)}
-                    className={`w-16 h-12 rounded-lg overflow-hidden border-2 transition-all duration-300 ${
+                    className={`w-12 h-8 sm:w-16 sm:h-12 rounded-lg overflow-hidden border-2 transition-all duration-300 flex-shrink-0 ${
                       index === currentImageIndex ? 'border-aqua-neon' : 'border-white/50'
                     }`}
                   >
