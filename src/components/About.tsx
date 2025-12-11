@@ -1,9 +1,37 @@
-import React from 'react';
+'use client';
+
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Button from './Button';
 
+const testimonials = [
+  {
+    text: "Haideh helped us immensely in our real estate process. She is knowledgeable, kind, and effective.",
+    author: "Peter Curtis"
+  },
+  {
+    text: "We had an amazing experience with Haideh Bashash as our realtor. After months of frustration in our house search, we started working with Haideh, and, within weeks, she helped us find our dream home. She was there for us every step of the way, negotiating on our behalf and making the entire process smooth, enjoyable, and stress-free. Haideh's professionalism, dedication, and attentiveness were truly exceptional. She's also truly the sweetest and most caring real estate agent we've ever had the pleasure of working with. We highly recommend her to anyone in need of a top-notch real estate agent. Thank you, Haideh, for helping us find our dream home!",
+    author: "Neda Mirzaeian"
+  },
+  {
+    text: "My wife and I had a fantastic experience with Haideh as my realtor! She was super knowledgeable and always available to answer my questions. Thanks to her insights, we found the perfect home without any stress. If you need a dedicated and caring realtor, I highly recommend Haideh!",
+    author: "Hossein Entezari"
+  }
+];
+
 const About: React.FC = () => {
+  const [currentTestimonial, setCurrentTestimonial] = useState(0);
+
+  useEffect(() => {
+    if (testimonials.length <= 1) return;
+
+    const timer = setInterval(() => {
+      setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
+    }, 7000); // 7 seconds
+
+    return () => clearInterval(timer);
+  }, [testimonials.length]);
   return (
     <section 
       className="py-20 relative overflow-hidden bg-cover bg-center"
@@ -54,43 +82,46 @@ const About: React.FC = () => {
               </p>
             </div>
             
-            {/* Testimonials - Under the glass effect box */}
-            <div className="space-y-4 sm:space-y-6">
-              <div className="bg-white/5 backdrop-blur-sm rounded-lg p-4 sm:p-6 border border-aqua-neon/10">
-                <div className="flex items-start space-x-2 sm:space-x-4">
-                  <div className="flex-shrink-0 text-aqua-neon text-2xl sm:text-3xl lg:text-4xl font-bold">"</div>
-                  <div className="flex-1">
-                    <p className="text-grey-light text-sm xs:text-base sm:text-lg leading-relaxed mb-3">
-                      Haideh helped us immensely in our real estate process. She is knowledgeable, kind, and effective.
-                    </p>
-                    <p className="text-white font-semibold text-sm xs:text-base">— Peter Curtis</p>
+            {/* Testimonials Carousel - Under the glass effect box */}
+            <div className="relative min-h-[200px] sm:min-h-[250px]">
+              {testimonials.map((testimonial, index) => (
+                <div
+                  key={index}
+                  className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
+                    index === currentTestimonial ? 'opacity-100' : 'opacity-0 pointer-events-none'
+                  }`}
+                >
+                  <div className="bg-white/5 backdrop-blur-sm rounded-lg p-4 sm:p-6 border border-aqua-neon/10">
+                    <div className="flex items-start space-x-2 sm:space-x-4">
+                      <div className="flex-shrink-0 text-aqua-neon text-2xl sm:text-3xl lg:text-4xl font-bold">"</div>
+                      <div className="flex-1">
+                        <p className="text-grey-light text-sm xs:text-base sm:text-lg leading-relaxed mb-3">
+                          {testimonial.text}
+                        </p>
+                        <p className="text-white font-semibold text-sm xs:text-base">— {testimonial.author}</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-
-              <div className="bg-white/5 backdrop-blur-sm rounded-lg p-4 sm:p-6 border border-aqua-neon/10">
-                <div className="flex items-start space-x-2 sm:space-x-4">
-                  <div className="flex-shrink-0 text-aqua-neon text-2xl sm:text-3xl lg:text-4xl font-bold">"</div>
-                  <div className="flex-1">
-                    <p className="text-grey-light text-sm xs:text-base sm:text-lg leading-relaxed mb-3">
-                      We had an amazing experience with Haideh Bashash as our realtor. After months of frustration in our house search, we started working with Haideh, and, within weeks, she helped us find our dream home. She was there for us every step of the way, negotiating on our behalf and making the entire process smooth, enjoyable, and stress-free. Haideh's professionalism, dedication, and attentiveness were truly exceptional. She's also truly the sweetest and most caring real estate agent we've ever had the pleasure of working with. We highly recommend her to anyone in need of a top-notch real estate agent. Thank you, Haideh, for helping us find our dream home!
-                    </p>
-                    <p className="text-white font-semibold text-sm xs:text-base">— Neda Mirzaeian</p>
-                  </div>
+              ))}
+              
+              {/* Navigation dots */}
+              {testimonials.length > 1 && (
+                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 flex gap-2 mt-4">
+                  {testimonials.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentTestimonial(index)}
+                      className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
+                        index === currentTestimonial
+                          ? 'w-8 bg-aqua-neon'
+                          : 'w-2 bg-white/50 hover:bg-white/75'
+                      }`}
+                      aria-label={`Go to testimonial ${index + 1}`}
+                    />
+                  ))}
                 </div>
-              </div>
-
-              <div className="bg-white/5 backdrop-blur-sm rounded-lg p-4 sm:p-6 border border-aqua-neon/10">
-                <div className="flex items-start space-x-2 sm:space-x-4">
-                  <div className="flex-shrink-0 text-aqua-neon text-2xl sm:text-3xl lg:text-4xl font-bold">"</div>
-                  <div className="flex-1">
-                    <p className="text-grey-light text-sm xs:text-base sm:text-lg leading-relaxed mb-3">
-                      My wife and I had a fantastic experience with Haideh as my realtor! She was super knowledgeable and always available to answer my questions. Thanks to her insights, we found the perfect home without any stress. If you need a dedicated and caring realtor, I highly recommend Haideh!
-                    </p>
-                    <p className="text-white font-semibold text-sm xs:text-base">— Hossein Entezari</p>
-                  </div>
-                </div>
-              </div>
+              )}
             </div>
           </div>
         </div>
