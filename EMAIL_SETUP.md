@@ -2,16 +2,15 @@
 
 The contact form is configured to send emails to **info@haidehbashash.com**.
 
+## Current Status
+
+✅ **Resend package is installed** - The `resend` package is already installed in the project.
+
 ## Setup Instructions
 
 ### Option 1: Using Resend (Recommended)
 
-1. **Install Resend:**
-   ```bash
-   npm install resend
-   ```
-
-2. **Get Resend API Key:**
+1. **Get Resend API Key:**
    - Sign up at [resend.com](https://resend.com)
    - Create an API key
    - Add it to your `.env.local` file:

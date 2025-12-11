@@ -40,7 +40,9 @@ const ContactForm: React.FC = () => {
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.error || 'Failed to send message');
+        const errorMsg = data.error || 'Failed to send message. Please try again.';
+        console.error('API Error:', errorMsg);
+        throw new Error(errorMsg);
       }
       
       setSubmitStatus('success');
@@ -50,9 +52,10 @@ const ContactForm: React.FC = () => {
         phone: '',
         message: ''
       });
-    } catch (error) {
+    } catch (error: any) {
       console.error('Form submission error:', error);
       setSubmitStatus('error');
+      // Error message is already set in the component's error display
     } finally {
       setIsSubmitting(false);
     }

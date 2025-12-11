@@ -49,36 +49,57 @@ This email was sent from the Haideh Bashash Realtor website contact form.
         });
         
         if (error) {
-          console.error('Resend error:', error);
+          console.error('Resend API error:', error);
+          // In production, return error; in development, log and continue
+          if (process.env.NODE_ENV === 'production') {
+            return NextResponse.json(
+              { error: error.message || 'Failed to send email. Please try again later.' },
+              { status: 500 }
+            );
+          }
+          // In development, log error but don't fail
+          console.warn('Email sending failed, but continuing in development mode');
         } else {
           emailSent = true;
+          console.log('✅ Email sent successfully via Resend');
         }
-      } catch (resendError) {
-        console.error('Resend setup error:', resendError);
+      } catch (resendError: any) {
+        console.error('Resend initialization error:', resendError);
+        // In production, return error; in development, log and continue
+        if (process.env.NODE_ENV === 'production') {
+          return NextResponse.json(
+            { error: 'Email service error. Please contact support if this persists.' },
+            { status: 500 }
+          );
+        }
+        // In development, log error but don't fail
+        console.warn('Email service error, but continuing in development mode');
       }
     }
 
-    // If Resend is not configured, log the email for manual sending or use alternative service
+    // If Resend is not configured or failed, log the email
     if (!emailSent) {
-      console.log('='.repeat(50));
-      console.log('CONTACT FORM SUBMISSION');
-      console.log('='.repeat(50));
+      console.log('\n' + '='.repeat(60));
+      console.log('📧 CONTACT FORM SUBMISSION (Logged - Email service not configured)');
+      console.log('='.repeat(60));
       console.log(`To: ${recipientEmail}`);
       console.log(`Subject: ${subject}`);
       console.log(`From: ${email}`);
       console.log(`Phone: ${phone || 'Not provided'}`);
       console.log('\nMessage:');
       console.log(message);
-      console.log('='.repeat(50));
+      console.log('='.repeat(60) + '\n');
       
-      // In development, we'll still return success but log the email
-      // In production, you should set up Resend or another email service
+      // In production, require email service
       if (process.env.NODE_ENV === 'production') {
         return NextResponse.json(
-          { error: 'Email service not configured. Please set up RESEND_API_KEY.' },
+          { error: 'Email service not configured. Please contact the website administrator.' },
           { status: 500 }
         );
       }
+      
+      // In development, return success even without email service
+      console.log('ℹ️  NOTE: In production, configure RESEND_API_KEY to send emails automatically.\n');
     }
     
     return NextResponse.json(
