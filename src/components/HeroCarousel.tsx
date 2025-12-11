@@ -22,23 +22,33 @@ const HeroCarousel: React.FC<HeroCarouselProps> = ({
       setCurrentIndex((prevIndex) => {
         const nextIndex = (prevIndex + 1) % images.length;
         // Preload next image
-        if (!loadedImages.has(nextIndex)) {
-          setLoadedImages(prev => new Set([...prev, nextIndex]));
-        }
+        setLoadedImages((prev) => {
+          if (!prev.has(nextIndex)) {
+            const newSet = new Set(prev);
+            newSet.add(nextIndex);
+            return newSet;
+          }
+          return prev;
+        });
         return nextIndex;
       });
     }, interval);
 
     return () => clearInterval(timer);
-  }, [images.length, interval, loadedImages]);
+  }, [images.length, interval]);
 
   // Preload next image when current changes
   useEffect(() => {
     const nextIndex = (currentIndex + 1) % images.length;
-    if (!loadedImages.has(nextIndex)) {
-      setLoadedImages(prev => new Set([...prev, nextIndex]));
-    }
-  }, [currentIndex, images.length, loadedImages]);
+    setLoadedImages((prev) => {
+      if (!prev.has(nextIndex)) {
+        const newSet = new Set(prev);
+        newSet.add(nextIndex);
+        return newSet;
+      }
+      return prev;
+    });
+  }, [currentIndex, images.length]);
 
   if (images.length === 0) {
     // Fallback if no images
@@ -87,9 +97,14 @@ const HeroCarousel: React.FC<HeroCarouselProps> = ({
               key={index}
               onClick={() => {
                 setCurrentIndex(index);
-                if (!loadedImages.has(index)) {
-                  setLoadedImages(prev => new Set([...prev, index]));
-                }
+                setLoadedImages((prev) => {
+                  if (!prev.has(index)) {
+                    const newSet = new Set(prev);
+                    newSet.add(index);
+                    return newSet;
+                  }
+                  return prev;
+                });
               }}
               className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
                 index === currentIndex
