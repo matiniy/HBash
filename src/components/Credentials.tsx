@@ -77,7 +77,7 @@ const Credentials: React.FC = () => {
               <h3 className="text-xl font-bold text-white mb-2">Contact</h3>
               <p className="text-grey-light text-sm mb-2">Direct Access</p>
               <div className="space-y-1">
-                <p className="text-aqua-neon text-xs font-semibold">📧 HaidehRealtor@gmail.com</p>
+                <p className="text-aqua-neon text-xs font-semibold">📧 info@haidehbashash.com</p>
                 <p className="text-aqua-neon text-xs font-semibold">📞 214.916.9778</p>
               </div>
             </div>

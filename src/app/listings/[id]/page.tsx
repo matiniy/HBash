@@ -44,7 +44,7 @@ const getListingData = (id: string) => {
         name: 'H Bashash',
         title: 'Your Dallas Real Estate Expert',
         phone: '214-916-9778',
-        email: 'HaidehRealtor@gmail.com',
+        email: 'info@haidehbashash.com',
         license: 'License #0679262',
         brokerage: 'HomeSmart Stars Realty'
       },
@@ -87,7 +87,7 @@ const getListingData = (id: string) => {
         name: 'H Bashash',
         title: 'Your Dallas Real Estate Expert',
         phone: '214-916-9778',
-        email: 'HaidehRealtor@gmail.com',
+        email: 'info@haidehbashash.com',
         license: 'License #0679262',
         brokerage: 'HomeSmart Stars Realty'
       },
@@ -130,7 +130,7 @@ const getListingData = (id: string) => {
         name: 'H Bashash',
         title: 'Your Dallas Real Estate Expert',
         phone: '214-916-9778',
-        email: 'HaidehRealtor@gmail.com',
+        email: 'info@haidehbashash.com',
         license: 'License #0679262',
         brokerage: 'HomeSmart Stars Realty'
       },
