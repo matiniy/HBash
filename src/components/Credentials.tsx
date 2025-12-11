@@ -14,7 +14,7 @@ const Credentials: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Main Heading */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-grey-light mb-6">
             Trusted by 20+ Companies & 13,000 Clients in Dallas and Beyond
           </h2>
           <p className="text-grey-light text-lg max-w-3xl mx-auto">
@@ -32,7 +32,7 @@ const Credentials: React.FC = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-white mb-2">Licensed Realtor</h3>
+              <h3 className="text-xl font-bold text-grey-light mb-2">Licensed Realtor</h3>
               <p className="text-grey-light text-sm mb-2">Haideh Bashash</p>
               <p className="text-aqua-neon text-xs font-semibold">TREC Verified License #0679262</p>
             </div>
@@ -46,7 +46,7 @@ const Credentials: React.FC = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-white mb-2">Brokerage</h3>
+              <h3 className="text-xl font-bold text-grey-light mb-2">Brokerage</h3>
               <p className="text-grey-light text-sm mb-2">HomeSmart Stars</p>
               <p className="text-aqua-neon text-xs font-semibold">Operating under HomeSmart Stars Realty</p>
             </div>
@@ -60,7 +60,7 @@ const Credentials: React.FC = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-white mb-2">Experience</h3>
+              <h3 className="text-xl font-bold text-grey-light mb-2">Experience</h3>
               <p className="text-grey-light text-sm mb-2">9+ Years</p>
               <p className="text-aqua-neon text-xs font-semibold">Proven Results in Dallas</p>
             </div>
@@ -74,7 +74,7 @@ const Credentials: React.FC = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-18 4v7a2 2 0 002 2h14a2 2 0 002-2v-7M3 8l2.46-1.64A2 2 0 017.22 6h9.56a2 2 0 011.76.36L21 8" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-white mb-2">Contact</h3>
+              <h3 className="text-xl font-bold text-grey-light mb-2">Contact</h3>
               <p className="text-grey-light text-sm mb-2">Direct Access</p>
               <div className="space-y-1">
                 <p className="text-aqua-neon text-xs font-semibold">📧 info@haidehbashash.com</p>

@@ -62,7 +62,7 @@ const ContactForm: React.FC = () => {
     <section className="py-20 bg-deep-forest">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8 sm:mb-12">
-          <h2 className={`text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+          <h2 className={`text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-grey-light mb-4 sm:mb-6 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
             {t('contact.title')} <span className="text-aqua-neon">{t('contact.consultation')}</span>
           </h2>
           <p className={`text-sm xs:text-base sm:text-lg lg:text-xl text-grey-light max-w-2xl mx-auto ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
@@ -74,7 +74,7 @@ const ContactForm: React.FC = () => {
           <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label htmlFor="fullName" className={`block text-xs xs:text-sm font-medium text-white mb-1 xs:mb-2 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+                <label htmlFor="fullName" className={`block text-xs xs:text-sm font-medium text-grey-light mb-1 xs:mb-2 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
                   {t('contact.fullName')} *
                 </label>
                 <input
@@ -84,14 +84,14 @@ const ContactForm: React.FC = () => {
                   value={formData.fullName}
                   onChange={handleChange}
                   required
-                  className={`w-full px-3 xs:px-4 py-2.5 xs:py-3 bg-white/10 border border-aqua-neon/30 rounded-lg text-white placeholder-grey-light focus:outline-none focus:ring-2 focus:ring-aqua-neon focus:border-transparent transition-all duration-300 text-sm xs:text-base ${language === 'fa' ? 'font-sora text-right' : ''}`}
+                  className={`w-full px-3 xs:px-4 py-2.5 xs:py-3 bg-white/10 border border-aqua-neon/30 rounded-lg text-grey-light placeholder-grey-light focus:outline-none focus:ring-2 focus:ring-aqua-neon focus:border-transparent transition-all duration-300 text-sm xs:text-base ${language === 'fa' ? 'font-sora text-right' : ''}`}
                   placeholder={t('contact.fullNamePlaceholder')}
                   dir={language === 'fa' ? 'rtl' : 'ltr'}
                 />
               </div>
 
               <div>
-                <label htmlFor="email" className={`block text-xs xs:text-sm font-medium text-white mb-1 xs:mb-2 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+                <label htmlFor="email" className={`block text-xs xs:text-sm font-medium text-grey-light mb-1 xs:mb-2 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
                   {t('contact.email')} *
                 </label>
                 <input
@@ -101,7 +101,7 @@ const ContactForm: React.FC = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className={`w-full px-3 xs:px-4 py-2.5 xs:py-3 bg-white/10 border border-aqua-neon/30 rounded-lg text-white placeholder-grey-light focus:outline-none focus:ring-2 focus:ring-aqua-neon focus:border-transparent transition-all duration-300 text-sm xs:text-base ${language === 'fa' ? 'font-sora text-right' : ''}`}
+                  className={`w-full px-3 xs:px-4 py-2.5 xs:py-3 bg-white/10 border border-aqua-neon/30 rounded-lg text-grey-light placeholder-grey-light focus:outline-none focus:ring-2 focus:ring-aqua-neon focus:border-transparent transition-all duration-300 text-sm xs:text-base ${language === 'fa' ? 'font-sora text-right' : ''}`}
                   placeholder={t('contact.emailPlaceholder')}
                   dir={language === 'fa' ? 'rtl' : 'ltr'}
                 />
@@ -109,7 +109,7 @@ const ContactForm: React.FC = () => {
             </div>
 
             <div>
-              <label htmlFor="phone" className={`block text-xs xs:text-sm font-medium text-white mb-1 xs:mb-2 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+              <label htmlFor="phone" className={`block text-xs xs:text-sm font-medium text-grey-light mb-1 xs:mb-2 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
                 {t('contact.phone')}
               </label>
               <input
@@ -118,14 +118,14 @@ const ContactForm: React.FC = () => {
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
-                className={`w-full px-3 xs:px-4 py-2.5 xs:py-3 bg-white/10 border border-aqua-neon/30 rounded-lg text-white placeholder-grey-light focus:outline-none focus:ring-2 focus:ring-aqua-neon focus:border-transparent transition-all duration-300 text-sm xs:text-base ${language === 'fa' ? 'font-sora text-right' : ''}`}
+                className={`w-full px-3 xs:px-4 py-2.5 xs:py-3 bg-white/10 border border-aqua-neon/30 rounded-lg text-grey-light placeholder-grey-light focus:outline-none focus:ring-2 focus:ring-aqua-neon focus:border-transparent transition-all duration-300 text-sm xs:text-base ${language === 'fa' ? 'font-sora text-right' : ''}`}
                 placeholder={t('contact.phonePlaceholder')}
                 dir={language === 'fa' ? 'rtl' : 'ltr'}
               />
             </div>
 
             <div>
-              <label htmlFor="message" className={`block text-xs xs:text-sm font-medium text-white mb-1 xs:mb-2 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+              <label htmlFor="message" className={`block text-xs xs:text-sm font-medium text-grey-light mb-1 xs:mb-2 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
                 {t('contact.message')} *
               </label>
               <textarea
@@ -135,7 +135,7 @@ const ContactForm: React.FC = () => {
                 onChange={handleChange}
                 required
                 rows={4}
-                className={`w-full px-3 xs:px-4 py-2.5 xs:py-3 bg-white/10 border border-aqua-neon/30 rounded-lg text-white placeholder-grey-light focus:outline-none focus:ring-2 focus:ring-aqua-neon focus:border-transparent transition-all duration-300 resize-none text-sm xs:text-base ${language === 'fa' ? 'font-sora text-right' : ''}`}
+                className={`w-full px-3 xs:px-4 py-2.5 xs:py-3 bg-white/10 border border-aqua-neon/30 rounded-lg text-grey-light placeholder-grey-light focus:outline-none focus:ring-2 focus:ring-aqua-neon focus:border-transparent transition-all duration-300 resize-none text-sm xs:text-base ${language === 'fa' ? 'font-sora text-right' : ''}`}
                 placeholder={t('contact.messagePlaceholder')}
                 dir={language === 'fa' ? 'rtl' : 'ltr'}
               />

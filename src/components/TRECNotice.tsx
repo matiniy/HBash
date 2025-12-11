@@ -2,7 +2,7 @@ import React from 'react';
 
 const TRECNotice: React.FC = () => {
   return (
-    <div className="bg-deep-forest text-white p-8 rounded-lg border border-aqua-neon/20">
+    <div className="bg-deep-forest text-grey-light p-8 rounded-lg border border-aqua-neon/20">
       <div className="max-w-4xl mx-auto space-y-6">
         <div className="text-center mb-8">
           <h2 className="text-2xl md:text-3xl font-bold text-aqua-neon mb-4">
@@ -16,7 +16,7 @@ const TRECNotice: React.FC = () => {
         <div className="space-y-6 text-grey-light leading-relaxed">
           <div>
             <p className="mb-4">
-              <strong className="text-white">THE TEXAS REAL ESTATE COMMISSION (TREC) REGULATES</strong>
+              <strong className="text-grey-light">THE TEXAS REAL ESTATE COMMISSION (TREC) REGULATES</strong>
             </p>
             <p>
               REAL ESTATE BROKERS AND SALES AGENTS, REAL ESTATE INSPECTORS, EASEMENT AND RIGHT-OF-WAY AGENTS, 
@@ -32,7 +32,7 @@ const TRECNotice: React.FC = () => {
               href="https://www.trec.texas.gov" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-aqua-neon hover:text-[#00e694] underline transition-colors"
+              className="text-aqua-neon hover:text-[#1a5a6a] underline transition-colors"
             >
               WWW.TREC.TEXAS.GOV
             </a>
@@ -57,14 +57,14 @@ const TRECNotice: React.FC = () => {
           </div>
 
           <div className="bg-white/5 p-4 rounded border border-aqua-neon/10">
-            <p className="text-white font-semibold mb-2">PLEASE NOTE:</p>
+            <p className="text-grey-light font-semibold mb-2">PLEASE NOTE:</p>
             <p>
               INSPECTORS MAY LIMIT LIABILITY THROUGH PROVISIONS IN THE CONTRACT OR INSPECTION AGREEMENT BETWEEN THE INSPECTOR AND THEIR CLIENTS. PLEASE BE SURE TO READ ANY CONTRACT OR AGREEMENT CAREFULLY. IF YOU DO NOT UNDERSTAND ANY TERMS OR PROVISIONS, CONSULT AN ATTORNEY.
             </p>
           </div>
 
           <div className="pt-6 border-t border-aqua-neon/20">
-            <p className="text-white font-semibold mb-2">TEXAS REAL ESTATE COMMISSION</p>
+            <p className="text-grey-light font-semibold mb-2">TEXAS REAL ESTATE COMMISSION</p>
             <p>P.O. BOX 12188</p>
             <p>AUSTIN, TEXAS 78711-2188</p>
             <p className="mt-2">

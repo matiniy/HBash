@@ -40,7 +40,7 @@ const Stats: React.FC = () => {
               <div className="flex justify-center mb-2 group-hover:scale-110 transition-transform duration-300">
                 {stat.icon}
               </div>
-              <div className="text-2xl md:text-3xl font-bold text-white mb-1 group-hover:text-aqua-neon transition-colors duration-300">
+              <div className="text-2xl md:text-3xl font-bold text-grey-light mb-1 group-hover:text-aqua-neon transition-colors duration-300">
                 {stat.number}
               </div>
               <div className="text-grey-light text-xs md:text-sm">

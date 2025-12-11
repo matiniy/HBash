@@ -152,7 +152,7 @@ const ListingDetailsPage = () => {
     return (
       <div className="min-h-screen bg-deep-forest flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-4xl font-bold text-white mb-4">Listing Not Found</h1>
+          <h1 className="text-4xl font-bold text-grey-light mb-4">Listing Not Found</h1>
           <Link href="/listings">
             <Button variant="primary">Back to Listings</Button>
           </Link>
@@ -212,7 +212,7 @@ const ListingDetailsPage = () => {
                 <div className="bg-aqua-neon/20 text-aqua-neon px-2 sm:px-3 py-1 sm:py-1.5 rounded-full text-xs sm:text-sm font-semibold border border-aqua-neon/30 text-center">
                   {listing.type}
                 </div>
-                <div className="bg-white/20 text-white px-2 sm:px-3 py-1 sm:py-1.5 rounded-full text-xs sm:text-sm font-semibold border border-white/30 text-center">
+                <div className="bg-white/20 text-grey-light px-2 sm:px-3 py-1 sm:py-1.5 rounded-full text-xs sm:text-sm font-semibold border border-white/30 text-center">
                   {listing.status}
                 </div>
               </div>
@@ -220,11 +220,11 @@ const ListingDetailsPage = () => {
               {/* Quick Stats - Hidden on very small screens, shown on larger mobile */}
               <div className="hidden xs:grid grid-cols-2 gap-2 sm:gap-3 text-center">
                 <div className="bg-white/10 rounded-lg p-1.5 sm:p-2">
-                  <div className="text-sm sm:text-lg font-bold text-white">{listing.beds}</div>
+                  <div className="text-sm sm:text-lg font-bold text-grey-light">{listing.beds}</div>
                   <div className="text-xs text-grey-light">Beds</div>
                 </div>
                 <div className="bg-white/10 rounded-lg p-1.5 sm:p-2">
-                  <div className="text-sm sm:text-lg font-bold text-white">{listing.baths}</div>
+                  <div className="text-sm sm:text-lg font-bold text-grey-light">{listing.baths}</div>
                   <div className="text-xs text-grey-light">Baths</div>
                 </div>
               </div>
@@ -239,7 +239,7 @@ const ListingDetailsPage = () => {
                 onClick={prevImage}
                 className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-black/50 hover:bg-black/70 rounded-full flex items-center justify-center transition-all duration-300"
               >
-                <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 sm:w-6 sm:h-6 text-grey-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                 </svg>
               </button>
@@ -249,13 +249,13 @@ const ListingDetailsPage = () => {
                 onClick={nextImage}
                 className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-black/50 hover:bg-black/70 rounded-full flex items-center justify-center transition-all duration-300"
               >
-                <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 sm:w-6 sm:h-6 text-grey-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </button>
 
               {/* Image Counter */}
-              <div className="absolute bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2 bg-black/50 text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm">
+              <div className="absolute bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2 bg-black/50 text-grey-light px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm">
                 {currentImageIndex + 1} / {listing.images.length}
               </div>
 
@@ -300,7 +300,7 @@ const ListingDetailsPage = () => {
             {/* Property Overview - Enhanced Design */}
             <section className="bg-gradient-to-br from-gray-800/60 to-gray-900/40 backdrop-blur-lg rounded-3xl p-6 sm:p-8 border border-gray-700/30 shadow-2xl">
               <div className="mb-8">
-                <h1 className="text-3xl xs:text-4xl sm:text-5xl font-bold text-white mb-3 leading-tight">{listing.title}</h1>
+                <h1 className="text-3xl xs:text-4xl sm:text-5xl font-bold text-grey-light mb-3 leading-tight">{listing.title}</h1>
                 <div className="flex items-center gap-2 text-lg text-grey-light">
                   <svg className="w-5 h-5 text-aqua-neon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -334,11 +334,11 @@ const ListingDetailsPage = () => {
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 <div className="bg-white/5 rounded-xl p-4 border border-white/10">
                   <div className="text-sm text-grey-light mb-1">Year Built</div>
-                  <div className="text-lg font-semibold text-white">{listing.yearBuilt}</div>
+                  <div className="text-lg font-semibold text-grey-light">{listing.yearBuilt}</div>
                 </div>
                 <div className="bg-white/5 rounded-xl p-4 border border-white/10">
                   <div className="text-sm text-grey-light mb-1">Parking</div>
-                  <div className="text-lg font-semibold text-white">{listing.parking}</div>
+                  <div className="text-lg font-semibold text-grey-light">{listing.parking}</div>
                 </div>
                 <div className="bg-white/5 rounded-xl p-4 border border-white/10">
                   <div className="text-sm text-grey-light mb-1">Property Type</div>
@@ -349,14 +349,14 @@ const ListingDetailsPage = () => {
 
             {/* Property Description - Enhanced */}
             <section className="bg-gradient-to-br from-gray-800/60 to-gray-900/40 backdrop-blur-lg rounded-3xl p-6 sm:p-8 border border-gray-700/30 shadow-2xl">
-              <h2 className="text-2xl xs:text-3xl font-bold text-white mb-6 flex items-center gap-3">
+              <h2 className="text-2xl xs:text-3xl font-bold text-grey-light mb-6 flex items-center gap-3">
                 <div className="w-1 h-8 bg-aqua-neon rounded-full"></div>
                 About This Property
               </h2>
               <p className="text-grey-light leading-relaxed mb-8 text-lg">{listing.description}</p>
               
               <div className="bg-aqua-neon/10 rounded-2xl p-6 border border-aqua-neon/20">
-                <h3 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+                <h3 className="text-lg font-semibold text-grey-light mb-4 flex items-center gap-2">
                   <svg className="w-5 h-5 text-aqua-neon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
@@ -366,7 +366,7 @@ const ListingDetailsPage = () => {
                   {listing.features.slice(0, 4).map((feature, index) => (
                     <div key={index} className="flex items-center text-grey-light">
                       <span className="text-aqua-neon mr-3 text-lg">✓</span>
-                      <span className="text-white">{feature}</span>
+                      <span className="text-grey-light">{feature}</span>
                     </div>
                   ))}
                 </div>
@@ -375,14 +375,14 @@ const ListingDetailsPage = () => {
 
             {/* Key Features - Enhanced */}
             <section className="bg-gradient-to-br from-gray-800/60 to-gray-900/40 backdrop-blur-lg rounded-3xl p-6 sm:p-8 border border-gray-700/30 shadow-2xl">
-              <h2 className="text-2xl xs:text-3xl font-bold text-white mb-8 flex items-center gap-3">
+              <h2 className="text-2xl xs:text-3xl font-bold text-grey-light mb-8 flex items-center gap-3">
                 <div className="w-1 h-8 bg-aqua-neon rounded-full"></div>
                 Key Features & Amenities
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {listing.features.map((feature, index) => (
                   <div key={index} className="bg-white/5 rounded-xl p-4 border border-white/10 hover:border-aqua-neon/30 transition-all duration-300 group">
-                    <div className="flex items-center text-grey-light group-hover:text-white transition-colors">
+                    <div className="flex items-center text-grey-light group-hover:text-grey-light transition-colors">
                       <span className="text-aqua-neon mr-3 text-lg group-hover:scale-110 transition-transform">✓</span>
                       <span className="font-medium">{feature}</span>
                     </div>
@@ -393,7 +393,7 @@ const ListingDetailsPage = () => {
 
             {/* Map & Neighborhood - Enhanced */}
             <section className="bg-gradient-to-br from-gray-800/60 to-gray-900/40 backdrop-blur-lg rounded-3xl p-6 sm:p-8 border border-gray-700/30 shadow-2xl">
-              <h2 className="text-2xl xs:text-3xl font-bold text-white mb-6 flex items-center gap-3">
+              <h2 className="text-2xl xs:text-3xl font-bold text-grey-light mb-6 flex items-center gap-3">
                 <div className="w-1 h-8 bg-aqua-neon rounded-full"></div>
                 Location & Neighborhood
               </h2>
@@ -407,7 +407,7 @@ const ListingDetailsPage = () => {
                 </div>
               </div>
               <div>
-                <h3 className="text-xl font-semibold text-white mb-6 flex items-center gap-2">
+                <h3 className="text-xl font-semibold text-grey-light mb-6 flex items-center gap-2">
                   <svg className="w-5 h-5 text-aqua-neon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
@@ -450,7 +450,7 @@ const ListingDetailsPage = () => {
                 <div className="w-24 h-24 bg-gradient-to-br from-aqua-neon to-aqua-neon/80 rounded-full mx-auto mb-6 flex items-center justify-center shadow-lg">
                   <span className="text-3xl font-bold text-deep-forest">H</span>
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-2">{listing.agent.name}</h3>
+                <h3 className="text-2xl font-bold text-grey-light mb-2">{listing.agent.name}</h3>
                 <p className="text-grey-light text-lg">{listing.agent.title}</p>
                 <div className="mt-4 bg-aqua-neon/10 rounded-full px-4 py-2 inline-block">
                   <span className="text-aqua-neon text-sm font-semibold">{listing.agent.license}</span>
@@ -467,7 +467,7 @@ const ListingDetailsPage = () => {
                     </div>
                     <div>
                       <div className="text-sm text-grey-light">Phone</div>
-                      <div className="text-white font-semibold">{listing.agent.phone}</div>
+                      <div className="text-grey-light font-semibold">{listing.agent.phone}</div>
                     </div>
                   </div>
                 </div>
@@ -480,7 +480,7 @@ const ListingDetailsPage = () => {
                     </div>
                     <div>
                       <div className="text-sm text-grey-light">Email</div>
-                      <div className="text-white font-semibold text-sm">{listing.agent.email}</div>
+                      <div className="text-grey-light font-semibold text-sm">{listing.agent.email}</div>
                     </div>
                   </div>
                 </div>
@@ -498,7 +498,7 @@ const ListingDetailsPage = () => {
               <div className="bg-white/5 rounded-xl p-4 border border-white/10">
                 <div className="text-center">
                   <div className="text-sm text-grey-light mb-2">Licensed with</div>
-                  <div className="text-white font-semibold">{listing.agent.brokerage}</div>
+                  <div className="text-grey-light font-semibold">{listing.agent.brokerage}</div>
                 </div>
               </div>
             </div>

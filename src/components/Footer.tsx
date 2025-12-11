@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo and Description */}
           <div className="col-span-1 md:col-span-2">
-            <h3 className="text-xl xs:text-2xl font-bold text-white mb-3 xs:mb-4">Haideh Bashash</h3>
+            <h3 className="text-xl xs:text-2xl font-bold text-grey-light mb-3 xs:mb-4">Haideh Bashash</h3>
             <p className={`text-sm xs:text-base text-grey-light mb-4 xs:mb-6 max-w-md ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
               {t('footer.description')}
             </p>
@@ -44,7 +44,7 @@ const Footer: React.FC = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className={`text-base xs:text-lg font-semibold text-white mb-3 xs:mb-4 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+            <h4 className={`text-base xs:text-lg font-semibold text-grey-light mb-3 xs:mb-4 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
               {t('footer.quickLinks')}
             </h4>
             <ul className="space-y-1 xs:space-y-2">
@@ -83,7 +83,7 @@ const Footer: React.FC = () => {
 
           {/* Contact Info */}
           <div>
-            <h4 className={`text-base xs:text-lg font-semibold text-white mb-3 xs:mb-4 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+            <h4 className={`text-base xs:text-lg font-semibold text-grey-light mb-3 xs:mb-4 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
               {t('footer.contactInfo')}
             </h4>
             <div className="space-y-2 xs:space-y-3 text-grey-light">
@@ -127,7 +127,7 @@ const Footer: React.FC = () => {
               {t('footer.copyright')}
             </p>
             <p className={`text-xs xs:text-sm text-grey-light ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
-              <Link href="/trec-notice" className="text-aqua-neon hover:text-[#00e694] underline transition-colors">
+              <Link href="/trec-notice" className="text-aqua-neon hover:text-[#1a5a6a] underline transition-colors">
                 {t('footer.trecNotice')}
               </Link>
             </p>

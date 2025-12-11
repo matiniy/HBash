@@ -3,10 +3,10 @@
 @tailwind utilities;
 
 :root {
-  --deep-forest: #042222;
-  --aqua-neon: #00FFA3;
-  --white: #FFFFFF;
-  --grey-light: #B3B3B3;
+  --deep-forest: #000000;
+  --aqua-neon: #144552;
+  --white: #E8F1F2;
+  --grey-light: #E8F1F2;
   --black-70: rgba(0, 0, 0, 0.7);
 }
 
@@ -20,8 +20,8 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
-  background-color: var(--deep-forest);
-  color: var(--white);
+  background-color: #000000;
+  color: #E8F1F2;
 }
 
 body {
@@ -47,12 +47,12 @@ a {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--aqua-neon);
+  background: #144552;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #00e694;
+  background: #1a5a6a;
 }
 
 /* Marquee animation */
@@ -85,14 +85,14 @@ a {
 
 /* Button hover effects */
 .btn-primary:hover {
-  background-color: #00e694;
+  background-color: #1a5a6a;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 255, 163, 0.3);
+  box-shadow: 0 4px 12px rgba(20, 69, 82, 0.3);
 }
 
 .btn-secondary:hover {
-  background-color: var(--aqua-neon);
-  color: var(--deep-forest);
+  background-color: #144552;
+  color: #E8F1F2;
   transform: translateY(-2px);
 }
 

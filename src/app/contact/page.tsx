@@ -13,7 +13,7 @@ export default function Contact() {
       <section className="pt-20 pb-16 bg-deep-forest">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-grey-light mb-6">
               Get In <span className="text-aqua-neon">Touch</span>
             </h1>
             <p className="text-xl text-grey-light max-w-3xl mx-auto">
@@ -120,7 +120,7 @@ export default function Contact() {
       <section className="py-20 bg-deep-forest">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-grey-light mb-6">
               Frequently Asked <span className="text-aqua-neon">Questions</span>
             </h2>
             <p className="text-lg text-grey-light">
@@ -148,7 +148,7 @@ export default function Contact() {
               }
             ].map((faq, index) => (
               <div key={index} className="bg-white/5 backdrop-blur-sm rounded-lg p-6 border border-aqua-neon/20">
-                <h3 className="text-lg font-semibold text-white mb-3">{faq.question}</h3>
+                <h3 className="text-lg font-semibold text-grey-light mb-3">{faq.question}</h3>
                 <p className="text-grey-light">{faq.answer}</p>
               </div>
             ))}
