@@ -48,10 +48,15 @@ const About: React.FC = () => {
           {/* Right Content - Glass Effect Box and Testimonials */}
           <div className="space-y-8">
             {/* Glass Effect Box - Positioned 150px to the left, overlapping image */}
-            <div className="relative -ml-[50px] sm:-ml-[100px] lg:-ml-[150px] w-[110%] sm:w-[115%] lg:w-[120%] h-[180px] sm:h-[200px] lg:h-[220px] bg-black/40 backdrop-blur-lg rounded-tr-2xl rounded-bl-2xl rounded-br-2xl rounded-tl-none p-3 sm:p-4 text-white z-20 flex items-center">
-              <p className="text-sm xs:text-base sm:text-lg lg:text-[20px] font-sora font-normal leading-normal text-left">
-                With a deep passion for helping people find the perfect home, H Bashash brings years of experience, market insight, and personal attention to every client relationship.
-              </p>
+            <div className="relative -ml-[50px] sm:-ml-[100px] lg:-ml-[150px] w-[110%] sm:w-[115%] lg:w-[120%] min-h-[300px] sm:min-h-[350px] lg:min-h-[400px] bg-black/40 backdrop-blur-lg rounded-tr-2xl rounded-bl-2xl rounded-br-2xl rounded-tl-none p-4 sm:p-6 lg:p-8 text-white z-20 flex items-start">
+              <div className="space-y-3 sm:space-y-4">
+                <p className="text-xs xs:text-sm sm:text-base lg:text-lg font-sora font-normal leading-relaxed text-left">
+                  Haideh Bashash is a dedicated full-time real estate professional with HomeSmart Stars, proudly serving clients since 2016. Her business is founded on unwavering principles of dedication, communication, determination, and trust. Whether buying, selling, or renting, Haideh tirelessly advocates for her clients' best interests, ensuring they feel informed and supported every step of the way. Guided by her core philosophy of "quality over quantity," she brings a thoughtful, client-centered approach to every transaction.
+                </p>
+                <p className="text-xs xs:text-sm sm:text-base lg:text-lg font-sora font-normal leading-relaxed text-left">
+                  Before beginning her real estate career, Haideh served for 17 years at the United Nations, an experience that enriched her with exceptional interpersonal and communication skills, as well as the ability to work effectively with people from diverse cultures and backgrounds. Fluent in Turkish and Persian, she values connection and community, both personally and professionally. When she's not assisting clients, Haideh enjoys spending quality time with her family and friends.
+                </p>
+              </div>
             </div>
             
             {/* Testimonials - Under the glass effect box */}
