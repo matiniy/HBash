@@ -1,25 +1,39 @@
-# Hero Background Image Directory
+# Hero Carousel Images
 
-## 📁 Upload Your Hero Image Here
+This directory contains images for the homepage hero carousel.
 
-Place your hero background image in this directory: `public/images/hero/`
+## How to Add Images
 
-### Recommended Specifications:
-- **File name**: `hero-background.jpg` (or .png, .webp)
-- **Dimensions**: 1920x1080px or higher
-- **Format**: JPG, PNG, or WebP
-- **File size**: Under 2MB for optimal loading
+1. **Upload your images** to this directory (`/public/images/hero/`)
+   - Supported formats: `.jpg`, `.jpeg`, `.png`, `.webp`
+   - Recommended size: 1920x1080px or larger (16:9 aspect ratio works best)
+   - File size: Keep under 2MB for optimal performance
 
-### Current Image:
-The website currently uses a placeholder image from Unsplash. To use your own image:
+2. **Update the Hero component** to include your new image:
+   - Open: `src/components/Hero.tsx`
+   - Find the `heroImages` array (around line 10-15)
+   - Add your image path: `'/images/hero/your-image-name.jpg'`
 
-1. Upload your image to this directory
-2. Rename it to `hero-background.jpg`
-3. The website will automatically use your image
+## Example
 
-### Supported File Names:
-- `hero-background.jpg`
-- `hero-background.png` 
-- `hero-background.webp`
+```typescript
+const heroImages = [
+  '/images/hero/2_photo_2.jpg',
+  '/images/hero/20_photo_22.jpg',
+  '/images/hero/your-new-image.jpg',  // Add your new image here
+];
+```
 
-The image will be displayed as a full-screen background in the hero section with proper responsive scaling.
+## Carousel Settings
+
+- **Interval**: 4 seconds between each image
+- **Transition**: Smooth fade effect (1 second)
+- **Navigation**: Dots at the bottom allow manual navigation
+- **Auto-play**: Automatically cycles through all images
+
+## Tips
+
+- Use high-quality images for best results
+- Ensure images are properly optimized before uploading
+- Images will automatically scale to fit the hero section
+- The carousel will loop continuously through all images

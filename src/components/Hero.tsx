@@ -3,6 +3,19 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Button from './Button';
+import HeroCarousel from './HeroCarousel';
+
+// Hero images array - Add your image filenames here
+// Simply add new images to /public/images/hero/ and add their filenames to this array
+const heroImages = [
+  '/images/hero/2_photo_2.jpg',
+  '/images/hero/20_photo_22.jpg',
+  '/images/hero/21_photo_23.jpg',
+  '/images/hero/59_photo_59.jpg',
+  '/images/hero/62A73F24-0FF0-45FB-8099-165430CA0911.JPG',
+  // Add more images here as you upload them to /public/images/hero/
+  // Example: '/images/hero/your-new-image.jpg',
+];
 
 const Hero: React.FC = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -17,36 +30,34 @@ const Hero: React.FC = () => {
   const scale = Math.max(0.8, 1 - scrollY * 0.0005);
   return (
     <section className="min-h-screen flex items-center relative overflow-hidden">
-      {/* Mobile: Full Background Image */}
-      <div className="absolute inset-0 lg:hidden">
+      {/* Mobile: Full Background Carousel */}
+      <div className="absolute inset-0 lg:hidden z-0">
         <div 
-          className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat transition-transform duration-75 ease-out"
+          className="absolute inset-0 transition-transform duration-75 ease-out"
           style={{
-            backgroundImage: `url('/images/hero/hero-background.jpg'), url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
             transform: `scale(${scale})`,
             transformOrigin: 'center center'
           }}
-        ></div>
+        >
+          <HeroCarousel images={heroImages} interval={4000} />
+        </div>
         {/* Dark overlay for mobile text readability */}
-        <div className="absolute inset-0 bg-black/50"></div>
+        <div className="absolute inset-0 bg-black/50 z-[1]"></div>
       </div>
 
-      {/* Desktop: Side-by-side layout */}
-      <div className="absolute inset-0 hidden lg:block">
+      {/* Desktop: Side-by-side layout with carousel */}
+      <div className="absolute inset-0 hidden lg:block z-0">
         <div 
-          className="absolute right-0 top-0 w-[65%] h-[120%] bg-cover bg-center bg-no-repeat transition-transform duration-75 ease-out"
+          className="absolute right-0 top-0 w-[65%] h-[120%] transition-transform duration-75 ease-out overflow-hidden"
           style={{
-            backgroundImage: `url('/images/hero/hero-background.jpg'), url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center right',
             transform: `scale(${scale})`,
             transformOrigin: 'center center'
           }}
-        ></div>
+        >
+          <HeroCarousel images={heroImages} interval={4000} />
+        </div>
         {/* Dark overlay for left side on desktop */}
-        <div className="absolute left-0 top-0 w-[35%] h-full bg-deep-forest"></div>
+        <div className="absolute left-0 top-0 w-[35%] h-full bg-deep-forest z-[1]"></div>
       </div>
 
       <div className="w-full px-4 sm:px-6 lg:px-8 relative z-10">
