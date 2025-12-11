@@ -4,8 +4,11 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Button from './Button';
+import LanguageToggle from './LanguageToggle';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Navbar: React.FC = () => {
+  const { t, language } = useLanguage();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [logoIndex, setLogoIndex] = useState(0);
   const [isFloating, setIsFloating] = useState(false);
@@ -71,18 +74,19 @@ const Navbar: React.FC = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
+          <div className="hidden md:flex items-center space-x-4 lg:space-x-6">
             <Link href="/about" className="text-white hover:text-aqua-neon transition-colors">
-              About
+              {t('nav.about')}
             </Link>
             <Link href="/services" className="text-white hover:text-aqua-neon transition-colors">
-              Services
+              {t('nav.services')}
             </Link>
             <Link href="/listings" className="text-white hover:text-aqua-neon transition-colors">
-              Listings
+              {t('nav.listings')}
             </Link>
+            <LanguageToggle />
             <Link href="/contact">
-              <Button variant="primary">Contact</Button>
+              <Button variant="primary">{t('nav.contact')}</Button>
             </Link>
           </div>
 
@@ -113,25 +117,28 @@ const Navbar: React.FC = () => {
                 className="block px-3 py-3 text-white hover:text-aqua-neon transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
-                About
+                {t('nav.about')}
               </Link>
               <Link
                 href="/services"
                 className="block px-3 py-3 text-white hover:text-aqua-neon transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Services
+                {t('nav.services')}
               </Link>
               <Link
                 href="/listings"
                 className="block px-3 py-3 text-white hover:text-aqua-neon transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Listings
+                {t('nav.listings')}
               </Link>
+              <div className="px-3 py-3">
+                <LanguageToggle />
+              </div>
               <div className="px-3 py-2">
                 <Link href="/contact" onClick={() => setIsMenuOpen(false)}>
-                  <Button variant="primary" className="w-full">Contact</Button>
+                  <Button variant="primary" className="w-full">{t('nav.contact')}</Button>
                 </Link>
               </div>
             </div>

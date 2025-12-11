@@ -1,0 +1,56 @@
+{
+  "nav": {
+    "about": "About",
+    "services": "Services",
+    "listings": "Listings",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Find Your Dream Home In The Heart Of",
+    "dallas": "Dallas",
+    "subtitle": "From luxury estates to family-friendly neighborhoods, discover homes that fit your lifestyle - guided by a trusted expert who knows Dallas inside out.",
+    "scheduleConsultation": "Schedule Consultation",
+    "browseListings": "Browse Listings"
+  },
+  "stats": {
+    "trustedByCompanies": "Trusted By Companies",
+    "projectsCompleted": "Projects Completed",
+    "yearsHelping": "Years Helping"
+  },
+  "marquee": {
+    "vision1": "Because Home Is More Than Walls — It's Where Stories Begin",
+    "vision2": "Turning Dallas Dreams Into Addresses",
+    "vision3": "Where Every Door Opens to a New Chapter"
+  },
+  "about": {
+    "bio": "Haideh Bashash is the agent people turn to when they want clarity, confidence, and a genuinely smooth real estate experience. Since 2016, she has built a reputation for unwavering dedication and honest communication, treating every client's goals as if they were her own. Her 17 years at the United Nations sharpened her ability to understand people, solve problems calmly, and navigate complex situations with ease—skills that set her apart in today's market. Fluent in Turkish and Persian, deeply connected to her community, and driven by a \"quality over quantity\" mindset, Haideh brings a steady, client-first approach that delivers real results and long-term trust.",
+    "readMore": "Read More →"
+  },
+  "listings": {
+    "featured": "Featured",
+    "listings": "Listings",
+    "description": "Discover our handpicked selection of premium properties in Dallas. From luxury apartments to family estates, find your perfect home.",
+    "viewAll": "View All Listings"
+  },
+  "contact": {
+    "title": "Schedule a",
+    "consultation": "Consultation",
+    "subtitle": "Ready to find your dream home? Let's discuss your needs and start your journey to homeownership.",
+    "fullName": "Full Name",
+    "email": "Email Address",
+    "phone": "Phone Number",
+    "message": "Message",
+    "sendMessage": "Send Message",
+    "sending": "Sending...",
+    "success": "Thank you! Your message has been sent successfully. We'll get back to you soon.",
+    "error": "Sorry, there was an error sending your message. Please try again."
+  },
+  "footer": {
+    "description": "Your trusted real estate partner in Dallas. Helping you find the perfect home with years of experience and personal attention.",
+    "quickLinks": "Quick Links",
+    "contactInfo": "Contact Info",
+    "iabs": "IABS",
+    "consumerProtection": "Consumer Protection Notice",
+    "copyright": "© 2025 Haideh Bashash Realtor. All rights reserved. | Designed by Metamatn Interactive."
+  }
+}
