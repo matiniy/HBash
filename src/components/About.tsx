@@ -11,14 +11,16 @@ const testimonials = [
     author: "Peter Curtis"
   },
   {
-    text: "We had an amazing experience with Haideh Bashash as our realtor. After months of frustration in our house search, we started working with Haideh, and, within weeks, she helped us find our dream home. She was there for us every step of the way, negotiating on our behalf and making the entire process smooth, enjoyable, and stress-free. Haideh's professionalism, dedication, and attentiveness were truly exceptional. She's also truly the sweetest and most caring real estate agent we've ever had the pleasure of working with. We highly recommend her to anyone in need of a top-notch real estate agent. Thank you, Haideh, for helping us find our dream home!",
+    text: "After months of frustration, Haideh helped us find our dream home within weeks. She made the entire process smooth, enjoyable, and stress-free. Highly recommend!",
     author: "Neda Mirzaeian"
   },
   {
-    text: "My wife and I had a fantastic experience with Haideh as my realtor! She was super knowledgeable and always available to answer my questions. Thanks to her insights, we found the perfect home without any stress. If you need a dedicated and caring realtor, I highly recommend Haideh!",
+    text: "My wife and I had a fantastic experience with Haideh! She was super knowledgeable and always available. We found the perfect home without any stress.",
     author: "Hossein Entezari"
   }
 ];
+
+const GOOGLE_REVIEWS_URL = "https://maps.app.goo.gl/NTTL8uiUqwZL3enEA";
 
 const About: React.FC = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
@@ -76,10 +78,17 @@ const About: React.FC = () => {
           {/* Right Content - Glass Effect Box and Testimonials */}
           <div className="space-y-8">
             {/* Glass Effect Box - Positioned 150px to the left, overlapping image */}
-            <div className="relative -ml-[50px] sm:-ml-[100px] lg:-ml-[150px] w-[110%] sm:w-[115%] lg:w-[120%] min-h-[200px] sm:min-h-[250px] lg:min-h-[280px] bg-black/40 backdrop-blur-lg rounded-tr-2xl rounded-bl-2xl rounded-br-2xl rounded-tl-none p-4 sm:p-6 lg:p-8 text-white z-20 flex items-center">
-              <p className="text-sm xs:text-base sm:text-lg lg:text-xl font-sora font-normal leading-relaxed text-left">
-                Haideh Bashash delivers clear guidance, strong advocacy, and smooth results. Since 2016, she's earned a reputation for dedication, honest communication, and sharp negotiation. With 17 years at the United Nations, she brings valuable multicultural insight and works easily with clients from all backgrounds. Fluent in Turkish and Farsi, she leads with a calm, client-first, "quality over quantity" approach.
-              </p>
+            <div className="relative -ml-[50px] sm:-ml-[100px] lg:-ml-[150px] w-[110%] sm:w-[115%] lg:w-[120%] min-h-[180px] sm:min-h-[200px] lg:min-h-[220px] bg-black/40 backdrop-blur-lg rounded-tr-2xl rounded-bl-2xl rounded-br-2xl rounded-tl-none p-4 sm:p-6 lg:p-8 text-white z-20 flex flex-col justify-center">
+              <div className="space-y-3 sm:space-y-4">
+                <p className="text-sm xs:text-base sm:text-lg lg:text-xl font-sora font-normal leading-relaxed text-left line-clamp-3">
+                  Haideh Bashash is the agent people turn to when they want clarity, confidence, and a genuinely smooth real estate experience. Since 2016, she has built a reputation for unwavering dedication and honest communication, treating every client's goals as if they were her own. Her 17 years at the United Nations sharpened her ability to understand people, solve problems calmly, and navigate complex situations with ease—skills that set her apart in today's market. Fluent in Turkish and Persian, deeply connected to her community, and driven by a "quality over quantity" mindset, Haideh brings a steady, client-first approach that delivers real results and long-term trust.
+                </p>
+                <Link href="/about" className="inline-block mt-2">
+                  <span className="text-aqua-neon hover:text-[#00e694] font-semibold text-sm xs:text-base sm:text-lg transition-colors duration-300 underline">
+                    Read More →
+                  </span>
+                </Link>
+              </div>
             </div>
             
             {/* Testimonials Carousel - Under the glass effect box */}
@@ -91,17 +100,29 @@ const About: React.FC = () => {
                     index === currentTestimonial ? 'opacity-100' : 'opacity-0 pointer-events-none'
                   }`}
                 >
-                  <div className="bg-white/5 backdrop-blur-sm rounded-lg p-4 sm:p-6 border border-aqua-neon/10">
-                    <div className="flex items-start space-x-2 sm:space-x-4">
-                      <div className="flex-shrink-0 text-aqua-neon text-2xl sm:text-3xl lg:text-4xl font-bold">"</div>
-                      <div className="flex-1">
-                        <p className="text-grey-light text-sm xs:text-base sm:text-lg leading-relaxed mb-3">
-                          {testimonial.text}
-                        </p>
-                        <p className="text-white font-semibold text-sm xs:text-base">— {testimonial.author}</p>
+                  <a
+                    href={GOOGLE_REVIEWS_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block cursor-pointer group"
+                  >
+                    <div className="bg-white/5 backdrop-blur-sm rounded-lg p-4 sm:p-6 border border-aqua-neon/10 group-hover:bg-white/10 group-hover:border-aqua-neon/30 transition-all duration-300">
+                      <div className="flex items-start space-x-2 sm:space-x-4">
+                        <div className="flex-shrink-0 text-aqua-neon text-2xl sm:text-3xl lg:text-4xl font-bold">"</div>
+                        <div className="flex-1">
+                          <p className="text-grey-light text-sm xs:text-base sm:text-lg leading-relaxed mb-3 group-hover:text-white transition-colors">
+                            {testimonial.text}
+                          </p>
+                          <div className="flex items-center justify-between">
+                            <p className="text-white font-semibold text-sm xs:text-base">— {testimonial.author}</p>
+                            <span className="text-aqua-neon text-xs xs:text-sm font-semibold group-hover:text-[#00e694] transition-colors">
+                              Read More Reviews →
+                            </span>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  </a>
                 </div>
               ))}
               

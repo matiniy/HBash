@@ -29,14 +29,19 @@ export default function About() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-deep-forest mb-6">
-                A Passion for Real Estate
+                About Haideh Bashash
               </h2>
-              <p className="text-lg text-gray-600 mb-6">
-                With over 9 years of experience in the Dallas real estate market, H Bashash has built a reputation for excellence, integrity, and results. What started as a passion for helping people find their perfect home has grown into a thriving practice that serves clients across the Dallas metropolitan area.
-              </p>
-              <p className="text-lg text-gray-600 mb-8">
-                Our approach is simple: listen to your needs, understand your goals, and work tirelessly to exceed your expectations. Whether you're a first-time homebuyer, a growing family looking to upgrade, or an investor seeking the next great opportunity, we're here to guide you every step of the way.
-              </p>
+              <div className="space-y-6 mb-8">
+                <p className="text-lg text-gray-600 leading-relaxed">
+                  Haideh Bashash is the agent people turn to when they want clarity, confidence, and a genuinely smooth real estate experience. Since 2016, she has built a reputation for unwavering dedication and honest communication, treating every client's goals as if they were her own.
+                </p>
+                <p className="text-lg text-gray-600 leading-relaxed">
+                  Her 17 years at the United Nations sharpened her ability to understand people, solve problems calmly, and navigate complex situations with ease—skills that set her apart in today's market.
+                </p>
+                <p className="text-lg text-gray-600 leading-relaxed">
+                  Fluent in Turkish and Persian, deeply connected to her community, and driven by a "quality over quantity" mindset, Haideh brings a steady, client-first approach that delivers real results and long-term trust.
+                </p>
+              </div>
               <Link href="/contact">
                 <Button variant="primary">Get In Touch</Button>
               </Link>
