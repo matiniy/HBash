@@ -1,29 +1,22 @@
 # IABS Document Directory
 
-This directory is for the Information About Brokerage Services (IABS) document.
+This directory contains the Information About Brokerage Services (IABS) document.
 
 ## How to Add the IABS Document
 
-1. **Upload your IABS document** to this directory (`/public/documents/iabs/`)
-   - Supported formats: `.pdf`, `.doc`, `.docx`, `.txt`
-   - Recommended: PDF format for best compatibility
+1. **Upload your IABS PDF** to this directory (`/public/documents/iabs/`)
+   - File name should be: `IABS.pdf`
+   - Supported format: PDF
+   - The document will be displayed in an embedded PDF viewer on the IABS page
 
-2. **Update the IABS page** to reference your document:
-   - Open: `src/app/iabs/page.tsx`
-   - Update the document path in the component
+## File Location
 
-## Example Document Structure
+- **Directory**: `/public/documents/iabs/`
+- **Expected filename**: `IABS.pdf`
+- **Page URL**: `/iabs`
 
-```
-/public/documents/iabs/
-  - IABS-Document.pdf (or your document name)
-  - README.md (this file)
-```
+## Notes
 
-## Display Options
-
-The IABS page can display:
-- PDF documents (embedded viewer)
-- Text documents (readable format)
-- Download links for any document type
-
+- The IABS page will automatically display the PDF in an embedded viewer
+- Users can also download the PDF using the download button
+- If the PDF is not found, users will see a message with a download link
