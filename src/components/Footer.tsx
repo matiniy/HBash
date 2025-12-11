@@ -63,6 +63,11 @@ const Footer: React.FC = () => {
                 </Link>
               </li>
               <li>
+                <Link href="/iabs" className="text-sm xs:text-base text-grey-light hover:text-aqua-neon transition-colors">
+                  IABS
+                </Link>
+              </li>
+              <li>
                 <Link href="/trec-notice" className="text-sm xs:text-base text-grey-light hover:text-aqua-neon transition-colors">
                   Consumer Protection Notice
                 </Link>
