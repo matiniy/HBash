@@ -62,6 +62,11 @@ const Footer: React.FC = () => {
                   Contact
                 </Link>
               </li>
+              <li>
+                <Link href="/trec-notice" className="text-sm xs:text-base text-grey-light hover:text-aqua-neon transition-colors">
+                  TREC Notice
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -103,10 +108,17 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-6 xs:mt-8 pt-6 xs:pt-8 text-center">
-          <p className="text-xs xs:text-sm text-grey-light">
-            © 2025 Haideh Bashash Realtor. All rights reserved. | Designed by Metamatn Interactive.
-          </p>
+        <div className="border-t border-gray-800 mt-6 xs:mt-8 pt-6 xs:pt-8">
+          <div className="text-center space-y-2">
+            <p className="text-xs xs:text-sm text-grey-light">
+              © 2025 Haideh Bashash Realtor. All rights reserved. | Designed by Metamatn Interactive.
+            </p>
+            <p className="text-xs xs:text-sm text-grey-light">
+              <Link href="/trec-notice" className="text-aqua-neon hover:text-[#00e694] underline transition-colors">
+                Texas Real Estate Commission Consumer Protection Notice (TREC CN 1-5)
+              </Link>
+            </p>
+          </div>
         </div>
       </div>
     </footer>
