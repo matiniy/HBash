@@ -1,7 +1,11 @@
+'use client';
+
 import React from 'react';
 import Link from 'next/link';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Footer: React.FC = () => {
+  const { t, language } = useLanguage();
   return (
     <footer className="bg-black py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -9,8 +13,8 @@ const Footer: React.FC = () => {
           {/* Logo and Description */}
           <div className="col-span-1 md:col-span-2">
             <h3 className="text-xl xs:text-2xl font-bold text-white mb-3 xs:mb-4">Haideh Bashash</h3>
-            <p className="text-sm xs:text-base text-grey-light mb-4 xs:mb-6 max-w-md">
-              Your trusted real estate partner in Dallas. Helping you find the perfect home with years of experience and personal attention.
+            <p className={`text-sm xs:text-base text-grey-light mb-4 xs:mb-6 max-w-md ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+              {t('footer.description')}
             </p>
             <div className="flex items-center space-x-4">
               <a href="#" className="text-grey-light hover:text-aqua-neon transition-colors" aria-label="Twitter">
@@ -40,36 +44,38 @@ const Footer: React.FC = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-base xs:text-lg font-semibold text-white mb-3 xs:mb-4">Quick Links</h4>
+            <h4 className={`text-base xs:text-lg font-semibold text-white mb-3 xs:mb-4 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+              {t('footer.quickLinks')}
+            </h4>
             <ul className="space-y-1 xs:space-y-2">
               <li>
-                <Link href="/about" className="text-sm xs:text-base text-grey-light hover:text-aqua-neon transition-colors">
-                  About
+                <Link href="/about" className={`text-sm xs:text-base text-grey-light hover:text-aqua-neon transition-colors ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+                  {t('nav.about')}
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="text-sm xs:text-base text-grey-light hover:text-aqua-neon transition-colors">
-                  Services
+                <Link href="/services" className={`text-sm xs:text-base text-grey-light hover:text-aqua-neon transition-colors ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+                  {t('nav.services')}
                 </Link>
               </li>
               <li>
-                <Link href="/listings" className="text-sm xs:text-base text-grey-light hover:text-aqua-neon transition-colors">
-                  Listings
+                <Link href="/listings" className={`text-sm xs:text-base text-grey-light hover:text-aqua-neon transition-colors ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+                  {t('nav.listings')}
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-sm xs:text-base text-grey-light hover:text-aqua-neon transition-colors">
-                  Contact
+                <Link href="/contact" className={`text-sm xs:text-base text-grey-light hover:text-aqua-neon transition-colors ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+                  {t('nav.contact')}
                 </Link>
               </li>
               <li>
-                <Link href="/iabs" className="text-sm xs:text-base text-grey-light hover:text-aqua-neon transition-colors">
-                  IABS
+                <Link href="/iabs" className={`text-sm xs:text-base text-grey-light hover:text-aqua-neon transition-colors ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+                  {t('footer.iabs')}
                 </Link>
               </li>
               <li>
-                <Link href="/trec-notice" className="text-sm xs:text-base text-grey-light hover:text-aqua-neon transition-colors">
-                  Consumer Protection Notice
+                <Link href="/trec-notice" className={`text-sm xs:text-base text-grey-light hover:text-aqua-neon transition-colors ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+                  {t('footer.consumerProtection')}
                 </Link>
               </li>
             </ul>
@@ -77,7 +83,9 @@ const Footer: React.FC = () => {
 
           {/* Contact Info */}
           <div>
-            <h4 className="text-base xs:text-lg font-semibold text-white mb-3 xs:mb-4">Contact Info</h4>
+            <h4 className={`text-base xs:text-lg font-semibold text-white mb-3 xs:mb-4 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+              {t('footer.contactInfo')}
+            </h4>
             <div className="space-y-2 xs:space-y-3 text-grey-light">
               <p className="flex items-start text-xs xs:text-sm">
                 <svg className="w-3 h-3 xs:w-4 xs:h-4 mr-1 xs:mr-2 mt-0.5 xs:mt-1 text-aqua-neon flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -115,12 +123,12 @@ const Footer: React.FC = () => {
 
         <div className="border-t border-gray-800 mt-6 xs:mt-8 pt-6 xs:pt-8">
           <div className="text-center space-y-2">
-            <p className="text-xs xs:text-sm text-grey-light">
-              © 2025 Haideh Bashash Realtor. All rights reserved. | Designed by Metamatn Interactive.
+            <p className={`text-xs xs:text-sm text-grey-light ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+              {t('footer.copyright')}
             </p>
-            <p className="text-xs xs:text-sm text-grey-light">
+            <p className={`text-xs xs:text-sm text-grey-light ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
               <Link href="/trec-notice" className="text-aqua-neon hover:text-[#00e694] underline transition-colors">
-                Texas Real Estate Commission Consumer Protection Notice (TREC CN 1-5)
+                {t('footer.trecNotice')}
               </Link>
             </p>
           </div>

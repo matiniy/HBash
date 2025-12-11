@@ -10,36 +10,42 @@
     "dallas": "Dallas",
     "subtitle": "From luxury estates to family-friendly neighborhoods, discover homes that fit your lifestyle - guided by a trusted expert who knows Dallas inside out.",
     "scheduleConsultation": "Schedule Consultation",
-    "browseListings": "Browse Listings"
-  },
-  "stats": {
-    "trustedByCompanies": "Trusted By Companies",
-    "projectsCompleted": "Projects Completed",
-    "yearsHelping": "Years Helping"
-  },
-  "marquee": {
-    "vision1": "Because Home Is More Than Walls — It's Where Stories Begin",
-    "vision2": "Turning Dallas Dreams Into Addresses",
-    "vision3": "Where Every Door Opens to a New Chapter"
+    "browseListings": "Browse Listings",
+    "stats": {
+      "trustedByCompanies": "Trusted By Companies",
+      "projectsCompleted": "Projects Completed",
+      "yearsHelping": "Years Helping"
+    },
+    "marquee": {
+      "line1": "Because Home Is More Than Walls — It's Where Stories Begin",
+      "line2": "Turning Dallas Dreams Into Addresses",
+      "line3": "Where Every Door Opens to a New Chapter"
+    }
   },
   "about": {
     "bio": "Haideh Bashash is the agent people turn to when they want clarity, confidence, and a genuinely smooth real estate experience. Since 2016, she has built a reputation for unwavering dedication and honest communication, treating every client's goals as if they were her own. Her 17 years at the United Nations sharpened her ability to understand people, solve problems calmly, and navigate complex situations with ease—skills that set her apart in today's market. Fluent in Turkish and Persian, deeply connected to her community, and driven by a \"quality over quantity\" mindset, Haideh brings a steady, client-first approach that delivers real results and long-term trust.",
-    "readMore": "Read More →"
+    "readMore": "Read More →",
+    "joinNow": "Join Now",
+    "readMoreReviews": "Read More Reviews →"
   },
   "listings": {
     "featured": "Featured",
     "listings": "Listings",
     "description": "Discover our handpicked selection of premium properties in Dallas. From luxury apartments to family estates, find your perfect home.",
-    "viewAll": "View All Listings"
+    "viewAll": "View All"
   },
   "contact": {
     "title": "Schedule a",
     "consultation": "Consultation",
     "subtitle": "Ready to find your dream home? Let's discuss your needs and start your journey to homeownership.",
     "fullName": "Full Name",
+    "fullNamePlaceholder": "Enter your full name",
     "email": "Email Address",
+    "emailPlaceholder": "Enter your email",
     "phone": "Phone Number",
+    "phonePlaceholder": "Enter your phone number",
     "message": "Message",
+    "messagePlaceholder": "Tell us about your dream home and any specific requirements...",
     "sendMessage": "Send Message",
     "sending": "Sending...",
     "success": "Thank you! Your message has been sent successfully. We'll get back to you soon.",
@@ -51,6 +57,7 @@
     "contactInfo": "Contact Info",
     "iabs": "IABS",
     "consumerProtection": "Consumer Protection Notice",
-    "copyright": "© 2025 Haideh Bashash Realtor. All rights reserved. | Designed by Metamatn Interactive."
+    "copyright": "© 2025 Haideh Bashash Realtor. All rights reserved. | Designed by Metamatn Interactive.",
+    "trecNotice": "Texas Real Estate Commission Consumer Protection Notice (TREC CN 1-5)"
   }
 }

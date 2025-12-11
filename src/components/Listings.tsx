@@ -1,9 +1,13 @@
+'use client';
+
 import React from 'react';
 import Link from 'next/link';
 import Button from './Button';
 import ListingCard from './ListingCard';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Listings: React.FC = () => {
+  const { t, language } = useLanguage();
   const featuredListings = [
     {
       id: '1',
@@ -53,8 +57,8 @@ const Listings: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6">
-            Listings
+          <h2 className={`text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+            {t('listings.listings')}
           </h2>
         </div>
 
@@ -72,7 +76,7 @@ const Listings: React.FC = () => {
         <div className="text-center">
           <Link href="/listings">
             <Button variant="secondary" className="w-full sm:w-auto">
-              View All
+              {t('listings.viewAll')}
             </Button>
           </Link>
         </div>

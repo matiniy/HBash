@@ -2,8 +2,10 @@
 
 import React, { useState } from 'react';
 import Button from './Button';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const ContactForm: React.FC = () => {
+  const { t, language } = useLanguage();
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -60,11 +62,11 @@ const ContactForm: React.FC = () => {
     <section className="py-20 bg-deep-forest">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8 sm:mb-12">
-          <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6">
-            Schedule a <span className="text-aqua-neon">Consultation</span>
+          <h2 className={`text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+            {t('contact.title')} <span className="text-aqua-neon">{t('contact.consultation')}</span>
           </h2>
-          <p className="text-sm xs:text-base sm:text-lg lg:text-xl text-grey-light max-w-2xl mx-auto">
-            Ready to find your dream home? Let's discuss your needs and start your journey to homeownership.
+          <p className={`text-sm xs:text-base sm:text-lg lg:text-xl text-grey-light max-w-2xl mx-auto ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+            {t('contact.subtitle')}
           </p>
         </div>
 
@@ -72,8 +74,8 @@ const ContactForm: React.FC = () => {
           <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label htmlFor="fullName" className="block text-xs xs:text-sm font-medium text-white mb-1 xs:mb-2">
-                  Full Name *
+                <label htmlFor="fullName" className={`block text-xs xs:text-sm font-medium text-white mb-1 xs:mb-2 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+                  {t('contact.fullName')} *
                 </label>
                 <input
                   type="text"
@@ -82,14 +84,15 @@ const ContactForm: React.FC = () => {
                   value={formData.fullName}
                   onChange={handleChange}
                   required
-                  className="w-full px-3 xs:px-4 py-2.5 xs:py-3 bg-white/10 border border-aqua-neon/30 rounded-lg text-white placeholder-grey-light focus:outline-none focus:ring-2 focus:ring-aqua-neon focus:border-transparent transition-all duration-300 text-sm xs:text-base"
-                  placeholder="Enter your full name"
+                  className={`w-full px-3 xs:px-4 py-2.5 xs:py-3 bg-white/10 border border-aqua-neon/30 rounded-lg text-white placeholder-grey-light focus:outline-none focus:ring-2 focus:ring-aqua-neon focus:border-transparent transition-all duration-300 text-sm xs:text-base ${language === 'fa' ? 'font-sora text-right' : ''}`}
+                  placeholder={t('contact.fullNamePlaceholder')}
+                  dir={language === 'fa' ? 'rtl' : 'ltr'}
                 />
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-xs xs:text-sm font-medium text-white mb-1 xs:mb-2">
-                  Email Address *
+                <label htmlFor="email" className={`block text-xs xs:text-sm font-medium text-white mb-1 xs:mb-2 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+                  {t('contact.email')} *
                 </label>
                 <input
                   type="email"
@@ -98,15 +101,16 @@ const ContactForm: React.FC = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-3 xs:px-4 py-2.5 xs:py-3 bg-white/10 border border-aqua-neon/30 rounded-lg text-white placeholder-grey-light focus:outline-none focus:ring-2 focus:ring-aqua-neon focus:border-transparent transition-all duration-300 text-sm xs:text-base"
-                  placeholder="Enter your email"
+                  className={`w-full px-3 xs:px-4 py-2.5 xs:py-3 bg-white/10 border border-aqua-neon/30 rounded-lg text-white placeholder-grey-light focus:outline-none focus:ring-2 focus:ring-aqua-neon focus:border-transparent transition-all duration-300 text-sm xs:text-base ${language === 'fa' ? 'font-sora text-right' : ''}`}
+                  placeholder={t('contact.emailPlaceholder')}
+                  dir={language === 'fa' ? 'rtl' : 'ltr'}
                 />
               </div>
             </div>
 
             <div>
-              <label htmlFor="phone" className="block text-xs xs:text-sm font-medium text-white mb-1 xs:mb-2">
-                Phone Number
+              <label htmlFor="phone" className={`block text-xs xs:text-sm font-medium text-white mb-1 xs:mb-2 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+                {t('contact.phone')}
               </label>
               <input
                 type="tel"
@@ -114,14 +118,15 @@ const ContactForm: React.FC = () => {
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
-                className="w-full px-3 xs:px-4 py-2.5 xs:py-3 bg-white/10 border border-aqua-neon/30 rounded-lg text-white placeholder-grey-light focus:outline-none focus:ring-2 focus:ring-aqua-neon focus:border-transparent transition-all duration-300 text-sm xs:text-base"
-                placeholder="Enter your phone number"
+                className={`w-full px-3 xs:px-4 py-2.5 xs:py-3 bg-white/10 border border-aqua-neon/30 rounded-lg text-white placeholder-grey-light focus:outline-none focus:ring-2 focus:ring-aqua-neon focus:border-transparent transition-all duration-300 text-sm xs:text-base ${language === 'fa' ? 'font-sora text-right' : ''}`}
+                placeholder={t('contact.phonePlaceholder')}
+                dir={language === 'fa' ? 'rtl' : 'ltr'}
               />
             </div>
 
             <div>
-              <label htmlFor="message" className="block text-xs xs:text-sm font-medium text-white mb-1 xs:mb-2">
-                Message *
+              <label htmlFor="message" className={`block text-xs xs:text-sm font-medium text-white mb-1 xs:mb-2 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+                {t('contact.message')} *
               </label>
               <textarea
                 id="message"
@@ -130,21 +135,22 @@ const ContactForm: React.FC = () => {
                 onChange={handleChange}
                 required
                 rows={4}
-                className="w-full px-3 xs:px-4 py-2.5 xs:py-3 bg-white/10 border border-aqua-neon/30 rounded-lg text-white placeholder-grey-light focus:outline-none focus:ring-2 focus:ring-aqua-neon focus:border-transparent transition-all duration-300 resize-none text-sm xs:text-base"
-                placeholder="Tell us about your dream home and any specific requirements..."
+                className={`w-full px-3 xs:px-4 py-2.5 xs:py-3 bg-white/10 border border-aqua-neon/30 rounded-lg text-white placeholder-grey-light focus:outline-none focus:ring-2 focus:ring-aqua-neon focus:border-transparent transition-all duration-300 resize-none text-sm xs:text-base ${language === 'fa' ? 'font-sora text-right' : ''}`}
+                placeholder={t('contact.messagePlaceholder')}
+                dir={language === 'fa' ? 'rtl' : 'ltr'}
               />
             </div>
 
             {/* Status Messages */}
             {submitStatus === 'success' && (
-              <div className="p-4 bg-green-500/20 border border-green-500/30 rounded-lg text-green-400 text-center">
-                Thank you! Your message has been sent successfully. We'll get back to you soon.
+              <div className={`p-4 bg-green-500/20 border border-green-500/30 rounded-lg text-green-400 text-center ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+                {t('contact.success')}
               </div>
             )}
 
             {submitStatus === 'error' && (
-              <div className="p-4 bg-red-500/20 border border-red-500/30 rounded-lg text-red-400 text-center">
-                Sorry, there was an error sending your message. Please try again.
+              <div className={`p-4 bg-red-500/20 border border-red-500/30 rounded-lg text-red-400 text-center ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+                {t('contact.error')}
               </div>
             )}
 
@@ -161,10 +167,10 @@ const ContactForm: React.FC = () => {
                       <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                       <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                     </svg>
-                    Sending...
+                    {t('contact.sending')}
                   </div>
                 ) : (
-                  'Send Message'
+                  t('contact.sendMessage')
                 )}
               </Button>
             </div>

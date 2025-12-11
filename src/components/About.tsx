@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Button from './Button';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const testimonials = [
   {
@@ -23,6 +24,7 @@ const testimonials = [
 const GOOGLE_REVIEWS_URL = "https://maps.app.goo.gl/NTTL8uiUqwZL3enEA";
 
 const About: React.FC = () => {
+  const { t, language } = useLanguage();
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
 
   useEffect(() => {
@@ -61,7 +63,7 @@ const About: React.FC = () => {
                 <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-full max-w-[calc(100%-60px)] flex flex-col sm:flex-row gap-3 items-center justify-center">
               <Link href="/contact">
                 <Button variant="primary" className="w-full sm:w-auto">
-                  Schedule Consultation
+                  {t('hero.scheduleConsultation')}
                 </Button>
               </Link>
               <Link href="https://t.me/KasboKarDallas" target="_blank" rel="noopener noreferrer">
@@ -69,7 +71,7 @@ const About: React.FC = () => {
                   <svg className="w-4 h-4 xs:w-5 xs:h-5" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
                   </svg>
-                  Join Now
+                  {t('about.joinNow')}
                 </button>
               </Link>
             </div>
@@ -78,14 +80,14 @@ const About: React.FC = () => {
           {/* Right Content - Glass Effect Box and Testimonials */}
           <div className="space-y-8">
             {/* Glass Effect Box - Positioned 150px to the left, overlapping image */}
-            <div className="relative -ml-[50px] sm:-ml-[100px] lg:-ml-[150px] w-[110%] sm:w-[115%] lg:w-[120%] min-h-[180px] sm:min-h-[200px] lg:min-h-[220px] bg-black/40 backdrop-blur-lg rounded-tr-2xl rounded-bl-2xl rounded-br-2xl rounded-tl-none p-4 sm:p-6 lg:p-8 text-white z-20 flex flex-col justify-center">
+            <div className={`relative -ml-[50px] sm:-ml-[100px] lg:-ml-[150px] w-[110%] sm:w-[115%] lg:w-[120%] min-h-[180px] sm:min-h-[200px] lg:min-h-[220px] bg-black/40 backdrop-blur-lg rounded-tr-2xl rounded-bl-2xl rounded-br-2xl rounded-tl-none p-4 sm:p-6 lg:p-8 text-white z-20 flex flex-col justify-center ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
               <div className="space-y-3 sm:space-y-4">
-                <p className="text-sm xs:text-base sm:text-lg lg:text-xl font-sora font-normal leading-relaxed text-left line-clamp-3">
-                  Haideh Bashash is the agent people turn to when they want clarity, confidence, and a genuinely smooth real estate experience. Since 2016, she has built a reputation for unwavering dedication and honest communication, treating every client's goals as if they were her own. Her 17 years at the United Nations sharpened her ability to understand people, solve problems calmly, and navigate complex situations with ease—skills that set her apart in today's market. Fluent in Turkish and Persian, deeply connected to her community, and driven by a "quality over quantity" mindset, Haideh brings a steady, client-first approach that delivers real results and long-term trust.
+                <p className={`text-sm xs:text-base sm:text-lg lg:text-xl font-sora font-normal leading-relaxed ${language === 'fa' ? 'text-right' : 'text-left'} line-clamp-3`}>
+                  {t('about.bio')}
                 </p>
                 <Link href="/about" className="inline-block mt-2">
                   <span className="text-aqua-neon hover:text-[#00e694] font-semibold text-sm xs:text-base sm:text-lg transition-colors duration-300 underline">
-                    Read More →
+                    {t('about.readMore')}
                   </span>
                 </Link>
               </div>
@@ -115,8 +117,8 @@ const About: React.FC = () => {
                           </p>
                           <div className="flex items-center justify-between">
                             <p className="text-white font-semibold text-sm xs:text-base">— {testimonial.author}</p>
-                            <span className="text-aqua-neon text-xs xs:text-sm font-semibold group-hover:text-[#00e694] transition-colors">
-                              Read More Reviews →
+                            <span className={`text-aqua-neon text-xs xs:text-sm font-semibold group-hover:text-[#00e694] transition-colors ${language === 'fa' ? 'font-sora' : ''}`}>
+                              {t('about.readMoreReviews')}
                             </span>
                           </div>
                         </div>
