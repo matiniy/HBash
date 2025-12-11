@@ -64,7 +64,7 @@ const Footer: React.FC = () => {
               </li>
               <li>
                 <Link href="/trec-notice" className="text-sm xs:text-base text-grey-light hover:text-aqua-neon transition-colors">
-                  TREC Notice
+                  Consumer Protection Notice
                 </Link>
               </li>
             </ul>
