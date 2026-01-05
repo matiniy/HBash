@@ -12,21 +12,20 @@ const LISTINGS_PASSWORD = '1234567890';
 
 export default function Listings() {
   const { t } = useLanguage();
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  // Check authentication status immediately on mount (synchronously)
+  const [isAuthenticated, setIsAuthenticated] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const authStatus = sessionStorage.getItem('listings_authenticated');
+      return authStatus === 'true';
+    }
+    return false;
+  });
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedType, setSelectedType] = useState('all');
   const [selectedPriceRange, setSelectedPriceRange] = useState('all');
   const [selectedBeds, setSelectedBeds] = useState('all');
   const [selectedBaths, setSelectedBaths] = useState('all');
   const [sortBy, setSortBy] = useState('price-asc');
-
-  // Check authentication status on mount
-  useEffect(() => {
-    const authStatus = sessionStorage.getItem('listings_authenticated');
-    if (authStatus === 'true') {
-      setIsAuthenticated(true);
-    }
-  }, []);
 
   const allListings = [
     {

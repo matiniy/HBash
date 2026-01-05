@@ -154,15 +154,14 @@ const ListingDetailsPage = () => {
   const id = (params?.id ?? '') as string;
   const listing = getListingData(id);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-
-  // Check authentication status
-  useEffect(() => {
-    const authStatus = sessionStorage.getItem('listings_authenticated');
-    if (authStatus === 'true') {
-      setIsAuthenticated(true);
+  // Check authentication status immediately on mount (synchronously)
+  const [isAuthenticated, setIsAuthenticated] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const authStatus = sessionStorage.getItem('listings_authenticated');
+      return authStatus === 'true';
     }
-  }, []);
+    return false;
+  });
 
   // Show password protection if not authenticated
   if (!isAuthenticated) {
