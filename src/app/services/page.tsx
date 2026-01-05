@@ -107,10 +107,10 @@ export default function Services() {
       <section className="pt-20 pb-16 bg-deep-forest">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-grey-light mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
               Our <span className="text-aqua-neon">Services</span>
             </h1>
-            <p className="text-xl text-grey-light max-w-3xl mx-auto">
+            <p className="text-xl text-white max-w-3xl mx-auto">
               Comprehensive real estate solutions tailored to your unique needs and goals.
             </p>
           </div>
@@ -152,10 +152,10 @@ export default function Services() {
       <section className="py-20 bg-deep-forest">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-grey-light mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
               Our <span className="text-aqua-neon">Process</span>
             </h2>
-            <p className="text-lg text-grey-light max-w-3xl mx-auto">
+            <p className="text-lg text-white max-w-3xl mx-auto">
               A proven methodology that ensures your success at every step.
             </p>
           </div>
@@ -171,8 +171,8 @@ export default function Services() {
                 <div className="w-16 h-16 bg-aqua-neon/20 rounded-full mx-auto mb-6 flex items-center justify-center group-hover:bg-aqua-neon/30 transition-colors duration-300">
                   <span className="text-2xl font-bold text-aqua-neon">{item.step}</span>
                 </div>
-                <h3 className="text-xl font-bold text-grey-light mb-4">{item.title}</h3>
-                <p className="text-grey-light">{item.description}</p>
+                <h3 className="text-xl font-bold text-white mb-4">{item.title}</h3>
+                <p className="text-white">{item.description}</p>
               </div>
             ))}
           </div>
@@ -182,14 +182,14 @@ export default function Services() {
       {/* CTA Section */}
       <section className="py-20 bg-aqua-neon">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-grey-light mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-deep-forest mb-6">
             Ready to Get Started?
           </h2>
-          <p className="text-lg text-grey-light mb-8">
+          <p className="text-lg text-deep-forest mb-8">
             Let's discuss how we can help you achieve your real estate goals.
           </p>
           <Link href="/contact">
-            <Button variant="secondary" className="bg-deep-forest text-aqua-neon border-deep-forest hover:bg-grey-light hover:text-deep-forest">
+            <Button variant="secondary" className="bg-deep-forest text-aqua-neon border-deep-forest hover:bg-white hover:text-deep-forest">
               Schedule Consultation
             </Button>
           </Link>

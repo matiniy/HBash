@@ -13,10 +13,10 @@ export default function About() {
       <section className="pt-20 pb-16 bg-deep-forest">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-grey-light mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
               About <span className="text-aqua-neon">H Bashash</span>
             </h1>
-            <p className="text-xl text-grey-light max-w-3xl mx-auto">
+            <p className="text-xl text-white max-w-3xl mx-auto">
               Your trusted real estate partner in Dallas, bringing years of experience and personal attention to every client relationship.
             </p>
           </div>
@@ -65,10 +65,10 @@ export default function About() {
       <section className="py-20 bg-deep-forest">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-grey-light mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
               Our <span className="text-aqua-neon">Values</span>
             </h2>
-            <p className="text-lg text-grey-light max-w-3xl mx-auto">
+            <p className="text-lg text-white max-w-3xl mx-auto">
               The principles that guide everything we do and every relationship we build.
             </p>
           </div>
@@ -80,8 +80,8 @@ export default function About() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-grey-light mb-4">Integrity</h3>
-              <p className="text-grey-light">
+              <h3 className="text-xl font-bold text-white mb-4">Integrity</h3>
+              <p className="text-white">
                 We believe in doing the right thing, even when no one is watching. Honest communication and transparent practices are the foundation of our business.
               </p>
             </div>
@@ -92,8 +92,8 @@ export default function About() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-grey-light mb-4">Excellence</h3>
-              <p className="text-grey-light">
+              <h3 className="text-xl font-bold text-white mb-4">Excellence</h3>
+              <p className="text-white">
                 We strive for excellence in everything we do, from market research to client communication. Our attention to detail sets us apart.
               </p>
             </div>
@@ -104,8 +104,8 @@ export default function About() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-grey-light mb-4">Client Focus</h3>
-              <p className="text-grey-light">
+              <h3 className="text-xl font-bold text-white mb-4">Client Focus</h3>
+              <p className="text-white">
                 Your success is our success. We're committed to understanding your unique needs and delivering solutions that exceed your expectations.
               </p>
             </div>
@@ -116,14 +116,14 @@ export default function About() {
       {/* CTA Section */}
       <section className="py-20 bg-aqua-neon">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-grey-light mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-deep-forest mb-6">
             Ready to Start Your Journey?
           </h2>
-          <p className="text-lg text-grey-light mb-8">
+          <p className="text-lg text-deep-forest mb-8">
             Let's discuss your real estate goals and create a plan that works for you.
           </p>
           <Link href="/contact">
-            <Button variant="secondary" className="bg-deep-forest text-aqua-neon border-deep-forest hover:bg-grey-light hover:text-deep-forest">
+            <Button variant="secondary" className="bg-deep-forest text-aqua-neon border-deep-forest hover:bg-white hover:text-deep-forest">
               Schedule Consultation
             </Button>
           </Link>

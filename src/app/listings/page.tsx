@@ -224,10 +224,10 @@ export default function Listings() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-grey-light mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
               Property <span className="text-aqua-neon">Listings</span>
             </h1>
-            <p className="text-xl text-grey-light max-w-3xl mx-auto">
+            <p className="text-xl text-white max-w-3xl mx-auto">
               Discover your perfect home in Dallas. Browse our curated selection of premium properties.
             </p>
           </div>
@@ -244,7 +244,7 @@ export default function Listings() {
               <div className="flex-1 w-full">
                 <div className="relative">
                   <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                    <svg className="h-5 w-5 text-grey-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                     </svg>
                   </div>
@@ -253,7 +253,7 @@ export default function Listings() {
                     placeholder="Search by location, features, or keywords..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="w-full pl-10 pr-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-xl text-grey-light placeholder-grey-light focus:outline-none focus:ring-2 focus:ring-aqua-neon focus:border-transparent"
+                    className="w-full pl-10 pr-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-xl text-white placeholder-grey-light focus:outline-none focus:ring-2 focus:ring-aqua-neon focus:border-transparent"
                   />
                 </div>
               </div>
@@ -263,7 +263,7 @@ export default function Listings() {
                 <select
                   value={selectedType}
                   onChange={(e) => setSelectedType(e.target.value)}
-                  className="px-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-xl text-grey-light focus:outline-none focus:ring-2 focus:ring-aqua-neon min-w-[140px]"
+                  className="px-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-aqua-neon min-w-[140px]"
                 >
                   {propertyTypes.map((type) => (
                     <option key={type.value} value={type.value}>
@@ -275,7 +275,7 @@ export default function Listings() {
                 <select
                   value={selectedPriceRange}
                   onChange={(e) => setSelectedPriceRange(e.target.value)}
-                  className="px-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-xl text-grey-light focus:outline-none focus:ring-2 focus:ring-aqua-neon min-w-[140px]"
+                  className="px-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-aqua-neon min-w-[140px]"
                 >
                   {priceRanges.map((range) => (
                     <option key={range.value} value={range.value}>
@@ -287,7 +287,7 @@ export default function Listings() {
                 <select
                   value={selectedBeds}
                   onChange={(e) => setSelectedBeds(e.target.value)}
-                  className="px-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-xl text-grey-light focus:outline-none focus:ring-2 focus:ring-aqua-neon min-w-[120px]"
+                  className="px-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-aqua-neon min-w-[120px]"
                 >
                   {bedOptions.map((option) => (
                     <option key={option.value} value={option.value}>
@@ -299,7 +299,7 @@ export default function Listings() {
                 <select
                   value={selectedBaths}
                   onChange={(e) => setSelectedBaths(e.target.value)}
-                  className="px-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-xl text-grey-light focus:outline-none focus:ring-2 focus:ring-aqua-neon min-w-[120px]"
+                  className="px-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-aqua-neon min-w-[120px]"
                 >
                   {bathOptions.map((option) => (
                     <option key={option.value} value={option.value}>
@@ -311,7 +311,7 @@ export default function Listings() {
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value)}
-                  className="px-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-xl text-grey-light focus:outline-none focus:ring-2 focus:ring-aqua-neon min-w-[160px]"
+                  className="px-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-aqua-neon min-w-[160px]"
                 >
                   {sortOptions.map((option) => (
                     <option key={option.value} value={option.value}>
@@ -325,10 +325,10 @@ export default function Listings() {
 
           {/* Results Summary */}
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-            <div className="text-grey-light">
+            <div className="text-white">
               Showing <span className="text-aqua-neon font-semibold">{filteredListings.length}</span> of {allListings.length} properties
             </div>
-            <div className="flex items-center gap-2 text-sm text-grey-light">
+            <div className="flex items-center gap-2 text-sm text-white">
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
               </svg>
@@ -354,12 +354,12 @@ export default function Listings() {
           ) : (
             <div className="text-center py-20">
               <div className="w-24 h-24 bg-gray-700/50 rounded-full flex items-center justify-center mx-auto mb-6">
-                <svg className="w-12 h-12 text-grey-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold text-grey-light mb-4">No Properties Found</h3>
-              <p className="text-grey-light mb-8 max-w-md mx-auto">
+              <h3 className="text-2xl font-bold text-white mb-4">No Properties Found</h3>
+              <p className="text-white mb-8 max-w-md mx-auto">
                 Try adjusting your search criteria or filters to find more properties.
               </p>
               <Button 
@@ -383,10 +383,10 @@ export default function Listings() {
       {/* CTA Section */}
       <section className="py-20 bg-gray-900/50 backdrop-blur-sm border-t border-gray-700/50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-grey-light mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
             Don't See What You're Looking For?
           </h2>
-          <p className="text-lg text-grey-light mb-8">
+          <p className="text-lg text-white mb-8">
             Our inventory is constantly updated. Let us know your specific requirements and we'll help you find the perfect property.
           </p>
           <Button variant="primary" className="w-full sm:w-auto">

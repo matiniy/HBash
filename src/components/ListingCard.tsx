@@ -36,16 +36,16 @@ const ListingCard: React.FC<ListingCardProps> = ({
         </div>
         
         {/* Price Badge */}
-        <div className="absolute top-2 xs:top-4 left-2 xs:left-4 bg-aqua-neon text-grey-light px-2 xs:px-3 py-1 rounded-full text-xs xs:text-sm font-semibold">
+        <div className="absolute top-2 xs:top-4 left-2 xs:left-4 bg-aqua-neon text-deep-forest px-2 xs:px-3 py-1 rounded-full text-xs xs:text-sm font-semibold">
           {price}
         </div>
 
         {/* Dark Overlay with Content */}
         <div className="absolute inset-0 bg-black/40 flex flex-col justify-end p-3 xs:p-4">
-          <div className="text-grey-light">
+          <div className="text-white">
             <h3 className="text-sm xs:text-base sm:text-lg font-bold mb-1">{title}</h3>
-            <p className="text-xs xs:text-sm text-grey-light mb-1 xs:mb-2">{location}</p>
-            <div className="text-xs xs:text-sm text-grey-light">
+            <p className="text-xs xs:text-sm text-white mb-1 xs:mb-2">{location}</p>
+            <div className="text-xs xs:text-sm text-white">
               {beds} Beds • {baths} Baths • {sqft}
             </div>
           </div>
@@ -53,12 +53,12 @@ const ListingCard: React.FC<ListingCardProps> = ({
 
         {/* Navigation Arrows */}
         <div className="absolute top-1/2 -translate-y-1/2 left-2 w-8 h-8 bg-black/50 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <svg className="w-4 h-4 text-grey-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
           </svg>
         </div>
         <div className="absolute top-1/2 -translate-y-1/2 right-2 w-8 h-8 bg-black/50 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <svg className="w-4 h-4 text-grey-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
           </svg>
         </div>

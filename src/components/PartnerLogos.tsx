@@ -14,10 +14,10 @@ const PartnerLogos: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Main Heading */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-grey-light mb-6">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
             Trusted by 20+ Companies & 13,000 Clients in Dallas and Beyond
           </h2>
-          <p className="text-grey-light text-lg max-w-3xl mx-auto">
+          <p className="text-white text-lg max-w-3xl mx-auto">
             More than 20+ partnerships across Dallas & Texas, providing corporate real estate support and relocation housing solutions
           </p>
         </div>
@@ -25,20 +25,20 @@ const PartnerLogos: React.FC = () => {
         {/* Partnership Logos - Horizontal Layout */}
         <div className="flex flex-wrap justify-center items-center gap-6">
           <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl px-6 py-4 border border-gray-700/50 hover:border-aqua-neon/50 transition-all duration-300 group text-center min-w-[200px]">
-            <div className="text-xl font-bold text-grey-light mb-1">Google</div>
-            <p className="text-grey-light text-xs">Relocation housing</p>
+            <div className="text-xl font-bold text-white mb-1">Google</div>
+            <p className="text-white text-xs">Relocation housing</p>
           </div>
           <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl px-6 py-4 border border-gray-700/50 hover:border-aqua-neon/50 transition-all duration-300 group text-center min-w-[200px]">
-            <div className="text-xl font-bold text-grey-light mb-1">Slack</div>
-            <p className="text-grey-light text-xs">Corporate support</p>
+            <div className="text-xl font-bold text-white mb-1">Slack</div>
+            <p className="text-white text-xs">Corporate support</p>
           </div>
           <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl px-6 py-4 border border-gray-700/50 hover:border-aqua-neon/50 transition-all duration-300 group text-center min-w-[200px]">
-            <div className="text-xl font-bold text-grey-light mb-1">Rio Tinto</div>
-            <p className="text-grey-light text-xs">Executive housing</p>
+            <div className="text-xl font-bold text-white mb-1">Rio Tinto</div>
+            <p className="text-white text-xs">Executive housing</p>
           </div>
           <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl px-6 py-4 border border-gray-700/50 hover:border-aqua-neon/50 transition-all duration-300 group text-center min-w-[200px]">
-            <div className="text-xl font-bold text-grey-light mb-1">Heroku</div>
-            <p className="text-grey-light text-xs">Tech relocation</p>
+            <div className="text-xl font-bold text-white mb-1">Heroku</div>
+            <p className="text-white text-xs">Tech relocation</p>
           </div>
         </div>
       </div>

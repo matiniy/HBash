@@ -70,12 +70,12 @@ const Hero: React.FC = () => {
             <div className="w-full lg:w-[50%] lg:max-w-[950px]">
               {/* Glass Effect Background - Full width on mobile, positioned over extending image on desktop */}
               <div className="bg-black/40 backdrop-blur-lg rounded-2xl p-4 xs:p-6 sm:p-8 shadow-2xl">
-                <h1 className={`text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-normal text-grey-light leading-tight font-space-grotesk ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+                <h1 className={`text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-normal text-white leading-tight font-space-grotesk ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
                   {t('hero.title')}{' '}
                   <span className="text-aqua-neon">{t('hero.dallas')}</span>
                 </h1>
                 
-                <p className={`text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl text-grey-light leading-relaxed mt-4 sm:mt-6 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+                <p className={`text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl text-white leading-relaxed mt-4 sm:mt-6 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
                   {t('hero.subtitle')}
                 </p>
 
@@ -95,26 +95,26 @@ const Hero: React.FC = () => {
                 {/* Stats Row - Directly under hero content */}
                 <div className="grid grid-cols-3 gap-2 xs:gap-4 sm:gap-6 mt-6 sm:mt-8 lg:mt-12">
                   <div className="text-center">
-                    <div className="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-grey-light mb-1">
+                    <div className="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-1">
                       20%
                     </div>
-                    <div className={`text-grey-light text-xs xs:text-sm sm:text-base ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+                    <div className={`text-white text-xs xs:text-sm sm:text-base ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
                       {t('hero.stats.trustedByCompanies')}
                     </div>
                   </div>
                   <div className="text-center">
-                    <div className="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-grey-light mb-1">
+                    <div className="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-1">
                       13K
                     </div>
-                    <div className={`text-grey-light text-xs xs:text-sm sm:text-base ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+                    <div className={`text-white text-xs xs:text-sm sm:text-base ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
                       {t('hero.stats.projectsCompleted')}
                     </div>
                   </div>
                   <div className="text-center">
-                    <div className="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-grey-light mb-1">
+                    <div className="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-1">
                       9+
                     </div>
-                    <div className={`text-grey-light text-xs xs:text-sm sm:text-base ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+                    <div className={`text-white text-xs xs:text-sm sm:text-base ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
                       {t('hero.stats.yearsHelping')}
                     </div>
                   </div>
@@ -136,25 +136,25 @@ const Hero: React.FC = () => {
             <div className={`flex whitespace-nowrap marquee-slow ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
               {/* Content block 1 */}
               <div className="flex-shrink-0 flex items-center">
-                <span className="text-grey-light font-semibold text-base sm:text-lg mx-4 sm:mx-8">
+                <span className="text-deep-forest font-semibold text-base sm:text-lg mx-4 sm:mx-8">
                   {t('hero.marquee.line1')} •
                 </span>
-                <span className="text-grey-light font-semibold text-base sm:text-lg mx-4 sm:mx-8">
+                <span className="text-deep-forest font-semibold text-base sm:text-lg mx-4 sm:mx-8">
                   {t('hero.marquee.line2')} •
                 </span>
-                <span className="text-grey-light font-semibold text-base sm:text-lg mx-4 sm:mx-8">
+                <span className="text-deep-forest font-semibold text-base sm:text-lg mx-4 sm:mx-8">
                   {t('hero.marquee.line3')} •
                 </span>
               </div>
               {/* Content block 2 (duplicate for seamless loop) */}
               <div className="flex-shrink-0 flex items-center">
-                <span className="text-grey-light font-semibold text-base sm:text-lg mx-4 sm:mx-8">
+                <span className="text-deep-forest font-semibold text-base sm:text-lg mx-4 sm:mx-8">
                   {t('hero.marquee.line1')} •
                 </span>
-                <span className="text-grey-light font-semibold text-base sm:text-lg mx-4 sm:mx-8">
+                <span className="text-deep-forest font-semibold text-base sm:text-lg mx-4 sm:mx-8">
                   {t('hero.marquee.line2')} •
                 </span>
-                <span className="text-grey-light font-semibold text-base sm:text-lg mx-4 sm:mx-8">
+                <span className="text-deep-forest font-semibold text-base sm:text-lg mx-4 sm:mx-8">
                   {t('hero.marquee.line3')} •
                 </span>
               </div>

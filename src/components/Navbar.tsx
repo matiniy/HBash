@@ -68,20 +68,20 @@ const Navbar: React.FC = () => {
                 onError={handleLogoError}
               />
             ) : (
-              <span className="text-xl sm:text-2xl font-semibold text-grey-light">Haideh Bashash</span>
+              <span className="text-xl sm:text-2xl font-semibold text-white">Haideh Bashash</span>
             )}
             <span className="sr-only">Haideh Bashash</span>
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-4 lg:space-x-6">
-            <Link href="/about" className="text-grey-light hover:text-aqua-neon transition-colors">
+            <Link href="/about" className="text-white hover:text-aqua-neon transition-colors">
               {t('nav.about')}
             </Link>
-            <Link href="/services" className="text-grey-light hover:text-aqua-neon transition-colors">
+            <Link href="/services" className="text-white hover:text-aqua-neon transition-colors">
               {t('nav.services')}
             </Link>
-            <Link href="/listings" className="text-grey-light hover:text-aqua-neon transition-colors">
+            <Link href="/listings" className="text-white hover:text-aqua-neon transition-colors">
               {t('nav.listings')}
             </Link>
             <LanguageToggle />
@@ -94,7 +94,7 @@ const Navbar: React.FC = () => {
           <div className="md:hidden">
             <button
               onClick={toggleMenu}
-              className="p-3 text-grey-light hover:text-aqua-neon focus:outline-none focus:text-aqua-neon"
+              className="p-3 text-white hover:text-aqua-neon focus:outline-none focus:text-aqua-neon"
               aria-label="Open navigation menu"
             >
               <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -114,21 +114,21 @@ const Navbar: React.FC = () => {
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-deep-forest/98 backdrop-blur-sm border-t border-aqua-neon/20 rounded-b-2xl">
               <Link
                 href="/about"
-                className="block px-3 py-3 text-grey-light hover:text-aqua-neon transition-colors"
+                className="block px-3 py-3 text-white hover:text-aqua-neon transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {t('nav.about')}
               </Link>
               <Link
                 href="/services"
-                className="block px-3 py-3 text-grey-light hover:text-aqua-neon transition-colors"
+                className="block px-3 py-3 text-white hover:text-aqua-neon transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {t('nav.services')}
               </Link>
               <Link
                 href="/listings"
-                className="block px-3 py-3 text-grey-light hover:text-aqua-neon transition-colors"
+                className="block px-3 py-3 text-white hover:text-aqua-neon transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {t('nav.listings')}

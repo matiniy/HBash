@@ -13,7 +13,8 @@ const HeroCarousel: React.FC<HeroCarouselProps> = ({
   interval = 4000 // 4 seconds default
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [loadedImages, setLoadedImages] = useState<Set<number>>(new Set([0])); // Track loaded images
+  // Preload all images immediately for faster transitions
+  const [loadedImages, setLoadedImages] = useState<Set<number>>(new Set(images.map((_, i) => i)));
 
   useEffect(() => {
     if (images.length <= 1) return;
@@ -76,10 +77,11 @@ const HeroCarousel: React.FC<HeroCarouselProps> = ({
                 alt={`Hero image ${index + 1}`}
                 fill
                 className="object-cover"
-                priority={index === 0}
-                quality={index === 0 ? 85 : 75} // Lower quality for non-first images
-                loading={index === 0 ? 'eager' : 'lazy'}
+                priority={index < 3} // Priority for first 3 images
+                quality={80} // Balanced quality for all images
+                loading={index < 3 ? 'eager' : 'lazy'}
                 sizes="100vw"
+                unoptimized={false}
               />
             ) : (
               // Placeholder while loading
