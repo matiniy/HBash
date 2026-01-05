@@ -13,7 +13,7 @@ const config: Config = {
         'sora': ['var(--font-sora)', 'sans-serif'],
       },
       colors: {
-        'deep-forest': '#021212',
+        'deep-forest': '#000000',
         'aqua-neon': '#00FFA3',
         'grey-light': '#B3B3B3',
         'black-70': 'rgba(0, 0, 0, 0.7)',
