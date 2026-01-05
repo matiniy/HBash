@@ -5,8 +5,12 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ListingCard from '@/components/ListingCard';
 import Button from '@/components/Button';
+import PasswordProtection from '@/components/PasswordProtection';
+
+const LISTINGS_PASSWORD = '1234567890';
 
 export default function Listings() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedType, setSelectedType] = useState('all');
   const [selectedPriceRange, setSelectedPriceRange] = useState('all');
@@ -207,6 +211,21 @@ export default function Listings() {
     }
     return `$${price.toLocaleString()}`;
   };
+
+  // Show password protection if not authenticated
+  if (!isAuthenticated) {
+    return (
+      <>
+        <Navbar />
+        <PasswordProtection
+          correctPassword={LISTINGS_PASSWORD}
+          onSuccess={() => setIsAuthenticated(true)}
+          title="Listings Page"
+          message="This page is currently under development and requires a password to access."
+        />
+      </>
+    );
+  }
 
   return (
     <main className="min-h-screen bg-deep-forest">
