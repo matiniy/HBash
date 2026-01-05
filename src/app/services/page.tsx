@@ -118,23 +118,23 @@ export default function Services() {
       </section>
 
       {/* Services Grid */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-deep-forest">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <div key={index} className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 group border border-gray-100">
+              <div key={index} className="bg-black/40 backdrop-blur-lg rounded-2xl p-8 shadow-lg hover:shadow-2xl hover:shadow-aqua-neon/20 transition-all duration-300 group border border-aqua-neon/20 hover:border-aqua-neon/40">
                 <div className="w-16 h-16 bg-aqua-neon/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-aqua-neon/20 transition-colors duration-300">
                   {service.icon}
                 </div>
-                <h3 className="text-2xl font-bold text-deep-forest mb-4 group-hover:text-aqua-neon transition-colors duration-300">
+                <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-aqua-neon transition-colors duration-300">
                   {service.title}
                 </h3>
-                <p className="text-gray-600 mb-6">
+                <p className="text-grey-light mb-6">
                   {service.description}
                 </p>
                 <ul className="space-y-2">
                   {service.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center text-sm text-gray-600">
+                    <li key={featureIndex} className="flex items-center text-sm text-grey-light">
                       <svg className="w-4 h-4 text-aqua-neon mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
