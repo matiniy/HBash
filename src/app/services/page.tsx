@@ -1,14 +1,18 @@
+'use client';
+
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Button from '@/components/Button';
 import Link from 'next/link';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function Services() {
+  const { t, language } = useLanguage();
   const services = [
     {
-      title: 'Home Buying',
-      description: 'Expert guidance through the entire home buying process, from pre-approval to closing.',
+      title: t('servicesPage.homeBuying'),
+      description: t('servicesPage.homeBuyingDesc'),
       features: [
         'Market analysis and property evaluation',
         'Negotiation and offer strategies',
@@ -22,8 +26,8 @@ export default function Services() {
       )
     },
     {
-      title: 'Home Selling',
-      description: 'Maximize your property value with our comprehensive selling strategy and marketing approach.',
+      title: t('servicesPage.homeSelling'),
+      description: t('servicesPage.homeSellingDesc'),
       features: [
         'Property valuation and pricing strategy',
         'Professional photography and staging',
@@ -37,8 +41,8 @@ export default function Services() {
       )
     },
     {
-      title: 'Investment Properties',
-      description: 'Strategic real estate investment guidance to help you build wealth through property.',
+      title: t('servicesPage.investmentProperties'),
+      description: t('servicesPage.investmentPropertiesDesc'),
       features: [
         'Market analysis and investment opportunities',
         'Rental property evaluation',
@@ -52,8 +56,8 @@ export default function Services() {
       )
     },
     {
-      title: 'Relocation Services',
-      description: 'Comprehensive relocation support for families and individuals moving to or from Dallas.',
+      title: t('servicesPage.relocationServices'),
+      description: t('servicesPage.relocationServicesDesc'),
       features: [
         'Neighborhood research and recommendations',
         'School district information',
@@ -68,8 +72,8 @@ export default function Services() {
       )
     },
     {
-      title: 'Market Analysis',
-      description: 'In-depth market insights and property valuations to inform your real estate decisions.',
+      title: t('servicesPage.marketAnalysis'),
+      description: t('servicesPage.marketAnalysisDesc'),
       features: [
         'Comparative market analysis (CMA)',
         'Property value assessments',
@@ -83,8 +87,8 @@ export default function Services() {
       )
     },
     {
-      title: 'Consultation',
-      description: 'Personalized real estate consultation to help you make informed decisions.',
+      title: t('servicesPage.consultation'),
+      description: t('servicesPage.consultationDesc'),
       features: [
         'One-on-one strategy sessions',
         'Goal setting and planning',
@@ -107,11 +111,11 @@ export default function Services() {
       <section className="pt-20 pb-12 sm:pb-16 bg-deep-forest">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6">
-              Our <span className="text-aqua-neon">Services</span>
+            <h1 className={`text-3xl xs:text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+              {t('servicesPage.title')} <span className="text-aqua-neon">{t('servicesPage.titleHighlight')}</span>
             </h1>
-            <p className="text-base xs:text-lg sm:text-xl text-white max-w-3xl mx-auto px-2">
-              Comprehensive real estate solutions tailored to your unique needs and goals.
+            <p className={`text-base xs:text-lg sm:text-xl text-white max-w-3xl mx-auto px-2 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+              {t('servicesPage.subtitle')}
             </p>
           </div>
         </div>
@@ -128,16 +132,16 @@ export default function Services() {
                     {service.icon}
                   </div>
                 </div>
-                <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4 group-hover:text-aqua-neon transition-colors duration-300">
+                <h3 className={`text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4 group-hover:text-aqua-neon transition-colors duration-300 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
                   {service.title}
                 </h3>
-                <p className="text-sm sm:text-base text-white mb-4 sm:mb-6">
+                <p className={`text-sm sm:text-base text-white mb-4 sm:mb-6 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
                   {service.description}
                 </p>
                 <ul className="space-y-2">
                   {service.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-start text-xs sm:text-sm text-white">
-                      <svg className="w-3 h-3 sm:w-4 sm:h-4 text-aqua-neon mr-2 sm:mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <li key={featureIndex} className={`flex items-start text-xs sm:text-sm text-white ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+                      <svg className={`w-3 h-3 sm:w-4 sm:h-4 text-aqua-neon flex-shrink-0 mt-0.5 ${language === 'fa' ? 'ml-2 sm:ml-3' : 'mr-2 sm:mr-3'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                       <span>{feature}</span>
@@ -154,27 +158,31 @@ export default function Services() {
       <section className="py-12 sm:py-16 lg:py-20 bg-deep-forest">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-            <h2 className="text-2xl xs:text-3xl sm:text-3xl md:text-4xl font-bold text-white mb-4 sm:mb-6">
-              Our <span className="text-aqua-neon">Process</span>
+            <h2 className={`text-2xl xs:text-3xl sm:text-3xl md:text-4xl font-bold text-white mb-4 sm:mb-6 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+              {t('servicesPage.processTitle')} <span className="text-aqua-neon">{t('servicesPage.processTitleHighlight')}</span>
             </h2>
-            <p className="text-base sm:text-lg text-white max-w-3xl mx-auto px-2">
-              A proven methodology that ensures your success at every step.
+            <p className={`text-base sm:text-lg text-white max-w-3xl mx-auto px-2 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+              {t('servicesPage.processSubtitle')}
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {[
-              { step: '01', title: 'Consultation', description: 'We start with understanding your goals, timeline, and budget.' },
-              { step: '02', title: 'Strategy', description: 'Develop a customized plan tailored to your specific needs.' },
-              { step: '03', title: 'Execution', description: 'Implement our strategy with precision and attention to detail.' },
-              { step: '04', title: 'Results', description: 'Deliver exceptional outcomes that exceed your expectations.' }
+              { step: '01', title: t('servicesPage.step1Title'), description: t('servicesPage.step1Desc') },
+              { step: '02', title: t('servicesPage.step2Title'), description: t('servicesPage.step2Desc') },
+              { step: '03', title: t('servicesPage.step3Title'), description: t('servicesPage.step3Desc') },
+              { step: '04', title: t('servicesPage.step4Title'), description: t('servicesPage.step4Desc') }
             ].map((item, index) => (
               <div key={index} className="text-center group">
                 <div className="w-12 h-12 sm:w-16 sm:h-16 bg-aqua-neon/20 rounded-full mx-auto mb-4 sm:mb-6 flex items-center justify-center group-hover:bg-aqua-neon/30 transition-colors duration-300">
                   <span className="text-xl sm:text-2xl font-bold text-aqua-neon">{item.step}</span>
                 </div>
-                <h3 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-4">{item.title}</h3>
-                <p className="text-sm sm:text-base text-white px-2">{item.description}</p>
+                <h3 className={`text-lg sm:text-xl font-bold text-white mb-2 sm:mb-4 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+                  {item.title}
+                </h3>
+                <p className={`text-sm sm:text-base text-white px-2 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+                  {item.description}
+                </p>
               </div>
             ))}
           </div>
@@ -184,15 +192,15 @@ export default function Services() {
       {/* CTA Section */}
       <section className="py-12 sm:py-16 lg:py-20 bg-aqua-neon">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-2xl xs:text-3xl sm:text-3xl md:text-4xl font-bold text-deep-forest mb-4 sm:mb-6">
-            Ready to Get Started?
+          <h2 className={`text-2xl xs:text-3xl sm:text-3xl md:text-4xl font-bold text-deep-forest mb-4 sm:mb-6 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+            {t('servicesPage.ctaTitle')}
           </h2>
-          <p className="text-base sm:text-lg text-deep-forest mb-6 sm:mb-8 px-2">
-            Let's discuss how we can help you achieve your real estate goals.
+          <p className={`text-base sm:text-lg text-deep-forest mb-6 sm:mb-8 px-2 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+            {t('servicesPage.ctaSubtitle')}
           </p>
           <Link href="/contact">
-            <button className="px-4 xs:px-6 py-2.5 xs:py-3 bg-deep-forest text-white rounded-full hover:rounded-[10px] font-semibold text-sm xs:text-base transition-all duration-300 hover:bg-black hover:text-aqua-neon border-2 border-deep-forest hover:border-aqua-neon min-h-[44px] flex items-center justify-center mx-auto w-full sm:w-auto max-w-xs sm:max-w-none">
-              Schedule Consultation
+            <button className={`px-4 xs:px-6 py-2.5 xs:py-3 bg-deep-forest text-white rounded-full hover:rounded-[10px] font-semibold text-sm xs:text-base transition-all duration-300 hover:bg-black hover:text-aqua-neon border-2 border-deep-forest hover:border-aqua-neon min-h-[44px] flex items-center justify-center mx-auto w-full sm:w-auto max-w-xs sm:max-w-none ${language === 'fa' ? 'min-w-[calc(100%+15px)] sm:min-w-[calc(auto+15px)]' : ''}`}>
+              {t('servicesPage.scheduleConsultation')}
             </button>
           </Link>
         </div>
