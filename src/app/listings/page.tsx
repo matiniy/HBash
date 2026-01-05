@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ListingCard from '@/components/ListingCard';
@@ -17,6 +17,14 @@ export default function Listings() {
   const [selectedBeds, setSelectedBeds] = useState('all');
   const [selectedBaths, setSelectedBaths] = useState('all');
   const [sortBy, setSortBy] = useState('price-asc');
+
+  // Check authentication status on mount
+  useEffect(() => {
+    const authStatus = sessionStorage.getItem('listings_authenticated');
+    if (authStatus === 'true') {
+      setIsAuthenticated(true);
+    }
+  }, []);
 
   const allListings = [
     {
