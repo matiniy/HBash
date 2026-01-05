@@ -104,13 +104,13 @@ export default function Services() {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="pt-20 pb-16 bg-deep-forest">
+      <section className="pt-20 pb-12 sm:pb-16 bg-deep-forest">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+            <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6">
               Our <span className="text-aqua-neon">Services</span>
             </h1>
-            <p className="text-xl text-white max-w-3xl mx-auto">
+            <p className="text-base xs:text-lg sm:text-xl text-white max-w-3xl mx-auto px-2">
               Comprehensive real estate solutions tailored to your unique needs and goals.
             </p>
           </div>
@@ -118,27 +118,29 @@ export default function Services() {
       </section>
 
       {/* Services Grid */}
-      <section className="py-20 bg-deep-forest">
+      <section className="py-12 sm:py-16 lg:py-20 bg-deep-forest">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {services.map((service, index) => (
-              <div key={index} className="bg-black/40 backdrop-blur-lg rounded-2xl p-8 shadow-lg hover:shadow-2xl hover:shadow-aqua-neon/20 transition-all duration-300 group border border-aqua-neon/20 hover:border-aqua-neon/40">
-                <div className="w-16 h-16 bg-aqua-neon/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-aqua-neon/20 transition-colors duration-300">
-                  {service.icon}
+              <div key={index} className="bg-black/40 backdrop-blur-lg rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-2xl hover:shadow-aqua-neon/20 transition-all duration-300 group border border-aqua-neon/20 hover:border-aqua-neon/40">
+                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-aqua-neon/10 rounded-full flex items-center justify-center mb-4 sm:mb-6 group-hover:bg-aqua-neon/20 transition-colors duration-300">
+                  <div className="w-8 h-8 sm:w-12 sm:h-12 text-aqua-neon">
+                    {service.icon}
+                  </div>
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-aqua-neon transition-colors duration-300">
+                <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4 group-hover:text-aqua-neon transition-colors duration-300">
                   {service.title}
                 </h3>
-                <p className="text-white mb-6">
+                <p className="text-sm sm:text-base text-white mb-4 sm:mb-6">
                   {service.description}
                 </p>
                 <ul className="space-y-2">
                   {service.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center text-sm text-white">
-                      <svg className="w-4 h-4 text-aqua-neon mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <li key={featureIndex} className="flex items-start text-xs sm:text-sm text-white">
+                      <svg className="w-3 h-3 sm:w-4 sm:h-4 text-aqua-neon mr-2 sm:mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
-                      {feature}
+                      <span>{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -149,18 +151,18 @@ export default function Services() {
       </section>
 
       {/* Process Section */}
-      <section className="py-20 bg-deep-forest">
+      <section className="py-12 sm:py-16 lg:py-20 bg-deep-forest">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+          <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+            <h2 className="text-2xl xs:text-3xl sm:text-3xl md:text-4xl font-bold text-white mb-4 sm:mb-6">
               Our <span className="text-aqua-neon">Process</span>
             </h2>
-            <p className="text-lg text-white max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg text-white max-w-3xl mx-auto px-2">
               A proven methodology that ensures your success at every step.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {[
               { step: '01', title: 'Consultation', description: 'We start with understanding your goals, timeline, and budget.' },
               { step: '02', title: 'Strategy', description: 'Develop a customized plan tailored to your specific needs.' },
@@ -168,11 +170,11 @@ export default function Services() {
               { step: '04', title: 'Results', description: 'Deliver exceptional outcomes that exceed your expectations.' }
             ].map((item, index) => (
               <div key={index} className="text-center group">
-                <div className="w-16 h-16 bg-aqua-neon/20 rounded-full mx-auto mb-6 flex items-center justify-center group-hover:bg-aqua-neon/30 transition-colors duration-300">
-                  <span className="text-2xl font-bold text-aqua-neon">{item.step}</span>
+                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-aqua-neon/20 rounded-full mx-auto mb-4 sm:mb-6 flex items-center justify-center group-hover:bg-aqua-neon/30 transition-colors duration-300">
+                  <span className="text-xl sm:text-2xl font-bold text-aqua-neon">{item.step}</span>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-4">{item.title}</h3>
-                <p className="text-white">{item.description}</p>
+                <h3 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-4">{item.title}</h3>
+                <p className="text-sm sm:text-base text-white px-2">{item.description}</p>
               </div>
             ))}
           </div>
@@ -180,16 +182,16 @@ export default function Services() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-aqua-neon">
+      <section className="py-12 sm:py-16 lg:py-20 bg-aqua-neon">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-deep-forest mb-6">
+          <h2 className="text-2xl xs:text-3xl sm:text-3xl md:text-4xl font-bold text-deep-forest mb-4 sm:mb-6">
             Ready to Get Started?
           </h2>
-          <p className="text-lg text-deep-forest mb-8">
+          <p className="text-base sm:text-lg text-deep-forest mb-6 sm:mb-8 px-2">
             Let's discuss how we can help you achieve your real estate goals.
           </p>
           <Link href="/contact">
-            <button className="px-6 py-3 bg-deep-forest text-white rounded-full hover:rounded-[10px] font-semibold text-base transition-all duration-300 hover:bg-black hover:text-aqua-neon border-2 border-deep-forest hover:border-aqua-neon min-h-[44px] flex items-center justify-center mx-auto">
+            <button className="px-4 xs:px-6 py-2.5 xs:py-3 bg-deep-forest text-white rounded-full hover:rounded-[10px] font-semibold text-sm xs:text-base transition-all duration-300 hover:bg-black hover:text-aqua-neon border-2 border-deep-forest hover:border-aqua-neon min-h-[44px] flex items-center justify-center mx-auto w-full sm:w-auto max-w-xs sm:max-w-none">
               Schedule Consultation
             </button>
           </Link>
