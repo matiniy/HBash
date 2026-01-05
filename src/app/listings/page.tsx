@@ -6,10 +6,12 @@ import Footer from '@/components/Footer';
 import ListingCard from '@/components/ListingCard';
 import Button from '@/components/Button';
 import PasswordProtection from '@/components/PasswordProtection';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const LISTINGS_PASSWORD = '1234567890';
 
 export default function Listings() {
+  const { t } = useLanguage();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedType, setSelectedType] = useState('all');
@@ -228,8 +230,8 @@ export default function Listings() {
         <PasswordProtection
           correctPassword={LISTINGS_PASSWORD}
           onSuccess={() => setIsAuthenticated(true)}
-          title="Listings Page"
-          message="This page is currently under development and requires a password to access."
+          title={t('password.listingsTitle')}
+          message={t('password.listingsMessage')}
         />
       </>
     );

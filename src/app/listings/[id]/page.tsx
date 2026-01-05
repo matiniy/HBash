@@ -7,6 +7,7 @@ import Button from '@/components/Button';
 import PasswordProtection from '@/components/PasswordProtection';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const LISTINGS_PASSWORD = '1234567890';
 
@@ -148,6 +149,7 @@ const getListingData = (id: string) => {
 };
 
 const ListingDetailsPage = () => {
+  const { t } = useLanguage();
   const params = useParams();
   const id = (params?.id ?? '') as string;
   const listing = getListingData(id);
@@ -170,8 +172,8 @@ const ListingDetailsPage = () => {
         <PasswordProtection
           correctPassword={LISTINGS_PASSWORD}
           onSuccess={() => setIsAuthenticated(true)}
-          title="Listing Details"
-          message="This page is currently under development and requires a password to access."
+          title={t('password.listingDetailsTitle')}
+          message={t('password.listingDetailsMessage')}
         />
       </>
     );

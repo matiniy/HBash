@@ -59,5 +59,11 @@
     "consumerProtection": "Consumer Protection Notice",
     "copyright": "© 2025 Haideh Bashash Realtor. All rights reserved. | Designed by Metamatn Interactive.",
     "trecNotice": "Texas Real Estate Commission Consumer Protection Notice (TREC CN 1-5)"
+  },
+  "password": {
+    "listingsTitle": "Listings Page",
+    "listingsMessage": "This page is currently under development and requires a password to access.",
+    "listingDetailsTitle": "Listing Details",
+    "listingDetailsMessage": "This page is currently under development and requires a password to access."
   }
 }

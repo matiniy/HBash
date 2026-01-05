@@ -59,5 +59,11 @@
     "consumerProtection": "اعلامیه حمایت از مصرف‌کننده",
     "copyright": "© ۲۰۲۵ حیده باشاش مشاور املاک. تمامی حقوق محفوظ است. | طراحی شده توسط Metamatn Interactive.",
     "trecNotice": "اعلامیه حمایت از مصرف‌کننده کمیسیون املاک تگزاس (TREC CN 1-5)"
+  },
+  "password": {
+    "listingsTitle": "صفحه املاک",
+    "listingsMessage": "این صفحه در حال توسعه است و برای دسترسی به رمز عبور نیاز دارد.",
+    "listingDetailsTitle": "جزئیات ملک",
+    "listingDetailsMessage": "این صفحه در حال توسعه است و برای دسترسی به رمز عبور نیاز دارد."
   }
 }
