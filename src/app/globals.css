@@ -111,6 +111,7 @@ a {
 .light-mode {
   background-color: #FFFFFF !important;
   color: #1a1a1a !important;
+  --aqua-neon: #144552; /* Darker teal for light mode only */
 }
 
 .light-mode body {
@@ -155,7 +156,7 @@ a {
 
 .light-mode nav a:hover,
 .light-mode nav button:hover {
-  color: var(--aqua-neon) !important;
+  color: #144552 !important;
 }
 
 /* Light mode hero section */
@@ -193,24 +194,28 @@ a {
 }
 
 .light-mode footer a:hover {
-  color: var(--aqua-neon) !important;
+  color: #144552 !important;
 }
 
-/* Light mode buttons - ensure visibility */
+/* Light mode buttons - ensure visibility with darker teal */
 .light-mode .btn-primary {
-  background-color: var(--aqua-neon) !important;
-  color: #000000 !important;
+  background-color: #144552 !important;
+  color: #FFFFFF !important;
+}
+
+.light-mode .btn-primary:hover {
+  background-color: #0d2f3a !important;
 }
 
 .light-mode .btn-secondary {
   background-color: transparent !important;
-  color: var(--aqua-neon) !important;
-  border-color: var(--aqua-neon) !important;
+  color: #144552 !important;
+  border-color: #144552 !important;
 }
 
 .light-mode .btn-secondary:hover {
-  background-color: var(--aqua-neon) !important;
-  color: #000000 !important;
+  background-color: #144552 !important;
+  color: #FFFFFF !important;
 }
 
 /* Light mode cards and sections */
@@ -226,12 +231,22 @@ a {
 
 .light-mode .border-aqua-neon\/10,
 .light-mode [class*="border-aqua-neon/10"] {
-  border-color: rgba(0, 255, 163, 0.2) !important;
+  border-color: rgba(20, 69, 82, 0.2) !important;
 }
 
 .light-mode .border-aqua-neon\/20,
 .light-mode [class*="border-aqua-neon/20"] {
-  border-color: rgba(0, 255, 163, 0.3) !important;
+  border-color: rgba(20, 69, 82, 0.3) !important;
+}
+
+.light-mode .border-aqua-neon\/30,
+.light-mode [class*="border-aqua-neon/30"] {
+  border-color: rgba(20, 69, 82, 0.4) !important;
+}
+
+.light-mode .border-aqua-neon\/50,
+.light-mode [class*="border-aqua-neon/50"] {
+  border-color: rgba(20, 69, 82, 0.5) !important;
 }
 
 /* Light mode scrollbar */
@@ -240,7 +255,11 @@ a {
 }
 
 .light-mode ::-webkit-scrollbar-thumb {
-  background: var(--aqua-neon);
+  background: #144552;
+}
+
+.light-mode ::-webkit-scrollbar-thumb:hover {
+  background: #0d2f3a;
 }
 
 /* Light mode credentials section */
@@ -267,15 +286,7 @@ a {
   color: #6a6a6a !important;
 }
 
-/* Light mode stats */
-.light-mode .text-aqua-neon {
-  color: var(--aqua-neon) !important;
-}
-
-/* Ensure aqua-neon text stays visible */
-.light-mode .text-aqua-neon {
-  color: var(--aqua-neon) !important;
-}
+/* Light mode stats - darker teal (already defined above, removing duplicate) */
 
 /* Light mode credentials section specific */
 .light-mode .bg-gray-800\/50,
@@ -290,7 +301,17 @@ a {
 
 .light-mode .bg-aqua-neon\/20,
 .light-mode [class*="bg-aqua-neon/20"] {
-  background-color: rgba(0, 255, 163, 0.15) !important;
+  background-color: rgba(20, 69, 82, 0.15) !important;
+}
+
+.light-mode .bg-aqua-neon\/10,
+.light-mode [class*="bg-aqua-neon/10"] {
+  background-color: rgba(20, 69, 82, 0.1) !important;
+}
+
+.light-mode .bg-aqua-neon\/30,
+.light-mode [class*="bg-aqua-neon/30"] {
+  background-color: rgba(20, 69, 82, 0.2) !important;
 }
 
 /* Light mode page loader */
@@ -404,7 +425,7 @@ a {
 
 /* Light mode link hover */
 .light-mode a:hover {
-  color: var(--aqua-neon) !important;
+  color: #144552 !important;
 }
 
 /* Light mode button text in primary buttons */
@@ -496,13 +517,13 @@ a {
   color: #1a1a1a !important;
 }
 
-/* Light mode ensure buttons are visible */
+/* Light mode ensure buttons are visible with darker teal */
 .light-mode button.bg-transparent {
-  border-color: var(--aqua-neon) !important;
-  color: var(--aqua-neon) !important;
+  border-color: #144552 !important;
+  color: #144552 !important;
 }
 
 .light-mode button.bg-transparent:hover {
-  background-color: var(--aqua-neon) !important;
-  color: #000000 !important;
+  background-color: #144552 !important;
+  color: #FFFFFF !important;
 }
