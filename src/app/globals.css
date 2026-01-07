@@ -205,6 +205,7 @@ a {
 
 .light-mode .btn-primary:hover {
   background-color: #0d2f3a !important;
+  color: #FFFFFF !important;
 }
 
 .light-mode .btn-secondary {
