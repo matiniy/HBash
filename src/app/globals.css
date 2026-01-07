@@ -106,3 +106,403 @@ a {
 * {
   transition: all 0.3s ease;
 }
+
+/* Light Mode Overrides */
+.light-mode {
+  background-color: #FFFFFF !important;
+  color: #1a1a1a !important;
+}
+
+.light-mode body {
+  background-color: #FFFFFF !important;
+  color: #1a1a1a !important;
+}
+
+.light-mode * {
+  color: inherit;
+}
+
+.light-mode .bg-deep-forest,
+.light-mode [class*="bg-deep-forest"] {
+  background-color: #FFFFFF !important;
+}
+
+.light-mode .bg-black,
+.light-mode [class*="bg-black"] {
+  background-color: #F5F5F5 !important;
+}
+
+.light-mode .text-white,
+.light-mode [class*="text-white"] {
+  color: #1a1a1a !important;
+}
+
+.light-mode .text-grey-light,
+.light-mode [class*="text-grey-light"] {
+  color: #4a4a4a !important;
+}
+
+/* Light mode navbar */
+.light-mode nav {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+.light-mode nav a,
+.light-mode nav button {
+  color: #1a1a1a !important;
+}
+
+.light-mode nav a:hover,
+.light-mode nav button:hover {
+  color: var(--aqua-neon) !important;
+}
+
+/* Light mode hero section */
+.light-mode .bg-black\/40,
+.light-mode [class*="bg-black/40"] {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.light-mode .bg-black\/20,
+.light-mode [class*="bg-black/20"] {
+  background-color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* Light mode about section */
+.light-mode .bg-deep-forest\/30,
+.light-mode [class*="bg-deep-forest/30"] {
+  background-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.light-mode .bg-deep-forest\/20,
+.light-mode [class*="bg-deep-forest/20"] {
+  background-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+/* Light mode footer */
+.light-mode footer {
+  background-color: #F5F5F5 !important;
+}
+
+.light-mode footer h3,
+.light-mode footer h4,
+.light-mode footer p,
+.light-mode footer a {
+  color: #1a1a1a !important;
+}
+
+.light-mode footer a:hover {
+  color: var(--aqua-neon) !important;
+}
+
+/* Light mode buttons - ensure visibility */
+.light-mode .btn-primary {
+  background-color: var(--aqua-neon) !important;
+  color: #000000 !important;
+}
+
+.light-mode .btn-secondary {
+  background-color: transparent !important;
+  color: var(--aqua-neon) !important;
+  border-color: var(--aqua-neon) !important;
+}
+
+.light-mode .btn-secondary:hover {
+  background-color: var(--aqua-neon) !important;
+  color: #000000 !important;
+}
+
+/* Light mode cards and sections */
+.light-mode .bg-white\/5,
+.light-mode [class*="bg-white/5"] {
+  background-color: rgba(0, 0, 0, 0.03) !important;
+}
+
+.light-mode .bg-white\/10,
+.light-mode [class*="bg-white/10"] {
+  background-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+.light-mode .border-aqua-neon\/10,
+.light-mode [class*="border-aqua-neon/10"] {
+  border-color: rgba(0, 255, 163, 0.2) !important;
+}
+
+.light-mode .border-aqua-neon\/20,
+.light-mode [class*="border-aqua-neon/20"] {
+  border-color: rgba(0, 255, 163, 0.3) !important;
+}
+
+/* Light mode scrollbar */
+.light-mode ::-webkit-scrollbar-track {
+  background: #F5F5F5;
+}
+
+.light-mode ::-webkit-scrollbar-thumb {
+  background: var(--aqua-neon);
+}
+
+/* Light mode credentials section */
+.light-mode .bg-black\/40,
+.light-mode [class*="bg-black/40"] {
+  background-color: rgba(245, 245, 245, 0.9) !important;
+}
+
+.light-mode .border-aqua-neon\/20,
+.light-mode [class*="border-aqua-neon/20"] {
+  border-color: rgba(0, 255, 163, 0.3) !important;
+}
+
+/* Light mode contact form */
+.light-mode input,
+.light-mode textarea {
+  background-color: #FFFFFF !important;
+  color: #1a1a1a !important;
+  border-color: rgba(0, 0, 0, 0.2) !important;
+}
+
+.light-mode input::placeholder,
+.light-mode textarea::placeholder {
+  color: #6a6a6a !important;
+}
+
+/* Light mode stats */
+.light-mode .text-aqua-neon {
+  color: var(--aqua-neon) !important;
+}
+
+/* Ensure aqua-neon text stays visible */
+.light-mode .text-aqua-neon {
+  color: var(--aqua-neon) !important;
+}
+
+/* Light mode credentials section specific */
+.light-mode .bg-gray-800\/50,
+.light-mode [class*="bg-gray-800/50"] {
+  background-color: rgba(245, 245, 245, 0.9) !important;
+}
+
+.light-mode .border-gray-700\/50,
+.light-mode [class*="border-gray-700/50"] {
+  border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+.light-mode .bg-aqua-neon\/20,
+.light-mode [class*="bg-aqua-neon/20"] {
+  background-color: rgba(0, 255, 163, 0.15) !important;
+}
+
+/* Light mode page loader */
+.light-mode .bg-deep-forest {
+  background-color: #FFFFFF !important;
+}
+
+.light-mode .fixed.inset-0.bg-deep-forest {
+  background-color: #FFFFFF !important;
+}
+
+.light-mode .fixed.inset-0.bg-deep-forest h1,
+.light-mode .fixed.inset-0.bg-deep-forest p {
+  color: #1a1a1a !important;
+}
+
+/* Light mode hero glass effect */
+.light-mode section {
+  color: #1a1a1a;
+}
+
+/* Light mode testimonial cards */
+.light-mode .backdrop-blur-sm,
+.light-mode .backdrop-blur-lg {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Light mode section backgrounds */
+.light-mode section.bg-deep-forest {
+  background-color: #FFFFFF !important;
+}
+
+.light-mode section.bg-black {
+  background-color: #F5F5F5 !important;
+}
+
+/* Light mode hero text overlays */
+.light-mode .bg-black\/50,
+.light-mode [class*="bg-black/50"] {
+  background-color: rgba(255, 255, 255, 0.85) !important;
+}
+
+/* Light mode hero text */
+.light-mode h1,
+.light-mode h2,
+.light-mode h3,
+.light-mode h4,
+.light-mode p {
+  color: #1a1a1a !important;
+}
+
+/* Light mode hero section specific */
+.light-mode section.min-h-screen {
+  color: #1a1a1a !important;
+}
+
+/* Light mode stats section */
+.light-mode .text-white {
+  color: #1a1a1a !important;
+}
+
+/* Light mode marquee text */
+.light-mode .marquee,
+.light-mode .marquee-slow {
+  color: #1a1a1a !important;
+}
+
+/* Light mode credentials badges */
+.light-mode .bg-gray-800,
+.light-mode [class*="bg-gray-800"] {
+  background-color: #F5F5F5 !important;
+  color: #1a1a1a !important;
+}
+
+/* Light mode overlay adjustments */
+.light-mode .bg-deep-forest\/30,
+.light-mode [class*="bg-deep-forest/30"] {
+  background-color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.light-mode .bg-deep-forest\/20,
+.light-mode [class*="bg-deep-forest/20"] {
+  background-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* Light mode glass effects */
+.light-mode .backdrop-blur-xl,
+.light-mode .backdrop-blur-lg,
+.light-mode .backdrop-blur-md,
+.light-mode .backdrop-blur-sm {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Light mode border colors */
+.light-mode .border-white\/20,
+.light-mode [class*="border-white/20"] {
+  border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+.light-mode .border-white\/10,
+.light-mode [class*="border-white/10"] {
+  border-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Light mode shadow adjustments */
+.light-mode .shadow-xl,
+.light-mode .shadow-lg,
+.light-mode .shadow-md {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Light mode link hover */
+.light-mode a:hover {
+  color: var(--aqua-neon) !important;
+}
+
+/* Light mode button text in primary buttons */
+.light-mode .btn-primary {
+  color: #000000 !important;
+}
+
+/* Light mode contact form labels */
+.light-mode label {
+  color: #1a1a1a !important;
+}
+
+/* Light mode testimonial cards text */
+.light-mode .text-white\/90,
+.light-mode [class*="text-white/90"] {
+  color: #1a1a1a !important;
+}
+
+/* Light mode about section bio text */
+.light-mode .line-clamp-3 {
+  color: #1a1a1a !important;
+}
+
+/* Light mode hero desktop overlay */
+.light-mode .bg-deep-forest.z-\[1\] {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+}
+
+/* Light mode hero mobile overlay */
+.light-mode .bg-black\/50.z-\[1\] {
+  background-color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* Light mode hero glass box */
+.light-mode .bg-black\/40.backdrop-blur-lg {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Light mode credentials section background */
+.light-mode section.bg-deep-forest {
+  background-color: #FFFFFF !important;
+}
+
+/* Light mode credentials cards */
+.light-mode .bg-gray-800\/50 {
+  background-color: rgba(245, 245, 245, 0.9) !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Light mode credentials text */
+.light-mode .bg-gray-800\/50 h3,
+.light-mode .bg-gray-800\/50 p {
+  color: #1a1a1a !important;
+}
+
+/* Light mode about section background image overlay */
+.light-mode .bg-deep-forest\/30 {
+  background-color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* Light mode about section glass box */
+.light-mode .bg-deep-forest\/20 {
+  background-color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* Light mode contact form section */
+.light-mode section:has(form) {
+  background-color: #FFFFFF !important;
+}
+
+/* Light mode stats numbers */
+.light-mode .text-lg,
+.light-mode .text-xl,
+.light-mode .text-2xl,
+.light-mode .text-3xl,
+.light-mode .text-4xl {
+  color: #1a1a1a !important;
+}
+
+/* Light mode navbar logo and links */
+.light-mode nav img {
+  filter: brightness(0) !important;
+}
+
+/* Light mode ensure all text is dark */
+.light-mode .text-white,
+.light-mode [class*="text-white"] {
+  color: #1a1a1a !important;
+}
+
+/* Light mode ensure buttons are visible */
+.light-mode button.bg-transparent {
+  border-color: var(--aqua-neon) !important;
+  color: var(--aqua-neon) !important;
+}
+
+.light-mode button.bg-transparent:hover {
+  background-color: var(--aqua-neon) !important;
+  color: #000000 !important;
+}
