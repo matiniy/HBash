@@ -314,6 +314,30 @@ a {
   background-color: rgba(20, 69, 82, 0.2) !important;
 }
 
+/* Light mode marquee background - darker teal */
+.light-mode .bg-aqua-neon,
+.light-mode section.bg-aqua-neon {
+  background-color: #144552 !important;
+}
+
+/* Light mode text on dark teal backgrounds - white for readability */
+.light-mode .bg-aqua-neon,
+.light-mode section.bg-aqua-neon {
+  color: #FFFFFF !important;
+}
+
+.light-mode .bg-aqua-neon *,
+.light-mode section.bg-aqua-neon * {
+  color: #FFFFFF !important;
+}
+
+.light-mode .bg-aqua-neon .text-deep-forest,
+.light-mode .bg-aqua-neon [class*="text-deep-forest"],
+.light-mode section.bg-aqua-neon .text-deep-forest,
+.light-mode section.bg-aqua-neon [class*="text-deep-forest"] {
+  color: #FFFFFF !important;
+}
+
 /* Light mode page loader */
 .light-mode .bg-deep-forest {
   background-color: #FFFFFF !important;
@@ -373,10 +397,17 @@ a {
   color: #1a1a1a !important;
 }
 
-/* Light mode marquee text */
+/* Light mode marquee text - white on dark teal background */
 .light-mode .marquee,
 .light-mode .marquee-slow {
-  color: #1a1a1a !important;
+  color: #FFFFFF !important;
+}
+
+.light-mode .bg-aqua-neon .marquee,
+.light-mode .bg-aqua-neon .marquee-slow,
+.light-mode section.bg-aqua-neon .marquee,
+.light-mode section.bg-aqua-neon .marquee-slow {
+  color: #FFFFFF !important;
 }
 
 /* Light mode credentials badges */
