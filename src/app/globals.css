@@ -284,7 +284,9 @@ a {
 
 /* Light mode buttons - Secondary: transparent background with dark teal/green text and border */
 .light-mode .btn-secondary,
-.light-mode button.btn-secondary {
+.light-mode button.btn-secondary,
+.light-mode .btn-secondary *,
+.light-mode button.btn-secondary * {
   background-color: transparent !important;
   color: #144552 !important;
   border-color: #144552 !important;
