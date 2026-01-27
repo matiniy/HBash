@@ -56,11 +56,16 @@ const About: React.FC = () => {
 
   return (
     <section 
-      className="py-20 relative overflow-hidden bg-cover bg-center"
-      style={{ backgroundImage: 'url("/images/Background/Background.png")' }}
+      className="py-20 relative overflow-hidden"
     >
-      {/* Dark overlay for readability */}
-      <div className="absolute inset-0 bg-deep-forest/30"></div>
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0"
+        style={{ backgroundImage: 'url("/images/Background/Background.png")' }}
+      ></div>
+      
+      {/* Overlay for readability - adjusted for theme visibility */}
+      <div className="absolute inset-0 bg-deep-forest/10 z-0 about-section-overlay"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start bg-deep-forest/20 rounded-tl-3xl rounded-tr-3xl p-8 lg:p-12">
