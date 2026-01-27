@@ -511,6 +511,16 @@ a {
   color: #FFFFFF !important;
 }
 
+/* Light mode hero glass card - keep true glassmorphism over hero image */
+.light-mode .hero-glass-card {
+  background: rgba(255, 255, 255, 0.72) !important;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18) !important;
+  border: 1px solid rgba(255, 255, 255, 0.7) !important;
+  backdrop-filter: blur(26px) !important;
+  -webkit-backdrop-filter: blur(26px) !important;
+}
+
+
 /* Light mode credentials badges */
 .light-mode .bg-gray-800,
 .light-mode [class*="bg-gray-800"] {
