@@ -80,13 +80,14 @@ const Hero: React.FC = () => {
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 mt-6 sm:mt-8">
+                  {/* Rebuilt secondary CTA button explicitly so text is always green */}
                   <Link href="/listings">
-                    <Button
-                      variant="secondary"
-                      className="w-full sm:w-auto hero-secondary-cta !text-aqua-neon [&>*]:!text-aqua-neon"
+                    <button
+                      type="button"
+                      className="w-full sm:w-auto px-4 xs:px-6 py-2.5 xs:py-3 rounded-full hover:rounded-[10px] font-semibold text-xs xs:text-sm sm:text-base transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-aqua-neon min-h-[44px] flex items-center justify-center border border-aqua-neon text-aqua-neon hero-secondary-cta"
                     >
                       {t('hero.browseListings')}
-                    </Button>
+                    </button>
                   </Link>
                   <Link href="/contact">
                     <Button variant="primary" className="w-full sm:w-auto">
