@@ -305,9 +305,9 @@ a {
   color: #FFFFFF !important;
 }
 
-/* Ensure hero secondary CTA button text is always green on white */
-.light-mode .hero-glass-card .btn-secondary,
-.light-mode .hero-glass-card .btn-secondary * {
+/* Ensure hero secondary CTA button text is always green on white (without affecting others) */
+.light-mode .hero-secondary-cta,
+.light-mode .hero-secondary-cta * {
   color: #144552 !important;
 }
 
