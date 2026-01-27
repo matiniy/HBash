@@ -588,6 +588,12 @@ a {
   color: #1a1a1a !important;
 }
 
+/* Final override: ensure hero secondary CTA (white button) text is green in light mode */
+.light-mode .hero-secondary-cta,
+.light-mode .hero-secondary-cta * {
+  color: #144552 !important;
+}
+
 /* Light mode about section bio text */
 .light-mode .line-clamp-3 {
   color: #1a1a1a !important;
