@@ -81,7 +81,10 @@ const Hero: React.FC = () => {
 
                 <div className="flex flex-col sm:flex-row gap-4 mt-6 sm:mt-8">
                   <Link href="/listings">
-                    <Button variant="secondary" className="w-full sm:w-auto hero-secondary-cta">
+                    <Button
+                      variant="secondary"
+                      className="w-full sm:w-auto hero-secondary-cta !text-aqua-neon [&>*]:!text-aqua-neon"
+                    >
                       {t('hero.browseListings')}
                     </Button>
                   </Link>
