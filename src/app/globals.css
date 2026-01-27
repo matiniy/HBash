@@ -107,15 +107,15 @@ a {
   transition: all 0.3s ease;
 }
 
-/* Light Mode Overrides */
+/* Light Mode (Primary/Default Theme) */
 .light-mode {
-  background-color: #FFFFFF !important;
+  background-color: #FAFAFA !important;
   color: #1a1a1a !important;
   --aqua-neon: #144552; /* Darker teal for light mode only */
 }
 
 .light-mode body {
-  background-color: #FFFFFF !important;
+  background-color: #FAFAFA !important;
   color: #1a1a1a !important;
 }
 
@@ -125,7 +125,7 @@ a {
 
 .light-mode .bg-deep-forest,
 .light-mode [class*="bg-deep-forest"] {
-  background-color: #FFFFFF !important;
+  background-color: #FAFAFA !important;
 }
 
 .light-mode .bg-black,
@@ -411,11 +411,11 @@ a {
 
 /* Light mode page loader */
 .light-mode .bg-deep-forest {
-  background-color: #FFFFFF !important;
+  background-color: #FAFAFA !important;
 }
 
 .light-mode .fixed.inset-0.bg-deep-forest {
-  background-color: #FFFFFF !important;
+  background-color: #FAFAFA !important;
 }
 
 .light-mode .fixed.inset-0.bg-deep-forest h1,
@@ -436,7 +436,7 @@ a {
 
 /* Light mode section backgrounds */
 .light-mode section.bg-deep-forest {
-  background-color: #FFFFFF !important;
+  background-color: #FAFAFA !important;
 }
 
 .light-mode section.bg-black {
@@ -566,7 +566,7 @@ a {
 
 /* Light mode credentials section background */
 .light-mode section.bg-deep-forest {
-  background-color: #FFFFFF !important;
+  background-color: #FAFAFA !important;
 }
 
 /* Light mode credentials cards */
@@ -593,7 +593,7 @@ a {
 
 /* Light mode contact form section */
 .light-mode section:has(form) {
-  background-color: #FFFFFF !important;
+  background-color: #FAFAFA !important;
 }
 
 /* Light mode stats numbers */

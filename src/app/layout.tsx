@@ -34,7 +34,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" dir="ltr">
+    <html lang="en" dir="ltr" className="light-mode">
       <body className={`${inter.className} ${spaceGrotesk.variable} ${sora.variable}`}>
         <LanguageProvider>
           {children}

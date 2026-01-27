@@ -23,10 +23,18 @@
     }
   },
   "about": {
-    "bio": "Haideh Bashash is the agent people turn to when they want clarity, confidence, and a genuinely smooth real estate experience. Since 2016, she has built a reputation for unwavering dedication and honest communication, treating every client's goals as if they were her own. Her 17 years at the United Nations sharpened her ability to understand people, solve problems calmly, and navigate complex situations with ease—skills that set her apart in today's market. Fluent in Turkish and Persian, deeply connected to her community, and driven by a \"quality over quantity\" mindset, Haideh brings a steady, client-first approach that delivers real results and long-term trust.",
+    "bio": "Haideh Bashash is a dedicated, full-time real estate professional with HomeSmart Stars brokerage. Whether buying, selling, or leasing a property, she works tirelessly to protect her clients' best interests and guide them through every step of the process. Her business is built on dedication, clear communication, determination, and trust, with a strong belief in the philosophy of quality over quantity. Before transitioning into real estate, Haideh spent over 17 years working with the United Nations, where she gained invaluable experience interacting with people from diverse backgrounds. This background strengthened her communication, negotiation, and interpersonal skills—assets she brings into her real estate practice today. Haideh is fluent in Persian and Turkish. Outside of work, she enjoys spending time with her family and friends.",
     "readMore": "Read More →",
     "joinNow": "Join Now",
     "readMoreReviews": "Read More Reviews →"
+  },
+  "testimonials": {
+    "title": "What People Say About Us"
+  },
+  "documents": {
+    "title": "Important Documents",
+    "subtitle": "Download important real estate documents and disclosures",
+    "download": "Download PDF"
   },
   "listings": {
     "featured": "Featured",
@@ -71,9 +79,9 @@
     "titleHighlight": "H Bashash",
     "subtitle": "Your trusted real estate partner in Dallas, bringing years of experience and personal attention to every client relationship.",
     "sectionTitle": "About Haideh Bashash",
-    "paragraph1": "Haideh Bashash is the agent people turn to when they want clarity, confidence, and a genuinely smooth real estate experience. Since 2016, she has built a reputation for unwavering dedication and honest communication, treating every client's goals as if they were her own.",
-    "paragraph2": "Her 17 years at the United Nations sharpened her ability to understand people, solve problems calmly, and navigate complex situations with ease—skills that set her apart in today's market.",
-    "paragraph3": "Fluent in Turkish and Persian, deeply connected to her community, and driven by a \"quality over quantity\" mindset, Haideh brings a steady, client-first approach that delivers real results and long-term trust.",
+    "paragraph1": "Haideh Bashash is a dedicated, full-time real estate professional with HomeSmart Stars brokerage. Whether buying, selling, or leasing a property, she works tirelessly to protect her clients' best interests and guide them through every step of the process.",
+    "paragraph2": "Her business is built on dedication, clear communication, determination, and trust, with a strong belief in the philosophy of quality over quantity. Before transitioning into real estate, Haideh spent over 17 years working with the United Nations, where she gained invaluable experience interacting with people from diverse backgrounds.",
+    "paragraph3": "This background strengthened her communication, negotiation, and interpersonal skills—assets she brings into her real estate practice today. Haideh is fluent in Persian and Turkish. Outside of work, she enjoys spending time with her family and friends.",
     "getInTouch": "Get In Touch",
     "licensedRealtor": "Licensed Realtor",
     "valuesTitle": "Our",

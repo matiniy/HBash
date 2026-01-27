@@ -12,15 +12,6 @@ const Credentials: React.FC = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Main Heading */}
-        <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-          <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 px-2">
-            Trusted by 20+ Companies & 13,000 Clients in Dallas and Beyond
-          </h2>
-          <p className="text-white text-sm xs:text-base sm:text-lg max-w-3xl mx-auto px-2">
-            More than 20+ partnerships across Dallas & Texas, providing corporate real estate support and relocation housing solutions
-          </p>
-        </div>
 
         {/* Credentials Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-8 sm:mb-12 lg:mb-16">
@@ -82,6 +73,31 @@ const Credentials: React.FC = () => {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Brokerage Logo Section */}
+        <div className="mt-8 sm:mt-12 lg:mt-16 mb-8 sm:mb-12 lg:mb-16">
+          <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-8">
+            {/* HomeSmart Stars Logo */}
+            <div className="flex items-center justify-center">
+              <img 
+                src="/images/brokerage/homesmart-stars-logo.png" 
+                alt="HomeSmart Stars" 
+                className="h-12 sm:h-16 md:h-20 w-auto object-contain"
+                onError={(e) => {
+                  // Fallback if logo not yet provided
+                  e.currentTarget.style.display = 'none';
+                }}
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Fair Housing Act Statement */}
+        <div className="mt-8 sm:mt-12 lg:mt-16 text-center">
+          <p className="text-white text-sm xs:text-base sm:text-lg max-w-4xl mx-auto px-2 leading-relaxed">
+            Haideh Bashash fully supports the principles of the Fair Housing Act and the Equal Opportunity Act.
+          </p>
         </div>
 
         {/* Legal Compliance Footer */}

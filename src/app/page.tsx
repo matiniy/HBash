@@ -4,8 +4,10 @@ import React, { useState, useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
+import Testimonials from '@/components/Testimonials';
 import ContactForm from '@/components/ContactForm';
 import Credentials from '@/components/Credentials';
+import Documents from '@/components/Documents';
 import Footer from '@/components/Footer';
 import PageLoader from '@/components/PageLoader';
 
@@ -44,8 +46,10 @@ export default function Home() {
         <Navbar />
         <Hero />
         <About />
+        <Testimonials />
         <ContactForm />
         <Credentials />
+        <Documents />
         <Footer />
       </main>
     </>
