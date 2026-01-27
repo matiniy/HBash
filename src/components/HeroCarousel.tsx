@@ -13,6 +13,7 @@ const HeroCarousel: React.FC<HeroCarouselProps> = ({
   interval = 4000 // 4 seconds default
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [previousIndex, setPreviousIndex] = useState(0);
   // Preload all images immediately for faster transitions
   const [loadedImages, setLoadedImages] = useState<Set<number>>(new Set(images.map((_, i) => i)));
 
@@ -22,6 +23,8 @@ const HeroCarousel: React.FC<HeroCarouselProps> = ({
     const timer = setInterval(() => {
       setCurrentIndex((prevIndex) => {
         const nextIndex = (prevIndex + 1) % images.length;
+        // Track previous index for slide direction (right-to-left)
+        setPreviousIndex(prevIndex);
         // Preload next image
         setLoadedImages((prev) => {
           if (!prev.has(nextIndex)) {
@@ -63,13 +66,20 @@ const HeroCarousel: React.FC<HeroCarouselProps> = ({
       {images.map((image, index) => {
         const isVisible = index === currentIndex;
         const shouldLoad = loadedImages.has(index);
+
+        // Determine slide position for right-to-left animation
+        let positionClass = 'translate-x-full opacity-0 z-0';
+        if (index === currentIndex) {
+          positionClass = 'translate-x-0 opacity-100 z-20';
+        } else if (index === previousIndex) {
+          // Slide previous slide out to the left
+          positionClass = '-translate-x-full opacity-0 z-10';
+        }
         
         return (
           <div
             key={index}
-            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-              isVisible ? 'opacity-100' : 'opacity-0'
-            }`}
+            className={`absolute inset-0 transform transition-transform duration-700 ease-out ${positionClass}`}
           >
             {shouldLoad ? (
               <Image
