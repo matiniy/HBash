@@ -48,10 +48,10 @@ const Hero: React.FC = () => {
         <div className="absolute inset-0 bg-black/50 z-[1]"></div>
       </div>
 
-      {/* Desktop: Side-by-side layout with carousel */}
+      {/* Desktop: Full-width background carousel with soft gradient under hero card */}
       <div className="absolute inset-0 hidden lg:block z-0">
         <div 
-          className="absolute right-0 top-0 w-[65%] h-[120%] transition-transform duration-75 ease-out overflow-hidden"
+          className="absolute inset-0 transition-transform duration-75 ease-out overflow-hidden"
           style={{
             transform: `scale(${scale})`,
             transformOrigin: 'center center'
@@ -59,8 +59,8 @@ const Hero: React.FC = () => {
         >
           <HeroCarousel images={heroImages} interval={4000} />
         </div>
-        {/* Dark overlay for left side on desktop */}
-        <div className="absolute left-0 top-0 w-[35%] h-full bg-deep-forest z-[1]"></div>
+        {/* Soft gradient overlay so image still shows beneath hero card */}
+        <div className="absolute inset-0 bg-gradient-to-r from-white/75 via-white/50 to-transparent z-[1] pointer-events-none"></div>
       </div>
 
       <div className="w-full px-4 sm:px-6 lg:px-8 relative z-10">
