@@ -68,7 +68,7 @@ const About: React.FC = () => {
       <div className="absolute inset-0 bg-deep-forest/10 z-0 about-section-overlay"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start bg-deep-forest/20 rounded-tl-3xl rounded-tr-3xl p-8 lg:p-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start py-8 lg:py-12">
           {/* Left Content - Realtor Image and CTA */}
           <div className="relative">
             <Image
