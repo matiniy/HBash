@@ -279,7 +279,7 @@ a {
 .light-mode button[class*="bg-aqua-neon"][class*="text-"],
 .light-mode .bg-aqua-neon button[class*="text-"],
 .light-mode button.bg-aqua-neon[class*="text-"] {
-  color: #FFFFFF !important;
+  color: #144552 !important;
 }
 
 /* Light mode buttons - Secondary: transparent background with dark teal/green text and border */
@@ -521,11 +521,11 @@ a {
 
 /* Light mode hero glass card - keep true glassmorphism over hero image */
 .light-mode .hero-glass-card {
-  background: rgba(255, 255, 255, 0.6) !important; /* 60% opacity */
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.15) !important;
-  border: 1px solid rgba(255, 255, 255, 0.85) !important;
-  backdrop-filter: blur(30px) !important;
-  -webkit-backdrop-filter: blur(30px) !important;
+  background: rgba(255, 255, 255, 0.5) !important; /* 50% opacity */
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.16) !important;
+  border: 1px solid rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: blur(28px) !important;
+  -webkit-backdrop-filter: blur(28px) !important;
 }
 
 
