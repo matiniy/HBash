@@ -91,34 +91,6 @@ const Hero: React.FC = () => {
                     </Button>
                   </Link>
                 </div>
-
-                {/* Stats Row - Directly under hero content */}
-                <div className="grid grid-cols-3 gap-2 xs:gap-4 sm:gap-6 mt-6 sm:mt-8 lg:mt-12">
-                  <div className="text-center">
-                    <div className="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-1">
-                      20%
-                    </div>
-                    <div className={`text-white text-xs xs:text-sm sm:text-base ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
-                      {t('hero.stats.trustedByCompanies')}
-                    </div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-1">
-                      13K
-                    </div>
-                    <div className={`text-white text-xs xs:text-sm sm:text-base ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
-                      {t('hero.stats.projectsCompleted')}
-                    </div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-1">
-                      9+
-                    </div>
-                    <div className={`text-white text-xs xs:text-sm sm:text-base ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
-                      {t('hero.stats.yearsHelping')}
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
 

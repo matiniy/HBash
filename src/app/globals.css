@@ -224,18 +224,18 @@ a {
   color: #144552 !important;
 }
 
-/* Light mode buttons - ensure visibility with darker teal and white text */
+/* Light mode buttons - use bright aqua background with dark text for better readability */
 .light-mode .btn-primary,
 .light-mode button.btn-primary,
 .light-mode .bg-aqua-neon.btn-primary,
 .light-mode button.bg-aqua-neon,
 .light-mode a .btn-primary,
 .light-mode a button.btn-primary {
-  background-color: #144552 !important;
-  color: #FFFFFF !important;
+  background-color: #00FFA3 !important;
+  color: #000000 !important;
 }
 
-/* Ensure button text is always white in light mode, even with text-deep-forest class */
+/* Ensure button text is always dark/black in light mode for readability */
 .light-mode .btn-primary,
 .light-mode button.btn-primary,
 .light-mode a .btn-primary,
@@ -246,7 +246,7 @@ a {
 .light-mode a button.btn-primary *,
 .light-mode .btn-primary.text-deep-forest,
 .light-mode button.btn-primary.text-deep-forest {
-  color: #FFFFFF !important;
+  color: #000000 !important;
 }
 
 /* Override any text color on primary buttons in light mode */
@@ -264,8 +264,8 @@ a {
 .light-mode button.btn-primary:hover,
 .light-mode .bg-aqua-neon.btn-primary:hover,
 .light-mode button.bg-aqua-neon:hover {
-  background-color: #0d2f3a !important;
-  color: #FFFFFF !important;
+  background-color: #00e694 !important;
+  color: #000000 !important;
 }
 
 /* Override inline text-deep-forest classes for buttons with teal backgrounds - HIGH SPECIFICITY */
@@ -659,9 +659,26 @@ a {
   color: #1a1a1a !important;
 }
 
-/* Light mode navbar logo and links */
+/* Light mode navbar logo - ensure it's visible */
 .light-mode nav img {
-  filter: brightness(0) !important;
+  filter: none !important;
+  opacity: 1 !important;
+}
+
+/* Light mode navbar background - override all deep-forest backgrounds */
+.light-mode nav {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Override Tailwind opacity classes for navbar in light mode */
+.light-mode nav[class*="bg-deep-forest"] {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+}
+
+.light-mode nav[class*="bg-deep-forest/95"],
+.light-mode nav[class*="bg-deep-forest/80"] {
+  background-color: rgba(255, 255, 255, 0.95) !important;
 }
 
 /* Light mode ensure all text is dark */
