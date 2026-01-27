@@ -224,18 +224,18 @@ a {
   color: #144552 !important;
 }
 
-/* Light mode buttons - use bright aqua background with dark text for better readability */
+/* Light mode buttons - Primary: dark teal/green background with dark text */
 .light-mode .btn-primary,
 .light-mode button.btn-primary,
 .light-mode .bg-aqua-neon.btn-primary,
 .light-mode button.bg-aqua-neon,
 .light-mode a .btn-primary,
 .light-mode a button.btn-primary {
-  background-color: #00FFA3 !important;
+  background-color: #144552 !important;
   color: #000000 !important;
 }
 
-/* Ensure button text is always dark/black in light mode for readability */
+/* Ensure primary button text is always dark/black in light mode */
 .light-mode .btn-primary,
 .light-mode button.btn-primary,
 .light-mode a .btn-primary,
@@ -249,54 +249,42 @@ a {
   color: #000000 !important;
 }
 
-/* Override any text color on primary buttons in light mode */
-.light-mode button[class*="btn-primary"],
-.light-mode a button[class*="btn-primary"] {
-  color: #FFFFFF !important;
-}
-
-.light-mode button[class*="btn-primary"] *,
-.light-mode a button[class*="btn-primary"] * {
-  color: #FFFFFF !important;
-}
-
 .light-mode .btn-primary:hover,
 .light-mode button.btn-primary:hover,
 .light-mode .bg-aqua-neon.btn-primary:hover,
 .light-mode button.bg-aqua-neon:hover {
-  background-color: #00e694 !important;
+  background-color: #0d2f3a !important;
   color: #000000 !important;
 }
 
-/* Override inline text-deep-forest classes for buttons with teal backgrounds - HIGH SPECIFICITY */
+/* Override all conflicting text color rules for primary buttons in light mode */
+.light-mode button[class*="btn-primary"],
+.light-mode a button[class*="btn-primary"],
+.light-mode button[class*="btn-primary"] *,
+.light-mode a button[class*="btn-primary"] *,
 .light-mode .btn-primary.text-deep-forest,
 .light-mode button.btn-primary.text-deep-forest,
 .light-mode .bg-aqua-neon.text-deep-forest,
 .light-mode button.bg-aqua-neon.text-deep-forest,
 .light-mode button[class*="btn-primary"][class*="text-deep-forest"],
 .light-mode button[class*="bg-aqua-neon"][class*="text-deep-forest"],
-.light-mode button.bg-aqua-neon.btn-primary.text-deep-forest {
-  color: #FFFFFF !important;
-}
-
+.light-mode button.bg-aqua-neon.btn-primary.text-deep-forest,
 .light-mode .btn-primary:hover.text-deep-forest,
 .light-mode button.btn-primary:hover.text-deep-forest,
 .light-mode .bg-aqua-neon:hover.text-deep-forest,
 .light-mode button.bg-aqua-neon:hover.text-deep-forest,
 .light-mode button[class*="btn-primary"]:hover[class*="text-deep-forest"],
 .light-mode button[class*="bg-aqua-neon"]:hover[class*="text-deep-forest"],
-.light-mode button.bg-aqua-neon.btn-primary:hover.text-deep-forest {
-  color: #FFFFFF !important;
-}
-
-/* Override any text color classes on buttons with teal backgrounds */
+.light-mode button.bg-aqua-neon.btn-primary:hover.text-deep-forest,
 .light-mode button[class*="bg-aqua-neon"][class*="text-"],
 .light-mode .bg-aqua-neon button[class*="text-"],
 .light-mode button.bg-aqua-neon[class*="text-"] {
-  color: #FFFFFF !important;
+  color: #000000 !important;
 }
 
-.light-mode .btn-secondary {
+/* Light mode buttons - Secondary: transparent background with dark teal/green text and border */
+.light-mode .btn-secondary,
+.light-mode button.btn-secondary {
   background-color: transparent !important;
   color: #144552 !important;
   border-color: #144552 !important;
@@ -306,24 +294,12 @@ a {
 .light-mode button.btn-secondary:hover {
   background-color: #144552 !important;
   color: #FFFFFF !important;
+  border-color: #144552 !important;
 }
 
 /* Override hover text-deep-forest for secondary buttons */
 .light-mode .btn-secondary:hover.text-deep-forest,
 .light-mode button.btn-secondary:hover.text-deep-forest {
-  color: #FFFFFF !important;
-}
-
-/* All buttons with teal/aqua-neon backgrounds should have white text */
-.light-mode button[class*="bg-aqua-neon"],
-.light-mode .bg-aqua-neon button,
-.light-mode button.bg-aqua-neon {
-  color: #FFFFFF !important;
-}
-
-.light-mode button[class*="bg-aqua-neon"] *,
-.light-mode .bg-aqua-neon button *,
-.light-mode button.bg-aqua-neon * {
   color: #FFFFFF !important;
 }
 
