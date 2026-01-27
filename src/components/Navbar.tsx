@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Button from './Button';
 import LanguageToggle from './LanguageToggle';
+import ThemeToggle from './ThemeToggle';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const Navbar: React.FC = () => {
@@ -24,6 +25,7 @@ const Navbar: React.FC = () => {
   }, []);
 
   const logoSources = [
+    '/images/Logo/Logo.png',
     '/images/Logo/logo.svg',
     '/images/Logo/logo.png',
     '/images/Logo/HBash.svg',
@@ -84,9 +86,7 @@ const Navbar: React.FC = () => {
             <Link href="/listings" className="text-white hover:text-aqua-neon transition-colors">
               {t('nav.listings')}
             </Link>
-            <Link href="/land2" className="text-aqua-neon hover:text-white bg-aqua-neon/10 px-3 py-1.5 rounded-full border border-aqua-neon/30 hover:bg-aqua-neon/20 transition-colors text-sm font-semibold">
-              Test
-            </Link>
+            <ThemeToggle />
             <LanguageToggle />
             <Link href="/contact">
               <Button variant="primary">{t('nav.contact')}</Button>
@@ -136,13 +136,10 @@ const Navbar: React.FC = () => {
               >
                 {t('nav.listings')}
               </Link>
-              <Link
-                href="/land2"
-                className="block px-3 py-3 text-aqua-neon hover:text-white bg-aqua-neon/10 border border-aqua-neon/30 hover:bg-aqua-neon/20 transition-colors rounded-lg mx-3 my-2 font-semibold text-center"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Test (Light Mode)
-              </Link>
+              <div className="px-3 py-3 flex items-center justify-between">
+                <span className="text-white text-sm">Theme:</span>
+                <ThemeToggle />
+              </div>
               <div className="px-3 py-3">
                 <LanguageToggle />
               </div>

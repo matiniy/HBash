@@ -119,6 +119,33 @@ a {
   color: #1a1a1a !important;
 }
 
+/* Dark Mode (Secondary Theme) */
+.dark-mode {
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+  --aqua-neon: #00FFA3; /* Bright aqua for dark mode */
+}
+
+.dark-mode body {
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+}
+
+.dark-mode .bg-deep-forest,
+.dark-mode [class*="bg-deep-forest"] {
+  background-color: #000000 !important;
+}
+
+.dark-mode .text-white,
+.dark-mode [class*="text-white"] {
+  color: #FFFFFF !important;
+}
+
+.dark-mode .bg-black,
+.dark-mode [class*="bg-black"] {
+  background-color: #000000 !important;
+}
+
 .light-mode * {
   color: inherit;
 }
@@ -201,8 +228,35 @@ a {
 .light-mode .btn-primary,
 .light-mode button.btn-primary,
 .light-mode .bg-aqua-neon.btn-primary,
-.light-mode button.bg-aqua-neon {
+.light-mode button.bg-aqua-neon,
+.light-mode a .btn-primary,
+.light-mode a button.btn-primary {
   background-color: #144552 !important;
+  color: #FFFFFF !important;
+}
+
+/* Ensure button text is always white in light mode, even with text-deep-forest class */
+.light-mode .btn-primary,
+.light-mode button.btn-primary,
+.light-mode a .btn-primary,
+.light-mode a button.btn-primary,
+.light-mode .btn-primary *,
+.light-mode button.btn-primary *,
+.light-mode a .btn-primary *,
+.light-mode a button.btn-primary *,
+.light-mode .btn-primary.text-deep-forest,
+.light-mode button.btn-primary.text-deep-forest {
+  color: #FFFFFF !important;
+}
+
+/* Override any text color on primary buttons in light mode */
+.light-mode button[class*="btn-primary"],
+.light-mode a button[class*="btn-primary"] {
+  color: #FFFFFF !important;
+}
+
+.light-mode button[class*="btn-primary"] *,
+.light-mode a button[class*="btn-primary"] * {
   color: #FFFFFF !important;
 }
 

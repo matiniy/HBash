@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Button from '@/components/Button';
@@ -52,20 +53,18 @@ export default function About() {
                 </Button>
               </Link>
             </div>
-            <div className="bg-gradient-to-br from-aqua-neon/20 to-deep-forest/20 rounded-3xl p-6 sm:p-8 h-64 sm:h-80 lg:h-96 flex items-center justify-center">
-              <div className="text-center">
-                <div className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 bg-aqua-neon/30 rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <svg className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-aqua-neon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                  </svg>
-                </div>
-                <h3 className={`text-xl sm:text-2xl font-bold text-white ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
-                  {t('aboutPage.titleHighlight')}
-                </h3>
-                <p className={`text-white/80 text-sm sm:text-base ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
-                  {t('aboutPage.licensedRealtor')}
-                </p>
-              </div>
+            <div className="relative">
+              <Image
+                src="/images/Realtor/realtor-photo.JPG"
+                alt="Haideh Bashash - Dallas Realtor"
+                width={600}
+                height={800}
+                className="w-full h-auto rounded-3xl shadow-2xl object-cover"
+                priority
+                quality={90}
+                placeholder="blur"
+                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
+              />
             </div>
           </div>
         </div>
