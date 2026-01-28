@@ -46,13 +46,13 @@ const Navbar: React.FC = () => {
     'fixed z-50 transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] will-change-transform will-change-opacity nav-glass backdrop-blur-xl',
     isFloating
       ? 'top-[max(1rem,env(safe-area-inset-top))] left-1/2 -translate-x-1/2 w-[94%] sm:w-[92%] md:w-[84%] rounded-full translate-y-0 opacity-100 nav-glass--floating'
-      : 'top-0 left-0 w-full translate-x-0 opacity-100'
+      : 'top-[max(0.75rem,env(safe-area-inset-top))] left-0 w-full translate-x-0 opacity-100'
   ].join(' ');
 
   const innerPadding = isFloating ? 'px-3 sm:px-4' : 'px-3 sm:px-4 lg:px-8';
   const barHeight = isFloating ? 'h-12 sm:h-14' : 'h-14 sm:h-16';
   // Keep logo visually aligned with toggles/nav: slightly smaller than the navbar height
-  const logoHeightClass = isFloating ? 'h-8 sm:h-9' : 'h-9 sm:h-10';
+  const logoHeightClass = isFloating ? 'h-9 sm:h-10' : 'h-10 sm:h-12';
 
   return (
     <nav className={navClasses}>
