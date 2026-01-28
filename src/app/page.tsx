@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
+import Reviews from '@/components/Reviews';
 import About from '@/components/About';
 import ContactForm from '@/components/ContactForm';
 import Credentials from '@/components/Credentials';
@@ -12,14 +13,12 @@ import PageLoader from '@/components/PageLoader';
 
 // Hero images array - used for preloading
 const heroImages = [
-  '/images/hero/1_photo_01_dte.jpg',
-  '/images/hero/2_photo_2.jpg',
-  '/images/hero/13_photo_12.jpg',
-  '/images/hero/20_photo_22.jpg',
-  '/images/hero/21_photo_23.jpg',
-  '/images/hero/54_photo_56.jpg',
-  '/images/hero/59_photo_59.jpg',
-  '/images/hero/62A73F24-0FF0-45FB-8099-165430CA0911.JPG',
+  '/images/hero/1.JPG',
+  '/images/hero/2.jpg',
+  '/images/hero/3.jpg',
+  '/images/hero/4.jpg',
+  '/images/hero/5.jpg',
+  '/images/hero/6.jpg',
 ];
 
 export default function Home() {
@@ -44,6 +43,7 @@ export default function Home() {
       >
         <Navbar />
         <Hero />
+        <Reviews />
         <About />
         <ContactForm />
         <Credentials />
