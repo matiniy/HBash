@@ -10,7 +10,7 @@ export default function Contact() {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="pt-20 pb-12 sm:pb-16 bg-deep-forest">
+      <section className="pt-[150px] pb-[50px] bg-deep-forest">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6">

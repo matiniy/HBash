@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 import Button from './Button';
 import LanguageToggle from './LanguageToggle';
 import ThemeToggle from './ThemeToggle';
@@ -13,6 +14,7 @@ const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [logoIndex, setLogoIndex] = useState(0);
   const [isFloating, setIsFloating] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const onScroll = () => {
@@ -42,6 +44,12 @@ const Navbar: React.FC = () => {
     setLogoIndex((prev) => (prev + 1 < logoSources.length ? prev + 1 : prev));
   };
 
+  const isActive = (href: string) => {
+    if (!pathname) return false;
+    if (href === '/') return pathname === '/';
+    return pathname === href || pathname.startsWith(`${href}/`);
+  };
+
   const navClasses = [
     'fixed z-50 transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] will-change-transform will-change-opacity nav-glass',
     isFloating
@@ -63,7 +71,7 @@ const Navbar: React.FC = () => {
             <Link href="/" className="flex items-center gap-2" style={{ padding: '5px' }}>
               {logoIndex < logoSources.length ? (
                 <span
-                  className={`relative ${logoHeightClass} aspect-square rounded-full overflow-hidden`}
+                  className={`nav-logo-bg relative ${logoHeightClass} aspect-square rounded-full overflow-hidden`}
                   aria-hidden="true"
                 >
                   <Image
@@ -90,13 +98,36 @@ const Navbar: React.FC = () => {
 
           {/* Desktop Navigation */}
           <div className="ml-auto hidden md:flex items-center space-x-4 lg:space-x-6">
-            <Link href="/about" className="nav-link hover:text-aqua-neon transition-colors">
+            <Link
+              href="/"
+              className={`nav-link nav-link-underline hover:text-aqua-neon transition-colors ${
+                isActive('/') ? 'nav-link-active' : ''
+              }`}
+            >
+              {t('nav.home')}
+            </Link>
+            <Link
+              href="/about"
+              className={`nav-link nav-link-underline hover:text-aqua-neon transition-colors ${
+                isActive('/about') ? 'nav-link-active' : ''
+              }`}
+            >
               {t('nav.about')}
             </Link>
-            <Link href="/services" className="nav-link hover:text-aqua-neon transition-colors">
+            <Link
+              href="/services"
+              className={`nav-link nav-link-underline hover:text-aqua-neon transition-colors ${
+                isActive('/services') ? 'nav-link-active' : ''
+              }`}
+            >
               {t('nav.services')}
             </Link>
-            <Link href="/listings" className="nav-link hover:text-aqua-neon transition-colors">
+            <Link
+              href="/listings"
+              className={`nav-link nav-link-underline hover:text-aqua-neon transition-colors ${
+                isActive('/listings') ? 'nav-link-active' : ''
+              }`}
+            >
               {t('nav.listings')}
             </Link>
             <Link href="/contact">
@@ -129,22 +160,37 @@ const Navbar: React.FC = () => {
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 rounded-b-2xl">
               <Link
+                href="/"
+                className={`block px-3 py-3 nav-link nav-link-underline hover:text-aqua-neon transition-colors ${
+                  isActive('/') ? 'nav-link-active' : ''
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {t('nav.home')}
+              </Link>
+              <Link
                 href="/about"
-                className="block px-3 py-3 nav-link hover:text-aqua-neon transition-colors"
+                className={`block px-3 py-3 nav-link nav-link-underline hover:text-aqua-neon transition-colors ${
+                  isActive('/about') ? 'nav-link-active' : ''
+                }`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 {t('nav.about')}
               </Link>
               <Link
                 href="/services"
-                className="block px-3 py-3 nav-link hover:text-aqua-neon transition-colors"
+                className={`block px-3 py-3 nav-link nav-link-underline hover:text-aqua-neon transition-colors ${
+                  isActive('/services') ? 'nav-link-active' : ''
+                }`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 {t('nav.services')}
               </Link>
               <Link
                 href="/listings"
-                className="block px-3 py-3 nav-link hover:text-aqua-neon transition-colors"
+                className={`block px-3 py-3 nav-link nav-link-underline hover:text-aqua-neon transition-colors ${
+                  isActive('/listings') ? 'nav-link-active' : ''
+                }`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 {t('nav.listings')}

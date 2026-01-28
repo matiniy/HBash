@@ -172,7 +172,7 @@ a {
 
 /* Navbar - minimal transparency, no blur effect */
 .nav-glass {
-  background: rgba(0, 0, 0, 0.05) !important;
+  background: rgba(0, 0, 0, 0.6) !important;
   border: none !important;
   box-shadow: none !important;
   backdrop-filter: none !important;
@@ -181,7 +181,7 @@ a {
 
 /* Navbar inner container styling for solid text and no gradient clip */
 .nav-inner {
-  background-color: rgba(148, 148, 148, 0.3) !important;
+  background-color: transparent !important;
   background-image: none !important;
   background-clip: unset !important;
   -webkit-background-clip: unset !important;
@@ -192,14 +192,53 @@ a {
   color: rgba(240, 252, 255, 1);
 }
 
+.nav-link-underline {
+  position: relative;
+  display: inline-flex;
+}
+
+.nav-link-underline::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -6px;
+  height: 2px;
+  background: var(--aqua-neon);
+  transform: scaleX(0);
+  transform-origin: left;
+  opacity: 0;
+  transition: transform 240ms ease, opacity 240ms ease;
+}
+
+.nav-link-underline:hover::after,
+.nav-link-active::after {
+  transform: scaleX(1);
+  opacity: 1;
+}
+
+/* Navbar logo backing for dark theme visibility */
+.nav-logo-bg {
+  background: rgba(120, 120, 120, 0.35);
+}
+
+.light-mode .nav-logo-bg {
+  background: transparent;
+}
+
 .nav-contact-button {
   font-family: "Segoe UI Symbol";
   font-size: 14px;
   font-weight: 500;
+  color: #000 !important;
   width: 210px;
   padding: 10px 24px;
   border-radius: 8px;
   box-shadow: none !important;
+}
+
+.nav-contact-button * {
+  color: #000 !important;
 }
 
 .nav-contact-button:hover {
@@ -208,7 +247,7 @@ a {
 
 /* Slightly stronger when floating (scrolled) */
 .nav-glass--floating {
-  background: rgba(0, 0, 0, 0.05) !important;
+  background: rgba(0, 0, 0, 0.6) !important;
   border: none !important;
   box-shadow: none !important;
   backdrop-filter: none !important;
@@ -217,7 +256,7 @@ a {
 
 /* Light mode: match page background (#E1E1E1) with 5% opacity */
 .light-mode .nav-glass {
-  background: rgba(225, 225, 225, 0.05) !important;
+  background: rgba(225, 225, 225, 0.7) !important;
   border: none !important;
   box-shadow: none !important;
   backdrop-filter: none !important;
@@ -225,7 +264,7 @@ a {
 }
 
 .light-mode .nav-glass--floating {
-  background: rgba(225, 225, 225, 0.05) !important;
+  background: rgba(225, 225, 225, 0.7) !important;
   border: none !important;
   box-shadow: none !important;
   backdrop-filter: none !important;
@@ -234,7 +273,15 @@ a {
 
 .light-mode nav a,
 .light-mode nav button {
-  color: #1a1a1a !important;
+  color: #0f172a !important;
+}
+
+.light-mode .nav-contact-button {
+  color: #fff !important;
+}
+
+.light-mode .nav-contact-button * {
+  color: #fff !important;
 }
 
 .light-mode nav a:hover,

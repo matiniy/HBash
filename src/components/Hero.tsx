@@ -55,7 +55,7 @@ const Hero: React.FC = () => {
           <div className="flex items-end justify-center min-h-screen pt-24 pb-10 sm:pb-12">
             {/* Centered hero card */}
             {/* Negative bottom margin so the marquee overlaps the bottom of the card */}
-            <div className="w-full max-w-[600px] sm:max-w-[680px] md:max-w-[760px] mb-[-18px] sm:mb-[-24px]">
+            <div className="w-full max-w-[603px] mb-[-18px] sm:mb-[-24px]">
               {/* Add extra bottom padding so buttons stay above the marquee while the card still overlaps */}
               <div className="hero-glass-card backdrop-blur-lg rounded-2xl p-4 xs:p-5 sm:p-6 pb-10 sm:pb-12 shadow-2xl text-center min-h-[180px] sm:min-h-[200px]">
                 <h1 className={`text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light text-white leading-tight font-oxygen ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
