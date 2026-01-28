@@ -52,9 +52,10 @@ const Hero: React.FC = () => {
       <div className="w-full px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-7xl mx-auto">
           {/* Push hero card closer to marquee: align to bottom with safe padding */}
-          <div className="flex items-end justify-center min-h-screen pt-24 pb-28 sm:pb-32">
+          <div className="flex items-end justify-center min-h-screen pt-24 pb-10 sm:pb-12">
             {/* Centered hero card */}
-            <div className="w-full max-w-[560px] sm:max-w-[620px] md:max-w-[680px]">
+            {/* Negative bottom margin so the marquee overlaps the bottom of the card */}
+            <div className="w-full max-w-[560px] sm:max-w-[620px] md:max-w-[680px] mb-[-44px] sm:mb-[-56px]">
               <div className="hero-glass-card backdrop-blur-lg rounded-2xl p-4 xs:p-5 sm:p-6 shadow-2xl text-center">
                 <h1 className={`text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light text-white leading-tight font-oxygen ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
                   {t('hero.title')}{' '}
@@ -84,7 +85,7 @@ const Hero: React.FC = () => {
       </div>
 
       {/* Full Width Marquee Strip */}
-      <div className="absolute bottom-0 left-0 w-full">
+      <div className="absolute bottom-0 left-0 w-full z-20">
         <section className="bg-aqua-neon py-3 sm:py-4 overflow-hidden">
             <div className={`flex whitespace-nowrap marquee-slow ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
               {/* Content block 1 */}
