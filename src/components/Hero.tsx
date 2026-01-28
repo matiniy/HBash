@@ -46,6 +46,9 @@ const Hero: React.FC = () => {
         <div className="absolute inset-0 hero-image-overlay z-[1]"></div>
       </div>
 
+      {/* Top scrim to keep navbar readable on bright images (no navbar background) */}
+      <div className="absolute top-0 left-0 w-full h-24 sm:h-28 hero-top-scrim z-[5] pointer-events-none" />
+
       <div className="w-full px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center justify-center min-h-screen py-12">
