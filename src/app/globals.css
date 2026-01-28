@@ -87,7 +87,7 @@ a {
 .btn-primary:hover {
   background-color: #00e694;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 255, 163, 0.3);
+  box-shadow: none;
 }
 
 .btn-secondary:hover {
@@ -177,6 +177,33 @@ a {
   box-shadow: none !important;
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
+}
+
+/* Navbar inner container styling for solid text and no gradient clip */
+.nav-inner {
+  background-color: rgba(148, 148, 148, 0.3) !important;
+  background-image: none !important;
+  background-clip: unset !important;
+  -webkit-background-clip: unset !important;
+  color: rgba(26, 26, 26, 1) !important;
+}
+
+.nav-link {
+  color: rgba(240, 252, 255, 1);
+}
+
+.nav-contact-button {
+  font-family: "Segoe UI Symbol";
+  font-size: 14px;
+  font-weight: 500;
+  width: 210px;
+  padding: 10px 24px;
+  border-radius: 8px;
+  box-shadow: none !important;
+}
+
+.nav-contact-button:hover {
+  box-shadow: none !important;
 }
 
 /* Slightly stronger when floating (scrolled) */

@@ -59,8 +59,8 @@ const Hero: React.FC = () => {
               {/* Add extra bottom padding so buttons stay above the marquee while the card still overlaps */}
               <div className="hero-glass-card backdrop-blur-lg rounded-2xl p-4 xs:p-5 sm:p-6 pb-10 sm:pb-12 shadow-2xl text-center min-h-[180px] sm:min-h-[200px]">
                 <h1 className={`text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light text-white leading-tight font-oxygen ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
-                  {t('hero.title')}{' '}
-                  <span className="text-aqua-neon font-bold italic">{t('hero.dallas')}</span>
+                  {t('hero.title')}
+                  <span className="block text-aqua-neon font-bold italic">{t('hero.dallas')}</span>
                 </h1>
 
                 <div className="flex flex-col sm:flex-row gap-4 mt-6 sm:mt-8 items-center justify-center">

@@ -56,8 +56,8 @@ const Navbar: React.FC = () => {
 
   return (
     <nav className={navClasses}>
-      <div className={`max-w-7xl mx-auto ${innerPadding}`}>
-        <div className={`flex justify-between items-center ${barHeight}`}>
+      <div className={`max-w-7xl mx-auto ${innerPadding} nav-inner`}>
+        <div className={`flex w-full items-center ${barHeight}`}>
           {/* Left cluster: Logo + Theme + Language */}
           <div className="flex items-center gap-2">
             <Link href="/" className="flex items-center gap-2" style={{ padding: '5px' }}>
@@ -89,23 +89,25 @@ const Navbar: React.FC = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-4 lg:space-x-6">
-            <Link href="/about" className="text-white hover:text-aqua-neon transition-colors">
+          <div className="ml-auto hidden md:flex items-center space-x-4 lg:space-x-6">
+            <Link href="/about" className="nav-link hover:text-aqua-neon transition-colors">
               {t('nav.about')}
             </Link>
-            <Link href="/services" className="text-white hover:text-aqua-neon transition-colors">
+            <Link href="/services" className="nav-link hover:text-aqua-neon transition-colors">
               {t('nav.services')}
             </Link>
-            <Link href="/listings" className="text-white hover:text-aqua-neon transition-colors">
+            <Link href="/listings" className="nav-link hover:text-aqua-neon transition-colors">
               {t('nav.listings')}
             </Link>
             <Link href="/contact">
-              <Button variant="primary">{t('nav.contact')}</Button>
+              <Button variant="primary" className="nav-contact-button">
+                {t('nav.contact')}
+              </Button>
             </Link>
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="ml-auto md:hidden">
             <button
               onClick={toggleMenu}
               className="p-3 text-white hover:text-aqua-neon focus:outline-none focus:text-aqua-neon"
@@ -128,21 +130,21 @@ const Navbar: React.FC = () => {
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 rounded-b-2xl">
               <Link
                 href="/about"
-                className="block px-3 py-3 text-white hover:text-aqua-neon transition-colors"
+                className="block px-3 py-3 nav-link hover:text-aqua-neon transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {t('nav.about')}
               </Link>
               <Link
                 href="/services"
-                className="block px-3 py-3 text-white hover:text-aqua-neon transition-colors"
+                className="block px-3 py-3 nav-link hover:text-aqua-neon transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {t('nav.services')}
               </Link>
               <Link
                 href="/listings"
-                className="block px-3 py-3 text-white hover:text-aqua-neon transition-colors"
+                className="block px-3 py-3 nav-link hover:text-aqua-neon transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {t('nav.listings')}
@@ -156,7 +158,9 @@ const Navbar: React.FC = () => {
               </div>
               <div className="px-3 py-2">
                 <Link href="/contact" onClick={() => setIsMenuOpen(false)}>
-                  <Button variant="primary" className="w-full">{t('nav.contact')}</Button>
+                  <Button variant="primary" className="w-full nav-contact-button">
+                    {t('nav.contact')}
+                  </Button>
                 </Link>
               </div>
             </div>
