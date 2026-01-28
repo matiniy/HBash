@@ -60,15 +60,19 @@ const Navbar: React.FC = () => {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2" style={{ padding: '5px' }}>
             {logoIndex < logoSources.length ? (
-              <Image
-                src={logoSources[logoIndex]}
-                alt="Haideh Bashash"
-                width={320}
-                height={80}
-                priority
-                className={`${logoHeightClass} w-auto transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)]`}
-                onError={handleLogoError}
-              />
+              <span
+                className={`relative ${logoHeightClass} aspect-square rounded-full overflow-hidden`}
+                aria-hidden="true"
+              >
+                <Image
+                  src={logoSources[logoIndex]}
+                  alt="Haideh Bashash"
+                  fill
+                  priority
+                  className="object-contain"
+                  onError={handleLogoError}
+                />
+              </span>
             ) : (
               <span className="text-xl sm:text-2xl font-semibold text-white">Haideh Bashash</span>
             )}
