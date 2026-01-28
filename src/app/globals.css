@@ -170,32 +170,39 @@ a {
   color: #4a4a4a !important;
 }
 
-/* Navbar glass (applies in both themes) */
+/* Navbar - minimal transparency, no blur effect */
 .nav-glass {
-  /* Minimum tint (not 0) so imagery shows through */
-  background: rgba(0, 0, 0, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.04);
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.16);
+  background: rgba(0, 0, 0, 0.05) !important;
+  border: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
 }
 
 /* Slightly stronger when floating (scrolled) */
 .nav-glass--floating {
-  background: rgba(0, 0, 0, 0.02);
-  border-color: rgba(255, 255, 255, 0.05);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
+  background: rgba(0, 0, 0, 0.05) !important;
+  border: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
 }
 
-/* Light mode: match page background (#E1E1E1) with glossy opacity */
+/* Light mode: match page background (#E1E1E1) with 5% opacity */
 .light-mode .nav-glass {
-  background: rgba(225, 225, 225, 0.02);
-  border-color: rgba(0, 0, 0, 0.06);
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+  background: rgba(225, 225, 225, 0.05) !important;
+  border: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
 }
 
 .light-mode .nav-glass--floating {
-  background: rgba(225, 225, 225, 0.02);
-  border-color: rgba(0, 0, 0, 0.07);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.10);
+  background: rgba(225, 225, 225, 0.05) !important;
+  border: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
 }
 
 .light-mode nav a,
