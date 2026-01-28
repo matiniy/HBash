@@ -170,9 +170,12 @@ a {
   color: #4a4a4a !important;
 }
 
-/* Light mode navbar - transparent by default, background only when floating */
+/* Light mode navbar - fully transparent, no background, no border */
 .light-mode nav {
-  border-color: rgba(0, 0, 0, 0.1) !important;
+  background-color: transparent !important;
+  border: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
 }
 
 .light-mode nav a,
@@ -661,16 +664,27 @@ a {
   opacity: 1 !important;
 }
 
-/* Light mode navbar background - only apply when navbar has background class (floating state) */
-/* Override Tailwind opacity classes for navbar in light mode - only when floating */
-.light-mode nav[class*="bg-deep-forest"] {
-  background-color: rgba(255, 255, 255, 0) !important;
-  border-color: rgba(0, 0, 0, 0.1) !important;
+/* Light mode navbar - force transparent for all states */
+.light-mode nav[class*="bg-deep-forest"],
+.light-mode nav[class*="bg-deep-forest/95"],
+.light-mode nav[class*="bg-deep-forest/80"],
+.light-mode nav[class*="backdrop-blur"],
+.light-mode nav[class*="border"] {
+  background-color: transparent !important;
+  border: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  box-shadow: none !important;
 }
 
-.light-mode nav[class*="bg-deep-forest/95"],
-.light-mode nav[class*="bg-deep-forest/80"] {
-  background-color: rgba(255, 255, 255, 0.95) !important;
+/* Light mode mobile menu - also transparent */
+.light-mode nav div[class*="bg-deep-forest"],
+.light-mode nav div[class*="backdrop-blur"],
+.light-mode nav div[class*="border"] {
+  background-color: transparent !important;
+  border: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
 }
 
 /* Light mode ensure all text is dark */
