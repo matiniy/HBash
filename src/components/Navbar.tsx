@@ -57,27 +57,35 @@ const Navbar: React.FC = () => {
     <nav className={navClasses}>
       <div className={`max-w-7xl mx-auto ${innerPadding}`}>
         <div className={`flex justify-between items-center ${barHeight}`}>
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-2" style={{ padding: '5px' }}>
-            {logoIndex < logoSources.length ? (
-              <span
-                className={`relative ${logoHeightClass} aspect-square rounded-full overflow-hidden`}
-                aria-hidden="true"
-              >
-                <Image
-                  src={logoSources[logoIndex]}
-                  alt="Haideh Bashash"
-                  fill
-                  priority
-                  className="object-contain"
-                  onError={handleLogoError}
-                />
-              </span>
-            ) : (
-              <span className="text-xl sm:text-2xl font-semibold text-white">Haideh Bashash</span>
-            )}
-            <span className="sr-only">Haideh Bashash</span>
-          </Link>
+          {/* Left cluster: Logo + Theme + Language */}
+          <div className="flex items-center gap-2">
+            <Link href="/" className="flex items-center gap-2" style={{ padding: '5px' }}>
+              {logoIndex < logoSources.length ? (
+                <span
+                  className={`relative ${logoHeightClass} aspect-square rounded-full overflow-hidden`}
+                  aria-hidden="true"
+                >
+                  <Image
+                    src={logoSources[logoIndex]}
+                    alt="Haideh Bashash"
+                    fill
+                    priority
+                    className="object-contain"
+                    onError={handleLogoError}
+                  />
+                </span>
+              ) : (
+                <span className="text-xl sm:text-2xl font-semibold text-white">Haideh Bashash</span>
+              )}
+              <span className="sr-only">Haideh Bashash</span>
+            </Link>
+
+            {/* Desktop toggles next to logo (smaller) */}
+            <div className="hidden md:flex items-center gap-2 scale-[0.88] origin-left">
+              <ThemeToggle />
+              <LanguageToggle />
+            </div>
+          </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-4 lg:space-x-6">
@@ -90,8 +98,6 @@ const Navbar: React.FC = () => {
             <Link href="/listings" className="text-white hover:text-aqua-neon transition-colors">
               {t('nav.listings')}
             </Link>
-            <ThemeToggle />
-            <LanguageToggle />
             <Link href="/contact">
               <Button variant="primary">{t('nav.contact')}</Button>
             </Link>
