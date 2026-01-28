@@ -57,7 +57,7 @@ const Hero: React.FC = () => {
                   <span className="text-aqua-neon font-bold italic">{t('hero.dallas')}</span>
                 </h1>
 
-                <div className="flex flex-col sm:flex-row gap-4 mt-6 sm:mt-8">
+                <div className="flex flex-col sm:flex-row gap-4 mt-6 sm:mt-8 items-center justify-center">
                   {/* Rebuilt secondary CTA button explicitly so text is always green */}
                   <Link href="/listings">
                     <button
