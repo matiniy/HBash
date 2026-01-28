@@ -170,12 +170,31 @@ a {
   color: #4a4a4a !important;
 }
 
-/* Light mode navbar - fully transparent, no background, no border */
-.light-mode nav {
-  background-color: transparent !important;
-  border: none !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
+/* Navbar glass (applies in both themes) */
+.nav-glass {
+  background: rgba(0, 0, 0, 0.22);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.22);
+}
+
+/* Slightly stronger when floating (scrolled) */
+.nav-glass--floating {
+  background: rgba(0, 0, 0, 0.32);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.28);
+}
+
+/* Light mode: match page background (#E1E1E1) with glossy opacity */
+.light-mode .nav-glass {
+  background: rgba(225, 225, 225, 0.55);
+  border-color: rgba(0, 0, 0, 0.10);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.12);
+}
+
+.light-mode .nav-glass--floating {
+  background: rgba(225, 225, 225, 0.70);
+  border-color: rgba(0, 0, 0, 0.12);
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.16);
 }
 
 .light-mode nav a,
@@ -679,28 +698,7 @@ a {
   opacity: 1 !important;
 }
 
-/* Light mode navbar - force transparent for all states */
-.light-mode nav[class*="bg-deep-forest"],
-.light-mode nav[class*="bg-deep-forest/95"],
-.light-mode nav[class*="bg-deep-forest/80"],
-.light-mode nav[class*="backdrop-blur"],
-.light-mode nav[class*="border"] {
-  background-color: transparent !important;
-  border: none !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-  box-shadow: none !important;
-}
-
-/* Light mode mobile menu - also transparent */
-.light-mode nav div[class*="bg-deep-forest"],
-.light-mode nav div[class*="backdrop-blur"],
-.light-mode nav div[class*="border"] {
-  background-color: transparent !important;
-  border: none !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-}
+/* (Removed) light-mode navbar forced transparency overrides */
 
 /* Light mode ensure all text is dark */
 .light-mode .text-white,

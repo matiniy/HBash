@@ -43,9 +43,9 @@ const Navbar: React.FC = () => {
   };
 
   const navClasses = [
-    'fixed z-50 transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] will-change-transform will-change-opacity',
+    'fixed z-50 transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] will-change-transform will-change-opacity nav-glass backdrop-blur-xl',
     isFloating
-      ? 'top-[max(1rem,env(safe-area-inset-top))] left-1/2 -translate-x-1/2 w-[94%] sm:w-[92%] md:w-[84%] rounded-full translate-y-0 opacity-100'
+      ? 'top-[max(1rem,env(safe-area-inset-top))] left-1/2 -translate-x-1/2 w-[94%] sm:w-[92%] md:w-[84%] rounded-full translate-y-0 opacity-100 nav-glass--floating'
       : 'top-0 left-0 w-full translate-x-0 opacity-100'
   ].join(' ');
 
