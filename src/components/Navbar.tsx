@@ -51,7 +51,8 @@ const Navbar: React.FC = () => {
 
   const innerPadding = isFloating ? 'px-3 sm:px-4' : 'px-3 sm:px-4 lg:px-8';
   const barHeight = isFloating ? 'h-12 sm:h-14' : 'h-14 sm:h-16';
-  const logoHeightClass = isFloating ? 'h-10 sm:h-12' : 'h-12 sm:h-16';
+  // Keep logo visually aligned with toggles/nav: slightly smaller than the navbar height
+  const logoHeightClass = isFloating ? 'h-8 sm:h-9' : 'h-9 sm:h-10';
 
   return (
     <nav className={navClasses}>
