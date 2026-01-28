@@ -585,7 +585,7 @@ a {
 .light-mode .hero-glass-card.backdrop-blur-lg {
   background: rgba(225, 225, 225, 0.5) !important; /* 50% opacity glass */
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.16) !important;
-  border: 1px solid rgba(225, 225, 225, 0.9) !important;
+  border: none !important;
 }
 
 /* Light mode border colors */
