@@ -46,7 +46,7 @@ const Navbar: React.FC = () => {
     'fixed z-50 transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] will-change-transform will-change-opacity',
     isFloating
       ? 'top-[max(1rem,env(safe-area-inset-top))] left-1/2 -translate-x-1/2 w-[94%] sm:w-[92%] md:w-[84%] rounded-full border border-aqua-neon/20 bg-deep-forest/80 backdrop-blur-xl shadow-xl ring-1 ring-black/10 translate-y-0 opacity-100'
-      : 'top-0 left-0 w-full translate-x-0 bg-deep-forest/95 backdrop-blur-sm border-b border-aqua-neon/20 opacity-100'
+      : 'top-0 left-0 w-full translate-x-0 backdrop-blur-sm border-b border-aqua-neon/20 opacity-100'
   ].join(' ');
 
   const innerPadding = isFloating ? 'px-3 sm:px-4' : 'px-3 sm:px-4 lg:px-8';

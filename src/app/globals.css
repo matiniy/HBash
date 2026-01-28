@@ -170,9 +170,8 @@ a {
   color: #4a4a4a !important;
 }
 
-/* Light mode navbar */
+/* Light mode navbar - transparent by default, background only when floating */
 .light-mode nav {
-  background-color: rgba(255, 255, 255, 0.95) !important;
   border-color: rgba(0, 0, 0, 0.1) !important;
 }
 
@@ -662,15 +661,11 @@ a {
   opacity: 1 !important;
 }
 
-/* Light mode navbar background - override all deep-forest backgrounds */
-.light-mode nav {
-  background-color: rgba(255, 255, 255, 0.95) !important;
-  border-color: rgba(0, 0, 0, 0.1) !important;
-}
-
-/* Override Tailwind opacity classes for navbar in light mode */
+/* Light mode navbar background - only apply when navbar has background class (floating state) */
+/* Override Tailwind opacity classes for navbar in light mode - only when floating */
 .light-mode nav[class*="bg-deep-forest"] {
   background-color: rgba(255, 255, 255, 0.95) !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
 }
 
 .light-mode nav[class*="bg-deep-forest/95"],
