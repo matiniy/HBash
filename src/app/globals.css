@@ -109,13 +109,13 @@ a {
 
 /* Light Mode (Primary/Default Theme) */
 .light-mode {
-  background-color: #FAFAFA !important;
+  background-color: #E1E1E1 !important;
   color: #1a1a1a !important;
   --aqua-neon: #144552; /* Darker teal for light mode only */
 }
 
 .light-mode body {
-  background-color: #FAFAFA !important;
+  background-color: #E1E1E1 !important;
   color: #1a1a1a !important;
 }
 
@@ -152,12 +152,12 @@ a {
 
 .light-mode .bg-deep-forest,
 .light-mode [class*="bg-deep-forest"] {
-  background-color: #FAFAFA !important;
+  background-color: #E1E1E1 !important;
 }
 
 .light-mode .bg-black,
 .light-mode [class*="bg-black"] {
-  background-color: #F5F5F5 !important;
+  background-color: #E1E1E1 !important;
 }
 
 .light-mode .text-white,
@@ -191,28 +191,28 @@ a {
 /* Light mode hero section */
 .light-mode .bg-black\/40,
 .light-mode [class*="bg-black/40"] {
-  background-color: rgba(255, 255, 255, 0.9) !important;
+  background-color: rgba(225, 225, 225, 0.9) !important;
 }
 
 .light-mode .bg-black\/20,
 .light-mode [class*="bg-black/20"] {
-  background-color: rgba(255, 255, 255, 0.7) !important;
+  background-color: rgba(225, 225, 225, 0.7) !important;
 }
 
 /* Light mode about section */
 .light-mode .bg-deep-forest\/30,
 .light-mode [class*="bg-deep-forest/30"] {
-  background-color: rgba(255, 255, 255, 0.5) !important;
+  background-color: rgba(225, 225, 225, 0.5) !important;
 }
 
 .light-mode .bg-deep-forest\/20,
 .light-mode [class*="bg-deep-forest/20"] {
-  background-color: rgba(255, 255, 255, 0.4) !important;
+  background-color: rgba(225, 225, 225, 0.4) !important;
 }
 
 /* Light mode footer */
 .light-mode footer {
-  background-color: #F5F5F5 !important;
+  background-color: #E1E1E1 !important;
 }
 
 .light-mode footer h3,
@@ -346,7 +346,7 @@ a {
 
 /* Light mode scrollbar */
 .light-mode ::-webkit-scrollbar-track {
-  background: #F5F5F5;
+  background: #E1E1E1;
 }
 
 .light-mode ::-webkit-scrollbar-thumb {
@@ -371,7 +371,7 @@ a {
 /* Light mode contact form */
 .light-mode input,
 .light-mode textarea {
-  background-color: #FFFFFF !important;
+  background-color: #E1E1E1 !important;
   color: #1a1a1a !important;
   border-color: rgba(0, 0, 0, 0.2) !important;
 }
@@ -451,11 +451,11 @@ a {
 
 /* Light mode page loader */
 .light-mode .bg-deep-forest {
-  background-color: #FAFAFA !important;
+  background-color: #E1E1E1 !important;
 }
 
 .light-mode .fixed.inset-0.bg-deep-forest {
-  background-color: #FAFAFA !important;
+  background-color: #E1E1E1 !important;
 }
 
 .light-mode .fixed.inset-0.bg-deep-forest h1,
@@ -471,22 +471,22 @@ a {
 /* Light mode testimonial cards */
 .light-mode .backdrop-blur-sm,
 .light-mode .backdrop-blur-lg {
-  background-color: rgba(255, 255, 255, 0.9) !important;
+  background-color: rgba(225, 225, 225, 0.9) !important;
 }
 
 /* Light mode section backgrounds */
 .light-mode section.bg-deep-forest {
-  background-color: #FAFAFA !important;
+  background-color: #E1E1E1 !important;
 }
 
 .light-mode section.bg-black {
-  background-color: #F5F5F5 !important;
+  background-color: #E1E1E1 !important;
 }
 
 /* Light mode hero text overlays */
 .light-mode .bg-black\/50,
 .light-mode [class*="bg-black/50"] {
-  background-color: rgba(255, 255, 255, 0.85) !important;
+  background-color: rgba(225, 225, 225, 0.85) !important;
 }
 
 /* Light mode hero text */
@@ -524,19 +524,19 @@ a {
 /* Light mode credentials badges */
 .light-mode .bg-gray-800,
 .light-mode [class*="bg-gray-800"] {
-  background-color: #F5F5F5 !important;
+  background-color: #E1E1E1 !important;
   color: #1a1a1a !important;
 }
 
 /* Light mode overlay adjustments */
 .light-mode .bg-deep-forest\/30,
 .light-mode [class*="bg-deep-forest/30"] {
-  background-color: rgba(255, 255, 255, 0.6) !important;
+  background-color: rgba(225, 225, 225, 0.6) !important;
 }
 
 .light-mode .bg-deep-forest\/20,
 .light-mode [class*="bg-deep-forest/20"] {
-  background-color: rgba(255, 255, 255, 0.5) !important;
+  background-color: rgba(225, 225, 225, 0.5) !important;
 }
 
 /* Light mode glass effects */
@@ -544,14 +544,14 @@ a {
 .light-mode .backdrop-blur-lg,
 .light-mode .backdrop-blur-md,
 .light-mode .backdrop-blur-sm {
-  background-color: rgba(255, 255, 255, 0.9) !important;
+  background-color: rgba(225, 225, 225, 0.9) !important;
 }
 
 /* Re-apply custom background for hero glass card so blur doesn't become solid */
 .light-mode .hero-glass-card.backdrop-blur-lg {
-  background: rgba(255, 255, 255, 0.5) !important; /* 50% opacity glass */
+  background: rgba(225, 225, 225, 0.5) !important; /* 50% opacity glass */
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.16) !important;
-  border: 1px solid rgba(255, 255, 255, 0.9) !important;
+  border: 1px solid rgba(225, 225, 225, 0.9) !important;
 }
 
 /* Light mode border colors */
@@ -603,23 +603,23 @@ a {
 
 /* Light mode hero desktop overlay */
 .light-mode .bg-deep-forest.z-\[1\] {
-  background-color: rgba(255, 255, 255, 0.95) !important;
+  background-color: rgba(225, 225, 225, 0.95) !important;
 }
 
 /* Light mode hero mobile overlay */
 .light-mode .bg-black\/50.z-\[1\] {
-  background-color: rgba(255, 255, 255, 0.7) !important;
+  background-color: rgba(225, 225, 225, 0.7) !important;
 }
 
 /* Light mode hero glass box */
 .light-mode .bg-black\/40.backdrop-blur-lg {
-  background-color: rgba(255, 255, 255, 0.7) !important; /* more transparent so image shows through */
+  background-color: rgba(225, 225, 225, 0.7) !important; /* more transparent so image shows through */
   border: 1px solid rgba(0, 0, 0, 0.08) !important;
 }
 
 /* Light mode credentials section background */
 .light-mode section.bg-deep-forest {
-  background-color: #FAFAFA !important;
+  background-color: #E1E1E1 !important;
 }
 
 /* Light mode credentials cards */
@@ -636,17 +636,17 @@ a {
 
 /* Light mode about section background image overlay */
 .light-mode .bg-deep-forest\/30 {
-  background-color: rgba(255, 255, 255, 0.6) !important;
+  background-color: rgba(225, 225, 225, 0.6) !important;
 }
 
 /* Light mode about section glass box */
 .light-mode .bg-deep-forest\/20 {
-  background-color: rgba(255, 255, 255, 0.7) !important;
+  background-color: rgba(225, 225, 225, 0.7) !important;
 }
 
 /* Light mode contact form section */
 .light-mode section:has(form) {
-  background-color: #FAFAFA !important;
+  background-color: #E1E1E1 !important;
 }
 
 /* Light mode stats numbers */
