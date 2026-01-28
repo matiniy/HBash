@@ -64,22 +64,19 @@ const HeroCarousel: React.FC<HeroCarouselProps> = ({
   return (
     <div className="absolute inset-0 overflow-hidden">
       {images.map((image, index) => {
-        const isVisible = index === currentIndex;
         const shouldLoad = loadedImages.has(index);
 
-        // Determine slide position for right-to-left animation
-        let positionClass = 'translate-x-full opacity-0 z-0';
-        if (index === currentIndex) {
-          positionClass = 'translate-x-0 opacity-100 z-20';
-        } else if (index === previousIndex) {
-          // Slide previous slide out to the left
-          positionClass = '-translate-x-full opacity-0 z-10';
-        }
+        // Smooth cross-fade (no sliding)
+        const isCurrent = index === currentIndex;
+        const isPrev = index === previousIndex;
+        // Keep only current & previous on top to prevent flicker/stacking artifacts
+        const zClass = isCurrent ? 'z-20' : isPrev ? 'z-10' : 'z-0';
+        const opacityClass = isCurrent ? 'opacity-100' : 'opacity-0';
         
         return (
           <div
             key={index}
-            className={`absolute inset-0 transform transition-transform duration-700 ease-out ${positionClass}`}
+            className={`absolute inset-0 ${zClass} transition-opacity duration-1000 ease-in-out ${opacityClass}`}
           >
             {shouldLoad ? (
               <Image
