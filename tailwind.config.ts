@@ -11,6 +11,7 @@ const config: Config = {
       fontFamily: {
         'space-grotesk': ['var(--font-space-grotesk)', 'sans-serif'],
         'sora': ['var(--font-sora)', 'sans-serif'],
+        'oxygen': ['var(--font-oxygen)', 'sans-serif'],
       },
       colors: {
         'deep-forest': '#000000',

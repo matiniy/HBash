@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter, Space_Grotesk, Sora } from 'next/font/google'
+import { Inter, Space_Grotesk, Sora, Oxygen } from 'next/font/google'
 import './globals.css'
 import { LanguageProvider } from '@/contexts/LanguageContext'
 
@@ -13,6 +13,11 @@ const sora = Sora({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
   variable: '--font-sora'
+})
+const oxygen = Oxygen({ 
+  subsets: ['latin'],
+  weight: ['300', '400', '700'],
+  variable: '--font-oxygen'
 })
 
 export const metadata: Metadata = {
@@ -35,7 +40,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" dir="ltr" className="light-mode">
-      <body className={`${inter.className} ${spaceGrotesk.variable} ${sora.variable}`}>
+      <body className={`${inter.className} ${spaceGrotesk.variable} ${sora.variable} ${oxygen.variable}`}>
         <LanguageProvider>
           {children}
         </LanguageProvider>

@@ -172,6 +172,13 @@ const About: React.FC = () => {
                 </div>
               )}
             </div>
+
+            {/* Description text under testimonials */}
+            <div className={`mt-8 sm:mt-10 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+              <p className={`text-white text-sm xs:text-base sm:text-lg md:text-xl leading-relaxed ${language === 'fa' ? 'text-right' : 'text-left'}`}>
+                {t('hero.subtitle')}
+              </p>
+            </div>
           </div>
         </div>
       </div>

@@ -70,14 +70,10 @@ const Hero: React.FC = () => {
             <div className="w-full lg:w-[50%] lg:max-w-[950px]">
               {/* Glass Effect Background - Full width on mobile, positioned over extending image on desktop */}
               <div className="bg-black/40 backdrop-blur-lg rounded-2xl p-4 xs:p-6 sm:p-8 shadow-2xl hero-glass-card">
-                <h1 className={`text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-normal text-white leading-tight font-space-grotesk ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+                <h1 className={`text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-normal text-white leading-tight font-oxygen ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
                   {t('hero.title')}{' '}
                   <span className="text-aqua-neon">{t('hero.dallas')}</span>
                 </h1>
-                
-                <p className={`text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl text-white leading-relaxed mt-4 sm:mt-6 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
-                  {t('hero.subtitle')}
-                </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 mt-6 sm:mt-8">
                   {/* Rebuilt secondary CTA button explicitly so text is always green */}

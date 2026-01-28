@@ -664,7 +664,7 @@ a {
 /* Light mode navbar background - only apply when navbar has background class (floating state) */
 /* Override Tailwind opacity classes for navbar in light mode - only when floating */
 .light-mode nav[class*="bg-deep-forest"] {
-  background-color: rgba(255, 255, 255, 0.95) !important;
+  background-color: rgba(255, 255, 255, 0) !important;
   border-color: rgba(0, 0, 0, 0.1) !important;
 }
 
