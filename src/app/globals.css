@@ -172,27 +172,27 @@ a {
 
 /* Navbar glass (applies in both themes) */
 .nav-glass {
-  background: rgba(0, 0, 0, 0.15);
+  background: rgba(0, 0, 0, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 18px 48px rgba(0, 0, 0, 0.22);
 }
 
 /* Slightly stronger when floating (scrolled) */
 .nav-glass--floating {
-  background: rgba(0, 0, 0, 0.15);
+  background: rgba(0, 0, 0, 0.08);
   border-color: rgba(255, 255, 255, 0.12);
   box-shadow: 0 22px 60px rgba(0, 0, 0, 0.28);
 }
 
 /* Light mode: match page background (#E1E1E1) with glossy opacity */
 .light-mode .nav-glass {
-  background: rgba(225, 225, 225, 0.15);
+  background: rgba(225, 225, 225, 0.08);
   border-color: rgba(0, 0, 0, 0.10);
   box-shadow: 0 18px 48px rgba(0, 0, 0, 0.12);
 }
 
 .light-mode .nav-glass--floating {
-  background: rgba(225, 225, 225, 0.15);
+  background: rgba(225, 225, 225, 0.08);
   border-color: rgba(0, 0, 0, 0.12);
   box-shadow: 0 22px 60px rgba(0, 0, 0, 0.16);
 }
