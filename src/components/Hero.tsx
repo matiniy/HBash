@@ -31,8 +31,8 @@ const Hero: React.FC = () => {
   const scale = Math.max(0.8, 1 - scrollY * 0.0005);
   return (
     <section className="min-h-screen flex items-center relative overflow-hidden">
-      {/* Mobile: Full Background Carousel */}
-      <div className="absolute inset-0 lg:hidden z-0">
+      {/* Full Background Carousel (mobile + desktop) */}
+      <div className="absolute inset-0 z-0">
         <div 
           className="absolute inset-0 transition-transform duration-75 ease-out"
           style={{
@@ -42,33 +42,17 @@ const Hero: React.FC = () => {
         >
           <HeroCarousel images={heroImages} interval={4000} />
         </div>
-        {/* Dark overlay for mobile text readability */}
-        <div className="absolute inset-0 bg-black/50 z-[1]"></div>
-      </div>
-
-      {/* Desktop: Side-by-side layout with carousel (image on the right as before) */}
-      <div className="absolute inset-0 hidden lg:block z-0">
-        <div 
-          className="absolute right-0 top-0 w-[65%] h-[120%] transition-transform duration-75 ease-out overflow-hidden"
-          style={{
-            transform: `scale(${scale})`,
-            transformOrigin: 'center center'
-          }}
-        >
-          <HeroCarousel images={heroImages} interval={4000} />
-        </div>
-        {/* Solid left overlay so text side stays clean */}
-        <div className="absolute left-0 top-0 w-[35%] h-full bg-deep-forest z-[1]"></div>
+        {/* Soft overlay for text readability (keeps images visible) */}
+        <div className="absolute inset-0 bg-black/30 z-[1]"></div>
       </div>
 
       <div className="w-full px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-7xl mx-auto">
-          <div className="flex items-center min-h-screen py-12">
-            {/* Content - Full width on mobile, half width on desktop */}
-            <div className="w-full lg:w-[50%] lg:max-w-[950px]">
-              {/* Glass Effect Background - Full width on mobile, positioned over extending image on desktop */}
-              <div className="bg-black/40 backdrop-blur-lg rounded-2xl p-4 xs:p-6 sm:p-8 shadow-2xl hero-glass-card">
-                <h1 className={`text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light text-white leading-tight font-oxygen ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+          <div className="flex items-center justify-center min-h-screen py-12">
+            {/* Centered hero card */}
+            <div className="w-full max-w-[680px] sm:max-w-[760px] md:max-w-[820px]">
+              <div className="bg-black/40 backdrop-blur-lg rounded-2xl p-4 xs:p-6 sm:p-8 shadow-2xl hero-glass-card text-center">
+                <h1 className={`text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-white leading-tight font-oxygen ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
                   {t('hero.title')}{' '}
                   <span className="text-aqua-neon font-bold italic">{t('hero.dallas')}</span>
                 </h1>
@@ -90,11 +74,6 @@ const Hero: React.FC = () => {
                   </Link>
                 </div>
               </div>
-            </div>
-
-            {/* Desktop: Right Content - Empty space for image to show through */}
-            <div className="hidden lg:block lg:flex-1 h-full min-h-[600px]">
-              {/* This space allows the background image to show through */}
             </div>
           </div>
         </div>
