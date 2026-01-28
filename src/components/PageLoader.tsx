@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 interface PageLoaderProps {
@@ -130,6 +131,17 @@ const PageLoader: React.FC<PageLoaderProps> = ({ onComplete, imagesToPreload = [
       <div className="w-full max-w-md px-8 text-center">
         {/* Logo or Brand Name */}
         <div className="mb-8">
+          <div className="flex justify-center mb-4">
+            <span className="relative h-12 w-12 sm:h-14 sm:w-14 rounded-full overflow-hidden">
+              <Image
+                src="/images/Logo/logo.png"
+                alt="Haideh Bashash"
+                fill
+                priority
+                className="object-contain"
+              />
+            </span>
+          </div>
           <h1 className="text-3xl sm:text-4xl font-bold text-aqua-neon mb-2">
             Haideh Bashash
           </h1>
