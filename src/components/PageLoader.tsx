@@ -132,7 +132,7 @@ const PageLoader: React.FC<PageLoaderProps> = ({ onComplete, imagesToPreload = [
         {/* Logo or Brand Name */}
         <div className="mb-8">
           <div className="flex justify-center mb-4">
-            <span className="relative h-12 w-12 sm:h-14 sm:w-14 rounded-full overflow-hidden">
+            <span className="relative h-20 w-20 sm:h-24 sm:w-24 rounded-full overflow-hidden">
               <Image
                 src="/images/Logo/logo.png"
                 alt="Haideh Bashash"
@@ -142,7 +142,7 @@ const PageLoader: React.FC<PageLoaderProps> = ({ onComplete, imagesToPreload = [
               />
             </span>
           </div>
-          <h1 className="text-3xl sm:text-4xl font-bold text-aqua-neon mb-2">
+          <h1 className="text-3xl sm:text-4xl font-bold mb-2 bg-gradient-to-r from-[#2B798D] to-[#031C23] bg-clip-text text-transparent">
             Haideh Bashash
           </h1>
           <p className="text-grey-light text-sm">
