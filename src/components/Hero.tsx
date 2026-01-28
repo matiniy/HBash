@@ -9,14 +9,12 @@ import { useLanguage } from '@/contexts/LanguageContext';
 // Hero images array - Add your image filenames here
 // Simply add new images to /public/images/hero/ and add their filenames to this array
 const heroImages = [
-  '/images/hero/1_photo_01_dte.jpg',
-  '/images/hero/2_photo_2.jpg',
-  '/images/hero/13_photo_12.jpg',
-  '/images/hero/20_photo_22.jpg',
-  '/images/hero/21_photo_23.jpg',
-  '/images/hero/54_photo_56.jpg',
-  '/images/hero/59_photo_59.jpg',
-  '/images/hero/62A73F24-0FF0-45FB-8099-165430CA0911.JPG',
+  '/images/hero/1.JPG',
+  '/images/hero/2.jpg',
+  '/images/hero/3.jpg',
+  '/images/hero/4.jpg',
+  '/images/hero/5.jpg',
+  '/images/hero/6.jpg',
 ];
 
 const Hero: React.FC = () => {
