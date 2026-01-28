@@ -43,16 +43,16 @@ const Hero: React.FC = () => {
           <HeroCarousel images={heroImages} interval={4000} />
         </div>
         {/* Soft overlay for text readability (keeps images visible) */}
-        <div className="absolute inset-0 bg-black/30 z-[1]"></div>
+        <div className="absolute inset-0 hero-image-overlay z-[1]"></div>
       </div>
 
       <div className="w-full px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center justify-center min-h-screen py-12">
             {/* Centered hero card */}
-            <div className="w-full max-w-[680px] sm:max-w-[760px] md:max-w-[820px]">
-              <div className="bg-black/40 backdrop-blur-lg rounded-2xl p-4 xs:p-6 sm:p-8 shadow-2xl hero-glass-card text-center">
-                <h1 className={`text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-white leading-tight font-oxygen ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+            <div className="w-full max-w-[560px] sm:max-w-[620px] md:max-w-[680px] translate-y-8">
+              <div className="hero-glass-card backdrop-blur-lg rounded-2xl p-4 xs:p-5 sm:p-6 shadow-2xl text-center">
+                <h1 className={`text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light text-white leading-tight font-oxygen ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
                   {t('hero.title')}{' '}
                   <span className="text-aqua-neon font-bold italic">{t('hero.dallas')}</span>
                 </h1>

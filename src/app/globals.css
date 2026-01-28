@@ -188,6 +188,11 @@ a {
   color: #144552 !important;
 }
 
+/* Hero: ensure overlay stays dark in light mode (avoid bg-black/* overrides) */
+.hero-image-overlay {
+  background: rgba(0, 0, 0, 0.28) !important;
+}
+
 /* Light mode hero section */
 .light-mode .bg-black\/40,
 .light-mode [class*="bg-black/40"] {
