@@ -15,6 +15,7 @@ const Navbar: React.FC = () => {
   const [logoIndex, setLogoIndex] = useState(0);
   const [isFloating, setIsFloating] = useState(false);
   const pathname = usePathname();
+  const isFarsi = language === 'fa';
 
   useEffect(() => {
     const onScroll = () => {
@@ -63,7 +64,7 @@ const Navbar: React.FC = () => {
   const logoHeightClass = isFloating ? 'h-9 sm:h-10' : 'h-10 sm:h-12';
 
   return (
-    <nav className={navClasses}>
+    <nav className={`${navClasses} ${isFarsi ? 'nav-rtl' : ''}`}>
       <div className={`max-w-7xl mx-auto ${innerPadding} nav-inner`}>
         <div className={`flex w-full items-center ${barHeight}`}>
           {/* Left cluster: Logo + Theme + Language */}

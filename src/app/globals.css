@@ -237,6 +237,11 @@ a {
   box-shadow: none !important;
 }
 
+.nav-rtl.nav-glass--floating .nav-contact-button {
+  width: 180px !important;
+  min-width: 180px !important;
+}
+
 .nav-contact-button * {
   color: #000 !important;
 }
