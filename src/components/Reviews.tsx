@@ -59,6 +59,14 @@ const Reviews: React.FC = () => {
           <h2 className="section-title-luxerie section-title-luxerie-large text-white">
             {t('reviews.title')}
           </h2>
+          <p
+            className={`mt-2 text-white/90 text-sm xs:text-base sm:text-lg ${
+              language === 'fa' ? 'font-sora' : ''
+            }`}
+            dir={language === 'fa' ? 'rtl' : 'ltr'}
+          >
+            {t('reviews.subtitle')}
+          </p>
         </div>
 
         <div className="relative min-h-[220px] sm:min-h-[260px]">

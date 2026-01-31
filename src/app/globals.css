@@ -212,6 +212,10 @@ a {
   font-size: 26px;
 }
 
+.loader-green-gradient {
+  background: linear-gradient(90deg, #144552 0%, #00FFA3 100%);
+}
+
 .hero-title-farsi {
   font-family: "Sora", "IRANSans", "Vazirmatn", sans-serif;
 }

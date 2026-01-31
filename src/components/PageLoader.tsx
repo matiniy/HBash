@@ -154,10 +154,10 @@ const PageLoader: React.FC<PageLoaderProps> = ({ onComplete, imagesToPreload = [
         <div className="mb-6">
           <div className="w-full h-2 bg-black/30 rounded-full overflow-hidden">
             <div
-              className="h-full bg-aqua-neon rounded-full transition-all duration-300 ease-out relative"
+              className="h-full rounded-full transition-all duration-300 ease-out relative loader-green-gradient"
               style={{ width: `${progress}%` }}
             >
-              <div className="absolute inset-0 bg-aqua-neon/50 animate-pulse"></div>
+              <div className="absolute inset-0 loader-green-gradient opacity-50 animate-pulse"></div>
             </div>
           </div>
           <p className="text-aqua-neon text-sm mt-2 font-semibold">
@@ -181,7 +181,7 @@ const PageLoader: React.FC<PageLoaderProps> = ({ onComplete, imagesToPreload = [
           {[0, 1, 2].map((i) => (
             <div
               key={i}
-              className="w-2 h-2 bg-aqua-neon rounded-full animate-pulse"
+              className="w-2 h-2 rounded-full animate-pulse loader-green-gradient"
               style={{
                 animationDelay: `${i * 0.2}s`,
                 animationDuration: '1s',
