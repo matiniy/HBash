@@ -142,7 +142,7 @@ const PageLoader: React.FC<PageLoaderProps> = ({ onComplete, imagesToPreload = [
               />
             </span>
           </div>
-          <h1 className="text-3xl sm:text-4xl font-bold mb-2 bg-gradient-to-r from-[#2B798D] to-[#031C23] bg-clip-text text-transparent">
+          <h1 className="hero-title-luxerie text-3xl sm:text-4xl font-bold mb-2 bg-gradient-to-r from-[#2B798D] to-[#031C23] bg-clip-text text-transparent">
             Haideh Bashash
           </h1>
           <p className="text-grey-light text-sm">
@@ -177,18 +177,6 @@ const PageLoader: React.FC<PageLoaderProps> = ({ onComplete, imagesToPreload = [
         </div>
 
         {/* Loading Animation */}
-        <div className="mt-8 flex justify-center gap-2">
-          {[0, 1, 2].map((i) => (
-            <div
-              key={i}
-              className="w-2 h-2 rounded-full animate-pulse loader-green-gradient"
-              style={{
-                animationDelay: `${i * 0.2}s`,
-                animationDuration: '1s',
-              }}
-            />
-          ))}
-        </div>
       </div>
     </div>
   );

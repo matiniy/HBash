@@ -13,14 +13,13 @@ const Navbar: React.FC = () => {
   const { t, language } = useLanguage();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [logoIndex, setLogoIndex] = useState(0);
-  const [isFloating, setIsFloating] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
   const isFarsi = language === 'fa';
 
   useEffect(() => {
     const onScroll = () => {
-      const y = window.scrollY;
-      setIsFloating(y > 10); // floating whenever not at the very top
+      setIsScrolled(window.scrollY > 10);
     };
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
@@ -51,17 +50,11 @@ const Navbar: React.FC = () => {
     return pathname === href || pathname.startsWith(`${href}/`);
   };
 
-  const navClasses = [
-    'fixed z-50 transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] will-change-transform will-change-opacity nav-glass',
-    isFloating
-      ? 'top-[max(1rem,env(safe-area-inset-top))] left-1/2 -translate-x-1/2 w-[94%] sm:w-[92%] md:w-[84%] rounded-full translate-y-0 opacity-100 nav-glass--floating'
-      : 'top-0 left-0 w-full translate-x-0 opacity-100'
-  ].join(' ');
-
-  const innerPadding = isFloating ? 'px-3 sm:px-4' : 'px-3 sm:px-4 lg:px-8';
-  const barHeight = isFloating ? 'h-12 sm:h-14' : 'h-14 sm:h-16';
+  const navClasses = `fixed top-0 left-0 w-full z-50 nav-glass ${isScrolled ? 'nav-glass--scrolled' : ''}`;
+  const innerPadding = 'px-3 sm:px-4 lg:px-8';
+  const barHeight = 'h-14 sm:h-16';
   // Keep logo visually aligned with toggles/nav: slightly smaller than the navbar height
-  const logoHeightClass = isFloating ? 'h-9 sm:h-10' : 'h-10 sm:h-12';
+  const logoHeightClass = 'h-10 sm:h-12';
 
   return (
     <nav className={`${navClasses} ${isFarsi ? 'nav-rtl' : ''}`}>
