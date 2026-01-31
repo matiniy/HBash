@@ -56,7 +56,7 @@ const Reviews: React.FC = () => {
           className={`text-center mb-8 sm:mb-12 ${language === 'fa' ? 'font-sora' : ''}`}
           dir={language === 'fa' ? 'rtl' : 'ltr'}
         >
-          <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-semibold text-white">
+          <h2 className="section-title-luxerie section-title-luxerie-large text-white">
             {t('reviews.title')}
           </h2>
         </div>

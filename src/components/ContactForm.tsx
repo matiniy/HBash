@@ -65,7 +65,7 @@ const ContactForm: React.FC = () => {
     <section className="py-20 bg-deep-forest">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8 sm:mb-12">
-          <h2 className={`text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+          <h2 className="section-title-luxerie section-title-luxerie-large text-white mb-4 sm:mb-6" dir={language === 'fa' ? 'rtl' : 'ltr'}>
             {t('contact.title')} <span className="text-aqua-neon">{t('contact.consultation')}</span>
           </h2>
           <p className={`text-sm xs:text-base sm:text-lg lg:text-xl text-white max-w-2xl mx-auto ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>

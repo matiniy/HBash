@@ -202,6 +202,16 @@ a {
   line-height: 1.05;
 }
 
+.section-title-luxerie {
+  font-family: "Luxerie", Sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.section-title-luxerie-large {
+  font-size: 26px;
+}
+
 .hero-title-farsi {
   font-family: "Sora", "IRANSans", "Vazirmatn", sans-serif;
 }
