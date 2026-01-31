@@ -63,7 +63,7 @@ const Testimonials: React.FC = () => {
 
         {/* Testimonials Carousel */}
         <div className="max-w-4xl mx-auto">
-          <div className="relative min-h-[250px] sm:min-h-[300px]">
+          <div className="relative min-h-[200px] sm:min-h-[260px]">
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
@@ -77,7 +77,7 @@ const Testimonials: React.FC = () => {
                   rel="noopener noreferrer"
                   className="block cursor-pointer group"
                 >
-                  <div className="bg-white/5 backdrop-blur-sm rounded-lg p-6 sm:p-8 border border-aqua-neon/10 group-hover:bg-white/10 group-hover:border-aqua-neon/30 transition-all duration-300">
+                  <div className="bg-white/5 backdrop-blur-sm rounded-lg p-5 sm:p-8 border border-aqua-neon/10 group-hover:bg-white/10 group-hover:border-aqua-neon/30 transition-all duration-300">
                     <div className="flex items-start space-x-4">
                       <div className="flex-shrink-0 text-aqua-neon text-3xl sm:text-4xl lg:text-5xl font-bold">"</div>
                       <div className="flex-1">

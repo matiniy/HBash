@@ -10,9 +10,7 @@ const About: React.FC = () => {
   const { t, language } = useLanguage();
 
   return (
-    <section 
-      className="py-20 relative overflow-hidden"
-    >
+    <section className="py-14 sm:py-20 relative overflow-hidden">
       {/* Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0"
@@ -31,14 +29,14 @@ const About: React.FC = () => {
               alt="H Bashash - Dallas Realtor"
               width={600}
               height={800}
-              className="w-[calc(100%-60px)] mx-auto h-[350px] xs:h-[400px] sm:h-[470px] md:h-[520px] lg:h-[620px] object-cover object-top rounded-2xl shadow-2xl"
+              className="w-full sm:w-[calc(100%-60px)] mx-auto h-[260px] xs:h-[320px] sm:h-[420px] md:h-[520px] lg:h-[620px] object-cover object-top rounded-2xl shadow-2xl"
               priority
               quality={85}
               placeholder="blur"
               blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
             />
                 {/* Buttons - Responsive: Stacked on mobile, horizontal on desktop */}
-                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-full max-w-[calc(100%-60px)] flex flex-col sm:flex-row gap-3 items-center justify-center">
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-full max-w-full sm:max-w-[calc(100%-60px)] flex flex-col sm:flex-row gap-3 items-center justify-center">
               <Link href="/contact">
                 <Button variant="primary" className="w-full sm:w-auto">
                   {t('hero.scheduleConsultation')}
@@ -58,7 +56,7 @@ const About: React.FC = () => {
           {/* Right Content - Glass Effect Box and Testimonials */}
           <div className="space-y-8">
             {/* Glass Effect Box - Positioned 150px to the left, overlapping image */}
-            <div className={`relative -ml-[50px] sm:-ml-[100px] lg:-ml-[150px] w-[110%] sm:w-[115%] lg:w-[120%] min-h-[180px] sm:min-h-[200px] lg:min-h-[220px] bg-black/40 backdrop-blur-lg rounded-tr-2xl rounded-bl-2xl rounded-br-2xl rounded-tl-none p-4 sm:p-6 lg:p-8 text-white z-20 flex flex-col justify-center ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+            <div className={`relative -ml-0 sm:-ml-[100px] lg:-ml-[150px] w-full sm:w-[115%] lg:w-[120%] min-h-[160px] sm:min-h-[200px] lg:min-h-[220px] bg-black/40 backdrop-blur-lg rounded-tr-2xl rounded-bl-2xl rounded-br-2xl rounded-tl-none p-4 sm:p-6 lg:p-8 text-white z-20 flex flex-col justify-center ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
               <div className="space-y-3 sm:space-y-4">
                 <p className={`text-sm xs:text-base sm:text-lg lg:text-xl font-sora font-normal leading-relaxed ${language === 'fa' ? 'text-right' : 'text-left'} line-clamp-3`}>
                   {t('about.bio')}
