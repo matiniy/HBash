@@ -52,20 +52,32 @@ const Hero: React.FC = () => {
       <div className="w-full px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-7xl mx-auto">
           {/* Push hero card closer to marquee: align to bottom with safe padding */}
-          <div className="flex items-end justify-center min-h-screen pt-24 pb-10 sm:pb-12">
+          <div className="flex items-center justify-start min-h-screen pt-24 pb-10 sm:pb-12">
             {/* Centered hero card */}
             {/* Negative bottom margin so the marquee overlaps the bottom of the card */}
-            <div className="w-full max-w-[603px] mb-[-18px] sm:mb-[-24px]">
+            <div className="w-full max-w-[520px] -mt-[50px] sm:-mt-[60px] mb-[-18px] sm:mb-[-24px] pl-4 sm:pl-6 lg:pl-12">
               {/* Add extra bottom padding so buttons stay above the marquee while the card still overlaps */}
-              <div className="hero-glass-card backdrop-blur-lg rounded-2xl p-4 xs:p-5 sm:p-6 pb-10 sm:pb-12 shadow-2xl text-center min-h-[180px] sm:min-h-[200px]">
-                <h1 className={`text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light text-white leading-tight font-oxygen ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
-                  {t('hero.title')}
-                  <span className="block text-aqua-neon font-bold italic">{t('hero.dallas')}</span>
+              <div className={`hero-glass-card backdrop-blur-lg rounded-2xl bg-white/20 p-4 xs:p-5 sm:p-6 pb-10 sm:pb-12 shadow-2xl min-h-[180px] sm:min-h-[200px] ${language === 'fa' ? 'text-right' : 'text-left'}`}>
+                <h1
+                  className={`hero-title-luxerie leading-tight ${language === 'fa' ? 'hero-title-farsi' : ''}`}
+                  dir={language === 'fa' ? 'rtl' : 'ltr'}
+                >
+                  {t('hero.primaryTitle')}
+                  <span className="block">{t('hero.primaryHighlight')}</span>
                 </h1>
+                <p
+                  className={`mt-3 text-xs xs:text-sm sm:text-base text-white/90 leading-relaxed ${
+                    language === 'fa' ? 'font-sora' : ''
+                  }`}
+                  dir={language === 'fa' ? 'rtl' : 'ltr'}
+                >
+                  {t('hero.primarySubheadlineLine1')}
+                  <span className="block">{t('hero.primarySubheadlineLine2')}</span>
+                </p>
 
-                <div className="flex flex-col sm:flex-row gap-4 mt-6 sm:mt-8 items-center justify-center">
+                <div className={`flex flex-col sm:flex-row gap-4 mt-6 sm:mt-8 items-start ${language === 'fa' ? 'sm:justify-end' : 'sm:justify-start'}`}>
                   <Link href="/contact">
-                    <Button variant="primary" className="w-full sm:w-auto">
+                    <Button variant="primary" className="w-full sm:w-auto font-light">
                       {t('hero.scheduleConsultation')}
                     </Button>
                   </Link>
