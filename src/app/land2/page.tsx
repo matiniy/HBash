@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
@@ -23,14 +23,27 @@ const heroImages = [
 
 export default function Land2() {
   const [isLoading, setIsLoading] = useState(true);
+  const [hasMounted, setHasMounted] = useState(false);
 
   const handleLoadingComplete = () => {
     setIsLoading(false);
   };
 
+  useEffect(() => {
+    setHasMounted(true);
+    const hasLoaded = sessionStorage.getItem('hbash_has_loaded') === 'true';
+    setIsLoading(!hasLoaded);
+  }, []);
+
+  useEffect(() => {
+    if (!isLoading && typeof window !== 'undefined') {
+      sessionStorage.setItem('hbash_has_loaded', 'true');
+    }
+  }, [isLoading]);
+
   return (
     <>
-      {isLoading && (
+      {hasMounted && isLoading && (
         <PageLoader 
           onComplete={handleLoadingComplete}
           imagesToPreload={heroImages}
@@ -39,7 +52,7 @@ export default function Land2() {
       <div className="light-mode">
         <main 
           className={`min-h-screen bg-white transition-opacity duration-500 ${
-            isLoading ? 'opacity-0' : 'opacity-100'
+            hasMounted && !isLoading ? 'opacity-100' : 'opacity-0'
           }`}
         >
           <Navbar />

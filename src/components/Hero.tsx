@@ -62,7 +62,7 @@ const Hero: React.FC = () => {
                   className={`hero-title-luxerie leading-tight ${language === 'fa' ? 'hero-title-farsi' : ''}`}
                   dir={language === 'fa' ? 'rtl' : 'ltr'}
                 >
-                  {t('hero.primaryTitle')}
+                  <span className="block">{t('hero.primaryTitle')}</span>
                   <span className="block">{t('hero.primaryHighlight')}</span>
                 </h1>
                 <p

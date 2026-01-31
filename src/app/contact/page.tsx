@@ -13,7 +13,7 @@ export default function Contact() {
       <section className="pt-[150px] pb-[50px] bg-deep-forest">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="section-title-luxerie section-title-luxerie-large text-white mb-4 sm:mb-6">
+            <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6">
               Get In <span className="text-aqua-neon">Touch</span>
             </h1>
             <p className="text-base xs:text-lg sm:text-xl text-white max-w-3xl mx-auto px-2">
@@ -32,7 +32,7 @@ export default function Contact() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
             {/* Contact Information */}
             <div>
-              <h2 className="section-title-luxerie section-title-luxerie-large text-white mb-6 sm:mb-8">
+              <h2 className="text-2xl xs:text-3xl sm:text-3xl md:text-4xl font-bold text-white mb-6 sm:mb-8">
                 Contact <span className="text-aqua-neon">Information</span>
               </h2>
               
@@ -44,8 +44,8 @@ export default function Contact() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
                   </div>
-                <div>
-                  <h3 className="section-title-luxerie text-white mb-2">Office Location</h3>
+                  <div>
+                    <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">Office Location</h3>
                     <p className="text-sm sm:text-base text-white/80">
                       5717 Legacy Dr Suite 250<br />
                       Plano, TX 75024, United States
@@ -59,8 +59,8 @@ export default function Contact() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                     </svg>
                   </div>
-                <div>
-                  <h3 className="section-title-luxerie text-white mb-2">Phone</h3>
+                  <div>
+                    <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">Phone</h3>
                     <p className="text-sm sm:text-base text-white/80">
                       +1 214-916-9778<br />
                       Available 9 AM - 6 PM, Mon-Fri
@@ -74,8 +74,8 @@ export default function Contact() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
                   </div>
-                <div>
-                  <h3 className="section-title-luxerie text-white mb-2">Email</h3>
+                  <div>
+                    <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">Email</h3>
                     <p className="text-sm sm:text-base text-white/80">
                       info@haidehbashash.com<br />
                       We respond within 24 hours
@@ -89,8 +89,8 @@ export default function Contact() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
-                <div>
-                  <h3 className="section-title-luxerie text-white mb-2">Office Hours</h3>
+                  <div>
+                    <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">Office Hours</h3>
                     <p className="text-sm sm:text-base text-white/80">
                       Monday - Friday: 9:00 AM - 6:00 PM<br />
                       Saturday: 10:00 AM - 4:00 PM<br />
@@ -120,7 +120,7 @@ export default function Contact() {
       <section className="py-12 sm:py-16 lg:py-20 bg-deep-forest">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-            <h2 className="section-title-luxerie section-title-luxerie-large text-white mb-4 sm:mb-6">
+            <h2 className="text-2xl xs:text-3xl sm:text-3xl md:text-4xl font-bold text-white mb-4 sm:mb-6">
               Frequently Asked <span className="text-aqua-neon">Questions</span>
             </h2>
             <p className="text-base sm:text-lg text-white px-2">

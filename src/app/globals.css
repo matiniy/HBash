@@ -370,7 +370,7 @@ a {
 
 /* Hero glass card sizing/opacity */
 .hero-glass-card {
-  width: min(100%, 420px);
+  width: min(100%, 520px);
   opacity: 0.9;
 }
 

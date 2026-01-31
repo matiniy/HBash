@@ -23,14 +23,27 @@ const heroImages = [
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
+  const [hasMounted, setHasMounted] = useState(false);
 
   const handleLoadingComplete = () => {
     setIsLoading(false);
   };
 
+  useEffect(() => {
+    setHasMounted(true);
+    const hasLoaded = sessionStorage.getItem('hbash_has_loaded') === 'true';
+    setIsLoading(!hasLoaded);
+  }, []);
+
+  useEffect(() => {
+    if (!isLoading && typeof window !== 'undefined') {
+      sessionStorage.setItem('hbash_has_loaded', 'true');
+    }
+  }, [isLoading]);
+
   return (
     <>
-      {isLoading && (
+      {hasMounted && isLoading && (
         <PageLoader 
           onComplete={handleLoadingComplete}
           imagesToPreload={heroImages}
@@ -38,7 +51,7 @@ export default function Home() {
       )}
       <main 
         className={`min-h-screen bg-deep-forest transition-opacity duration-500 ${
-          isLoading ? 'opacity-0' : 'opacity-100'
+          hasMounted && !isLoading ? 'opacity-100' : 'opacity-0'
         }`}
       >
         <Navbar />
