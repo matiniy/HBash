@@ -94,25 +94,25 @@ const Hero: React.FC = () => {
             <div className={`flex whitespace-nowrap marquee-slow ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
               {/* Content block 1 */}
               <div className="flex-shrink-0 flex items-center">
-                <span className="text-deep-forest font-normal text-base sm:text-lg mx-4 sm:mx-8">
+                <span className="text-deep-forest font-normal text-base sm:text-lg mx-2 sm:mx-4">
                   {t('hero.marquee.line1')} •
                 </span>
-                <span className="text-deep-forest font-normal text-base sm:text-lg mx-4 sm:mx-8">
+                <span className="text-deep-forest font-normal text-base sm:text-lg mx-2 sm:mx-4">
                   {t('hero.marquee.line2')} •
                 </span>
-                <span className="text-deep-forest font-normal text-base sm:text-lg mx-4 sm:mx-8">
+                <span className="text-deep-forest font-normal text-base sm:text-lg mx-2 sm:mx-4">
                   {t('hero.marquee.line3')} •
                 </span>
               </div>
               {/* Content block 2 (duplicate for seamless loop) */}
               <div className="flex-shrink-0 flex items-center">
-                <span className="text-deep-forest font-normal text-base sm:text-lg mx-4 sm:mx-8">
+                <span className="text-deep-forest font-normal text-base sm:text-lg mx-2 sm:mx-4">
                   {t('hero.marquee.line1')} •
                 </span>
-                <span className="text-deep-forest font-normal text-base sm:text-lg mx-4 sm:mx-8">
+                <span className="text-deep-forest font-normal text-base sm:text-lg mx-2 sm:mx-4">
                   {t('hero.marquee.line2')} •
                 </span>
-                <span className="text-deep-forest font-normal text-base sm:text-lg mx-4 sm:mx-8">
+                <span className="text-deep-forest font-normal text-base sm:text-lg mx-2 sm:mx-4">
                   {t('hero.marquee.line3')} •
                 </span>
               </div>

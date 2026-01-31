@@ -69,7 +69,7 @@ const Reviews: React.FC = () => {
           </p>
         </div>
 
-        <div className="relative min-h-[220px] sm:min-h-[260px]">
+        <div className="relative min-h-[180px] sm:min-h-[220px]">
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
@@ -120,7 +120,7 @@ const Reviews: React.FC = () => {
           ))}
 
           {testimonials.length > 1 && (
-            <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 flex gap-2">
+            <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 flex gap-2">
               {testimonials.map((_, index) => (
                 <button
                   key={index}
