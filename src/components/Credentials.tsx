@@ -20,7 +20,7 @@ const Credentials: React.FC = () => {
             <div className="text-center">
               <div className="w-12 h-12 sm:w-16 sm:h-16 bg-aqua-neon/20 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 group-hover:bg-aqua-neon/30 transition-colors">
                 <svg className="w-6 h-6 sm:w-8 sm:h-8 text-aqua-neon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.25} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
               <h3 className="section-title-luxerie text-white mb-2">Licensed Realtor</h3>
@@ -34,7 +34,7 @@ const Credentials: React.FC = () => {
             <div className="text-center">
               <div className="w-12 h-12 sm:w-16 sm:h-16 bg-aqua-neon/20 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 group-hover:bg-aqua-neon/30 transition-colors">
                 <svg className="w-6 h-6 sm:w-8 sm:h-8 text-aqua-neon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.25} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                 </svg>
               </div>
               <h3 className="section-title-luxerie text-white mb-2">Brokerage</h3>
@@ -48,7 +48,7 @@ const Credentials: React.FC = () => {
             <div className="text-center">
               <div className="w-12 h-12 sm:w-16 sm:h-16 bg-aqua-neon/20 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 group-hover:bg-aqua-neon/30 transition-colors">
                 <svg className="w-6 h-6 sm:w-8 sm:h-8 text-aqua-neon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.25} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
               <h3 className="section-title-luxerie text-white mb-2">Experience</h3>
@@ -62,7 +62,7 @@ const Credentials: React.FC = () => {
             <div className="text-center">
               <div className="w-12 h-12 sm:w-16 sm:h-16 bg-aqua-neon/20 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 group-hover:bg-aqua-neon/30 transition-colors">
                 <svg className="w-6 h-6 sm:w-8 sm:h-8 text-aqua-neon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-18 4v7a2 2 0 002 2h14a2 2 0 002-2v-7M3 8l2.46-1.64A2 2 0 017.22 6h9.56a2 2 0 011.76.36L21 8" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.25} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-18 4v7a2 2 0 002 2h14a2 2 0 002-2v-7M3 8l2.46-1.64A2 2 0 017.22 6h9.56a2 2 0 011.76.36L21 8" />
                 </svg>
               </div>
               <h3 className="section-title-luxerie text-white mb-2">Contact</h3>

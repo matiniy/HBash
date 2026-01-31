@@ -84,10 +84,7 @@ const Reviews: React.FC = () => {
                 className="block cursor-pointer group"
               >
                 <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-aqua-neon/10 group-hover:bg-white/10 group-hover:border-aqua-neon/30 transition-all duration-300">
-                  <div className="flex items-start space-x-2 sm:space-x-4">
-                    <div className="flex-shrink-0 text-aqua-neon text-2xl sm:text-3xl lg:text-4xl font-bold">
-                      "
-                    </div>
+                  <div className="flex items-start">
                     <div className="flex-1">
                       <StarRating />
                       <p
