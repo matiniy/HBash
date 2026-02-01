@@ -24,19 +24,19 @@ const PartnerLogos: React.FC = () => {
 
         {/* Partnership Logos - Horizontal Layout */}
         <div className="flex flex-wrap justify-center items-center gap-6">
-          <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl px-6 py-4 border border-gray-700/50 hover:border-aqua-neon/50 transition-all duration-300 group text-center min-w-[200px]">
+          <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl px-6 py-4 border border-gray-700/50 hover:border-aqua-neon/50 transition-all duration-300 group text-center w-full sm:w-auto min-w-0 sm:min-w-[200px]">
             <div className="text-xl font-bold text-white mb-1">Google</div>
             <p className="text-white text-xs">Relocation housing</p>
           </div>
-          <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl px-6 py-4 border border-gray-700/50 hover:border-aqua-neon/50 transition-all duration-300 group text-center min-w-[200px]">
+          <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl px-6 py-4 border border-gray-700/50 hover:border-aqua-neon/50 transition-all duration-300 group text-center w-full sm:w-auto min-w-0 sm:min-w-[200px]">
             <div className="text-xl font-bold text-white mb-1">Slack</div>
             <p className="text-white text-xs">Corporate support</p>
           </div>
-          <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl px-6 py-4 border border-gray-700/50 hover:border-aqua-neon/50 transition-all duration-300 group text-center min-w-[200px]">
+          <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl px-6 py-4 border border-gray-700/50 hover:border-aqua-neon/50 transition-all duration-300 group text-center w-full sm:w-auto min-w-0 sm:min-w-[200px]">
             <div className="text-xl font-bold text-white mb-1">Rio Tinto</div>
             <p className="text-white text-xs">Executive housing</p>
           </div>
-          <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl px-6 py-4 border border-gray-700/50 hover:border-aqua-neon/50 transition-all duration-300 group text-center min-w-[200px]">
+          <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl px-6 py-4 border border-gray-700/50 hover:border-aqua-neon/50 transition-all duration-300 group text-center w-full sm:w-auto min-w-0 sm:min-w-[200px]">
             <div className="text-xl font-bold text-white mb-1">Heroku</div>
             <p className="text-white text-xs">Tech relocation</p>
           </div>

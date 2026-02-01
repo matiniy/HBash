@@ -291,7 +291,7 @@ export default function Listings() {
                 <select
                   value={selectedType}
                   onChange={(e) => setSelectedType(e.target.value)}
-                  className="px-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-aqua-neon min-w-[140px]"
+                  className="w-full sm:w-auto px-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-aqua-neon min-w-0 sm:min-w-[140px]"
                 >
                   {propertyTypes.map((type) => (
                     <option key={type.value} value={type.value}>
@@ -303,7 +303,7 @@ export default function Listings() {
                 <select
                   value={selectedPriceRange}
                   onChange={(e) => setSelectedPriceRange(e.target.value)}
-                  className="px-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-aqua-neon min-w-[140px]"
+                  className="w-full sm:w-auto px-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-aqua-neon min-w-0 sm:min-w-[140px]"
                 >
                   {priceRanges.map((range) => (
                     <option key={range.value} value={range.value}>
@@ -315,7 +315,7 @@ export default function Listings() {
                 <select
                   value={selectedBeds}
                   onChange={(e) => setSelectedBeds(e.target.value)}
-                  className="px-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-aqua-neon min-w-[120px]"
+                  className="w-full sm:w-auto px-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-aqua-neon min-w-0 sm:min-w-[120px]"
                 >
                   {bedOptions.map((option) => (
                     <option key={option.value} value={option.value}>
@@ -327,7 +327,7 @@ export default function Listings() {
                 <select
                   value={selectedBaths}
                   onChange={(e) => setSelectedBaths(e.target.value)}
-                  className="px-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-aqua-neon min-w-[120px]"
+                  className="w-full sm:w-auto px-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-aqua-neon min-w-0 sm:min-w-[120px]"
                 >
                   {bathOptions.map((option) => (
                     <option key={option.value} value={option.value}>
@@ -339,7 +339,7 @@ export default function Listings() {
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value)}
-                  className="px-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-aqua-neon min-w-[160px]"
+                  className="w-full sm:w-auto px-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-aqua-neon min-w-0 sm:min-w-[160px]"
                 >
                   {sortOptions.map((option) => (
                     <option key={option.value} value={option.value}>

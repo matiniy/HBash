@@ -28,7 +28,7 @@ const ListingCard: React.FC<ListingCardProps> = ({
     <Link href={`/listings/${id}`}>
       <div className="group relative bg-gray-800/80 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 listing-card border border-gray-700/50 cursor-pointer">
       {/* Image Container */}
-      <div className="relative h-96 overflow-hidden">
+      <div className="relative h-72 sm:h-96 overflow-hidden">
         <div 
           className="w-full h-full bg-gradient-to-br from-aqua-neon/20 to-deep-forest/20 group-hover:scale-105 transition-transform duration-300"
           style={{ backgroundImage: `url(${image})`, backgroundSize: 'cover', backgroundPosition: 'center' }}

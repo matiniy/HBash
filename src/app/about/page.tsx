@@ -48,7 +48,7 @@ export default function About() {
                 </p>
               </div>
               <Link href="/contact">
-                <Button variant="primary" className={`w-full sm:w-auto ${language === 'fa' ? 'min-w-[calc(100%+15px)] sm:min-w-[calc(auto+15px)]' : ''}`}>
+                <Button variant="primary" className={`w-full sm:w-auto ${language === 'fa' ? 'sm:min-w-[calc(auto+15px)]' : ''}`}>
                   {t('aboutPage.getInTouch')}
                 </Button>
               </Link>
@@ -138,7 +138,7 @@ export default function About() {
             {t('aboutPage.ctaSubtitle')}
           </p>
           <Link href="/contact">
-            <Button variant="secondary" className={`bg-deep-forest text-aqua-neon border-deep-forest hover:bg-white hover:text-deep-forest w-full sm:w-auto ${language === 'fa' ? 'min-w-[calc(100%+15px)] sm:min-w-[calc(auto+15px)]' : ''}`}>
+            <Button variant="secondary" className={`bg-deep-forest text-aqua-neon border-deep-forest hover:bg-white hover:text-deep-forest w-full sm:w-auto ${language === 'fa' ? 'sm:min-w-[calc(auto+15px)]' : ''}`}>
               {t('aboutPage.scheduleConsultation')}
             </Button>
           </Link>

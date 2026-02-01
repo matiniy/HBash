@@ -199,7 +199,7 @@ export default function Services() {
             {t('servicesPage.ctaSubtitle')}
           </p>
           <Link href="/contact">
-            <button className={`px-4 xs:px-6 py-2.5 xs:py-3 bg-deep-forest text-white rounded-full hover:rounded-[10px] font-semibold text-sm xs:text-base transition-all duration-300 hover:bg-black hover:text-aqua-neon border-2 border-deep-forest hover:border-aqua-neon min-h-[44px] flex items-center justify-center mx-auto w-full sm:w-auto max-w-xs sm:max-w-none ${language === 'fa' ? 'min-w-[calc(100%+15px)] sm:min-w-[calc(auto+15px)]' : ''}`}>
+            <button className={`px-4 xs:px-6 py-2.5 xs:py-3 bg-deep-forest text-white rounded-full hover:rounded-[10px] font-semibold text-sm xs:text-base transition-all duration-300 hover:bg-black hover:text-aqua-neon border-2 border-deep-forest hover:border-aqua-neon min-h-[44px] flex items-center justify-center mx-auto w-full sm:w-auto max-w-xs sm:max-w-none ${language === 'fa' ? 'sm:min-w-[calc(auto+15px)]' : ''}`}>
               {t('servicesPage.scheduleConsultation')}
             </button>
           </Link>
