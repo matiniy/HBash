@@ -151,8 +151,8 @@ const Navbar: React.FC = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 rounded-b-2xl">
+          <div className="md:hidden fixed inset-0 top-14 z-40 bg-black/95">
+            <div className="h-full overflow-y-auto px-2 pt-4 pb-6 space-y-1 sm:px-3">
               <Link
                 href="/"
                 className={`block px-3 py-3 nav-link nav-link-underline hover:text-aqua-neon transition-colors ${
