@@ -1,16 +1,19 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
 
 interface HeroCarouselProps {
   images: string[];
   interval?: number; // in milliseconds
+  className?: string;
+  style?: React.CSSProperties;
 }
 
 const HeroCarousel: React.FC<HeroCarouselProps> = ({ 
   images, 
-  interval = 4000 // 4 seconds default
+  interval = 4000, // 4 seconds default
+  className = '',
+  style
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [previousIndex, setPreviousIndex] = useState(0);
@@ -62,7 +65,7 @@ const HeroCarousel: React.FC<HeroCarouselProps> = ({
   }
 
   return (
-    <div className="absolute inset-0 overflow-hidden">
+    <div className={`relative w-full h-full overflow-hidden ${className}`} style={style}>
       {images.map((image, index) => {
         const shouldLoad = loadedImages.has(index);
 
@@ -79,16 +82,11 @@ const HeroCarousel: React.FC<HeroCarouselProps> = ({
             className={`absolute inset-0 ${zClass} transition-opacity duration-1000 ease-in-out ${opacityClass}`}
           >
             {shouldLoad ? (
-              <Image
-                src={image}
-                alt={`Hero image ${index + 1}`}
-                fill
-                className="object-cover"
-                priority={index < 3} // Priority for first 3 images
-                quality={80} // Balanced quality for all images
-                loading={index < 3 ? 'eager' : 'lazy'}
-                sizes="100vw"
-                unoptimized={false}
+              <div
+                className="absolute inset-0 bg-center bg-cover"
+                style={{ backgroundImage: `url('${image}')` }}
+                role="img"
+                aria-label={`Hero image ${index + 1}`}
               />
             ) : (
               // Placeholder while loading
