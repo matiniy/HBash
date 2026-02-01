@@ -218,7 +218,7 @@ a {
 }
 
 .loader-green-gradient {
-  background: linear-gradient(90deg, #144552 0%, #00FFA3 100%);
+  background: linear-gradient(90deg, #00FFA3 0%, #144552 100%);
 }
 
 .hero-title-farsi {
@@ -266,6 +266,21 @@ a {
 /* Navbar logo backing for dark theme visibility */
 .nav-logo-bg {
   background: rgba(120, 120, 120, 0.35);
+}
+
+.review-progress {
+  animation: review-progress 7000ms linear infinite;
+  transform-origin: left;
+  background: linear-gradient(90deg, #144552 0%, #00FFA3 100%);
+}
+
+@keyframes review-progress {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
 }
 
 .light-mode .nav-logo-bg {

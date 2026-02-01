@@ -69,7 +69,7 @@ const Reviews: React.FC = () => {
           </p>
         </div>
 
-        <div className="relative min-h-[180px] sm:min-h-[220px]">
+        <div className="relative min-h-[260px] xs:min-h-[240px] sm:min-h-[220px]">
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
@@ -119,21 +119,27 @@ const Reviews: React.FC = () => {
             </div>
           ))}
 
-          {testimonials.length > 1 && (
-            <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 flex gap-2">
+        </div>
+        {testimonials.length > 1 && (
+          <div className="mt-4 flex justify-center">
+            <div className="flex gap-2">
               {testimonials.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setCurrentTestimonial(index)}
-                  className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
-                    index === currentTestimonial ? 'w-8 bg-aqua-neon' : 'w-2 bg-white/50 hover:bg-white/75'
+                  className={`relative h-2 rounded-full overflow-hidden transition-colors duration-300 cursor-pointer ${
+                    index === currentTestimonial ? 'w-10 bg-white/20' : 'w-2 bg-white/40 hover:bg-white/60'
                   }`}
                   aria-label={`Go to testimonial ${index + 1}`}
-                />
+                >
+                  {index === currentTestimonial && (
+                    <span className="absolute inset-0 review-progress bg-aqua-neon" />
+                  )}
+                </button>
               ))}
             </div>
-          )}
-        </div>
+          </div>
+        )}
       </div>
     </section>
   );
