@@ -29,6 +29,8 @@ const Hero: React.FC = () => {
 
   // Calculate scale based on scroll position
   const scale = Math.max(0.8, 1 - scrollY * 0.0005);
+  const textOffset = Math.min(scrollY * 0.3, 120);
+  const textOpacity = Math.max(0, 1 - scrollY * 0.0025);
   return (
     <section className="min-h-screen relative overflow-hidden">
       {/* Top scrim to keep navbar readable on bright images (no navbar background) */}
@@ -45,6 +47,11 @@ const Hero: React.FC = () => {
                 language === 'fa' ? 'hero-title-farsi' : ''
               }`}
               dir={language === 'fa' ? 'rtl' : 'ltr'}
+              style={{
+                transform: `translateY(-${textOffset}px)`,
+                opacity: textOpacity,
+                transition: 'opacity 150ms linear'
+              }}
             >
               <span className="block whitespace-normal lg:whitespace-nowrap">
                 {t('hero.primaryTitle')}
@@ -58,6 +65,11 @@ const Hero: React.FC = () => {
                 language === 'fa' ? 'font-sora' : ''
               }`}
               dir={language === 'fa' ? 'rtl' : 'ltr'}
+              style={{
+                transform: `translateY(-${textOffset}px)`,
+                opacity: textOpacity,
+                transition: 'opacity 150ms linear'
+              }}
             >
               <span className="block whitespace-nowrap">
                 {t('hero.primarySubheadlineLine1')}
@@ -67,7 +79,15 @@ const Hero: React.FC = () => {
               </span>
             </p>
 
-            <Link href="/contact" className="mt-6 sm:mt-8 w-full flex justify-start">
+            <Link
+              href="/contact"
+              className="mt-6 sm:mt-8 w-full flex justify-start"
+              style={{
+                transform: `translateY(-${textOffset}px)`,
+                opacity: textOpacity,
+                transition: 'opacity 150ms linear'
+              }}
+            >
               <Button variant="primary" className="w-auto font-light">
                 {t('hero.scheduleConsultation')}
               </Button>
