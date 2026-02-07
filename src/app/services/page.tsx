@@ -104,11 +104,11 @@ export default function Services() {
   ];
 
   return (
-    <main className="min-h-screen bg-deep-forest">
+    <main className="min-h-screen bg-deep-forest overflow-x-hidden w-full max-w-[100vw]">
       <Navbar />
       
       {/* Hero Section */}
-      <section className="pt-[150px] pb-[50px] bg-deep-forest">
+      <section className="pt-24 sm:pt-28 md:pt-32 lg:pt-[150px] pb-8 sm:pb-12 lg:pb-[50px] bg-deep-forest">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className={`section-title-luxerie section-title-luxerie-large text-white mb-4 sm:mb-6 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>

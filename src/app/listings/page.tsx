@@ -237,11 +237,11 @@ export default function Listings() {
   }
 
   return (
-    <main className="min-h-screen bg-deep-forest">
+    <main className="min-h-screen bg-deep-forest overflow-x-hidden w-full max-w-[100vw]">
       <Navbar />
       
       {/* Hero Section */}
-      <section className="pt-20 pb-16 bg-deep-forest relative overflow-hidden">
+      <section className="pt-20 sm:pt-24 pb-10 sm:pb-16 bg-deep-forest relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-20 left-10 w-32 h-32 border border-aqua-neon rounded-full"></div>
@@ -252,10 +252,10 @@ export default function Listings() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+            <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6">
               Property <span className="text-aqua-neon">Listings</span>
             </h1>
-            <p className="text-xl text-white max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg lg:text-xl text-white max-w-3xl mx-auto px-1">
               Discover your perfect home in Dallas. Browse our curated selection of premium properties.
             </p>
           </div>
@@ -266,7 +266,7 @@ export default function Listings() {
       <section className="py-12 bg-gray-900/50 backdrop-blur-sm border-b border-gray-700/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Main Search Bar */}
-          <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/50 mb-8">
+          <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-gray-700/50 mb-6 sm:mb-8">
             <div className="flex flex-col lg:flex-row gap-4 items-center">
               {/* Search Input */}
               <div className="flex-1 w-full">

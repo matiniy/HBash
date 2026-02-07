@@ -88,7 +88,7 @@ const ContactForm: React.FC = () => {
                   value={formData.fullName}
                   onChange={handleChange}
                   required
-                  className={`w-full px-3 xs:px-4 py-2.5 xs:py-3 bg-white/10 border border-aqua-neon/30 rounded-lg text-white placeholder-grey-light focus:outline-none focus:ring-2 focus:ring-aqua-neon focus:border-transparent transition-all duration-300 text-sm xs:text-base ${language === 'fa' ? 'font-sora text-right' : ''}`}
+                  className={`w-full px-3 xs:px-4 py-2.5 xs:py-3 min-h-[44px] bg-white/10 border border-aqua-neon/30 rounded-lg text-white placeholder-grey-light focus:outline-none focus:ring-2 focus:ring-aqua-neon focus:border-transparent transition-all duration-300 text-base ${language === 'fa' ? 'font-sora text-right' : ''}`}
                   placeholder={t('contact.fullNamePlaceholder')}
                   dir={language === 'fa' ? 'rtl' : 'ltr'}
                 />
@@ -105,7 +105,7 @@ const ContactForm: React.FC = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className={`w-full px-3 xs:px-4 py-2.5 xs:py-3 bg-white/10 border border-aqua-neon/30 rounded-lg text-white placeholder-grey-light focus:outline-none focus:ring-2 focus:ring-aqua-neon focus:border-transparent transition-all duration-300 text-sm xs:text-base ${language === 'fa' ? 'font-sora text-right' : ''}`}
+                  className={`w-full px-3 xs:px-4 py-2.5 xs:py-3 min-h-[44px] bg-white/10 border border-aqua-neon/30 rounded-lg text-white placeholder-grey-light focus:outline-none focus:ring-2 focus:ring-aqua-neon focus:border-transparent transition-all duration-300 text-base ${language === 'fa' ? 'font-sora text-right' : ''}`}
                   placeholder={t('contact.emailPlaceholder')}
                   dir={language === 'fa' ? 'rtl' : 'ltr'}
                 />
@@ -122,7 +122,7 @@ const ContactForm: React.FC = () => {
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
-                className={`w-full px-3 xs:px-4 py-2.5 xs:py-3 bg-white/10 border border-aqua-neon/30 rounded-lg text-white placeholder-grey-light focus:outline-none focus:ring-2 focus:ring-aqua-neon focus:border-transparent transition-all duration-300 text-sm xs:text-base ${language === 'fa' ? 'font-sora text-right' : ''}`}
+                className={`w-full px-3 xs:px-4 py-2.5 xs:py-3 min-h-[44px] bg-white/10 border border-aqua-neon/30 rounded-lg text-white placeholder-grey-light focus:outline-none focus:ring-2 focus:ring-aqua-neon focus:border-transparent transition-all duration-300 text-base ${language === 'fa' ? 'font-sora text-right' : ''}`}
                 placeholder={t('contact.phonePlaceholder')}
                 dir={language === 'fa' ? 'rtl' : 'ltr'}
               />
@@ -139,7 +139,7 @@ const ContactForm: React.FC = () => {
                 onChange={handleChange}
                 required
                 rows={4}
-                className={`w-full px-3 xs:px-4 py-2.5 xs:py-3 bg-white/10 border border-aqua-neon/30 rounded-lg text-white placeholder-grey-light focus:outline-none focus:ring-2 focus:ring-aqua-neon focus:border-transparent transition-all duration-300 resize-none text-sm xs:text-base ${language === 'fa' ? 'font-sora text-right' : ''}`}
+                className={`w-full px-3 xs:px-4 py-2.5 xs:py-3 min-h-[120px] bg-white/10 border border-aqua-neon/30 rounded-lg text-white placeholder-grey-light focus:outline-none focus:ring-2 focus:ring-aqua-neon focus:border-transparent transition-all duration-300 resize-none text-base ${language === 'fa' ? 'font-sora text-right' : ''}`}
                 placeholder={t('contact.messagePlaceholder')}
                 dir={language === 'fa' ? 'rtl' : 'ltr'}
               />

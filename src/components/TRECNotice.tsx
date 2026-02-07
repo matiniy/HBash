@@ -2,18 +2,18 @@ import React from 'react';
 
 const TRECNotice: React.FC = () => {
   return (
-    <div className="bg-deep-forest text-white p-8 rounded-lg border border-aqua-neon/20">
-      <div className="max-w-4xl mx-auto space-y-6">
-        <div className="text-center mb-8">
-          <h2 className="text-2xl md:text-3xl font-bold text-aqua-neon mb-4">
+    <div className="bg-deep-forest text-white p-4 sm:p-6 lg:p-8 rounded-lg border border-aqua-neon/20">
+      <div className="max-w-4xl mx-auto space-y-4 sm:space-y-6 px-0">
+        <div className="text-center mb-6 sm:mb-8">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-aqua-neon mb-3 sm:mb-4">
             Consumer Protection Notice
           </h2>
-          <p className="text-white text-sm">
+          <p className="text-white text-sm sm:text-base">
             TREC ID: CN 1-5
           </p>
         </div>
 
-        <div className="space-y-6 text-white leading-relaxed">
+        <div className="space-y-4 sm:space-y-6 text-white leading-relaxed text-sm sm:text-base">
           <div>
             <p className="mb-4">
               <strong className="text-white">THE TEXAS REAL ESTATE COMMISSION (TREC) REGULATES</strong>

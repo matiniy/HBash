@@ -201,7 +201,7 @@ const ListingDetailsClient: React.FC<ListingDetailsClientProps> = ({ id }) => {
   };
 
   return (
-    <div className="min-h-screen bg-deep-forest">
+    <div className="min-h-screen bg-deep-forest overflow-x-hidden w-full max-w-[100vw]">
       {/* Hero / Gallery Section */}
       <section className="relative h-[70vh] overflow-hidden">
         {/* Back Button */}

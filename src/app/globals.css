@@ -136,6 +136,19 @@ a {
   box-shadow: none;
 }
 
+/* Primary button in gradient area: dark green #144552 */
+.main-gradient-bg .btn-primary {
+  background-color: #144552 !important;
+  color: #ffffff !important;
+}
+.main-gradient-bg .btn-primary:hover {
+  background-color: var(--aqua-neon-hover) !important;
+  color: #144552 !important;
+}
+.main-gradient-bg .btn-primary [&>*] {
+  color: inherit !important;
+}
+
 .btn-secondary:hover {
   background-color: var(--aqua-neon-hover);
   color: var(--deep-forest);
@@ -313,7 +326,7 @@ nav .nav-link,
 }
 
 .reviews-read-more-link {
-  font-family: var(--font-raleway), "Raleway", sans-serif;
+  font-family: var(--font-raleway), "Raleway", sans-serif !important;
   color: #0d7488;
 }
 .reviews-read-more-link:hover {

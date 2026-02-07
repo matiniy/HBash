@@ -6,14 +6,14 @@ import Button from '@/components/Button';
 
 export default function Contact() {
   return (
-    <main className="min-h-screen bg-deep-forest">
+    <main className="min-h-screen bg-deep-forest overflow-x-hidden w-full max-w-[100vw]">
       <Navbar />
       
       {/* Hero Section */}
-      <section className="pt-[150px] pb-[50px] bg-deep-forest">
+      <section className="pt-24 sm:pt-28 md:pt-32 lg:pt-[150px] pb-8 sm:pb-12 lg:pb-[50px] bg-deep-forest">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6">
+            <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 sm:mb-6">
               Get In <span className="text-aqua-neon">Touch</span>
             </h1>
             <p className="text-base xs:text-lg sm:text-xl text-white max-w-3xl mx-auto px-2">

@@ -51,7 +51,7 @@ export default function Land2() {
       )}
       <div className="light-mode">
         <main 
-          className={`min-h-screen bg-white transition-opacity duration-500 ${
+          className={`min-h-screen bg-white transition-opacity duration-500 overflow-x-hidden w-full max-w-[100vw] ${
             hasMounted && !isLoading ? 'opacity-100' : 'opacity-0'
           }`}
         >
