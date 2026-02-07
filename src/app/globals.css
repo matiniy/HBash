@@ -327,6 +327,11 @@ nav .nav-link,
 .main-gradient-bg .hero-cta-suffix {
   color: #144552 !important;
 }
+/* Contact (and other) section titles: "Book a Consultation" at 32px, not the hero button */
+.section-title-luxerie .hero-cta-prefix,
+.section-title-luxerie .hero-cta-suffix {
+  font-size: 32px !important;
+}
 .hero-cta-arrow {
   display: inline-flex;
   flex-shrink: 0;
