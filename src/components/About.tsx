@@ -14,8 +14,8 @@ const About: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-6 items-center py-8 lg:py-12">
           {/* Left - Oval portrait and CTAs */}
-          <div className="flex flex-col items-center lg:items-start gap-6">
-            <div className="w-full max-w-[380px] sm:max-w-[420px] lg:max-w-[460px] aspect-[4/5] rounded-[50%] overflow-hidden border-2 border-[#E8DCC8] shrink-0">
+          <div className="flex flex-col items-center gap-6">
+            <div className="w-full max-w-full aspect-[4/5] rounded-[50%] overflow-hidden border-2 border-[#E8DCC8] shrink-0">
               <Image
                 src="/images/Realtor/realtor-photo.png"
                 alt="H Bashash - Dallas Realtor"
@@ -28,7 +28,7 @@ const About: React.FC = () => {
                 blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
               />
             </div>
-            <div className="flex flex-col sm:flex-row gap-3 items-center justify-center lg:justify-start w-full lg:w-auto">
+            <div className="flex flex-col sm:flex-row gap-3 items-center justify-center w-full">
               <Link href="/contact">
                 <Button variant="primary" className="w-full sm:w-auto">
                   {t('hero.scheduleConsultation')}

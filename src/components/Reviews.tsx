@@ -62,7 +62,7 @@ const Reviews: React.FC = () => {
     <section className="py-16 sm:py-20 bg-transparent">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
-          className={`text-left mb-8 sm:mb-12 ${language === 'fa' ? 'font-sora text-right' : ''}`}
+          className={`text-center mb-8 sm:mb-12 ${language === 'fa' ? 'font-sora' : ''}`}
           dir={language === 'fa' ? 'rtl' : 'ltr'}
         >
           <h2 className="reviews-section-title">
