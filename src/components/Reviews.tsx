@@ -99,7 +99,7 @@ const Reviews: React.FC = () => {
                 key={index}
                 ref={(el) => { slideRefs.current[index] = el; }}
                 onClick={() => setCurrentTestimonial(index)}
-                className={`reviews-carousel-slide flex-shrink-0 text-left transition-opacity duration-300 cursor-pointer px-4 sm:px-6 min-w-[280px] sm:min-w-[320px] lg:min-w-[360px] ${language === 'fa' ? 'text-right' : ''} ${
+                className={`reviews-carousel-slide flex-shrink-0 text-left transition-opacity duration-300 cursor-pointer px-3 sm:px-6 min-w-[260px] xs:min-w-[280px] sm:min-w-[320px] lg:min-w-[360px] ${language === 'fa' ? 'text-right' : ''} ${
                   index === currentTestimonial ? 'opacity-100' : 'opacity-50'
                 }`}
                 style={{ scrollSnapAlign: 'center' }}

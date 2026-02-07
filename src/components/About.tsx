@@ -21,7 +21,7 @@ const About: React.FC = () => {
                 alt="H Bashash - Dallas Realtor"
                 width={600}
                 height={800}
-                className="w-full h-auto object-contain"
+                className="w-full h-auto max-h-[60vh] sm:max-h-[70vh] md:max-h-none object-contain object-top"
                 priority
                 quality={85}
                 placeholder="blur"

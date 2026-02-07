@@ -9,9 +9,9 @@ const Footer: React.FC = () => {
   return (
     <footer className="bg-transparent py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
           {/* Logo and Description */}
-          <div className="col-span-1 md:col-span-2">
+          <div className="col-span-1 sm:col-span-2">
             <h3 className="text-xl xs:text-2xl font-bold text-white mb-3 xs:mb-4">Haideh Bashash</h3>
             <p className={`text-sm xs:text-base text-white mb-4 xs:mb-6 max-w-md ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
               {t('footer.description')}

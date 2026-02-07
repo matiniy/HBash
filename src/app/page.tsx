@@ -50,13 +50,13 @@ export default function Home() {
         />
       )}
       <main 
-        className={`min-h-screen bg-deep-forest transition-opacity duration-500 ${
+        className={`min-h-screen bg-deep-forest transition-opacity duration-500 overflow-x-hidden w-full max-w-[100vw] ${
           hasMounted && !isLoading ? 'opacity-100' : 'opacity-0'
         }`}
       >
         <Navbar />
         <Hero />
-        <div className="main-gradient-bg relative" style={{ background: 'radial-gradient(ellipse at center, #FFEFDF 0%, #F3D4B4 100%)' }}>
+        <div className="main-gradient-bg relative overflow-x-hidden w-full" style={{ background: 'radial-gradient(ellipse at center, #FFEFDF 0%, #F3D4B4 100%)' }}>
           {/* Noise overlay for all sections: size 1.2, 80% opacity, color #FEE2C6 */}
           <div className="gradient-noise-overlay" aria-hidden>
             <svg xmlns="http://www.w3.org/2000/svg" className="absolute inset-0 w-full h-full">

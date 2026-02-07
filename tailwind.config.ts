@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        xs: '475px',
+      },
       fontFamily: {
         'space-grotesk': ['var(--font-space-grotesk)', 'sans-serif'],
         'sora': ['var(--font-sora)', 'sans-serif'],

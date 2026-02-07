@@ -33,6 +33,12 @@ const raleway = Raleway({
   variable: '--font-raleway'
 })
 
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+};
+
 export const metadata: Metadata = {
   title: 'Haideh Bashash Realtor - Dallas, TX',
   description: 'Professional real estate services in Dallas, TX. Luxury listings, consultation booking, and expert guidance.',

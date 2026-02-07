@@ -22,7 +22,7 @@ const Documents: React.FC = () => {
   ];
 
   return (
-    <section className="py-16 bg-transparent relative overflow-hidden">
+    <section className="py-12 sm:py-14 lg:py-16 bg-transparent relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Title */}
         <div className="text-center mb-12">
