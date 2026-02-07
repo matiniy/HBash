@@ -22,11 +22,11 @@ const GOOGLE_REVIEWS_URL = 'https://maps.app.goo.gl/NTTL8uiUqwZL3enEA';
 
 const StarRating: React.FC = () => {
   return (
-    <div className="flex items-center gap-1 mb-3">
+    <div className="flex items-center gap-1 justify-center">
       {[...Array(5)].map((_, i) => (
         <svg
           key={i}
-          className="w-5 h-5 text-aqua-neon fill-current"
+          className="w-5 h-5 text-[#144552] fill-current"
           viewBox="0 0 20 20"
           fill="currentColor"
         >
@@ -37,9 +37,14 @@ const StarRating: React.FC = () => {
   );
 };
 
+const QuoteMark: React.FC = () => (
+  <span className="reviews-quote-mark" aria-hidden>"</span>
+);
+
 const Reviews: React.FC = () => {
   const { t, language } = useLanguage();
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
+  const slideRefs = React.useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
     if (testimonials.length <= 1) return;
@@ -49,8 +54,12 @@ const Reviews: React.FC = () => {
     return () => clearInterval(timer);
   }, []);
 
+  useEffect(() => {
+    slideRefs.current[currentTestimonial]?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+  }, [currentTestimonial]);
+
   return (
-    <section className="py-16 sm:py-20 bg-deep-forest">
+    <section className="py-16 sm:py-20 bg-transparent">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
           className={`text-center mb-8 sm:mb-12 ${language === 'fa' ? 'font-sora' : ''}`}
@@ -68,71 +77,76 @@ const Reviews: React.FC = () => {
           </p>
         </div>
 
-        <div className="relative min-h-[260px] xs:min-h-[240px] sm:min-h-[220px]">
-          {testimonials.map((testimonial, index) => (
-            <div
-              key={index}
-              className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
-                index === currentTestimonial ? 'opacity-100' : 'opacity-0 pointer-events-none'
-              }`}
-            >
-              <a
-                href={GOOGLE_REVIEWS_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block cursor-pointer group"
+        <div
+          className="reviews-carousel overflow-x-auto overflow-y-visible pb-2 -mx-4 px-4 sm:mx-0 sm:px-0 scroll-smooth"
+          style={{ scrollSnapType: 'x mandatory' }}
+        >
+          <div className="reviews-carousel-inner flex gap-6 sm:gap-8">
+            {testimonials.map((testimonial, index) => (
+              <div
+                key={index}
+                ref={(el) => { slideRefs.current[index] = el; }}
+                onClick={() => setCurrentTestimonial(index)}
+                className={`reviews-carousel-slide flex-shrink-0 text-center transition-opacity duration-300 cursor-pointer ${
+                  index === currentTestimonial ? 'opacity-100' : 'opacity-50'
+                }`}
+                style={{ scrollSnapAlign: 'center' }}
               >
-                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-aqua-neon/10 group-hover:bg-white/10 group-hover:border-aqua-neon/30 transition-all duration-300">
-                  <div className="flex items-start">
-                    <div className="flex-1">
-                      <StarRating />
-                      <p
-                        className={`text-white text-sm xs:text-base sm:text-lg leading-relaxed mb-3 group-hover:text-white transition-colors ${
-                          language === 'fa' ? 'font-sora' : ''
-                        }`}
-                        dir={language === 'fa' ? 'rtl' : 'ltr'}
-                      >
-                        {testimonial.text}
-                      </p>
-                      <div className="flex items-center justify-between">
-                        <p
-                          className={`text-white font-semibold text-sm xs:text-base ${
-                            language === 'fa' ? 'font-sora' : ''
-                          }`}
-                          dir={language === 'fa' ? 'rtl' : 'ltr'}
-                        >
-                          — {testimonial.author}
-                        </p>
-                        <span
-                          className={`text-aqua-neon text-xs xs:text-sm font-semibold group-hover:text-[#00e694] transition-colors ${
-                            language === 'fa' ? 'font-sora' : ''
-                          }`}
-                        >
-                          {t('about.readMoreReviews')}
-                        </span>
-                      </div>
-                    </div>
+                <a
+                  href={GOOGLE_REVIEWS_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block group"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <p
+                    className={`text-[#144552] font-semibold text-sm xs:text-base mb-2 ${
+                      language === 'fa' ? 'font-sora' : ''
+                    }`}
+                    dir={language === 'fa' ? 'rtl' : 'ltr'}
+                  >
+                    {testimonial.author}
+                  </p>
+                  <div className="flex items-start justify-center gap-1 sm:gap-2">
+                    <QuoteMark />
+                    <p
+                      className={`text-[#144552]/90 text-sm xs:text-base sm:text-lg leading-relaxed ${
+                        language === 'fa' ? 'font-sora' : ''
+                      }`}
+                      dir={language === 'fa' ? 'rtl' : 'ltr'}
+                    >
+                      {testimonial.text}
+                    </p>
                   </div>
-                </div>
-              </a>
-            </div>
-          ))}
-
+                  <div className="mt-4">
+                    <StarRating />
+                  </div>
+                  <span
+                    className={`inline-block mt-2 text-[#0d7488] text-xs xs:text-sm font-semibold group-hover:underline ${
+                      language === 'fa' ? 'font-sora' : ''
+                    }`}
+                  >
+                    {t('about.readMoreReviews')}
+                  </span>
+                </a>
+              </div>
+            ))}
+          </div>
         </div>
         {testimonials.length > 1 && (
-          <div className="mt-4 flex justify-center">
+          <div className="mt-6 flex justify-center">
             <div className="flex gap-2">
               {testimonials.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setCurrentTestimonial(index)}
                   className={`relative h-2 rounded-full overflow-hidden transition-colors duration-300 cursor-pointer ${
-                    index === currentTestimonial ? 'w-10 bg-white/20' : 'w-2 bg-white/40 hover:bg-white/60'
+                    index === currentTestimonial ? 'w-10 bg-[#144552]/30' : 'w-2 bg-[#144552]/20 hover:bg-[#144552]/30'
                   }`}
                   aria-label={`Go to testimonial ${index + 1}`}
                 >
                   {index === currentTestimonial && (
-                    <span className="absolute inset-0 review-progress bg-aqua-neon" />
+                    <span className="absolute inset-0 review-progress bg-[#144552]" />
                   )}
                 </button>
               ))}

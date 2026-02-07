@@ -242,11 +242,12 @@ nav .nav-link,
   color: rgba(255, 239, 223, 1);
 }
 
-/* "Your Home Journey" — PP Editorial Old only */
+/* "Your Home Journey" — PP Editorial Old only; negative margin aligns with line above (italic optical offset) */
 .hero-title-editorial {
   font-family: "PP Editorial Old";
   font-size: 63px;
   font-style: italic;
+  margin-left: -0.06em; /* pull left so italic aligns with "Lighting the way Through" */
 }
 
 /* Hero description: Raleway, line height 120.5%, one block */
@@ -351,6 +352,96 @@ nav .nav-link,
 }
 .light-mode .reviews-subtitle {
   color: #144552 !important;
+}
+
+.reviews-quote-mark {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 4rem;
+  line-height: 1;
+  color: rgba(243, 212, 180, 0.9);
+  flex-shrink: 0;
+  user-select: none;
+}
+
+@media (max-width: 640px) {
+  .reviews-quote-mark {
+    font-size: 3rem;
+  }
+}
+
+/* Reviews carousel: centered slide in focus (100%), prev/next peek at 50% opacity */
+.reviews-carousel {
+  scroll-padding-inline: 10vw;
+}
+.reviews-carousel-inner {
+  padding-inline: 10vw;
+}
+.reviews-carousel-slide {
+  width: 78vw;
+  max-width: 520px;
+}
+
+/* Main page gradient area (Client stories + below): light radial gradient, dark text */
+.main-gradient-bg .section-title-luxerie,
+.main-gradient-bg .section-title-luxerie-large {
+  color: #144552 !important;
+}
+.main-gradient-bg .reviews-title-clients,
+.main-gradient-bg .reviews-title-stories,
+.main-gradient-bg .reviews-subtitle {
+  color: #144552 !important;
+}
+.main-gradient-bg section .text-white {
+  color: #144552 !important;
+}
+.main-gradient-bg section label {
+  color: #144552 !important;
+}
+.main-gradient-bg input[type="text"],
+.main-gradient-bg input[type="email"],
+.main-gradient-bg input[type="tel"],
+.main-gradient-bg textarea {
+  color: #082C36 !important;
+  background: rgba(255, 255, 255, 0.9) !important;
+  border-color: rgba(20, 69, 82, 0.35) !important;
+}
+.main-gradient-bg input::placeholder,
+.main-gradient-bg textarea::placeholder {
+  color: rgba(8, 44, 54, 0.6) !important;
+}
+.main-gradient-bg .backdrop-blur-sm.rounded-2xl,
+.main-gradient-bg .backdrop-blur-sm.rounded-3xl {
+  background: rgba(255, 255, 255, 0.75) !important;
+  border-color: rgba(20, 69, 82, 0.2) !important;
+}
+.main-gradient-bg .border-gray-700\/50 {
+  background: rgba(255, 255, 255, 0.7) !important;
+  border-color: rgba(20, 69, 82, 0.2) !important;
+}
+.main-gradient-bg .border-gray-700\/50 .section-title-luxerie,
+.main-gradient-bg .border-gray-700\/50 .text-white {
+  color: #144552 !important;
+}
+.main-gradient-bg .border-gray-700\/50 .text-aqua-neon {
+  color: #0d7488 !important;
+}
+.main-gradient-bg footer h3,
+.main-gradient-bg footer h4,
+.main-gradient-bg footer p,
+.main-gradient-bg footer a {
+  color: #144552 !important;
+}
+.main-gradient-bg footer a:hover {
+  color: var(--aqua-neon) !important;
+}
+.main-gradient-bg .text-white\/80 {
+  color: rgba(20, 69, 82, 0.85) !important;
+}
+.main-gradient-bg .border-aqua-neon\/10 {
+  border-color: rgba(20, 69, 82, 0.2) !important;
+}
+.main-gradient-bg .border-aqua-neon\/20 {
+  border-color: rgba(20, 69, 82, 0.25) !important;
 }
 
 .loader-green-gradient {

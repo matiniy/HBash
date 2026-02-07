@@ -70,6 +70,7 @@ const Hero: React.FC = () => {
             ? 'text-right items-end lg:ml-auto lg:mr-12 lg:pl-0 lg:pr-0'
             : 'text-left items-start lg:pl-12 lg:pr-0 lg:mr-auto'
         }`}
+        style={{ transform: 'translateY(50px)' }}
       >
         <h1
           className={`hero-title-luxerie mt-10 sm:mt-12 lg:mt-0 ${

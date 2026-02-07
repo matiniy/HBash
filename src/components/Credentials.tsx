@@ -2,7 +2,7 @@ import React from 'react';
 
 const Credentials: React.FC = () => {
   return (
-    <section className="py-20 bg-deep-forest relative overflow-hidden">
+    <section className="py-20 bg-transparent relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-20 left-10 w-32 h-32 border border-aqua-neon rounded-full"></div>

@@ -62,7 +62,7 @@ const ContactForm: React.FC = () => {
   };
 
   return (
-    <section className="py-20 bg-deep-forest">
+    <section className="py-20 bg-transparent">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8 sm:mb-12">
           <h2 className="section-title-luxerie section-title-luxerie-large text-white mb-4 sm:mb-6" dir={language === 'fa' ? 'rtl' : 'ltr'}>

@@ -56,12 +56,14 @@ export default function Home() {
       >
         <Navbar />
         <Hero />
-        <Reviews />
-        <About />
-        <ContactForm />
-        <Credentials />
-        <Documents />
-        <Footer />
+        <div className="main-gradient-bg" style={{ background: 'radial-gradient(ellipse at center, #FFEFDF 0%, #F3D4B4 100%)' }}>
+          <Reviews />
+          <About />
+          <ContactForm />
+          <Credentials />
+          <Documents />
+          <Footer />
+        </div>
       </main>
     </>
   );
