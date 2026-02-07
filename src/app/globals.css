@@ -316,10 +316,12 @@ nav .nav-link,
   font-family: var(--font-raleway), "Raleway", sans-serif !important;
   font-weight: 500 !important;
   font-style: italic !important;
+  font-size: 0.85em !important;
 }
 .hero-cta-suffix {
   font-family: "PP Editorial Old", var(--font-playfair), Georgia, serif !important;
   font-style: italic !important;
+  font-size: 0.55em !important;
 }
 .main-gradient-bg .hero-cta-suffix {
   color: #144552 !important;
