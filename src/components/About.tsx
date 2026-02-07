@@ -14,7 +14,7 @@ const About: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center py-8 lg:py-12">
           {/* Left - Oval portrait and CTAs */}
-          <div className="flex flex-col items-center gap-6">
+          <div className="flex flex-col items-center gap-0">
             <div className="w-full shrink-0">
               <Image
                 src="/images/Realtor/realtor-photo.png"
@@ -28,10 +28,11 @@ const About: React.FC = () => {
                 blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
               />
             </div>
-            <div className="flex flex-col sm:flex-row gap-3 items-center justify-center w-full">
+            <div className="flex flex-col sm:flex-row gap-2 items-center justify-center w-full mt-0">
               <Link href="/contact">
                 <Button variant="primary" className="w-full sm:w-auto">
-                  {t('hero.scheduleConsultation')}
+                  <span className="hero-cta-prefix">{t('hero.consultationPrefix')}</span>{' '}
+                  <span className="hero-cta-suffix">{t('hero.consultationSuffix')}</span>
                 </Button>
               </Link>
               <Link href="https://t.me/KasboKarDallas" target="_blank" rel="noopener noreferrer">
@@ -48,15 +49,16 @@ const About: React.FC = () => {
           {/* Right - Title, bio and Read More on background (no box) */}
           <div className={`space-y-4 sm:space-y-5 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
             <h2 className="about-heading text-3xl sm:text-4xl lg:text-[2.5rem] leading-tight">
-              {t('about.heading')}
+              <span className="about-heading-raleway">{t('about.headingPrefix')}</span>{' '}
+              <span className="about-heading-editorial">{t('about.headingName')}</span>
             </h2>
-            <p className={`about-body text-sm xs:text-base sm:text-lg lg:text-xl leading-relaxed ${language === 'fa' ? 'text-right' : 'text-left'} line-clamp-4`}>
+            <p className={`about-body text-sm xs:text-base sm:text-lg lg:text-xl leading-relaxed ${language === 'fa' ? 'text-right' : 'text-left'} line-clamp-4`} style={{ fontFamily: 'var(--font-raleway), Raleway, sans-serif' }}>
               {t('about.bio')}
             </p>
             <Link href="/about" className="about-read-more inline-block font-semibold text-sm xs:text-base sm:text-lg transition-colors duration-300">
               {t('about.readMore')}
             </Link>
-            <p className={`about-body text-sm xs:text-base sm:text-lg md:text-xl leading-relaxed pt-2 ${language === 'fa' ? 'text-right' : 'text-left'}`}>
+            <p className={`about-body text-sm xs:text-base sm:text-lg md:text-xl leading-relaxed pt-2 ${language === 'fa' ? 'text-right' : 'text-left'}`} style={{ fontFamily: 'var(--font-raleway), Raleway, sans-serif' }}>
               {t('hero.subtitle')}
             </p>
           </div>

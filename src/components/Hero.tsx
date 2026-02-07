@@ -126,7 +126,8 @@ const Hero: React.FC = () => {
               <ArrowRight />
             </span>
           )}
-          <span>{t('hero.scheduleConsultation')}</span>
+          <span className="hero-cta-prefix">{t('hero.consultationPrefix')}</span>{' '}
+          <span className="hero-cta-suffix">{t('hero.consultationSuffix')}</span>
         </Link>
       </div>
 

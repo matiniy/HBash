@@ -15,7 +15,9 @@
     "title": "Find Your Home in",
     "dallas": "Dallas",
     "subtitle": "From luxury estates to family-friendly neighborhoods, discover homes that fit your lifestyle - guided by a trusted expert who knows Dallas inside out.",
-    "scheduleConsultation": "Schedule Consultation",
+    "scheduleConsultation": "Book a Consultation",
+    "consultationPrefix": "Book a",
+    "consultationSuffix": "Consultation",
     "browseListings": "Browse Listings",
     "stats": {
       "trustedByCompanies": "Trusted By Companies",
@@ -30,6 +32,8 @@
   },
   "about": {
     "heading": "About Haideh",
+    "headingPrefix": "About",
+    "headingName": "Haideh",
     "bio": "Haideh Bashash is a dedicated, full-time real estate professional with HomeSmart Stars brokerage. Whether buying, selling, or leasing a property, she works tirelessly to protect her clients' best interests and guide them through every step of the process. Her business is built on dedication, clear communication, determination, and trust, with a strong belief in the philosophy of quality over quantity. Before transitioning into real estate, Haideh spent over 17 years working with the United Nations, where she gained invaluable experience interacting with people from diverse backgrounds. This background strengthened her communication, negotiation, and interpersonal skills—assets she brings into her real estate practice today. Haideh is fluent in Persian and Turkish. Outside of work, she enjoys spending time with her family and friends.",
     "readMore": "Read More →",
     "joinNow": "Join Now",

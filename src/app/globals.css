@@ -249,6 +249,13 @@ nav .nav-link,
 .hero-cta-link:focus-visible * {
   color: inherit !important;
 }
+/* "Book a" = Raleway, "Consultation" = PP Editorial Old */
+.hero-cta-prefix {
+  font-family: var(--font-raleway), "Raleway", sans-serif !important;
+}
+.hero-cta-suffix {
+  font-family: "PP Editorial Old", var(--font-playfair), Georgia, serif !important;
+}
 .hero-cta-arrow {
   display: inline-flex;
   flex-shrink: 0;
@@ -379,17 +386,26 @@ nav .nav-link,
 .main-gradient-bg .reviews-subtitle {
   color: #144552 !important;
 }
-/* About section: no boxes, title + body on gradient; PP Editorial Old title, Raleway body, #144552 */
+/* About section: "About" = Raleway, "Haideh" = PP Editorial Old, #144552 */
 .main-gradient-bg .about-heading {
+  color: #144552 !important;
+}
+.main-gradient-bg .about-heading-raleway {
+  font-family: var(--font-raleway), "Raleway", sans-serif !important;
+  color: #144552 !important;
+}
+.main-gradient-bg .about-heading-editorial {
   font-family: "PP Editorial Old", var(--font-playfair), Georgia, serif !important;
   color: #144552 !important;
 }
+.about-body,
 .main-gradient-bg .about-body {
   font-family: var(--font-raleway), "Raleway", sans-serif !important;
   color: #144552 !important;
 }
+.about-read-more,
 .main-gradient-bg .about-read-more {
-  font-family: var(--font-raleway), "Raleway", sans-serif !important;
+  font-family: "PP Editorial Old", var(--font-playfair), Georgia, serif !important;
   color: #144552 !important;
 }
 .main-gradient-bg .about-read-more:hover {
