@@ -20,9 +20,9 @@ const testimonials = [
 
 const GOOGLE_REVIEWS_URL = 'https://maps.app.goo.gl/NTTL8uiUqwZL3enEA';
 
-const StarRating: React.FC = () => {
+const StarRating: React.FC<{ alignEnd?: boolean }> = ({ alignEnd }) => {
   return (
-    <div className="flex items-center gap-1 justify-center reviews-stars">
+    <div className={`flex items-center gap-1 reviews-stars ${alignEnd ? 'justify-end' : 'justify-start'}`}>
       {[...Array(5)].map((_, i) => (
         <svg
           key={i}
@@ -62,7 +62,7 @@ const Reviews: React.FC = () => {
     <section className="py-16 sm:py-20 bg-transparent">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
-          className={`text-center mb-8 sm:mb-12 ${language === 'fa' ? 'font-sora' : ''}`}
+          className={`text-left mb-8 sm:mb-12 ${language === 'fa' ? 'font-sora text-right' : ''}`}
           dir={language === 'fa' ? 'rtl' : 'ltr'}
         >
           <h2 className="reviews-section-title">
@@ -96,7 +96,7 @@ const Reviews: React.FC = () => {
                 key={index}
                 ref={(el) => { slideRefs.current[index] = el; }}
                 onClick={() => setCurrentTestimonial(index)}
-                className={`reviews-carousel-slide flex-shrink-0 text-center transition-opacity duration-300 cursor-pointer px-4 sm:px-6 ${
+                className={`reviews-carousel-slide flex-shrink-0 text-left transition-opacity duration-300 cursor-pointer px-4 sm:px-6 ${language === 'fa' ? 'text-right' : ''} ${
                   index === currentTestimonial ? 'opacity-100' : 'opacity-50'
                 }`}
                 style={{ scrollSnapAlign: 'center' }}
@@ -116,7 +116,7 @@ const Reviews: React.FC = () => {
                   >
                     {testimonial.author}
                   </p>
-                  <div className="flex items-start justify-center gap-1 sm:gap-2">
+                  <div className={`flex items-start gap-1 sm:gap-2 ${language === 'fa' ? 'justify-end' : 'justify-start'}`}>
                     <QuoteMark />
                     <p
                       className={`reviews-quote-text text-[#144552]/90 text-sm xs:text-base sm:text-lg leading-relaxed ${
@@ -128,7 +128,7 @@ const Reviews: React.FC = () => {
                     </p>
                   </div>
                   <div className="mt-4">
-                    <StarRating />
+                    <StarRating alignEnd={language === 'fa'} />
                   </div>
                 </a>
               </div>

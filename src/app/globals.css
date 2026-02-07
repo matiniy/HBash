@@ -540,9 +540,10 @@ nav .nav-link,
   opacity: 1;
 }
 
+/* Nav: primary white, active line light green (#00FFA3), hover = dark teal (#144552) */
 nav .nav-link:hover,
 .nav-link:hover {
-  color: var(--aqua-neon-hover) !important;
+  color: var(--aqua-neon) !important;
 }
 nav .nav-link-active,
 .nav-link-active {

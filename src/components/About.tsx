@@ -12,10 +12,10 @@ const About: React.FC = () => {
   return (
     <section className="py-14 sm:py-20 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center py-8 lg:py-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-6 items-center py-8 lg:py-12">
           {/* Left - Oval portrait and CTAs */}
           <div className="flex flex-col items-center lg:items-start gap-6">
-            <div className="w-full max-w-[320px] aspect-[4/5] rounded-[50%] overflow-hidden border-2 border-[#E8DCC8] shrink-0">
+            <div className="w-full max-w-[380px] sm:max-w-[420px] lg:max-w-[460px] aspect-[4/5] rounded-[50%] overflow-hidden border-2 border-[#E8DCC8] shrink-0">
               <Image
                 src="/images/Realtor/realtor-photo.png"
                 alt="H Bashash - Dallas Realtor"
