@@ -162,7 +162,7 @@ const ContactForm: React.FC = () => {
               <Button
                 type="submit"
                 variant="primary"
-                className="w-full sm:w-auto"
+                className="btn-contact-submit w-full sm:w-auto"
                 onClick={() => {}}
               >
                 {isSubmitting ? (

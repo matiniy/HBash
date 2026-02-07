@@ -130,23 +130,69 @@ a {
 .btn-font {
   font-family: var(--font-raleway), "Raleway", sans-serif !important;
 }
+/* Ensure button text color applies to all children (replaces Tailwind [&>*] to avoid CSS parse errors) */
+.btn-primary *,
+.btn-secondary * {
+  color: inherit !important;
+}
 .btn-primary:hover {
   background-color: var(--aqua-neon-hover);
   transform: translateY(-2px);
   box-shadow: none;
 }
 
-/* Primary button in gradient area: dark green #144552 */
+/* Primary button in gradient area: same size as "Clients Stories" (45px), dark green */
+.main-gradient-bg button.btn-primary,
 .main-gradient-bg .btn-primary {
+  background: #144552 !important;
   background-color: #144552 !important;
   color: #ffffff !important;
+  font-size: 28px !important;
+  min-height: 56px !important;
+  padding: 0.5rem 1.25rem !important;
 }
+@media (min-width: 475px) {
+  .main-gradient-bg button.btn-primary,
+  .main-gradient-bg .btn-primary {
+    font-size: 32px !important;
+    min-height: 60px !important;
+    padding: 0.6rem 1.5rem !important;
+  }
+}
+@media (min-width: 640px) {
+  .main-gradient-bg button.btn-primary,
+  .main-gradient-bg .btn-primary {
+    font-size: 45px !important;
+    min-height: 72px !important;
+    padding: 0.75rem 1.75rem !important;
+  }
+}
+.main-gradient-bg button.btn-primary *,
+.main-gradient-bg .btn-primary * {
+  color: #ffffff !important;
+  font-size: inherit !important;
+}
+.main-gradient-bg button.btn-primary:hover,
 .main-gradient-bg .btn-primary:hover {
+  background: var(--aqua-neon-hover) !important;
   background-color: var(--aqua-neon-hover) !important;
   color: #144552 !important;
 }
-.main-gradient-bg .btn-primary [&>*] {
-  color: inherit !important;
+.main-gradient-bg button.btn-primary:hover *,
+.main-gradient-bg .btn-primary:hover * {
+  color: #144552 !important;
+}
+
+/* Contact form "Send Message" button: always dark green #144552 */
+.btn-contact-submit,
+.btn-contact-submit * {
+  background-color: #144552 !important;
+  color: #ffffff !important;
+}
+.btn-contact-submit:hover,
+.btn-contact-submit:hover * {
+  background-color: var(--aqua-neon-hover) !important;
+  color: #144552 !important;
 }
 
 .btn-secondary:hover {
