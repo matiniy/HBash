@@ -69,12 +69,12 @@ const ContactForm: React.FC = () => {
             <span className="hero-cta-prefix">{t('contact.title')}</span>{' '}
             <span className="hero-cta-suffix text-aqua-neon">{t('contact.consultation')}</span>
           </h2>
-          <p className={`contact-subtitle text-sm xs:text-base sm:text-lg lg:text-xl text-white max-w-2xl mx-auto ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'} style={{ fontFamily: 'var(--font-raleway), Raleway, sans-serif' }}>
+          <p className="contact-subtitle text-sm xs:text-base sm:text-lg lg:text-xl text-white max-w-2xl mx-auto" dir={language === 'fa' ? 'rtl' : 'ltr'}>
             {t('contact.subtitle')}
           </p>
         </div>
 
-        <div className="bg-white/5 backdrop-blur-sm rounded-3xl p-4 sm:p-6 lg:p-8 border border-aqua-neon/20">
+        <div className="p-4 sm:p-6 lg:p-8">
           <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
