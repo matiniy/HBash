@@ -540,14 +540,20 @@ nav .nav-link,
   opacity: 1;
 }
 
-/* Nav: primary white, active line light green (#00FFA3), hover = dark teal (#144552) */
+/* Nav: primary white, selected = white + light green underline, hover = dark teal (#144552) */
 nav .nav-link:hover,
 .nav-link:hover {
-  color: var(--aqua-neon) !important;
+  color: var(--aqua-neon-hover) !important;
 }
 nav .nav-link-active,
 .nav-link-active {
-  color: var(--aqua-neon) !important;
+  color: #ffffff !important;
+}
+
+/* Language toggle: EN and FA text dark green #144552 */
+.nav-lang-toggle,
+.nav-lang-toggle span {
+  color: #144552 !important;
 }
 
 /* Navbar logo backing for dark theme visibility */

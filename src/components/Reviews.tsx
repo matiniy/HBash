@@ -20,6 +20,9 @@ const testimonials = [
 
 const GOOGLE_REVIEWS_URL = 'https://maps.app.goo.gl/NTTL8uiUqwZL3enEA';
 
+/** Duplicate testimonials so carousel has left/right siblings and can loop. */
+const loopedTestimonials = [...testimonials, ...testimonials];
+
 const StarRating: React.FC<{ alignEnd?: boolean }> = ({ alignEnd }) => {
   return (
     <div className={`flex items-center gap-1 reviews-stars ${alignEnd ? 'justify-end' : 'justify-start'}`}>
@@ -47,9 +50,9 @@ const Reviews: React.FC = () => {
   const slideRefs = React.useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
-    if (testimonials.length <= 1) return;
+    if (loopedTestimonials.length <= 1) return;
     const timer = setInterval(() => {
-      setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
+      setCurrentTestimonial((prev) => (prev + 1) % loopedTestimonials.length);
     }, 7000);
     return () => clearInterval(timer);
   }, []);
@@ -60,7 +63,7 @@ const Reviews: React.FC = () => {
 
   return (
     <section className="py-16 sm:py-20 bg-transparent">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
           className={`text-center mb-8 sm:mb-12 ${language === 'fa' ? 'font-sora' : ''}`}
           dir={language === 'fa' ? 'rtl' : 'ltr'}
@@ -91,12 +94,12 @@ const Reviews: React.FC = () => {
           style={{ scrollSnapType: 'x mandatory' }}
         >
           <div className="reviews-carousel-inner flex gap-6 sm:gap-8">
-            {testimonials.map((testimonial, index) => (
+            {loopedTestimonials.map((testimonial, index) => (
               <div
                 key={index}
                 ref={(el) => { slideRefs.current[index] = el; }}
                 onClick={() => setCurrentTestimonial(index)}
-                className={`reviews-carousel-slide flex-shrink-0 text-left transition-opacity duration-300 cursor-pointer px-4 sm:px-6 ${language === 'fa' ? 'text-right' : ''} ${
+                className={`reviews-carousel-slide flex-shrink-0 text-left transition-opacity duration-300 cursor-pointer px-4 sm:px-6 min-w-[280px] sm:min-w-[320px] lg:min-w-[360px] ${language === 'fa' ? 'text-right' : ''} ${
                   index === currentTestimonial ? 'opacity-100' : 'opacity-50'
                 }`}
                 style={{ scrollSnapAlign: 'center' }}

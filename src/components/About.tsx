@@ -12,16 +12,16 @@ const About: React.FC = () => {
   return (
     <section className="py-14 sm:py-20 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-6 items-center py-8 lg:py-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center py-8 lg:py-12">
           {/* Left - Oval portrait and CTAs */}
           <div className="flex flex-col items-center gap-6">
-            <div className="w-full max-w-full aspect-[4/5] rounded-[50%] overflow-hidden border-2 border-[#E8DCC8] shrink-0">
+            <div className="w-full shrink-0">
               <Image
                 src="/images/Realtor/realtor-photo.png"
                 alt="H Bashash - Dallas Realtor"
                 width={600}
                 height={800}
-                className="w-full h-full object-cover object-top"
+                className="w-full h-auto object-contain"
                 priority
                 quality={85}
                 placeholder="blur"
