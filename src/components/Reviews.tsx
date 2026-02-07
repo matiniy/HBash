@@ -61,9 +61,7 @@ const Reviews: React.FC = () => {
             <span className="reviews-title-stories">{t('reviews.titleStories')}</span>
           </h2>
           <p
-            className={`mt-2 text-white/90 text-sm xs:text-base sm:text-lg ${
-              language === 'fa' ? 'font-sora' : ''
-            }`}
+            className={`reviews-subtitle mt-2 ${language === 'fa' ? 'font-sora' : ''}`}
             dir={language === 'fa' ? 'rtl' : 'ltr'}
           >
             {t('reviews.subtitle')}

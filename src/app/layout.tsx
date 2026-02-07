@@ -24,6 +24,7 @@ const acme = Acme({ subsets: ['latin'], weight: ['400'], variable: '--font-acme'
 const playfair = Playfair_Display({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
+  style: ['normal', 'italic'],
   variable: '--font-playfair'
 })
 const raleway = Raleway({
