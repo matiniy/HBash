@@ -172,6 +172,18 @@ a {
   color: #ffffff !important;
   font-size: inherit !important;
 }
+/* Hero CTA button: keep "Book a Consultation" text at 16px, don't inherit button's large size */
+.main-gradient-bg .btn-primary .hero-cta-prefix,
+.main-gradient-bg .btn-primary .hero-cta-suffix {
+  font-size: 16px !important;
+}
+/* Ensure visible space between "Book a" and "Consultation" */
+.main-gradient-bg .btn-primary .hero-cta-prefix {
+  margin-right: 0.25em;
+}
+.main-gradient-bg .btn-primary .hero-cta-suffix {
+  margin-left: 0.15em;
+}
 .main-gradient-bg button.btn-primary:hover,
 .main-gradient-bg .btn-primary:hover {
   background: var(--aqua-neon-hover) !important;
@@ -327,10 +339,22 @@ nav .nav-link,
 .main-gradient-bg .hero-cta-suffix {
   color: #144552 !important;
 }
-/* Contact (and other) section titles: "Book a Consultation" at 32px, not the hero button */
+/* Contact (and other) section titles: "Book a Consultation" – responsive */
 .section-title-luxerie .hero-cta-prefix,
 .section-title-luxerie .hero-cta-suffix {
-  font-size: 32px !important;
+  font-size: 24px !important;
+}
+@media (min-width: 640px) {
+  .section-title-luxerie .hero-cta-prefix,
+  .section-title-luxerie .hero-cta-suffix {
+    font-size: 28px !important;
+  }
+}
+@media (min-width: 1024px) {
+  .section-title-luxerie .hero-cta-prefix,
+  .section-title-luxerie .hero-cta-suffix {
+    font-size: 32px !important;
+  }
 }
 .hero-cta-arrow {
   display: inline-flex;
