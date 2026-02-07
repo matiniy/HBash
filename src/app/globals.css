@@ -242,9 +242,9 @@ nav .nav-link,
   color: rgba(255, 239, 223, 1);
 }
 
-/* "Your Home Journey" — uses Playfair Display Italic (loads on Vercel); PP Editorial Old if font files added */
+/* "Your Home Journey" — PP Editorial Old only */
 .hero-title-editorial {
-  font-family: "PP Editorial Old", var(--font-playfair), Georgia, serif;
+  font-family: "PP Editorial Old";
   font-size: 63px;
   font-style: italic;
 }
@@ -346,8 +346,11 @@ nav .nav-link,
 .reviews-subtitle {
   font-family: var(--font-raleway), "Raleway", sans-serif;
   font-size: 16px;
-  color: #144552;
+  color: #144552 !important;
   white-space: pre-line;
+}
+.light-mode .reviews-subtitle {
+  color: #144552 !important;
 }
 
 .loader-green-gradient {
