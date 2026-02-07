@@ -25,18 +25,18 @@ const About: React.FC = () => {
           {/* Left Content - Realtor Image and CTA */}
           <div className="relative">
             <Image
-              src="/images/Realtor/realtor-photo.JPG"
+              src="/images/Realtor/realtor-photo.png"
               alt="H Bashash - Dallas Realtor"
               width={600}
               height={800}
-              className="w-full sm:w-[calc(100%-60px)] mx-auto h-auto object-cover object-top rounded-2xl shadow-2xl"
+              className="w-full h-auto object-cover object-top"
               priority
               quality={85}
               placeholder="blur"
               blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
             />
                 {/* Buttons - Responsive: Stacked on mobile, horizontal on desktop */}
-                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-full max-w-full sm:max-w-[calc(100%-60px)] flex flex-col sm:flex-row gap-3 items-center justify-center">
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-full max-w-full flex flex-col sm:flex-row gap-3 items-center justify-center">
               <Link href="/contact">
                 <Button variant="primary" className="w-full sm:w-auto">
                   {t('hero.scheduleConsultation')}

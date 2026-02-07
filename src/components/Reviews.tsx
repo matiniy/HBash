@@ -56,8 +56,9 @@ const Reviews: React.FC = () => {
           className={`text-center mb-8 sm:mb-12 ${language === 'fa' ? 'font-sora' : ''}`}
           dir={language === 'fa' ? 'rtl' : 'ltr'}
         >
-          <h2 className="section-title-luxerie section-title-luxerie-large text-white">
-            {t('reviews.title')}
+          <h2 className="reviews-section-title">
+            <span className="reviews-title-clients">{t('reviews.titleClients')}</span>
+            <span className="reviews-title-stories">{t('reviews.titleStories')}</span>
           </h2>
           <p
             className={`mt-2 text-white/90 text-sm xs:text-base sm:text-lg ${

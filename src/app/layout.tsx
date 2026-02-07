@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter, Space_Grotesk, Sora, Oxygen } from 'next/font/google'
+import { Inter, Space_Grotesk, Sora, Oxygen, Acme, Playfair_Display, Raleway } from 'next/font/google'
 import './globals.css'
 import { LanguageProvider } from '@/contexts/LanguageContext'
 
@@ -18,6 +18,18 @@ const oxygen = Oxygen({
   subsets: ['latin'],
   weight: ['300', '400', '700'],
   variable: '--font-oxygen'
+})
+/* Title font: try --font-acme (current) or --font-playfair for a serif look */
+const acme = Acme({ subsets: ['latin'], weight: ['400'], variable: '--font-acme' })
+const playfair = Playfair_Display({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-playfair'
+})
+const raleway = Raleway({
+  subsets: ['latin'],
+  weight: ['200', '300', '400', '500', '600', '700'],
+  variable: '--font-raleway'
 })
 
 export const metadata: Metadata = {
@@ -40,7 +52,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" dir="ltr" className="light-mode">
-      <body className={`${inter.className} ${spaceGrotesk.variable} ${sora.variable} ${oxygen.variable}`}>
+      <body className={`${inter.className} ${spaceGrotesk.variable} ${sora.variable} ${oxygen.variable} ${acme.variable} ${playfair.variable} ${raleway.variable}`}>
         <LanguageProvider>
           {children}
         </LanguageProvider>

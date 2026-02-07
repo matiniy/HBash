@@ -9,14 +9,14 @@ const LanguageToggle: React.FC = () => {
   return (
     <button
       onClick={toggleLanguage}
-      className="px-3 py-1.5 rounded-full bg-white/10 hover:bg-white/20 border border-aqua-neon/30 hover:border-aqua-neon/50 transition-all duration-300 flex items-center gap-2 text-white text-sm font-medium"
+      className="nav-lang-toggle px-3 py-1.5 rounded-full bg-white/10 hover:bg-white/20 border border-aqua-neon/30 hover:border-aqua-neon/50 transition-all duration-300 flex items-center gap-2 text-white text-sm font-medium"
       aria-label="Toggle language"
     >
-      <span className={language === 'en' ? 'font-bold text-aqua-neon' : 'opacity-60'}>
+      <span className={language === 'en' ? 'font-bold text-aqua-neon nav-lang-active' : 'opacity-60 nav-lang-inactive'}>
         EN
       </span>
-      <span className="text-white">|</span>
-      <span className={language === 'fa' ? 'font-bold text-aqua-neon' : 'opacity-60'}>
+      <span className="text-white nav-lang-sep">|</span>
+      <span className={language === 'fa' ? 'font-bold text-aqua-neon nav-lang-active' : 'opacity-60 nav-lang-inactive'}>
         FA
       </span>
     </button>

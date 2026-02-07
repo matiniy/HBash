@@ -7,10 +7,11 @@
     "contact": "Contact"
   },
   "hero": {
-    "primaryTitle": "Live Where",
-    "primaryHighlight": "Dallas Lives",
-    "primarySubheadlineLine1": "Thoughtfully curated homes across Dallas",
-    "primarySubheadlineLine2": "matched to your lifestyle, budget, and future.",
+    "primaryTitle": "Lighting the way Through",
+    "primaryHighlight": "Your Home Journey",
+    "primarySubheadlineLine1": "You're guided with care, clarity, and confidence as you buy or sell your home across Dallas.",
+    "primarySubheadlineLine2": "Thoughtful, unhurried, and centered around",
+    "primarySubheadlineLine3": "what truly matters to you.",
     "title": "Find Your Home in",
     "dallas": "Dallas",
     "subtitle": "From luxury estates to family-friendly neighborhoods, discover homes that fit your lifestyle - guided by a trusted expert who knows Dallas inside out.",
@@ -37,7 +38,9 @@
     "title": "What People Say About Us"
   },
   "reviews": {
-    "title": "Stories Behind the Sold Signs",
+    "title": "Clients Stories",
+    "titleClients": "Clients ",
+    "titleStories": "Stories",
     "subtitle": "Real people. Real homes. Real results."
   },
   "documents": {

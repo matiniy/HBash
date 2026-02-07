@@ -4,9 +4,7 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import Button from './Button';
 import LanguageToggle from './LanguageToggle';
-import ThemeToggle from './ThemeToggle';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const Navbar: React.FC = () => {
@@ -51,14 +49,14 @@ const Navbar: React.FC = () => {
   };
 
   const navClasses = `fixed top-0 left-0 w-full z-50 nav-glass ${isScrolled ? 'nav-glass--scrolled' : ''}`;
-  const innerPadding = 'px-3 sm:px-4 lg:px-8';
+  const innerPadding = 'px-6 sm:px-8 lg:pl-12 lg:pr-8';
   const barHeight = 'h-14 sm:h-16';
   // Keep logo visually aligned with toggles/nav: slightly smaller than the navbar height
   const logoHeightClass = 'h-10 sm:h-12';
 
   return (
     <nav className={`${navClasses} ${isFarsi ? 'nav-rtl' : ''}`}>
-      <div className={`max-w-7xl mx-auto ${innerPadding} nav-inner`}>
+      <div className={`w-full ${innerPadding} nav-inner`}>
         <div className={`flex w-full items-center ${barHeight}`}>
           {/* Left cluster: Logo + Theme + Language */}
           <div className="flex items-center gap-2">
@@ -83,9 +81,8 @@ const Navbar: React.FC = () => {
               <span className="sr-only">Haideh Bashash</span>
             </Link>
 
-            {/* Desktop toggles next to logo (smaller) */}
+            {/* Desktop: language toggle next to logo */}
             <div className="hidden md:flex items-center gap-2 scale-[0.88] origin-left">
-              <ThemeToggle />
               <LanguageToggle />
             </div>
           </div>
@@ -124,10 +121,13 @@ const Navbar: React.FC = () => {
             >
               {t('nav.listings')}
             </Link>
-            <Link href="/contact">
-              <Button variant="primary" className="nav-contact-button">
-                {t('nav.contact')}
-              </Button>
+            <Link
+              href="/contact"
+              className={`nav-link nav-link-underline hover:text-aqua-neon transition-colors ${
+                isActive('/contact') ? 'nav-link-active' : ''
+              }`}
+            >
+              {t('nav.contact')}
             </Link>
           </div>
 
@@ -189,20 +189,18 @@ const Navbar: React.FC = () => {
               >
                 {t('nav.listings')}
               </Link>
-              <div className="px-3 py-3 flex items-center justify-between">
-                <span className="text-white text-sm">Theme:</span>
-                <ThemeToggle />
-              </div>
               <div className="px-3 py-3">
                 <LanguageToggle />
               </div>
-              <div className="px-3 py-2">
-                <Link href="/contact" onClick={() => setIsMenuOpen(false)}>
-                  <Button variant="primary" className="w-full nav-contact-button">
-                    {t('nav.contact')}
-                  </Button>
-                </Link>
-              </div>
+              <Link
+                href="/contact"
+                className={`block px-3 py-3 nav-link nav-link-underline hover:text-aqua-neon transition-colors ${
+                  isActive('/contact') ? 'nav-link-active' : ''
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {t('nav.contact')}
+              </Link>
             </div>
           </div>
         )}

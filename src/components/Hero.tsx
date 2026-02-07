@@ -2,9 +2,20 @@
 
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-import Button from './Button';
 import HeroCarousel from './HeroCarousel';
 import { useLanguage } from '@/contexts/LanguageContext';
+
+const ArrowLeft = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+    <path d="M19 12H5M12 19l-7-7 7-7" />
+  </svg>
+);
+
+const ArrowRight = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+    <path d="M5 12h14M12 5l7 7-7 7" />
+  </svg>
+);
 
 // Hero images array - Add your image filenames here
 // Simply add new images to /public/images/hero/ and add their filenames to this array
@@ -27,86 +38,95 @@ const Hero: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Calculate scale based on scroll position
-  const scale = Math.max(0.8, 1 - scrollY * 0.0005);
   const textOffset = Math.min(scrollY * 0.3, 120);
   const textOpacity = Math.max(0, 1 - scrollY * 0.0025);
   return (
-    <section className="min-h-screen relative overflow-hidden">
-      {/* Top scrim to keep navbar readable on bright images (no navbar background) */}
-      <div className="absolute top-0 left-0 w-full h-24 sm:h-28 hero-top-scrim z-[5] pointer-events-none" />
+    <section className="hero-section min-h-screen relative overflow-hidden">
+      {/* Full-screen background image — no scroll scale or animation */}
+      <div className="absolute inset-0 z-0">
+        <HeroCarousel
+          className="absolute inset-0 w-full h-full object-cover"
+          images={heroImages}
+          interval={4000}
+          style={{
+            transform: 'scale(1)',
+            transformOrigin: 'center center'
+          }}
+        />
+        {/* Overlay: #082C36 darker — 62% opacity */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{ backgroundColor: 'rgba(8, 44, 54, 0.62)' }}
+          aria-hidden
+        />
+      </div>
 
-      <div className="w-full relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-[auto_1fr] min-h-screen lg:h-screen">
-          {/* Left panel */}
-          <div className={`bg-deep-forest/90 text-white flex flex-col items-start justify-center z-10 lg:h-screen w-full lg:w-auto px-6 sm:px-8 lg:pl-8 lg:pr-6 py-16 lg:py-20 ${
-            language === 'fa' ? 'text-right' : 'text-left'
-          }`}>
-            <h1
-              className={`hero-title-luxerie leading-tight mt-10 sm:mt-12 lg:mt-[72px] ${
-                language === 'fa' ? 'hero-title-farsi' : ''
-              }`}
-              dir={language === 'fa' ? 'rtl' : 'ltr'}
-              style={{
-                transform: `translateY(-${textOffset}px)`,
-                opacity: textOpacity,
-                transition: 'opacity 150ms linear'
-              }}
-            >
-              <span className="block whitespace-normal lg:whitespace-nowrap">
-                {t('hero.primaryTitle')}
-              </span>
-              <span className="block whitespace-normal lg:whitespace-nowrap">
-                {t('hero.primaryHighlight')}
-              </span>
-            </h1>
-            <p
-              className={`mt-3 text-xs xs:text-sm sm:text-base lg:text-lg text-white/90 leading-relaxed ${
-                language === 'fa' ? 'font-sora' : ''
-              }`}
-              dir={language === 'fa' ? 'rtl' : 'ltr'}
-              style={{
-                transform: `translateY(-${textOffset}px)`,
-                opacity: textOpacity,
-                transition: 'opacity 150ms linear'
-              }}
-            >
-              <span className="block whitespace-nowrap">
-                {t('hero.primarySubheadlineLine1')}
-              </span>
-              <span className="block whitespace-nowrap">
-                {t('hero.primarySubheadlineLine2')}
-              </span>
-            </p>
+      <div className="absolute top-0 left-0 w-full h-24 sm:h-28 hero-top-scrim z-[6] pointer-events-none" />
 
-            <Link
-              href="/contact"
-              className="mt-6 sm:mt-8 w-full flex justify-start"
-              style={{
-                transform: `translateY(-${textOffset}px)`,
-                opacity: textOpacity,
-                transition: 'opacity 150ms linear'
-              }}
-            >
-              <Button variant="primary" className="w-auto font-light">
-                {t('hero.scheduleConsultation')}
-              </Button>
-            </Link>
-          </div>
+      {/* Content overlay - text forced white */}
+      <div
+        className={`hero-content relative z-10 min-h-screen flex flex-col justify-center w-full max-w-2xl px-6 sm:px-8 py-24 lg:py-20 ${
+          language === 'fa'
+            ? 'text-right items-end lg:ml-auto lg:mr-12 lg:pl-0 lg:pr-0'
+            : 'text-left items-start lg:pl-12 lg:pr-0 lg:mr-auto'
+        }`}
+      >
+        <h1
+          className={`hero-title-luxerie mt-10 sm:mt-12 lg:mt-0 ${
+            language === 'fa' ? 'hero-title-farsi' : ''
+          }`}
+          dir={language === 'fa' ? 'rtl' : 'ltr'}
+          style={{
+            transform: `translateY(-${textOffset}px)`,
+            opacity: textOpacity,
+            transition: 'opacity 150ms linear'
+          }}
+        >
+          <span className="block whitespace-normal lg:whitespace-nowrap hero-title-lead">
+            {t('hero.primaryTitle')}
+          </span>
+          <span className="block whitespace-normal lg:whitespace-nowrap hero-title-editorial">
+            {t('hero.primaryHighlight')}
+          </span>
+        </h1>
+        <p
+          className={`hero-description mt-3 ${
+            language === 'fa' ? 'font-sora' : ''
+          }`}
+          dir={language === 'fa' ? 'rtl' : 'ltr'}
+          style={{
+            transform: `translateY(-${textOffset}px)`,
+            opacity: textOpacity,
+            transition: 'opacity 150ms linear'
+          }}
+        >
+          {[
+            t('hero.primarySubheadlineLine1'),
+            t('hero.primarySubheadlineLine2'),
+            t('hero.primarySubheadlineLine3')
+          ].join(' ')}
+        </p>
 
-          {/* Right panel image */}
-          <div className="relative h-[320px] sm:h-[420px] lg:h-screen overflow-hidden bg-deep-forest z-0 lg:-ml-px">
-            <HeroCarousel
-              className="absolute inset-0 w-full h-full transition-transform duration-75 ease-out"
-              images={heroImages}
-              interval={4000}
-              style={{
-                transform: `scale(${scale})`,
-                transformOrigin: 'center center'
-              }}
-            />
-          </div>
-        </div>
+        <Link
+          href="/contact"
+          className={`hero-cta-link mt-6 sm:mt-8 inline-flex items-center gap-2 w-fit ${language === 'fa' ? 'flex-row-reverse' : ''}`}
+          style={{
+            transform: `translateY(-${textOffset}px)`,
+            opacity: textOpacity,
+            transition: 'opacity 150ms linear'
+          }}
+        >
+          {language === 'fa' ? (
+            <span className="hero-cta-arrow" aria-hidden>
+              <ArrowLeft />
+            </span>
+          ) : (
+            <span className="hero-cta-arrow" aria-hidden>
+              <ArrowRight />
+            </span>
+          )}
+          <span>{t('hero.scheduleConsultation')}</span>
+        </Link>
       </div>
 
       {/* Full Width Marquee Strip */}
@@ -114,27 +134,27 @@ const Hero: React.FC = () => {
         <section className="bg-aqua-neon py-3 sm:py-4 overflow-hidden">
             <div className={`flex whitespace-nowrap marquee-slow ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
               {/* Content block 1 */}
-              <div className="flex-shrink-0 flex items-center">
-                <span className="text-deep-forest font-normal text-base sm:text-lg mx-2 sm:mx-4">
-                  {t('hero.marquee.line1')} •
+              <div className="flex-shrink-0 flex items-center marquee-inner">
+                <span className="text-deep-forest font-normal text-base sm:text-lg marquee-item">
+                  {t('hero.marquee.line1')} <span className="marquee-dot">•</span>
                 </span>
-                <span className="text-deep-forest font-normal text-base sm:text-lg mx-2 sm:mx-4">
-                  {t('hero.marquee.line2')} •
+                <span className="text-deep-forest font-normal text-base sm:text-lg marquee-item">
+                  {t('hero.marquee.line2')} <span className="marquee-dot">•</span>
                 </span>
-                <span className="text-deep-forest font-normal text-base sm:text-lg mx-2 sm:mx-4">
-                  {t('hero.marquee.line3')} •
+                <span className="text-deep-forest font-normal text-base sm:text-lg marquee-item">
+                  {t('hero.marquee.line3')} <span className="marquee-dot">•</span>
                 </span>
               </div>
               {/* Content block 2 (duplicate for seamless loop) */}
-              <div className="flex-shrink-0 flex items-center">
-                <span className="text-deep-forest font-normal text-base sm:text-lg mx-2 sm:mx-4">
-                  {t('hero.marquee.line1')} •
+              <div className="flex-shrink-0 flex items-center marquee-inner">
+                <span className="text-deep-forest font-normal text-base sm:text-lg marquee-item">
+                  {t('hero.marquee.line1')} <span className="marquee-dot">•</span>
                 </span>
-                <span className="text-deep-forest font-normal text-base sm:text-lg mx-2 sm:mx-4">
-                  {t('hero.marquee.line2')} •
+                <span className="text-deep-forest font-normal text-base sm:text-lg marquee-item">
+                  {t('hero.marquee.line2')} <span className="marquee-dot">•</span>
                 </span>
-                <span className="text-deep-forest font-normal text-base sm:text-lg mx-2 sm:mx-4">
-                  {t('hero.marquee.line3')} •
+                <span className="text-deep-forest font-normal text-base sm:text-lg marquee-item">
+                  {t('hero.marquee.line3')} <span className="marquee-dot">•</span>
                 </span>
               </div>
             </div>

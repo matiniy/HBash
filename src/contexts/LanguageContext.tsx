@@ -1,6 +1,7 @@
 'use client';
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
+import { translations } from '@/translations';
 
 type Language = 'en' | 'fa';
 
@@ -42,23 +43,22 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
   };
 
   const t = (key: string): string => {
-    // Import translations
-    const translations = require('@/translations').translations;
+    if (!translations || typeof translations !== 'object') return key;
     const keys = key.split('.');
-    let value: any = translations[language];
-    
+    let value: unknown = translations[language as keyof typeof translations];
+
     for (const k of keys) {
-      value = value?.[k];
+      value = value && typeof value === 'object' && k in value ? (value as Record<string, unknown>)[k] : undefined;
     }
-    
-    return value || (() => {
-      // Fallback to English
-      let fallback: any = translations['en'];
-      for (const k of keys) {
-        fallback = fallback?.[k];
-      }
-      return fallback || key;
-    })();
+
+    if (typeof value === 'string') return value;
+
+    // Fallback to English
+    let fallback: unknown = translations.en;
+    for (const k of keys) {
+      fallback = fallback && typeof fallback === 'object' && k in fallback ? (fallback as Record<string, unknown>)[k] : undefined;
+    }
+    return typeof fallback === 'string' ? fallback : key;
   };
 
   return (

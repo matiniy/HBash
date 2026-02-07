@@ -55,11 +55,11 @@ export default function About() {
             </div>
             <div className="relative">
               <Image
-                src="/images/Realtor/realtor-photo.JPG"
+                src="/images/Realtor/realtor-photo.png"
                 alt="Haideh Bashash - Dallas Realtor"
                 width={600}
                 height={800}
-                className="w-full h-auto rounded-3xl shadow-2xl object-cover"
+                className="w-full h-auto object-cover"
                 priority
                 quality={90}
                 placeholder="blur"
