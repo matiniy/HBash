@@ -355,12 +355,26 @@ nav .nav-link,
 }
 
 .reviews-quote-mark {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-space-grotesk), "Space Grotesk", sans-serif;
   font-size: 4rem;
   line-height: 1;
-  color: rgba(243, 212, 180, 0.9);
+  color: #D8AF86;
   flex-shrink: 0;
   user-select: none;
+}
+
+.reviews-stars,
+.reviews-stars svg {
+  color: #144552 !important;
+  fill: #144552 !important;
+}
+
+.reviews-author {
+  font-family: "PP Editorial Old", var(--font-playfair), Georgia, serif !important;
+  font-size: 29px !important;
+  line-height: 1.4 !important;
+  padding-top: 4px;
+  min-height: 1.4em;
 }
 
 @media (max-width: 640px) {
@@ -369,16 +383,35 @@ nav .nav-link,
   }
 }
 
+/* Reviews section noise overlay: size 2.6, density 100%, color #FEE2C6 */
+.reviews-noise-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.reviews-noise-overlay svg {
+  opacity: 1;
+}
+
 /* Reviews carousel: centered slide in focus (100%), prev/next peek at 50% opacity */
 .reviews-carousel {
-  scroll-padding-inline: 10vw;
+  scroll-padding-inline: 8vw;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+.reviews-carousel::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
 }
 .reviews-carousel-inner {
-  padding-inline: 10vw;
+  padding-inline: 8vw;
 }
 .reviews-carousel-slide {
-  width: 78vw;
-  max-width: 520px;
+  width: 84vw;
+  max-width: 600px;
+  min-width: 280px;
+  overflow: visible;
 }
 
 /* Main page gradient area (Client stories + below): light radial gradient, dark text */

@@ -86,7 +86,7 @@ const Testimonials: React.FC = () => {
                           {testimonial.text}
                         </p>
                         <div className="flex items-center justify-between">
-                          <p className={`text-white font-semibold text-base sm:text-lg ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+                          <p className={`reviews-author text-white font-semibold ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
                             — {testimonial.author}
                           </p>
                           <span className={`text-aqua-neon text-sm xs:text-base font-semibold group-hover:text-[#00e694] transition-colors ${language === 'fa' ? 'font-sora' : ''}`}>
