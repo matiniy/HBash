@@ -52,7 +52,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" dir="ltr" className="light-mode">
+    <html lang="en" dir="ltr">
       <body className={`${inter.className} ${spaceGrotesk.variable} ${sora.variable} ${oxygen.variable} ${acme.variable} ${playfair.variable} ${raleway.variable}`}>
         <LanguageProvider>
           {children}

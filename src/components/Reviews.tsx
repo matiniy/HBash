@@ -59,25 +59,8 @@ const Reviews: React.FC = () => {
   }, [currentTestimonial]);
 
   return (
-    <section className="py-16 sm:py-20 bg-transparent relative">
-      {/* Noise overlay: size 2.6, density 100%, color #FEE2C6 */}
-      <div className="reviews-noise-overlay" aria-hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" className="absolute inset-0 w-full h-full">
-          <defs>
-            <filter id="reviewsNoise" x="0" y="0">
-              <feTurbulence type="fractalNoise" baseFrequency="0.385" numOctaves="4" result="turbulence" />
-              <feColorMatrix
-                in="turbulence"
-                type="matrix"
-                values="0.996 0 0 0 0 0 0.886 0 0 0 0 0 0.776 0 0 0 0 0 1 0"
-                result="noise"
-              />
-            </filter>
-          </defs>
-          <rect width="100%" height="100%" fill="#FEE2C6" filter="url(#reviewsNoise)" />
-        </svg>
-      </div>
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section className="py-16 sm:py-20 bg-transparent">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
           className={`text-center mb-8 sm:mb-12 ${language === 'fa' ? 'font-sora' : ''}`}
           dir={language === 'fa' ? 'rtl' : 'ltr'}
@@ -136,7 +119,7 @@ const Reviews: React.FC = () => {
                   <div className="flex items-start justify-center gap-1 sm:gap-2">
                     <QuoteMark />
                     <p
-                      className={`text-[#144552]/90 text-sm xs:text-base sm:text-lg leading-relaxed ${
+                      className={`reviews-quote-text text-[#144552]/90 text-sm xs:text-base sm:text-lg leading-relaxed ${
                         language === 'fa' ? 'font-sora' : ''
                       }`}
                       dir={language === 'fa' ? 'rtl' : 'ltr'}

@@ -123,16 +123,6 @@ section.bg-aqua-neon .marquee-item {
     margin-right: 0.5rem;
   }
 }
-.light-mode .bg-aqua-neon .marquee-dot,
-.light-mode section.bg-aqua-neon .marquee-dot {
-  color: #0B323D !important;
-}
-.light-mode .bg-aqua-neon .marquee-item,
-.light-mode section.bg-aqua-neon .marquee-item {
-  color: #F9E8E8 !important;
-}
-
-
 /* Button hover effects */
 .btn-primary:hover {
   background-color: #00e694;
@@ -155,47 +145,6 @@ section.bg-aqua-neon .marquee-item {
 /* Smooth transitions */
 * {
   transition: all 0.3s ease;
-}
-
-/* Light Mode (Primary/Default Theme) */
-.light-mode {
-  background-color: #E1E1E1 !important;
-  color: #1a1a1a !important;
-  --aqua-neon: #144552; /* Darker teal for light mode only */
-}
-
-.light-mode body {
-  background-color: #E1E1E1 !important;
-  color: #1a1a1a !important;
-}
-
-.light-mode * {
-  color: inherit;
-}
-
-.light-mode .text-aqua-neon,
-.light-mode [class*="text-aqua-neon"] {
-  color: var(--aqua-neon) !important;
-}
-
-.light-mode .bg-deep-forest,
-.light-mode [class*="bg-deep-forest"] {
-  background-color: #E1E1E1 !important;
-}
-
-.light-mode .bg-black,
-.light-mode [class*="bg-black"] {
-  background-color: #E1E1E1 !important;
-}
-
-.light-mode .text-white,
-.light-mode [class*="text-white"] {
-  color: #1a1a1a !important;
-}
-
-.light-mode .text-grey-light,
-.light-mode [class*="text-grey-light"] {
-  color: #4a4a4a !important;
 }
 
 /* Navbar - no background (fully transparent) */
@@ -261,7 +210,7 @@ nav .nav-link,
   width: 100%;
 }
 
-/* Hero section: force white text (overrides light-mode) */
+/* Hero section: force white text */
 .hero-section .hero-content .hero-title-luxerie,
 .hero-section .hero-content .hero-title-lead,
 .hero-section .hero-content .hero-title-editorial,
@@ -292,13 +241,6 @@ nav .nav-link,
 .hero-cta-link:hover:visited,
 .hero-cta-link:focus-visible {
   color: var(--aqua-neon) !important;
-}
-/* Light theme: hero CTA hover uses dark-theme green (bright aqua) for consistency */
-.light-mode .hero-section .hero-content .hero-cta-link:hover,
-.light-mode .hero-cta-link:hover,
-.light-mode .hero-cta-link:hover:visited,
-.light-mode .hero-cta-link:focus-visible {
-  color: #00FFA3 !important;
 }
 .hero-cta-link:hover *,
 .hero-cta-link:focus-visible * {
@@ -350,9 +292,6 @@ nav .nav-link,
   color: #144552 !important;
   white-space: pre-line;
 }
-.light-mode .reviews-subtitle {
-  color: #144552 !important;
-}
 
 .reviews-quote-mark {
   font-family: var(--font-space-grotesk), "Space Grotesk", sans-serif;
@@ -371,10 +310,14 @@ nav .nav-link,
 
 .reviews-author {
   font-family: "PP Editorial Old", var(--font-playfair), Georgia, serif !important;
-  font-size: 29px !important;
+  font-size: 20px !important;
   line-height: 1.4 !important;
   padding-top: 4px;
   min-height: 1.4em;
+}
+
+.reviews-quote-text {
+  font-family: "PP Editorial Old", var(--font-playfair), Georgia, serif !important;
 }
 
 @media (max-width: 640px) {
@@ -383,16 +326,16 @@ nav .nav-link,
   }
 }
 
-/* Reviews section noise overlay: size 2.6, density 100%, color #FEE2C6 */
-.reviews-noise-overlay {
+/* Gradient area noise overlay: all sections (Reviews through Footer), size 1.2, 80% opacity, color #FEE2C6 */
+.gradient-noise-overlay {
   position: absolute;
   inset: 0;
   z-index: 0;
   pointer-events: none;
   overflow: hidden;
 }
-.reviews-noise-overlay svg {
-  opacity: 1;
+.gradient-noise-overlay svg {
+  opacity: 0.8;
 }
 
 /* Reviews carousel: centered slide in focus (100%), prev/next peek at 50% opacity */
@@ -569,6 +512,10 @@ nav .nav-link,
   opacity: 1;
 }
 
+nav .nav-link:hover,
+.nav-link:hover {
+  color: #00FFA3 !important; /* Dark theme light green */
+}
 nav .nav-link-active,
 .nav-link-active {
   color: #00FFA3 !important;
@@ -592,10 +539,6 @@ nav .nav-link-active,
   100% {
     transform: scaleX(1);
   }
-}
-
-.light-mode .nav-logo-bg {
-  background: transparent;
 }
 
 .nav-contact-button {
@@ -640,79 +583,7 @@ nav .nav-link-active,
   -webkit-backdrop-filter: none !important;
 }
 
-/* Light mode: no nav background */
-.light-mode .nav-glass {
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-}
-
-.light-mode .nav-glass--scrolled {
-  background: transparent !important;
-}
-
-.light-mode .nav-glass--floating {
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-}
-
-.light-mode nav a,
-.light-mode nav button {
-  color: #0f172a !important;
-}
-/* Light theme: nav menu links (Home, About, etc.) white */
-.light-mode nav .nav-link,
-.light-mode nav a.nav-link {
-  color: #ffffff !important;
-}
-
-.light-mode .nav-contact-button {
-  color: #fff !important;
-}
-
-.light-mode .nav-contact-button * {
-  color: #fff !important;
-}
-
-.light-mode nav a:hover,
-.light-mode nav button:hover {
-  color: #144552 !important;
-}
-.light-mode nav .nav-link:hover {
-  color: var(--aqua-neon) !important;
-}
-.light-mode nav .nav-link-active {
-  color: #00FFA3 !important;
-}
-
-/* Light theme: EN/FA language toggle — solid background so readable on any nav background */
-.light-mode nav .nav-lang-toggle {
-  color: #0f172a !important;
-  background-color: #ffffff !important;
-  border-color: rgba(20, 69, 82, 0.4) !important;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
-}
-.light-mode nav .nav-lang-toggle:hover {
-  background-color: #f1f5f9 !important;
-  border-color: rgba(20, 69, 82, 0.6) !important;
-}
-.light-mode nav .nav-lang-toggle .nav-lang-inactive {
-  color: #64748b !important;
-  opacity: 1 !important;
-}
-.light-mode nav .nav-lang-toggle .nav-lang-active {
-  color: #0f172a !important;
-}
-.light-mode nav .nav-lang-toggle .nav-lang-sep {
-  color: #94a3b8 !important;
-}
-
-/* Hero: ensure overlay stays dark in light mode (avoid bg-black/* overrides) */
+/* Hero: ensure overlay stays dark (avoid bg-black/* overrides) */
 .hero-image-overlay {
   background: rgba(0, 0, 0, 0.28) !important;
 }
@@ -733,502 +604,122 @@ nav .nav-link-active,
   opacity: 0.9;
 }
 
-/* Light mode hero section */
-.light-mode .bg-black\/40,
-.light-mode [class*="bg-black/40"] {
-  background-color: rgba(225, 225, 225, 0.9) !important;
-}
-
-.light-mode .bg-black\/20,
-.light-mode [class*="bg-black/20"] {
-  background-color: rgba(225, 225, 225, 0.7) !important;
-}
-
-/* Light mode about section */
-.light-mode .bg-deep-forest\/30,
-.light-mode [class*="bg-deep-forest/30"] {
-  background-color: rgba(225, 225, 225, 0.5) !important;
-}
-
-.light-mode .bg-deep-forest\/20,
-.light-mode [class*="bg-deep-forest/20"] {
-  background-color: rgba(225, 225, 225, 0.4) !important;
-}
 
 /* Light mode footer */
-.light-mode footer {
-  background-color: #E1E1E1 !important;
-}
 
-.light-mode footer h3,
-.light-mode footer h4,
-.light-mode footer p,
-.light-mode footer a {
-  color: #1a1a1a !important;
-}
 
-.light-mode footer a:hover {
-  color: #144552 !important;
-}
 
 /* Light mode buttons - Primary: dark teal/green background with white text */
-.light-mode .btn-primary,
-.light-mode button.btn-primary,
-.light-mode .bg-aqua-neon.btn-primary,
-.light-mode button.bg-aqua-neon,
-.light-mode a .btn-primary,
-.light-mode a button.btn-primary {
-  background-color: #144552 !important;
-  color: #FFFFFF !important;
-}
 
 /* Ensure primary button text is always white in light mode */
-.light-mode .btn-primary,
-.light-mode button.btn-primary,
-.light-mode a .btn-primary,
-.light-mode a button.btn-primary,
-.light-mode .btn-primary *,
-.light-mode button.btn-primary *,
-.light-mode a .btn-primary *,
-.light-mode a button.btn-primary *,
-.light-mode .btn-primary.text-deep-forest,
-.light-mode button.btn-primary.text-deep-forest {
-  color: #FFFFFF !important;
-}
 
-.light-mode .btn-primary:hover,
-.light-mode button.btn-primary:hover,
-.light-mode .bg-aqua-neon.btn-primary:hover,
-.light-mode button.bg-aqua-neon:hover {
-  background-color: #0d2f3a !important;
-  color: #FFFFFF !important;
-}
 
 /* Override all conflicting text color rules for primary buttons in light mode */
-.light-mode button[class*="btn-primary"],
-.light-mode a button[class*="btn-primary"],
-.light-mode button[class*="btn-primary"] *,
-.light-mode a button[class*="btn-primary"] *,
-.light-mode .btn-primary.text-deep-forest,
-.light-mode button.btn-primary.text-deep-forest,
-.light-mode .bg-aqua-neon.text-deep-forest,
-.light-mode button.bg-aqua-neon.text-deep-forest,
-.light-mode button[class*="btn-primary"][class*="text-deep-forest"],
-.light-mode button[class*="bg-aqua-neon"][class*="text-deep-forest"],
-.light-mode button.bg-aqua-neon.btn-primary.text-deep-forest,
-.light-mode .btn-primary:hover.text-deep-forest,
-.light-mode button.btn-primary:hover.text-deep-forest,
-.light-mode .bg-aqua-neon:hover.text-deep-forest,
-.light-mode button.bg-aqua-neon:hover.text-deep-forest,
-.light-mode button[class*="btn-primary"]:hover[class*="text-deep-forest"],
-.light-mode button[class*="bg-aqua-neon"]:hover[class*="text-deep-forest"],
-.light-mode button.bg-aqua-neon.btn-primary:hover.text-deep-forest,
-.light-mode button[class*="bg-aqua-neon"][class*="text-"],
-.light-mode .bg-aqua-neon button[class*="text-"],
-.light-mode button.bg-aqua-neon[class*="text-"] {
-  color: #FFFFFF !important;
-}
 
 /* Light mode buttons - Secondary: transparent background with dark teal/green text and border */
-.light-mode .btn-secondary,
-.light-mode button.btn-secondary,
-.light-mode .btn-secondary *,
-.light-mode button.btn-secondary * {
-  background-color: transparent !important;
-  color: #144552 !important;
-  border-color: #144552 !important;
-}
 
-.light-mode .btn-secondary:hover,
-.light-mode button.btn-secondary:hover {
-  background-color: #144552 !important;
-  color: #FFFFFF !important;
-  border-color: #144552 !important;
-}
 
 /* Override hover text-deep-forest for secondary buttons */
-.light-mode .btn-secondary:hover.text-deep-forest,
-.light-mode button.btn-secondary:hover.text-deep-forest {
-  color: #FFFFFF !important;
-}
 
 /* Ensure hero secondary CTA button text is always green on white (without affecting others) */
-.light-mode .hero-secondary-cta,
-.light-mode .hero-secondary-cta * {
-  color: #144552 !important;
-}
 
 /* Light mode cards and sections */
-.light-mode .bg-white\/5,
-.light-mode [class*="bg-white/5"] {
-  background-color: rgba(0, 0, 0, 0.03) !important;
-}
 
-.light-mode .bg-white\/10,
-.light-mode [class*="bg-white/10"] {
-  background-color: rgba(0, 0, 0, 0.05) !important;
-}
 
-.light-mode .border-aqua-neon\/10,
-.light-mode [class*="border-aqua-neon/10"] {
-  border-color: rgba(20, 69, 82, 0.2) !important;
-}
 
-.light-mode .border-aqua-neon\/20,
-.light-mode [class*="border-aqua-neon/20"] {
-  border-color: rgba(20, 69, 82, 0.3) !important;
-}
 
-.light-mode .border-aqua-neon\/30,
-.light-mode [class*="border-aqua-neon/30"] {
-  border-color: rgba(20, 69, 82, 0.4) !important;
-}
 
-.light-mode .border-aqua-neon\/50,
-.light-mode [class*="border-aqua-neon/50"] {
-  border-color: rgba(20, 69, 82, 0.5) !important;
-}
 
 /* Light mode scrollbar */
-.light-mode ::-webkit-scrollbar-track {
-  background: #E1E1E1;
-}
 
-.light-mode ::-webkit-scrollbar-thumb {
-  background: #144552;
-}
 
-.light-mode ::-webkit-scrollbar-thumb:hover {
-  background: #0d2f3a;
-}
 
 /* Light mode credentials section */
-.light-mode .bg-black\/40,
-.light-mode [class*="bg-black/40"] {
-  background-color: rgba(245, 245, 245, 0.9) !important;
-}
 
-.light-mode .border-aqua-neon\/20,
-.light-mode [class*="border-aqua-neon/20"] {
-  border-color: rgba(0, 255, 163, 0.3) !important;
-}
 
 /* Light mode contact form */
-.light-mode input,
-.light-mode textarea {
-  background-color: #E1E1E1 !important;
-  color: #1a1a1a !important;
-  border-color: rgba(0, 0, 0, 0.2) !important;
-}
 
-.light-mode input::placeholder,
-.light-mode textarea::placeholder {
-  color: #6a6a6a !important;
-}
 
 /* Light mode stats - darker teal (already defined above, removing duplicate) */
 
 /* Light mode credentials section specific */
-.light-mode .bg-gray-800\/50,
-.light-mode [class*="bg-gray-800/50"] {
-  background-color: rgba(245, 245, 245, 0.9) !important;
-}
 
-.light-mode .border-gray-700\/50,
-.light-mode [class*="border-gray-700/50"] {
-  border-color: rgba(0, 0, 0, 0.1) !important;
-}
 
-.light-mode .bg-aqua-neon\/20,
-.light-mode [class*="bg-aqua-neon/20"] {
-  background-color: rgba(20, 69, 82, 0.15) !important;
-}
 
-.light-mode .bg-aqua-neon\/10,
-.light-mode [class*="bg-aqua-neon/10"] {
-  background-color: rgba(20, 69, 82, 0.1) !important;
-}
 
-.light-mode .bg-aqua-neon\/30,
-.light-mode [class*="bg-aqua-neon/30"] {
-  background-color: rgba(20, 69, 82, 0.2) !important;
-}
 
 /* Light mode marquee background - darker teal */
-.light-mode .bg-aqua-neon,
-.light-mode section.bg-aqua-neon {
-  background-color: #144552 !important;
-}
 
 /* Light mode text on dark teal backgrounds - white for readability */
-.light-mode .bg-aqua-neon,
-.light-mode section.bg-aqua-neon {
-  color: #FFFFFF !important;
-}
 
-.light-mode .bg-aqua-neon *,
-.light-mode section.bg-aqua-neon * {
-  color: #FFFFFF !important;
-}
 
 /* Override text-deep-forest on dark teal backgrounds - must be white */
-.light-mode .bg-aqua-neon .text-deep-forest,
-.light-mode .bg-aqua-neon [class*="text-deep-forest"],
-.light-mode section.bg-aqua-neon .text-deep-forest,
-.light-mode section.bg-aqua-neon [class*="text-deep-forest"],
-.light-mode [class*="bg-aqua-neon"] [class*="text-deep-forest"],
-.light-mode section[class*="bg-aqua-neon"] [class*="text-deep-forest"] {
-  color: #FFFFFF !important;
-}
 
 /* Buttons inside dark teal sections should have white text */
-.light-mode .bg-aqua-neon button,
-.light-mode section.bg-aqua-neon button,
-.light-mode [class*="bg-aqua-neon"] button {
-  color: #FFFFFF !important;
-}
 
-.light-mode .bg-aqua-neon button *,
-.light-mode section.bg-aqua-neon button *,
-.light-mode [class*="bg-aqua-neon"] button * {
-  color: #FFFFFF !important;
-}
 
 /* Light mode page loader */
-.light-mode .bg-deep-forest {
-  background-color: #E1E1E1 !important;
-}
 
-.light-mode .fixed.inset-0.bg-deep-forest {
-  background-color: #E1E1E1 !important;
-}
 
-.light-mode .fixed.inset-0.bg-deep-forest h1,
-.light-mode .fixed.inset-0.bg-deep-forest p {
-  color: #1a1a1a !important;
-}
 
 /* Light mode hero glass effect */
-.light-mode section {
-  color: #1a1a1a;
-}
 
 /* Light mode testimonial cards */
-.light-mode .backdrop-blur-sm,
-.light-mode .backdrop-blur-lg {
-  background-color: rgba(225, 225, 225, 0.9) !important;
-}
 
 /* Light mode section backgrounds */
-.light-mode section.bg-deep-forest {
-  background-color: #E1E1E1 !important;
-}
 
-.light-mode section.bg-black {
-  background-color: #E1E1E1 !important;
-}
 
 /* Light mode hero text overlays */
-.light-mode .bg-black\/50,
-.light-mode [class*="bg-black/50"] {
-  background-color: rgba(225, 225, 225, 0.85) !important;
-}
 
 /* Light mode hero text */
-.light-mode h1,
-.light-mode h2,
-.light-mode h3,
-.light-mode h4,
-.light-mode p {
-  color: #1a1a1a !important;
-}
 
 /* Light mode hero section specific */
-.light-mode section.min-h-screen {
-  color: #1a1a1a !important;
-}
 
 /* Light mode stats section */
-.light-mode .text-white {
-  color: #1a1a1a !important;
-}
 
 /* Light mode marquee text - white on dark teal background */
-.light-mode .marquee,
-.light-mode .marquee-slow {
-  color: #FFFFFF !important;
-}
 
-.light-mode .bg-aqua-neon .marquee,
-.light-mode .bg-aqua-neon .marquee-slow,
-.light-mode section.bg-aqua-neon .marquee,
-.light-mode section.bg-aqua-neon .marquee-slow {
-  color: #FFFFFF !important;
-}
 
 /* Light mode credentials badges */
-.light-mode .bg-gray-800,
-.light-mode [class*="bg-gray-800"] {
-  background-color: #E1E1E1 !important;
-  color: #1a1a1a !important;
-}
 
 /* Light mode overlay adjustments */
-.light-mode .bg-deep-forest\/30,
-.light-mode [class*="bg-deep-forest/30"] {
-  background-color: rgba(225, 225, 225, 0.6) !important;
-}
 
-.light-mode .bg-deep-forest\/20,
-.light-mode [class*="bg-deep-forest/20"] {
-  background-color: rgba(225, 225, 225, 0.5) !important;
-}
 
 /* Light mode glass effects */
-.light-mode .backdrop-blur-xl,
-.light-mode .backdrop-blur-lg,
-.light-mode .backdrop-blur-md,
-.light-mode .backdrop-blur-sm {
-  background-color: rgba(225, 225, 225, 0.9) !important;
-}
 
 /* Re-apply custom background for hero glass card so blur doesn't become solid */
-.light-mode .hero-glass-card.backdrop-blur-lg {
-  background: rgba(225, 225, 225, 0.5) !important; /* 50% opacity glass */
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.16) !important;
-  border: none !important;
-}
 
 /* Light mode border colors */
-.light-mode .border-white\/20,
-.light-mode [class*="border-white/20"] {
-  border-color: rgba(0, 0, 0, 0.1) !important;
-}
 
-.light-mode .border-white\/10,
-.light-mode [class*="border-white/10"] {
-  border-color: rgba(0, 0, 0, 0.05) !important;
-}
 
 /* Light mode shadow adjustments */
-.light-mode .shadow-xl,
-.light-mode .shadow-lg,
-.light-mode .shadow-md {
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
-}
 
 /* Light mode link hover */
-.light-mode a:hover {
-  color: #144552 !important;
-}
 
 /* Light mode button text in primary buttons - REMOVED: conflicting with white text rule above */
 
 /* Light mode contact form labels */
-.light-mode label {
-  color: #1a1a1a !important;
-}
 
 /* Light mode testimonial cards text */
-.light-mode .text-white\/90,
-.light-mode [class*="text-white/90"] {
-  color: #1a1a1a !important;
-}
 
 /* Final override: ensure hero secondary CTA (white button) text is green in light mode */
-.light-mode .hero-secondary-cta,
-.light-mode .hero-secondary-cta * {
-  color: #144552 !important;
-}
 
 /* Light mode about section bio text */
-.light-mode .line-clamp-3 {
-  color: #1a1a1a !important;
-}
 
 /* Light mode hero desktop overlay */
-.light-mode .bg-deep-forest.z-\[1\] {
-  background-color: rgba(225, 225, 225, 0.95) !important;
-}
 
 /* Light mode hero mobile overlay */
-.light-mode .bg-black\/50.z-\[1\] {
-  background-color: rgba(225, 225, 225, 0.7) !important;
-}
 
 /* Light mode hero glass box */
-.light-mode .bg-black\/40.backdrop-blur-lg {
-  background-color: rgba(225, 225, 225, 0.7) !important; /* more transparent so image shows through */
-  border: 1px solid rgba(0, 0, 0, 0.08) !important;
-}
 
 /* Light mode credentials section background */
-.light-mode section.bg-deep-forest {
-  background-color: #E1E1E1 !important;
-}
 
 /* Light mode credentials cards */
-.light-mode .bg-gray-800\/50 {
-  background-color: rgba(245, 245, 245, 0.9) !important;
-  border-color: rgba(0, 0, 0, 0.1) !important;
-}
 
 /* Light mode credentials text */
-.light-mode .bg-gray-800\/50 h3,
-.light-mode .bg-gray-800\/50 p {
-  color: #1a1a1a !important;
-}
 
 /* Light mode about section background image overlay */
-.light-mode .bg-deep-forest\/30 {
-  background-color: rgba(225, 225, 225, 0.6) !important;
-}
 
 /* Light mode about section glass box */
-.light-mode .bg-deep-forest\/20 {
-  background-color: rgba(225, 225, 225, 0.7) !important;
-}
 
 /* Light mode contact form section */
-.light-mode section:has(form) {
-  background-color: #E1E1E1 !important;
-}
-
-/* Light mode stats numbers */
-.light-mode .text-lg,
-.light-mode .text-xl,
-.light-mode .text-2xl,
-.light-mode .text-3xl,
-.light-mode .text-4xl {
-  color: #1a1a1a !important;
-}
-
-/* Light mode navbar logo - ensure it's visible */
-.light-mode nav img {
-  filter: none !important;
-  opacity: 1 !important;
-}
-
-/* (Removed) light-mode navbar forced transparency overrides */
-
-/* Light mode ensure all text is dark */
-.light-mode .text-white,
-.light-mode [class*="text-white"] {
-  color: #1a1a1a !important;
-}
-
-/* Light mode ensure buttons are visible with darker teal */
-.light-mode button.bg-transparent {
-  border-color: #144552 !important;
-  color: #144552 !important;
-}
-
-.light-mode button.bg-transparent:hover {
-  background-color: #144552 !important;
-  color: #FFFFFF !important;
-}
-
-/* About section background overlay - lighter in light mode to show background */
-.light-mode .about-section-overlay {
-  background-color: rgba(0, 0, 0, 0.05) !important;
-}
