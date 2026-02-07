@@ -66,9 +66,10 @@ const ContactForm: React.FC = () => {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8 sm:mb-12">
           <h2 className="section-title-luxerie section-title-luxerie-large text-white mb-4 sm:mb-6" dir={language === 'fa' ? 'rtl' : 'ltr'}>
-            {t('contact.title')} <span className="text-aqua-neon">{t('contact.consultation')}</span>
+            <span className="hero-cta-prefix">{t('contact.title')}</span>{' '}
+            <span className="hero-cta-suffix text-aqua-neon">{t('contact.consultation')}</span>
           </h2>
-          <p className={`text-sm xs:text-base sm:text-lg lg:text-xl text-white max-w-2xl mx-auto ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+          <p className={`contact-subtitle text-sm xs:text-base sm:text-lg lg:text-xl text-white max-w-2xl mx-auto ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'} style={{ fontFamily: 'var(--font-raleway), Raleway, sans-serif' }}>
             {t('contact.subtitle')}
           </p>
         </div>

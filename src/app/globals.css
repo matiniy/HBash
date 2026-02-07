@@ -392,10 +392,14 @@ nav .nav-link,
 }
 .main-gradient-bg .about-heading-raleway {
   font-family: var(--font-raleway), "Raleway", sans-serif !important;
+  font-style: italic !important;
+  font-weight: 500 !important;
   color: #144552 !important;
 }
 .main-gradient-bg .about-heading-editorial {
   font-family: "PP Editorial Old", var(--font-playfair), Georgia, serif !important;
+  font-style: italic !important;
+  font-weight: 500 !important;
   color: #144552 !important;
 }
 .about-body,
@@ -411,6 +415,13 @@ nav .nav-link,
 .main-gradient-bg .about-read-more:hover {
   color: var(--aqua-neon-hover) !important;
 }
+
+/* Contact section: subtitle under "Book a Consultation" = Raleway */
+.contact-subtitle,
+.main-gradient-bg .contact-subtitle {
+  font-family: var(--font-raleway), "Raleway", sans-serif !important;
+}
+
 .main-gradient-bg section .text-white {
   color: #144552 !important;
 }
