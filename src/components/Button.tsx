@@ -23,7 +23,7 @@ const Button: React.FC<ButtonProps> = ({
   const baseClasses = `px-4 xs:px-6 py-2.5 xs:py-3 rounded-[8px] font-[500] text-sm font-["Segoe UI Symbol"] transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-aqua-neon min-h-[44px] w-full sm:w-[210px] max-w-full shadow-none flex items-center justify-center ${farsiWidthClass}`;
   
   const variantClasses = {
-    primary: 'bg-aqua-neon text-black hover:bg-[#00e694] hover:-translate-y-0.5 btn-primary [&>*]:text-black',
+    primary: 'bg-aqua-neon text-black hover:bg-[#00FFA3] hover:-translate-y-0.5 btn-primary [&>*]:text-black',
     secondary: 'bg-transparent text-aqua-neon border border-aqua-neon hover:bg-aqua-neon hover:text-deep-forest hover:-translate-y-0.5 btn-secondary [&>*]:text-aqua-neon'
   };
 

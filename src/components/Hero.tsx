@@ -132,29 +132,29 @@ const Hero: React.FC = () => {
 
       {/* Full Width Marquee Strip */}
       <div className="absolute bottom-0 left-0 w-full z-20">
-        <section className="bg-aqua-neon py-3 sm:py-4 overflow-hidden">
+        <section className="hero-marquee-strip py-3 sm:py-4 overflow-hidden">
             <div className={`flex whitespace-nowrap marquee-slow ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
               {/* Content block 1 */}
               <div className="flex-shrink-0 flex items-center marquee-inner">
-                <span className="text-deep-forest font-normal text-base sm:text-lg marquee-item">
+                <span className="font-normal text-base sm:text-lg marquee-item">
                   {t('hero.marquee.line1')} <span className="marquee-dot">•</span>
                 </span>
-                <span className="text-deep-forest font-normal text-base sm:text-lg marquee-item">
+                <span className="font-normal text-base sm:text-lg marquee-item">
                   {t('hero.marquee.line2')} <span className="marquee-dot">•</span>
                 </span>
-                <span className="text-deep-forest font-normal text-base sm:text-lg marquee-item">
+                <span className="font-normal text-base sm:text-lg marquee-item">
                   {t('hero.marquee.line3')} <span className="marquee-dot">•</span>
                 </span>
               </div>
               {/* Content block 2 (duplicate for seamless loop) */}
               <div className="flex-shrink-0 flex items-center marquee-inner">
-                <span className="text-deep-forest font-normal text-base sm:text-lg marquee-item">
+                <span className="font-normal text-base sm:text-lg marquee-item">
                   {t('hero.marquee.line1')} <span className="marquee-dot">•</span>
                 </span>
-                <span className="text-deep-forest font-normal text-base sm:text-lg marquee-item">
+                <span className="font-normal text-base sm:text-lg marquee-item">
                   {t('hero.marquee.line2')} <span className="marquee-dot">•</span>
                 </span>
-                <span className="text-deep-forest font-normal text-base sm:text-lg marquee-item">
+                <span className="font-normal text-base sm:text-lg marquee-item">
                   {t('hero.marquee.line3')} <span className="marquee-dot">•</span>
                 </span>
               </div>

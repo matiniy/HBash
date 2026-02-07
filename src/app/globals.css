@@ -20,7 +20,8 @@
 
 :root {
   --deep-forest: #000000;
-  --aqua-neon: #00FFA3;
+  --aqua-neon: #144552;
+  --aqua-neon-hover: #00FFA3;
   --e-global-color-e0663ad: var(--aqua-neon);
   --white: #FFFFFF;
   --grey-light: #B3B3B3;
@@ -69,7 +70,7 @@ a {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #00e694;
+  background: var(--aqua-neon-hover);
 }
 
 /* Marquee animation */
@@ -99,17 +100,19 @@ a {
   animation: marquee-slow 40s linear infinite;
 }
 
-/* Hero marquee: text — Raleway medium, color #F9E8E8 */
-.bg-aqua-neon .marquee-item,
-section.bg-aqua-neon .marquee-item {
+/* Hero marquee strip: background #144552, white text */
+.hero-marquee-strip {
+  background-color: #144552 !important;
+}
+.hero-marquee-strip .marquee-item,
+.hero-marquee-strip .marquee-dot {
   font-family: var(--font-raleway), "Raleway", sans-serif !important;
   font-weight: 400 !important;
-  color: #F9E8E8 !important;
+  color: #ffffff !important;
 }
 
-/* Hero marquee: dot color and tighter spacing */
+/* Hero marquee: dot spacing */
 .marquee-dot {
-  color: #0B323D !important;
   margin-left: 0.2em;
   margin-right: 0.2em;
 }
@@ -125,13 +128,13 @@ section.bg-aqua-neon .marquee-item {
 }
 /* Button hover effects */
 .btn-primary:hover {
-  background-color: #00e694;
+  background-color: var(--aqua-neon-hover);
   transform: translateY(-2px);
   box-shadow: none;
 }
 
 .btn-secondary:hover {
-  background-color: var(--aqua-neon);
+  background-color: var(--aqua-neon-hover);
   color: var(--deep-forest);
   transform: translateY(-2px);
 }
@@ -240,7 +243,7 @@ nav .nav-link,
 .hero-cta-link:hover,
 .hero-cta-link:hover:visited,
 .hero-cta-link:focus-visible {
-  color: var(--aqua-neon) !important;
+  color: var(--aqua-neon-hover) !important;
 }
 .hero-cta-link:hover *,
 .hero-cta-link:focus-visible * {
@@ -291,6 +294,15 @@ nav .nav-link,
   font-size: 16px;
   color: #144552 !important;
   white-space: pre-line;
+}
+
+.reviews-read-more-link {
+  font-family: var(--font-raleway), "Raleway", sans-serif;
+  color: #0d7488;
+}
+.reviews-read-more-link:hover {
+  color: var(--aqua-neon-hover) !important;
+  text-decoration: underline;
 }
 
 .reviews-quote-mark {
@@ -367,6 +379,22 @@ nav .nav-link,
 .main-gradient-bg .reviews-subtitle {
   color: #144552 !important;
 }
+/* About section: no boxes, title + body on gradient; PP Editorial Old title, Raleway body, #144552 */
+.main-gradient-bg .about-heading {
+  font-family: "PP Editorial Old", var(--font-playfair), Georgia, serif !important;
+  color: #144552 !important;
+}
+.main-gradient-bg .about-body {
+  font-family: var(--font-raleway), "Raleway", sans-serif !important;
+  color: #144552 !important;
+}
+.main-gradient-bg .about-read-more {
+  font-family: var(--font-raleway), "Raleway", sans-serif !important;
+  color: #144552 !important;
+}
+.main-gradient-bg .about-read-more:hover {
+  color: var(--aqua-neon-hover) !important;
+}
 .main-gradient-bg section .text-white {
   color: #144552 !important;
 }
@@ -408,7 +436,7 @@ nav .nav-link,
   color: #144552 !important;
 }
 .main-gradient-bg footer a:hover {
-  color: var(--aqua-neon) !important;
+  color: var(--aqua-neon-hover) !important;
 }
 .main-gradient-bg .text-white\/80 {
   color: rgba(20, 69, 82, 0.85) !important;
@@ -499,7 +527,7 @@ nav .nav-link,
   right: 0;
   bottom: -6px;
   height: 2px;
-  background: #00FFA3; /* Dark theme green for underline in all themes */
+  background: var(--aqua-neon-hover);
   transform: scaleX(0);
   transform-origin: left;
   opacity: 0;
@@ -514,11 +542,11 @@ nav .nav-link,
 
 nav .nav-link:hover,
 .nav-link:hover {
-  color: #00FFA3 !important; /* Dark theme light green */
+  color: var(--aqua-neon-hover) !important;
 }
 nav .nav-link-active,
 .nav-link-active {
-  color: #00FFA3 !important;
+  color: var(--aqua-neon) !important;
 }
 
 /* Navbar logo backing for dark theme visibility */

@@ -32,7 +32,7 @@ const TRECNotice: React.FC = () => {
               href="https://www.trec.texas.gov" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-aqua-neon hover:text-[#00e694] underline transition-colors"
+              className="text-aqua-neon hover:text-[#00FFA3] underline transition-colors"
             >
               WWW.TREC.TEXAS.GOV
             </a>
@@ -70,7 +70,7 @@ const TRECNotice: React.FC = () => {
             <p className="mt-2">
               <a 
                 href="tel:5129363000" 
-                className="text-aqua-neon hover:text-[#00e694] transition-colors"
+                className="text-aqua-neon hover:text-[#00FFA3] transition-colors"
               >
                 (512) 936-3000
               </a>

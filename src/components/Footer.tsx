@@ -104,7 +104,7 @@ const Footer: React.FC = () => {
               {t('footer.copyright')}
             </p>
             <p className={`text-xs xs:text-sm text-white ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
-              <Link href="/trec-notice" className="text-aqua-neon hover:text-[#00e694] underline transition-colors">
+              <Link href="/trec-notice" className="text-aqua-neon hover:text-[#00FFA3] underline transition-colors">
                 {t('footer.trecNotice')}
               </Link>
             </p>

@@ -11,32 +11,24 @@ const About: React.FC = () => {
 
   return (
     <section className="py-14 sm:py-20 relative overflow-hidden">
-      {/* Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0"
-        style={{ backgroundImage: 'url("/images/Background/Background.png")' }}
-      ></div>
-      
-      {/* Overlay for readability - adjusted for theme visibility */}
-      <div className="absolute inset-0 bg-deep-forest/10 z-0 about-section-overlay"></div>
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start py-8 lg:py-12">
-          {/* Left Content - Realtor Image and CTA */}
-          <div className="relative">
-            <Image
-              src="/images/Realtor/realtor-photo.png"
-              alt="H Bashash - Dallas Realtor"
-              width={600}
-              height={800}
-              className="w-full h-auto object-cover object-top"
-              priority
-              quality={85}
-              placeholder="blur"
-              blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
-            />
-                {/* Buttons - Responsive: Stacked on mobile, horizontal on desktop */}
-                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-full max-w-full flex flex-col sm:flex-row gap-3 items-center justify-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center py-8 lg:py-12">
+          {/* Left - Oval portrait and CTAs */}
+          <div className="flex flex-col items-center lg:items-start gap-6">
+            <div className="w-full max-w-[320px] aspect-[4/5] rounded-[50%] overflow-hidden border-2 border-[#E8DCC8] shrink-0">
+              <Image
+                src="/images/Realtor/realtor-photo.png"
+                alt="H Bashash - Dallas Realtor"
+                width={600}
+                height={800}
+                className="w-full h-full object-cover object-top"
+                priority
+                quality={85}
+                placeholder="blur"
+                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
+              />
+            </div>
+            <div className="flex flex-col sm:flex-row gap-3 items-center justify-center lg:justify-start w-full lg:w-auto">
               <Link href="/contact">
                 <Button variant="primary" className="w-full sm:w-auto">
                   {t('hero.scheduleConsultation')}
@@ -53,28 +45,20 @@ const About: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Content - Glass Effect Box and Testimonials */}
-          <div className="space-y-8">
-            {/* Glass Effect Box - Positioned 150px to the left, overlapping image */}
-            <div className={`relative -ml-0 sm:-ml-[100px] lg:-ml-[150px] w-full sm:w-[115%] lg:w-[120%] min-h-[160px] sm:min-h-[200px] lg:min-h-[220px] bg-black/40 backdrop-blur-lg rounded-tr-2xl rounded-bl-2xl rounded-br-2xl rounded-tl-none p-4 sm:p-6 lg:p-8 text-white z-20 flex flex-col justify-center ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
-              <div className="space-y-3 sm:space-y-4">
-                <p className={`text-sm xs:text-base sm:text-lg lg:text-xl font-sora font-normal leading-relaxed ${language === 'fa' ? 'text-right' : 'text-left'} line-clamp-3`}>
-                  {t('about.bio')}
-                </p>
-                <Link href="/about" className="inline-block mt-2">
-                  <span className="text-aqua-neon hover:text-[#00e694] font-semibold text-sm xs:text-base sm:text-lg transition-colors duration-300 underline">
-                    {t('about.readMore')}
-                  </span>
-                </Link>
-              </div>
-            </div>
-
-            {/* Description text under bio */}
-            <div className={`mt-8 sm:mt-10 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
-              <p className={`text-white text-sm xs:text-base sm:text-lg md:text-xl leading-relaxed ${language === 'fa' ? 'text-right' : 'text-left'}`}>
-                {t('hero.subtitle')}
-              </p>
-            </div>
+          {/* Right - Title, bio and Read More on background (no box) */}
+          <div className={`space-y-4 sm:space-y-5 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+            <h2 className="about-heading text-3xl sm:text-4xl lg:text-[2.5rem] leading-tight">
+              {t('about.heading')}
+            </h2>
+            <p className={`about-body text-sm xs:text-base sm:text-lg lg:text-xl leading-relaxed ${language === 'fa' ? 'text-right' : 'text-left'} line-clamp-4`}>
+              {t('about.bio')}
+            </p>
+            <Link href="/about" className="about-read-more inline-block font-semibold text-sm xs:text-base sm:text-lg transition-colors duration-300">
+              {t('about.readMore')}
+            </Link>
+            <p className={`about-body text-sm xs:text-base sm:text-lg md:text-xl leading-relaxed pt-2 ${language === 'fa' ? 'text-right' : 'text-left'}`}>
+              {t('hero.subtitle')}
+            </p>
           </div>
         </div>
       </div>

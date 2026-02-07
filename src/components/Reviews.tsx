@@ -79,7 +79,7 @@ const Reviews: React.FC = () => {
             href={GOOGLE_REVIEWS_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className={`inline-block mt-4 text-[#0d7488] text-sm sm:text-base font-semibold hover:underline ${language === 'fa' ? 'font-sora' : ''}`}
+            className={`reviews-read-more-link inline-block mt-4 text-sm sm:text-base font-semibold ${language === 'fa' ? 'font-sora' : ''}`}
             dir={language === 'fa' ? 'rtl' : 'ltr'}
           >
             {t('about.readMoreReviews')}

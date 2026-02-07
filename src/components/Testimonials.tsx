@@ -89,7 +89,7 @@ const Testimonials: React.FC = () => {
                           <p className={`reviews-author text-white font-semibold ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
                             — {testimonial.author}
                           </p>
-                          <span className={`text-aqua-neon text-sm xs:text-base font-semibold group-hover:text-[#00e694] transition-colors ${language === 'fa' ? 'font-sora' : ''}`}>
+                          <span className={`text-aqua-neon text-sm xs:text-base font-semibold group-hover:text-[#00FFA3] transition-colors ${language === 'fa' ? 'font-sora' : ''}`}>
                             {t('about.readMoreReviews')}
                           </span>
                         </div>
