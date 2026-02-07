@@ -58,9 +58,6 @@ const About: React.FC = () => {
             <Link href="/about" className="about-read-more inline-block font-semibold text-sm xs:text-base sm:text-lg transition-colors duration-300">
               {t('about.readMore')}
             </Link>
-            <p className={`about-body text-sm xs:text-base sm:text-lg md:text-xl leading-relaxed pt-2 ${language === 'fa' ? 'text-right' : 'text-left'}`} style={{ fontFamily: 'var(--font-raleway), Raleway, sans-serif' }}>
-              {t('hero.subtitle')}
-            </p>
           </div>
         </div>
       </div>

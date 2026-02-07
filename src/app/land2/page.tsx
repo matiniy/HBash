@@ -8,6 +8,7 @@ import ContactForm from '@/components/ContactForm';
 import Credentials from '@/components/Credentials';
 import Footer from '@/components/Footer';
 import PageLoader from '@/components/PageLoader';
+import GradientNoiseWrapper from '@/components/GradientNoiseWrapper';
 
 // Hero images array - used for preloading
 const heroImages = [
@@ -51,16 +52,18 @@ export default function Land2() {
       )}
       <div className="light-mode">
         <main 
-          className={`min-h-screen bg-white transition-opacity duration-500 overflow-x-hidden w-full max-w-[100vw] ${
+          className={`min-h-screen bg-deep-forest transition-opacity duration-500 overflow-x-hidden w-full max-w-[100vw] ${
             hasMounted && !isLoading ? 'opacity-100' : 'opacity-0'
           }`}
         >
           <Navbar />
           <Hero />
-          <About />
-          <ContactForm />
-          <Credentials />
-          <Footer />
+          <GradientNoiseWrapper>
+            <About />
+            <ContactForm />
+            <Credentials />
+            <Footer />
+          </GradientNoiseWrapper>
         </main>
       </div>
     </>

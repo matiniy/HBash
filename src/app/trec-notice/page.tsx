@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import TRECNotice from '@/components/TRECNotice';
+import GradientNoiseWrapper from '@/components/GradientNoiseWrapper';
 
 export default function TRECNoticePage() {
   return (
@@ -22,14 +23,16 @@ export default function TRECNoticePage() {
         </div>
       </section>
 
+      <GradientNoiseWrapper>
       {/* TREC Notice Content */}
-      <section className="py-12 bg-deep-forest">
+      <section className="py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <TRECNotice />
         </div>
       </section>
 
       <Footer />
+      </GradientNoiseWrapper>
     </main>
   );
 }

@@ -6,6 +6,7 @@ import Footer from '@/components/Footer';
 import Button from '@/components/Button';
 import Link from 'next/link';
 import { useLanguage } from '@/contexts/LanguageContext';
+import GradientNoiseWrapper from '@/components/GradientNoiseWrapper';
 
 export default function Services() {
   const { t, language } = useLanguage();
@@ -121,8 +122,9 @@ export default function Services() {
         </div>
       </section>
 
+      <GradientNoiseWrapper>
       {/* Services Grid */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-deep-forest">
+      <section className="py-12 sm:py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {services.map((service, index) => (
@@ -155,7 +157,7 @@ export default function Services() {
       </section>
 
       {/* Process Section */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-deep-forest">
+      <section className="py-12 sm:py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 sm:mb-12 lg:mb-16">
             <h2 className={`section-title-luxerie section-title-luxerie-large text-white mb-4 sm:mb-6 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
@@ -207,6 +209,7 @@ export default function Services() {
       </section>
 
       <Footer />
+      </GradientNoiseWrapper>
     </main>
   );
 }

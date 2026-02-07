@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import GradientNoiseWrapper from '@/components/GradientNoiseWrapper';
 
 export default function IABSPage() {
   return (
@@ -21,8 +22,9 @@ export default function IABSPage() {
         </div>
       </section>
 
+      <GradientNoiseWrapper>
       {/* IABS Document Content */}
-      <section className="py-12 bg-deep-forest">
+      <section className="py-12">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white/5 backdrop-blur-sm rounded-3xl p-4 sm:p-8 border border-aqua-neon/20">
             {/* IABS Image Container */}
@@ -58,6 +60,7 @@ export default function IABSPage() {
       </section>
 
       <Footer />
+      </GradientNoiseWrapper>
     </main>
   );
 }

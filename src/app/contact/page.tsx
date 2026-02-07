@@ -3,6 +3,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ContactForm from '@/components/ContactForm';
 import Button from '@/components/Button';
+import GradientNoiseWrapper from '@/components/GradientNoiseWrapper';
 
 export default function Contact() {
   return (
@@ -23,11 +24,12 @@ export default function Contact() {
         </div>
       </section>
 
+      <GradientNoiseWrapper>
       {/* Contact Form */}
       <ContactForm />
 
       {/* Contact Info Section */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-deep-forest">
+      <section className="py-12 sm:py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
             {/* Contact Information */}
@@ -117,7 +119,7 @@ export default function Contact() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-deep-forest">
+      <section className="py-12 sm:py-16 lg:py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 sm:mb-12 lg:mb-16">
             <h2 className="text-2xl xs:text-3xl sm:text-3xl md:text-4xl font-bold text-white mb-4 sm:mb-6">
@@ -157,6 +159,7 @@ export default function Contact() {
       </section>
 
       <Footer />
+      </GradientNoiseWrapper>
     </main>
   );
 }

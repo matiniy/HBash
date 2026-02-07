@@ -7,6 +7,7 @@ import Footer from '@/components/Footer';
 import Button from '@/components/Button';
 import Link from 'next/link';
 import { useLanguage } from '@/contexts/LanguageContext';
+import GradientNoiseWrapper from '@/components/GradientNoiseWrapper';
 
 export default function About() {
   const { t, language } = useLanguage();
@@ -28,8 +29,9 @@ export default function About() {
         </div>
       </section>
 
+      <GradientNoiseWrapper>
       {/* Story Section */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-deep-forest">
+      <section className="py-12 sm:py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
             <div>
@@ -71,7 +73,7 @@ export default function About() {
       </section>
 
       {/* Values Section */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-deep-forest">
+      <section className="py-12 sm:py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 sm:mb-12 lg:mb-16">
             <h2 className={`section-title-luxerie section-title-luxerie-large text-white mb-4 sm:mb-6 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
@@ -128,7 +130,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* CTA Section - keep bright aqua bar */}
       <section className="py-12 sm:py-16 lg:py-20 bg-aqua-neon">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className={`section-title-luxerie section-title-luxerie-large text-deep-forest mb-4 sm:mb-6 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
@@ -146,6 +148,7 @@ export default function About() {
       </section>
 
       <Footer />
+      </GradientNoiseWrapper>
     </main>
   );
 }

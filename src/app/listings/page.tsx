@@ -7,6 +7,7 @@ import ListingCard from '@/components/ListingCard';
 import Button from '@/components/Button';
 import PasswordProtection from '@/components/PasswordProtection';
 import { useLanguage } from '@/contexts/LanguageContext';
+import GradientNoiseWrapper from '@/components/GradientNoiseWrapper';
 
 const LISTINGS_PASSWORD = '1234567890';
 
@@ -262,6 +263,7 @@ export default function Listings() {
         </div>
       </section>
 
+      <GradientNoiseWrapper>
       {/* Search and Filter Section */}
       <section className="py-12 bg-gray-900/50 backdrop-blur-sm border-b border-gray-700/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -424,6 +426,7 @@ export default function Listings() {
       </section>
 
       <Footer />
+      </GradientNoiseWrapper>
     </main>
   );
 }
