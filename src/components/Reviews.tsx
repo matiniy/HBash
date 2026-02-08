@@ -48,6 +48,7 @@ const Reviews: React.FC = () => {
   const { t, language } = useLanguage();
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const slideRefs = React.useRef<(HTMLDivElement | null)[]>([]);
+  const carouselRef = React.useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     if (loopedTestimonials.length <= 1) return;
@@ -58,7 +59,15 @@ const Reviews: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    slideRefs.current[currentTestimonial]?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    const slideEl = slideRefs.current[currentTestimonial];
+    const carousel = carouselRef.current;
+    if (slideEl && carousel) {
+      const slideLeft = slideEl.offsetLeft;
+      const slideWidth = slideEl.offsetWidth;
+      const carouselWidth = carousel.offsetWidth;
+      const scrollLeft = slideLeft - (carouselWidth / 2) + (slideWidth / 2);
+      carousel.scrollTo({ left: Math.max(0, scrollLeft), behavior: 'smooth' });
+    }
   }, [currentTestimonial]);
 
   return (
@@ -90,6 +99,7 @@ const Reviews: React.FC = () => {
         </div>
 
         <div
+          ref={carouselRef}
           className="reviews-carousel overflow-x-auto overflow-y-visible pb-2 -mx-4 px-4 sm:mx-0 sm:px-0 scroll-smooth"
           style={{ scrollSnapType: 'x mandatory' }}
         >
@@ -99,6 +109,7 @@ const Reviews: React.FC = () => {
                 key={index}
                 ref={(el) => { slideRefs.current[index] = el; }}
                 onClick={() => setCurrentTestimonial(index)}
+                dir={language === 'fa' ? 'rtl' : 'ltr'}
                 className={`reviews-carousel-slide flex-shrink-0 text-left transition-opacity duration-300 cursor-pointer px-3 sm:px-6 min-w-[260px] xs:min-w-[280px] sm:min-w-[320px] lg:min-w-[360px] ${language === 'fa' ? 'text-right' : ''} ${
                   index === currentTestimonial ? 'opacity-100' : 'opacity-50'
                 }`}
@@ -112,17 +123,17 @@ const Reviews: React.FC = () => {
                   onClick={(e) => e.stopPropagation()}
                 >
                   <p
-                    className={`reviews-author text-[#144552] font-semibold text-sm xs:text-base mb-2 ${
+                    className={`reviews-author text-[#144552] font-semibold text-sm xs:text-base mb-2 reviews-align ${
                       language === 'fa' ? 'font-sora' : ''
                     }`}
                     dir={language === 'fa' ? 'rtl' : 'ltr'}
                   >
                     {testimonial.author}
                   </p>
-                  <div className={`flex items-start gap-1 sm:gap-2 ${language === 'fa' ? 'justify-end' : 'justify-start'}`}>
+                  <div className={`reviews-quote-block relative ${language === 'fa' ? 'text-right' : 'text-left'}`}>
                     <QuoteMark />
                     <p
-                      className={`reviews-quote-text text-[#144552]/90 text-sm xs:text-base sm:text-lg leading-relaxed ${
+                      className={`reviews-quote-text text-[#144552]/90 text-sm xs:text-base sm:text-lg leading-relaxed reviews-align ${
                         language === 'fa' ? 'font-sora' : ''
                       }`}
                       dir={language === 'fa' ? 'rtl' : 'ltr'}
@@ -130,7 +141,7 @@ const Reviews: React.FC = () => {
                       {testimonial.text}
                     </p>
                   </div>
-                  <div className="mt-4">
+                  <div className="mt-4 reviews-align">
                     <StarRating alignEnd={language === 'fa'} />
                   </div>
                 </a>

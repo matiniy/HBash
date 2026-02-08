@@ -415,6 +415,28 @@ nav .nav-link,
   text-decoration: underline;
 }
 
+/* Left-align name, quote text, and stars on the same edge; quote mark is decorative and out of flow */
+.reviews-align {
+  padding-left: 4.5rem;
+}
+.reviews-quote-block {
+  position: relative;
+}
+.reviews-quote-block .reviews-quote-mark {
+  position: absolute;
+  left: 0;
+  top: -0.15em;
+  font-family: var(--font-space-grotesk), "Space Grotesk", sans-serif;
+  font-size: 4rem;
+  line-height: 1;
+  color: #D8AF86;
+  user-select: none;
+  pointer-events: none;
+}
+.reviews-quote-block .reviews-quote-text {
+  padding-left: 0;
+}
+
 .reviews-quote-mark {
   font-family: var(--font-space-grotesk), "Space Grotesk", sans-serif;
   font-size: 4rem;
@@ -442,8 +464,21 @@ nav .nav-link,
   font-family: "PP Editorial Old", var(--font-playfair), Georgia, serif !important;
 }
 
+/* RTL: align name, quote, stars on the right */
+.reviews-carousel-slide[dir="rtl"] .reviews-align,
+[dir="rtl"] .reviews-align {
+  padding-left: 0;
+  padding-right: 4.5rem;
+}
+.reviews-carousel-slide[dir="rtl"] .reviews-quote-block .reviews-quote-mark,
+[dir="rtl"] .reviews-quote-block .reviews-quote-mark {
+  left: auto;
+  right: 0;
+}
+
 @media (max-width: 640px) {
-  .reviews-quote-mark {
+  .reviews-quote-mark,
+  .reviews-quote-block .reviews-quote-mark {
     font-size: 3rem;
   }
 }
