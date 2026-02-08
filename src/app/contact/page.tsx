@@ -21,20 +21,6 @@ export default function Contact() {
     <main className="contact-page min-h-screen overflow-x-hidden w-full max-w-[100vw]">
       <Navbar />
       <GradientNoiseWrapper>
-      {/* Hero Section - no black background */}
-      <section className="pt-24 sm:pt-28 md:pt-32 lg:pt-[150px] pb-8 sm:pb-12 lg:pb-[50px]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className={`contact-page-title text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-6 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
-              <span className="title-combo-first">{t('contactPage.pageTitle')}</span>{' '}<span className="contact-page-highlight title-combo-highlight">{t('contactPage.pageTitleHighlight')}</span>
-            </h1>
-            <p className={`contact-page-text text-base xs:text-lg sm:text-xl max-w-3xl mx-auto px-2 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
-              {t('contactPage.heroSubtitle')}
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* Contact Form */}
       <ContactForm />
 
@@ -44,7 +30,7 @@ export default function Contact() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-stretch">
             {/* Contact Information */}
             <div className="flex flex-col" dir={language === 'fa' ? 'rtl' : 'ltr'}>
-              <h2 className={`contact-page-title text-2xl xs:text-3xl sm:text-3xl md:text-4xl font-bold mb-6 sm:mb-8 ${language === 'fa' ? 'font-sora' : ''}`}>
+              <h2 className={`contact-page-title page-title-size font-bold mb-6 sm:mb-8 ${language === 'fa' ? 'font-sora' : ''}`}>
                 <span className="title-combo-first">{t('contactPage.contactInfoTitle')}</span>{' '}<span className="contact-page-highlight title-combo-highlight">{t('contactPage.contactInfoHighlight')}</span>
               </h2>
               
@@ -135,7 +121,7 @@ export default function Contact() {
       <section className="py-12 sm:py-16 lg:py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-            <h2 className={`contact-page-title text-2xl xs:text-3xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+            <h2 className={`contact-page-title page-title-size font-bold mb-4 sm:mb-6 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
               <span className="title-combo-first">{t('contactPage.faqTitle')}</span>{' '}<span className="contact-page-highlight title-combo-highlight">{t('contactPage.faqTitleHighlight')}</span>
             </h2>
             <p className={`contact-page-text text-base sm:text-lg px-2 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>

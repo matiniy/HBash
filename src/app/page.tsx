@@ -52,7 +52,7 @@ export default function Home() {
         />
       )}
       <main 
-        className={`min-h-screen bg-deep-forest transition-opacity duration-500 overflow-x-hidden w-full max-w-[100vw] ${
+        className={`home-page min-h-screen bg-deep-forest transition-opacity duration-500 overflow-x-hidden w-full max-w-[100vw] ${
           hasMounted && !isLoading ? 'opacity-100' : 'opacity-0'
         }`}
       >

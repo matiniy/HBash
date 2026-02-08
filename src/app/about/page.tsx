@@ -30,7 +30,7 @@ export default function About() {
       <section className="pt-24 sm:pt-28 md:pt-32 lg:pt-[150px] pb-2 sm:pb-4 lg:pb-6">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className={`max-w-3xl ${language === 'fa' ? 'text-right' : 'text-left'}`}>
-            <h1 className={`about-page-hero-title mb-0 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+            <h1 className={`about-page-hero-title page-title-size mb-0 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
               <span className="title-combo-first">{t('aboutPage.sectionTitlePrefix')}</span><span className="title-combo-highlight">{t('aboutPage.sectionTitleSuffix')}</span>
             </h1>
           </div>
@@ -89,7 +89,7 @@ export default function About() {
       <section className="py-12 sm:py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-            <h2 className={`about-page-title about-page-values-heading section-title-luxerie section-title-luxerie-large mb-4 sm:mb-6 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+            <h2 className={`about-page-title about-page-values-heading section-title-luxerie page-title-size mb-4 sm:mb-6 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
               <span className="title-combo-first">{t('aboutPage.valuesTitle')}</span>{' '}<span className="about-page-values-highlight title-combo-highlight">{t('aboutPage.valuesTitleHighlight')}</span>
             </h2>
             <p className={`about-page-text about-page-values-subtitle text-base sm:text-lg max-w-3xl mx-auto px-2 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
@@ -155,7 +155,7 @@ export default function About() {
       {/* CTA Section - green #144552 bar */}
       <section className="about-page-cta-section py-12 sm:py-16 lg:py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
-          <h2 className={`about-page-title section-title-luxerie section-title-luxerie-large about-page-cta-title mb-4 sm:mb-6 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+          <h2 className={`about-page-title section-title-luxerie page-title-size about-page-cta-title mb-4 sm:mb-6 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
             {t('aboutPage.ctaTitle')}
           </h2>
           <p className={`about-page-text text-base sm:text-lg about-page-cta-text mb-6 sm:mb-8 px-2 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>

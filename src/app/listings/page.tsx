@@ -251,7 +251,7 @@ export default function Listings() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center">
             <h1 className="listings-hero-title text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6">
-              Property <span className="listings-hero-highlight">Listings</span>
+              <span className="listings-hero-lead">Property</span>{' '}<span className="listings-hero-highlight">Listings</span>
             </h1>
             <p className="listings-hero-subtitle text-base sm:text-lg lg:text-xl max-w-3xl mx-auto px-1">
               Discover your perfect home in Dallas. Browse our curated selection of premium properties.
@@ -408,7 +408,7 @@ export default function Listings() {
 
       {/* CTA Section - button matches other site buttons (16px, #144552, 48px) */}
       <section className="listings-cta-section py-20 border-t border-[#144552]/10">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
           <h2 className="listings-hero-title text-3xl md:text-4xl font-bold mb-6">
             Don't See What You're Looking For?
           </h2>

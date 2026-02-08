@@ -466,6 +466,30 @@ nav .nav-link,
   font-size: clamp(1.25rem, 5vw, 1.625rem);
 }
 
+/* Page titles: same size as listing page (all non-homepage main/section titles) */
+.page-title-size {
+  font-size: 1.5rem !important; /* 24px = text-2xl */
+}
+@media (min-width: 475px) {
+  .page-title-size { font-size: 1.875rem !important; } /* text-3xl */
+}
+@media (min-width: 640px) {
+  .page-title-size { font-size: 2.25rem !important; } /* text-4xl */
+}
+@media (min-width: 768px) {
+  .page-title-size { font-size: 3rem !important; } /* text-5xl */
+}
+@media (min-width: 1024px) {
+  .page-title-size { font-size: 3.75rem !important; } /* text-6xl */
+}
+/* Force main page title children to use same size as listing (override .section-title-luxerie child sizes) */
+.page-title-size .title-combo-first,
+.page-title-size .title-combo-highlight,
+.page-title-size .hero-cta-prefix,
+.page-title-size .hero-cta-suffix {
+  font-size: inherit !important;
+}
+
 /* Reviews section title: "Clients" Raleway Light, "Stories" PP Editorial Old italic — same combo used site-wide for section titles */
 /* Reviews section background image */
 .reviews-section {
@@ -701,28 +725,14 @@ nav .nav-link,
 .about-page .main-gradient-bg .about-page-hero-title .title-combo-highlight {
   color: #144552 !important;
 }
-/* About page hero title: bigger size; "About" = Raleway Light, "Haideh Bashash" = PP Editorial Old italic */
+/* About page hero title: "About" = Raleway Light, "Haideh Bashash" = PP Editorial Old italic; size = .page-title-size (same as listing) */
 .about-page .about-page-hero-title .title-combo-first {
   font-family: var(--font-raleway), "Raleway", sans-serif !important;
   font-weight: 300 !important; /* Raleway Light */
-  font-size: 1.75rem !important; /* 28px */
 }
 .about-page .about-page-hero-title .title-combo-highlight {
   font-family: "PP Editorial Old", var(--font-playfair), Georgia, serif !important;
   font-style: italic !important;
-  font-size: 1.75rem !important;
-}
-@media (min-width: 640px) {
-  .about-page .about-page-hero-title .title-combo-first,
-  .about-page .about-page-hero-title .title-combo-highlight {
-    font-size: 2rem !important; /* 32px */
-  }
-}
-@media (min-width: 1024px) {
-  .about-page .about-page-hero-title .title-combo-first,
-  .about-page .about-page-hero-title .title-combo-highlight {
-    font-size: 2.25rem !important; /* 36px */
-  }
 }
 .about-page .main-gradient-bg .about-page-hero-subtitle {
   color: #144552 !important;
@@ -731,6 +741,13 @@ nav .nav-link,
 /* About page Values section + CTA: green #144552 */
 .about-page .main-gradient-bg .about-page-values-highlight {
   color: #144552 !important;
+}
+/* About page Values section: "My Values" at 36px */
+.about-page .about-page-values-heading,
+.about-page .about-page-values-heading .title-combo-first,
+.about-page .about-page-values-heading .about-page-values-highlight,
+.about-page .about-page-values-heading .title-combo-highlight {
+  font-size: 36px !important;
 }
 /* Match Services page: light icon circle background, outline icon #144552 */
 .about-page .main-gradient-bg .about-page-values-icon-wrap {
@@ -754,6 +771,9 @@ nav .nav-link,
 .about-page-cta-section {
   background: #144552 !important;
   background-color: #144552 !important;
+}
+.about-page .about-page-cta-section .about-page-cta-title {
+  font-size: 36px !important;
 }
 /* Override about-page title/text when inside CTA bar so they're visible (#FFEFDF on #144552) */
 .about-page .main-gradient-bg .about-page-cta-section .about-page-cta-title,
@@ -896,6 +916,13 @@ nav .nav-link,
   font-weight: 500 !important;
   color: #144552 !important;
 }
+.contact-page .contact-page-contact-info .contact-page-title {
+  font-size: 36px !important;
+}
+.contact-page .contact-page-contact-info .contact-page-title .title-combo-first,
+.contact-page .contact-page-contact-info .contact-page-title .title-combo-highlight {
+  font-size: inherit !important;
+}
 .contact-page .main-gradient-bg .contact-page-contact-info .contact-page-highlight {
   font-family: "PP Editorial Old", var(--font-playfair), Georgia, serif !important;
   font-style: italic !important;
@@ -1004,6 +1031,17 @@ nav .nav-link,
 .documents-section .documents-title-combo,
 .main-gradient-bg .documents-section .documents-title-combo {
   font-size: clamp(1.5rem, 4vw, 2.25rem);
+}
+
+/* Homepage: "Book a Consultation" same size as "Important Documents" */
+.home-page .contact-form-section .contact-page-title {
+  font-size: clamp(1.5rem, 4vw, 2.25rem) !important;
+}
+.home-page .contact-form-section .contact-page-title .title-combo-first,
+.home-page .contact-form-section .contact-page-title .title-combo-highlight,
+.home-page .contact-form-section .contact-page-title .hero-cta-prefix,
+.home-page .contact-form-section .contact-page-title .hero-cta-suffix {
+  font-size: inherit !important;
 }
 .documents-section .documents-subtitle,
 .main-gradient-bg .documents-section .documents-subtitle {
@@ -1120,7 +1158,20 @@ nav .nav-link,
   background: #144552 !important;
   background-color: #144552 !important;
 }
-.services-page-cta-bg .services-page-cta-title,
+/* Services CTA title: same size as listings "Don't See What You're Looking For?" (text-3xl md:text-4xl) */
+.services-page-cta-bg .services-page-cta-title {
+  font-size: 1.875rem !important; /* text-3xl */
+  color: #FFEFDF !important;
+}
+.services-page-cta-bg .services-page-cta-title .title-combo-first,
+.services-page-cta-bg .services-page-cta-title .title-combo-highlight {
+  font-size: inherit !important;
+}
+@media (min-width: 768px) {
+  .services-page-cta-bg .services-page-cta-title {
+    font-size: 2.25rem !important; /* text-4xl */
+  }
+}
 .services-page-cta-bg .services-page-cta-text {
   color: #FFEFDF !important;
 }
@@ -1225,13 +1276,17 @@ nav .nav-link,
 
 /* Listings page: Raleway + PP Editorial, form field lines #144552 */
 /* Listings: PP Editorial + Raleway, light background (no black) */
-.listings-page .listings-hero-title,
+.listings-page .listings-hero-lead {
+  font-family: var(--font-raleway), "Raleway", sans-serif !important;
+  font-weight: 300 !important; /* Raleway Light */
+}
 .listings-page .listings-hero-highlight {
   font-family: "PP Editorial Old", var(--font-playfair), Georgia, serif !important;
   font-style: italic !important;
   font-weight: 500 !important;
 }
 .main-gradient-bg .listings-hero-title { color: #144552 !important; }
+.main-gradient-bg .listings-hero-lead,
 .main-gradient-bg .listings-hero-highlight { color: #144552 !important; }
 .listings-page .listings-hero-subtitle,
 .main-gradient-bg .listings-hero-subtitle {
@@ -1242,6 +1297,11 @@ nav .nav-link,
   background: transparent !important;
 }
 /* Listings CTA "Contact Us" button: match other site buttons (16px, #144552, 48px, Raleway) */
+.listings-cta-section .listings-hero-title {
+  font-family: "PP Editorial Old", var(--font-playfair), Georgia, serif !important;
+  font-style: italic !important;
+  font-weight: 500 !important;
+}
 .listings-cta-section .btn-primary,
 .listings-cta-section button.btn-primary,
 .listings-cta-section .listings-cta-btn,
@@ -1544,9 +1604,15 @@ nav .nav-link-active,
   color: #144552 !important;
 }
 
-/* Navbar logo backing for dark theme visibility */
+/* Navbar logo: 100% opacity so it stays clear over hero/backgrounds */
 .nav-logo-bg {
-  background: rgba(120, 120, 120, 0.35);
+  background: rgba(220, 220, 220, 0.95);
+  opacity: 1;
+}
+.nav-logo-bg img,
+.nav-logo-bg picture,
+.nav-logo-bg picture img {
+  opacity: 1 !important;
 }
 
 .review-progress {
