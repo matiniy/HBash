@@ -26,25 +26,25 @@ export default function About() {
     <main className="about-page min-h-screen overflow-x-hidden w-full max-w-[100vw]">
       <Navbar />
       <GradientNoiseWrapper>
-      {/* Hero Section - no black background */}
-      <section className="pt-24 sm:pt-28 md:pt-32 lg:pt-[150px] pb-8 sm:pb-12 lg:pb-[50px]">
+      {/* Hero Section - name only, left-aligned */}
+      <section className="pt-24 sm:pt-28 md:pt-32 lg:pt-[150px] pb-2 sm:pb-4 lg:pb-6">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <p className={`about-page-text about-page-hero-subtitle text-lg xs:text-xl sm:text-2xl max-w-3xl mx-auto px-2 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
-              {t('aboutPage.subtitle')}
-            </p>
+          <div className={`max-w-3xl ${language === 'fa' ? 'text-right' : 'text-left'}`}>
+            <h1 className={`about-page-hero-title mb-0 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+              <span className="title-combo-first">{t('aboutPage.sectionTitlePrefix')}</span><span className="title-combo-highlight">{t('aboutPage.sectionTitleSuffix')}</span>
+            </h1>
           </div>
         </div>
       </section>
-      {/* Story Section */}
-      <section className="py-12 sm:py-16 lg:py-20">
+      {/* Story Section - subheader + bio in left column (same style/size/line break), image right */}
+      <section className="pt-4 sm:pt-6 lg:pt-8 pb-12 sm:pb-16 lg:pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-10 items-start">
             <div>
-              <h2 className={`about-page-title section-title-luxerie section-title-luxerie-large text-white mb-4 sm:mb-6 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
-                <span className="title-combo-first">{t('aboutPage.sectionTitlePrefix')}</span><span className="title-combo-highlight">{t('aboutPage.sectionTitleSuffix')}</span>
-              </h2>
               <div className="space-y-4 sm:space-y-6 mb-6 sm:mb-8">
+                <p className={`about-page-text text-sm xs:text-base sm:text-lg text-white leading-relaxed ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+                  {t('aboutPage.subtitle')}
+                </p>
                 <p className={`about-page-text text-sm xs:text-base sm:text-lg text-white leading-relaxed ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
                   {t('aboutPage.paragraph1')}
                 </p>
@@ -68,7 +68,7 @@ export default function About() {
                 <span className="hero-cta-prefix">{t('aboutPage.getInTouch')}</span>
               </Link>
             </div>
-            <div className="relative">
+            <div className="relative -mt-6 sm:-mt-10 lg:-mt-12 max-w-[88%] lg:max-w-[82%] mx-auto lg:mx-0 lg:ml-auto">
               <Image
                 src="/images/Realtor/realtor-photo.png"
                 alt="Haideh Bashash - Dallas Realtor"

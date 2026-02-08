@@ -16,6 +16,14 @@ const testimonials = [
     text: 'My wife and I had a fantastic experience with Haideh! She was super knowledgeable and always available. We found the perfect home without any stress.',
     author: 'Hossein Entezari',
   },
+  {
+    text: 'She truly listened to what we were looking for and found properties that fit our needs perfectly. Her expertise and guidance made the entire home buying process smooth and stress free. I highly recommend Haideh to anyone looking to buy or sell a home, she is simply the best!',
+    author: 'Arash SHAMS',
+  },
+  {
+    text: 'We are very pleased and blessed with our incredible experience with Haideh Bashash as our realtor. She is the most professional, dedicated, excellent communicator and kindest realtor. She was always respectful, available when needed and looking out for our interest.',
+    author: 'Anna Sharifi',
+  },
 ];
 
 const GOOGLE_REVIEWS_URL = 'https://maps.app.goo.gl/NTTL8uiUqwZL3enEA';
@@ -44,11 +52,17 @@ const QuoteMark: React.FC = () => (
   <span className="reviews-quote-mark" aria-hidden>"</span>
 );
 
+/** Ease-out cubic for smooth deceleration at end of scroll */
+function easeOutCubic(t: number): number {
+  return 1 - Math.pow(1 - t, 3);
+}
+
 const Reviews: React.FC = () => {
   const { t, language } = useLanguage();
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const slideRefs = React.useRef<(HTMLDivElement | null)[]>([]);
   const carouselRef = React.useRef<HTMLDivElement | null>(null);
+  const scrollDurationMs = 600;
 
   useEffect(() => {
     if (loopedTestimonials.length <= 1) return;
@@ -61,13 +75,22 @@ const Reviews: React.FC = () => {
   useEffect(() => {
     const slideEl = slideRefs.current[currentTestimonial];
     const carousel = carouselRef.current;
-    if (slideEl && carousel) {
-      const slideLeft = slideEl.offsetLeft;
-      const slideWidth = slideEl.offsetWidth;
-      const carouselWidth = carousel.offsetWidth;
-      const scrollLeft = slideLeft - (carouselWidth / 2) + (slideWidth / 2);
-      carousel.scrollTo({ left: Math.max(0, scrollLeft), behavior: 'smooth' });
-    }
+    if (!slideEl || !carousel) return;
+
+    const targetScroll =
+      slideEl.offsetLeft - carousel.offsetWidth / 2 + slideEl.offsetWidth / 2;
+    const startScroll = carousel.scrollLeft;
+    const distance = Math.max(0, targetScroll) - startScroll;
+    const startTime = performance.now();
+
+    const tick = (now: number) => {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / scrollDurationMs, 1);
+      const eased = easeOutCubic(progress);
+      carousel.scrollLeft = startScroll + distance * eased;
+      if (progress < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
   }, [currentTestimonial]);
 
   return (
@@ -111,7 +134,7 @@ const Reviews: React.FC = () => {
                 ref={(el) => { slideRefs.current[index] = el; }}
                 onClick={() => setCurrentTestimonial(index)}
                 dir={language === 'fa' ? 'rtl' : 'ltr'}
-                className={`reviews-carousel-slide flex-shrink-0 text-left transition-opacity duration-300 cursor-pointer px-3 sm:px-6 min-w-[260px] xs:min-w-[280px] sm:min-w-[320px] lg:min-w-[360px] ${language === 'fa' ? 'text-right' : ''} ${
+                className={`reviews-carousel-slide flex-shrink-0 text-left transition-opacity duration-500 ease-in-out cursor-pointer px-3 sm:px-6 min-w-[260px] xs:min-w-[280px] sm:min-w-[320px] lg:min-w-[360px] ${language === 'fa' ? 'text-right' : ''} ${
                   index === currentTestimonial ? 'opacity-100' : 'opacity-50'
                 }`}
                 style={{ scrollSnapAlign: 'center' }}

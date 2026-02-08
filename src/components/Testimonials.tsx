@@ -15,6 +15,14 @@ const testimonials = [
   {
     text: "My wife and I had a fantastic experience with Haideh! She was super knowledgeable and always available. We found the perfect home without any stress.",
     author: "Hossein Entezari"
+  },
+  {
+    text: "She truly listened to what we were looking for and found properties that fit our needs perfectly. Her expertise and guidance made the entire home buying process smooth and stress free. I highly recommend Haideh to anyone looking to buy or sell a home, she is simply the best!",
+    author: "Arash SHAMS"
+  },
+  {
+    text: "We are very pleased and blessed with our incredible experience with Haideh Bashash as our realtor. She is the most professional, dedicated, excellent communicator and kindest realtor. She was always respectful, available when needed and looking out for our interest.",
+    author: "Anna Sharifi"
   }
 ];
 

@@ -406,8 +406,8 @@ export default function Listings() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 border-t border-[#144552]/10">
+      {/* CTA Section - button matches other site buttons (16px, #144552, 48px) */}
+      <section className="listings-cta-section py-20 border-t border-[#144552]/10">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="listings-hero-title text-3xl md:text-4xl font-bold mb-6">
             Don't See What You're Looking For?
@@ -415,7 +415,7 @@ export default function Listings() {
           <p className="listings-hero-subtitle text-lg mb-8">
             Our inventory is constantly updated. Let us know your specific requirements and we'll help you find the perfect property.
           </p>
-          <Button variant="primary" className="w-full sm:w-auto">
+          <Button variant="primary" className="listings-cta-btn w-full sm:w-auto">
             Contact Us
           </Button>
         </div>

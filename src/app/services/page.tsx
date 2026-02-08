@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Link from 'next/link';
@@ -108,10 +109,10 @@ export default function Services() {
       <Navbar />
       <GradientNoiseWrapper>
       {/* Hero Section - no black background */}
-      <section className="pt-24 sm:pt-28 md:pt-32 lg:pt-[150px] pb-8 sm:pb-12 lg:pb-[50px]">
+      <section className="pt-20 sm:pt-24 md:pt-28 lg:pt-32 pb-4 sm:pb-6 lg:pb-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className={`services-page-title section-title-luxerie section-title-luxerie-large mb-4 sm:mb-6 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+            <h1 className={`services-page-title section-title-luxerie section-title-luxerie-large mb-3 sm:mb-4 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
               <span className="title-combo-first">{t('servicesPage.title')}</span>{' '}<span className="services-page-highlight title-combo-highlight">{t('servicesPage.titleHighlight')}</span>
             </h1>
             <p className={`services-page-text text-base xs:text-lg sm:text-xl max-w-3xl mx-auto px-2 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
@@ -122,17 +123,18 @@ export default function Services() {
       </section>
 
       {/* Services Grid - no box background */}
-      <section className="py-12 sm:py-16 lg:py-20">
+      <section className="pt-2 sm:pt-4 lg:pt-6 pb-12 sm:pb-16 lg:pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {services.map((service, index) => (
-              <div key={index} className="services-page-card p-6 sm:p-8 group">
-                <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-full flex items-center justify-center mb-4 sm:mb-6 services-page-icon-wrap">
-                  <div className="w-6 h-6 sm:w-10 sm:h-10 services-page-icon">
+              <div key={index} className="services-page-card p-5 sm:p-6 group">
+                <div className="services-page-icon-wrap relative w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center mb-3 sm:mb-4">
+                  <Image src="/images/icons%20background/image%20133.png" alt="" fill className="object-contain pointer-events-none" />
+                  <div className="relative z-10 w-[21px] h-[21px] sm:w-[37px] sm:h-[37px] services-page-icon">
                     {service.icon}
                   </div>
                 </div>
-                <h3 className={`services-page-title text-lg sm:text-xl font-semibold mb-3 sm:mb-4 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+                <h3 className={`services-page-title services-page-card-title text-base sm:text-lg font-semibold mb-2 sm:mb-3 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
                   {service.title}
                 </h3>
                 <p className={`services-page-text text-sm sm:text-base mb-4 sm:mb-6 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>

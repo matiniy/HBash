@@ -73,52 +73,54 @@ const Hero: React.FC = () => {
         }`}
         style={{ transform: 'translateY(50px)' }}
       >
-        <h1
-          className={`hero-title-luxerie mt-10 sm:mt-12 lg:mt-0 ${
-            language === 'fa' ? 'hero-title-farsi' : ''
-          }`}
-          dir={language === 'fa' ? 'rtl' : 'ltr'}
-          style={{
-            transform: `translateY(-${textOffset}px)`,
-            opacity: textOpacity,
-            transition: 'opacity 150ms linear'
-          }}
-        >
-          <span className="block whitespace-normal lg:whitespace-nowrap hero-title-lead">
-            {t('hero.primaryTitle')}
-          </span>
-          <span className="block whitespace-normal lg:whitespace-nowrap hero-title-editorial">
-            <ShinyText
-              text={t('hero.primaryHighlight')}
-              speed={5}
-              delay={0.5}
-              color="#FFEFDF"
-              shineColor="#F3D4B4"
-              spread={120}
-              direction="left"
-              yoyo={false}
-              pauseOnHover={true}
-              className="hero-shiny-text"
-            />
-          </span>
-        </h1>
-        <p
-          className={`hero-description mt-3 ${
-            language === 'fa' ? 'font-sora' : ''
-          }`}
-          dir={language === 'fa' ? 'rtl' : 'ltr'}
-          style={{
-            transform: `translateY(-${textOffset}px)`,
-            opacity: textOpacity,
-            transition: 'opacity 150ms linear'
-          }}
-        >
-          {[
-            t('hero.primarySubheadlineLine1'),
-            t('hero.primarySubheadlineLine2'),
-            t('hero.primarySubheadlineLine3')
-          ].join(' ')}
-        </p>
+        <div className="grid grid-cols-1 w-full max-w-[444px] lg:w-[444px] hero-text-block">
+          <h1
+            className={`hero-title-luxerie mt-10 sm:mt-12 lg:mt-0 ${
+              language === 'fa' ? 'hero-title-farsi' : ''
+            }`}
+            dir={language === 'fa' ? 'rtl' : 'ltr'}
+            style={{
+              transform: `translateY(-${textOffset}px)`,
+              opacity: textOpacity,
+              transition: 'opacity 150ms linear'
+            }}
+          >
+            <span className="block whitespace-normal lg:whitespace-nowrap hero-title-lead">
+              {t('hero.primaryTitle')}
+            </span>
+            <span className="block whitespace-normal lg:whitespace-nowrap hero-title-editorial">
+              <ShinyText
+                text={t('hero.primaryHighlight')}
+                speed={5}
+                delay={0.5}
+                color="#FFEFDF"
+                shineColor="#F3D4B4"
+                spread={120}
+                direction="left"
+                yoyo={false}
+                pauseOnHover={true}
+                className="hero-shiny-text"
+              />
+            </span>
+          </h1>
+          <p
+            className={`hero-description mt-2 w-full ${
+              language === 'fa' ? 'font-sora' : ''
+            }`}
+            dir={language === 'fa' ? 'rtl' : 'ltr'}
+            style={{
+              transform: `translateY(-${textOffset}px)`,
+              opacity: textOpacity,
+              transition: 'opacity 150ms linear'
+            }}
+          >
+            {[
+              t('hero.primarySubheadlineLine1'),
+              t('hero.primarySubheadlineLine2'),
+              t('hero.primarySubheadlineLine3')
+            ].join(' ')}
+          </p>
+        </div>
 
         <Link
           href="/contact"

@@ -297,7 +297,6 @@ nav .nav-link,
   font-size: 32.5px;
   font-weight: 300;
   letter-spacing: 0.02em;
-  max-width: 400px;
   color: rgba(255, 239, 223, 1);
 }
 
@@ -306,7 +305,6 @@ nav .nav-link,
   font-family: "PP Editorial Old";
   font-size: 63px;
   font-style: italic;
-  margin-left: -0.06em; /* pull left so italic aligns with "Lighting the way Through" */
 }
 .hero-title-editorial .shiny-text,
 .hero-title-editorial .hero-shiny-text {
@@ -315,15 +313,43 @@ nav .nav-link,
   font-style: inherit;
 }
 
-/* Hero description: Raleway, line height 120.5%, one block */
+/* Hero text block: title and description same width (444px) and left-aligned on all screens */
+.hero-text-block .hero-title-luxerie {
+  width: 100%;
+  min-width: 0;
+}
+.hero-text-block .hero-title-lead,
+.hero-text-block .hero-title-editorial {
+  display: block;
+  width: 100%;
+  min-width: 0;
+}
+/* Large screens: force 444px block so title and description align */
+@media (min-width: 1024px) {
+  .hero-text-block {
+    width: 444px !important;
+    max-width: 444px !important;
+  }
+  .hero-text-block .hero-title-luxerie,
+  .hero-text-block .hero-title-lead,
+  .hero-text-block .hero-title-editorial,
+  .hero-text-block .hero-description {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+  }
+}
+
+/* Hero description: same width as title block (444px on lg+, 100% below), Raleway */
 .hero-description {
   font-family: var(--font-raleway), "Raleway", sans-serif;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 300;
-  line-height: 1.205;
+  line-height: 22px;
   letter-spacing: 0.03em;
-  max-width: min(400px, 100%);
   width: 100%;
+  max-width: 100%;
+  margin-top: 8px;
 }
 
 /* Hero section: force white text */
@@ -647,7 +673,7 @@ nav .nav-link,
 .main-gradient-bg .about-heading-raleway {
   font-family: var(--font-raleway), "Raleway", sans-serif !important;
   font-style: italic !important;
-  font-weight: 500 !important;
+  font-weight: 300 !important; /* Raleway Light for "About" */
   color: #144552 !important;
 }
 .main-gradient-bg .about-heading-editorial {
@@ -670,6 +696,33 @@ nav .nav-link,
 .main-gradient-bg .about-page .about-page-title,
 .main-gradient-bg .about-page .about-page-text {
   color: #144552 !important;
+}
+.about-page .main-gradient-bg .about-page-hero-title .title-combo-first,
+.about-page .main-gradient-bg .about-page-hero-title .title-combo-highlight {
+  color: #144552 !important;
+}
+/* About page hero title: bigger size; "About" = Raleway Light, "Haideh Bashash" = PP Editorial Old italic */
+.about-page .about-page-hero-title .title-combo-first {
+  font-family: var(--font-raleway), "Raleway", sans-serif !important;
+  font-weight: 300 !important; /* Raleway Light */
+  font-size: 1.75rem !important; /* 28px */
+}
+.about-page .about-page-hero-title .title-combo-highlight {
+  font-family: "PP Editorial Old", var(--font-playfair), Georgia, serif !important;
+  font-style: italic !important;
+  font-size: 1.75rem !important;
+}
+@media (min-width: 640px) {
+  .about-page .about-page-hero-title .title-combo-first,
+  .about-page .about-page-hero-title .title-combo-highlight {
+    font-size: 2rem !important; /* 32px */
+  }
+}
+@media (min-width: 1024px) {
+  .about-page .about-page-hero-title .title-combo-first,
+  .about-page .about-page-hero-title .title-combo-highlight {
+    font-size: 2.25rem !important; /* 36px */
+  }
 }
 .about-page .main-gradient-bg .about-page-hero-subtitle {
   color: #144552 !important;
@@ -716,16 +769,16 @@ nav .nav-link,
   color: #ffffff !important;
 }
 .about-page .main-gradient-bg .about-page-cta-section .about-page-cta-btn {
-  background: #FFEFDF !important;
-  border-color: #FFEFDF !important;
+  background: #F3D4B4 !important;
+  border-color: #F3D4B4 !important;
   color: #144552 !important;
 }
 .about-page .main-gradient-bg .about-page-cta-section .about-page-cta-btn * {
   color: #144552 !important;
 }
 .about-page .main-gradient-bg .about-page-cta-section .about-page-cta-btn:hover {
-  background: rgba(255, 239, 223, 0.9) !important;
-  border-color: rgba(255, 239, 223, 0.9) !important;
+  background: rgba(243, 212, 180, 0.9) !important;
+  border-color: rgba(243, 212, 180, 0.9) !important;
   color: #0f3239 !important;
 }
 .about-page .main-gradient-bg .about-page-cta-section .about-page-cta-btn:hover * {
@@ -936,9 +989,9 @@ nav .nav-link,
 }
 .documents-section .documents-title-prefix,
 .main-gradient-bg .documents-section .documents-title-prefix {
-  font-family: "PP Editorial Old", var(--font-playfair), Georgia, serif !important;
+  font-family: var(--font-raleway), "Raleway", sans-serif !important;
   font-style: normal !important;
-  font-weight: 500 !important;
+  font-weight: 300 !important; /* Raleway Light for "Important" */
   color: #144552 !important;
 }
 .documents-section .documents-title-suffix,
@@ -1002,11 +1055,35 @@ nav .nav-link,
   color: #0f3239 !important;
 }
 
-/* Services page: no black box, Raleway body, PP Editorial Old italic titles, green #144552 */
+/* Services page: match about section title — Raleway Light + PP Editorial italic, same size (24/28/32px), green #144552 */
 .services-page .main-gradient-bg .services-page-title {
   font-family: "PP Editorial Old", var(--font-playfair), Georgia, serif !important;
   font-style: italic !important;
   font-weight: 500 !important;
+  color: #144552 !important;
+}
+/* Service card titles: PP Editorial italic, smaller size */
+.services-page .services-page-card .services-page-title {
+  font-family: "PP Editorial Old", var(--font-playfair), Georgia, serif !important;
+  font-style: italic !important;
+  font-weight: 500 !important;
+  color: #144552 !important;
+  font-size: 18px !important;
+}
+@media (min-width: 640px) {
+  .services-page .services-page-card .services-page-title {
+    font-size: 20px !important;
+  }
+}
+@media (min-width: 1024px) {
+  .services-page .services-page-card .services-page-title {
+    font-size: 22px !important;
+  }
+}
+/* Service card description and bullets: Raleway Light */
+.services-page .services-page-card .services-page-text {
+  font-family: var(--font-raleway), "Raleway", sans-serif !important;
+  font-weight: 300 !important;
   color: #144552 !important;
 }
 .services-page .main-gradient-bg .services-page-text {
@@ -1024,7 +1101,7 @@ nav .nav-link,
 }
 .services-page .services-page-icon-wrap,
 .services-page .main-gradient-bg .services-page-icon-wrap {
-  background-color: rgba(20, 69, 82, 0.12);
+  background: transparent;
 }
 .services-page .services-page-check,
 .services-page .main-gradient-bg .services-page-check {
@@ -1055,13 +1132,13 @@ nav .nav-link,
   color: #FFEFDF !important;
 }
 .services-page-cta-bg .services-page-cta-btn {
-  background: #ffffff !important;
+  background: #F3D4B4 !important;
   color: #144552 !important;
   font-family: var(--font-raleway), "Raleway", sans-serif !important;
 }
 .services-page-cta-bg .services-page-cta-btn:hover {
-  background: rgba(255, 255, 255, 0.9) !important;
-  color: #0f3239 !important;
+  background: rgba(243, 212, 180, 0.9) !important;
+  color: #144552 !important;
 }
 
 .about-read-more,
@@ -1071,6 +1148,14 @@ nav .nav-link,
 }
 .main-gradient-bg .about-read-more:hover {
   color: var(--aqua-neon-hover) !important;
+}
+.about-telegram-btn,
+.about-telegram-btn svg {
+  color: #FFEFDF !important;
+}
+.about-telegram-btn:hover,
+.about-telegram-btn:hover svg {
+  color: #FFEFDF !important;
 }
 
 /* Contact section: subtitle under "Book a Consultation" = Raleway + #144552 (homepage and contact page) */
@@ -1155,6 +1240,44 @@ nav .nav-link,
 }
 .listings-hero-section {
   background: transparent !important;
+}
+/* Listings CTA "Contact Us" button: match other site buttons (16px, #144552, 48px, Raleway) */
+.listings-cta-section .btn-primary,
+.listings-cta-section button.btn-primary,
+.listings-cta-section .listings-cta-btn,
+.main-gradient-bg .listings-cta-section .btn-primary,
+.main-gradient-bg .listings-cta-section button.btn-primary {
+  background: #144552 !important;
+  background-color: #144552 !important;
+  color: #ffffff !important;
+  font-size: 16px !important;
+  font-family: var(--font-raleway), "Raleway", sans-serif !important;
+  font-weight: 500 !important;
+  min-height: 48px !important;
+  height: 48px !important;
+  padding: 0.5rem 1.5rem !important;
+  border-radius: 8px !important;
+}
+.listings-cta-section .btn-primary *,
+.listings-cta-section button.btn-primary *,
+.main-gradient-bg .listings-cta-section .btn-primary *,
+.main-gradient-bg .listings-cta-section button.btn-primary * {
+  color: #ffffff !important;
+  font-size: 16px !important;
+}
+.listings-cta-section .btn-primary:hover,
+.listings-cta-section button.btn-primary:hover,
+.main-gradient-bg .listings-cta-section .btn-primary:hover,
+.main-gradient-bg .listings-cta-section button.btn-primary:hover {
+  background: var(--aqua-neon-hover) !important;
+  background-color: var(--aqua-neon-hover) !important;
+  color: #144552 !important;
+}
+.listings-cta-section .btn-primary:hover *,
+.listings-cta-section button.btn-primary:hover *,
+.main-gradient-bg .listings-cta-section .btn-primary:hover *,
+.main-gradient-bg .listings-cta-section button.btn-primary:hover * {
+  color: #144552 !important;
 }
 /* Search form: no box container, line-style fields only */
 .listings-search-inner {
