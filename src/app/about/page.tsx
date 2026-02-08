@@ -9,50 +9,63 @@ import Link from 'next/link';
 import { useLanguage } from '@/contexts/LanguageContext';
 import GradientNoiseWrapper from '@/components/GradientNoiseWrapper';
 
+const ArrowRight = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+    <path d="M5 12h14M12 5l7 7-7 7" />
+  </svg>
+);
+const ArrowLeft = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+    <path d="M19 12H5M12 19l-7-7 7-7" />
+  </svg>
+);
+
 export default function About() {
   const { t, language } = useLanguage();
   return (
-    <main className="min-h-screen bg-deep-forest overflow-x-hidden w-full max-w-[100vw]">
+    <main className="about-page min-h-screen overflow-x-hidden w-full max-w-[100vw]">
       <Navbar />
-      
-      {/* Hero Section */}
-      <section className="pt-24 sm:pt-28 md:pt-32 lg:pt-[150px] pb-8 sm:pb-12 lg:pb-[50px] bg-deep-forest">
+      <GradientNoiseWrapper>
+      {/* Hero Section - no black background */}
+      <section className="pt-24 sm:pt-28 md:pt-32 lg:pt-[150px] pb-8 sm:pb-12 lg:pb-[50px]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className={`section-title-luxerie section-title-luxerie-large text-white mb-4 sm:mb-6 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
-              {t('aboutPage.title')} <span className="text-aqua-neon">{t('aboutPage.titleHighlight')}</span>
-            </h1>
-            <p className={`text-base xs:text-lg sm:text-xl text-white max-w-3xl mx-auto px-2 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+            <p className={`about-page-text about-page-hero-subtitle text-lg xs:text-xl sm:text-2xl max-w-3xl mx-auto px-2 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
               {t('aboutPage.subtitle')}
             </p>
           </div>
         </div>
       </section>
-
-      <GradientNoiseWrapper>
       {/* Story Section */}
       <section className="py-12 sm:py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
             <div>
-              <h2 className={`section-title-luxerie section-title-luxerie-large text-white mb-4 sm:mb-6 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+              <h2 className={`about-page-title section-title-luxerie section-title-luxerie-large text-white mb-4 sm:mb-6 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
                 {t('aboutPage.sectionTitle')}
               </h2>
               <div className="space-y-4 sm:space-y-6 mb-6 sm:mb-8">
-                <p className={`text-sm xs:text-base sm:text-lg text-white leading-relaxed ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+                <p className={`about-page-text text-sm xs:text-base sm:text-lg text-white leading-relaxed ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
                   {t('aboutPage.paragraph1')}
                 </p>
-                <p className={`text-sm xs:text-base sm:text-lg text-white leading-relaxed ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+                <p className={`about-page-text text-sm xs:text-base sm:text-lg text-white leading-relaxed ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
                   {t('aboutPage.paragraph2')}
                 </p>
-                <p className={`text-sm xs:text-base sm:text-lg text-white leading-relaxed ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+                <p className={`about-page-text text-sm xs:text-base sm:text-lg text-white leading-relaxed ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
                   {t('aboutPage.paragraph3')}
                 </p>
               </div>
-              <Link href="/contact">
-                <Button variant="primary" className={`w-full sm:w-auto ${language === 'fa' ? 'sm:min-w-[calc(auto+15px)]' : ''}`}>
-                  {t('aboutPage.getInTouch')}
-                </Button>
+              <Link
+                href="/contact"
+                className={`hero-cta-link about-page-cta inline-flex items-center gap-2 w-fit ${language === 'fa' ? 'flex-row-reverse' : ''}`}
+                dir={language === 'fa' ? 'rtl' : 'ltr'}
+              >
+                {language === 'fa' ? (
+                  <span className="hero-cta-arrow" aria-hidden><ArrowLeft /></span>
+                ) : (
+                  <span className="hero-cta-arrow" aria-hidden><ArrowRight /></span>
+                )}
+                <span className="hero-cta-prefix">{t('aboutPage.getInTouch')}</span>
               </Link>
             </div>
             <div className="relative">
@@ -76,53 +89,59 @@ export default function About() {
       <section className="py-12 sm:py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-            <h2 className={`section-title-luxerie section-title-luxerie-large text-white mb-4 sm:mb-6 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
-              {t('aboutPage.valuesTitle')} <span className="text-aqua-neon">{t('aboutPage.valuesTitleHighlight')}</span>
+            <h2 className={`about-page-title about-page-values-heading section-title-luxerie section-title-luxerie-large mb-4 sm:mb-6 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+              {t('aboutPage.valuesTitle')} <span className="about-page-values-highlight">{t('aboutPage.valuesTitleHighlight')}</span>
             </h2>
-            <p className={`text-base sm:text-lg text-white max-w-3xl mx-auto px-2 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+            <p className={`about-page-text about-page-values-subtitle text-base sm:text-lg max-w-3xl mx-auto px-2 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
               {t('aboutPage.valuesSubtitle')}
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            <div className="text-center group">
-              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-aqua-neon/20 rounded-full mx-auto mb-4 sm:mb-6 flex items-center justify-center group-hover:bg-aqua-neon/30 transition-colors duration-300">
-                <svg className="w-6 h-6 sm:w-8 sm:h-8 text-aqua-neon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
+            <div className="about-page-values-card p-6 sm:p-8 text-center group">
+              <div className="about-page-values-icon-wrap w-10 h-10 sm:w-14 sm:h-14 rounded-full mx-auto mb-4 sm:mb-6 flex items-center justify-center">
+                <div className="about-page-values-icon w-6 h-6 sm:w-10 sm:h-10">
+                  <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
               </div>
-              <h3 className={`text-lg sm:text-xl font-bold text-white mb-2 sm:mb-4 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+              <h3 className={`about-page-text text-lg sm:text-xl font-semibold mb-2 sm:mb-4 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
                 {t('aboutPage.integrity')}
               </h3>
-              <p className={`text-sm sm:text-base text-white px-2 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+              <p className={`about-page-text text-sm sm:text-base px-2 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
                 {t('aboutPage.integrityDesc')}
               </p>
             </div>
 
-            <div className="text-center group">
-              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-aqua-neon/20 rounded-full mx-auto mb-4 sm:mb-6 flex items-center justify-center group-hover:bg-aqua-neon/30 transition-colors duration-300">
-                <svg className="w-6 h-6 sm:w-8 sm:h-8 text-aqua-neon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
+            <div className="about-page-values-card p-6 sm:p-8 text-center group">
+              <div className="about-page-values-icon-wrap w-10 h-10 sm:w-14 sm:h-14 rounded-full mx-auto mb-4 sm:mb-6 flex items-center justify-center">
+                <div className="about-page-values-icon w-6 h-6 sm:w-10 sm:h-10">
+                  <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                </div>
               </div>
-              <h3 className={`text-lg sm:text-xl font-bold text-white mb-2 sm:mb-4 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+              <h3 className={`about-page-text text-lg sm:text-xl font-semibold mb-2 sm:mb-4 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
                 {t('aboutPage.excellence')}
               </h3>
-              <p className={`text-sm sm:text-base text-white px-2 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+              <p className={`about-page-text text-sm sm:text-base px-2 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
                 {t('aboutPage.excellenceDesc')}
               </p>
             </div>
 
-            <div className="text-center group">
-              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-aqua-neon/20 rounded-full mx-auto mb-4 sm:mb-6 flex items-center justify-center group-hover:bg-aqua-neon/30 transition-colors duration-300">
-                <svg className="w-6 h-6 sm:w-8 sm:h-8 text-aqua-neon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                </svg>
+            <div className="about-page-values-card p-6 sm:p-8 text-center group">
+              <div className="about-page-values-icon-wrap w-10 h-10 sm:w-14 sm:h-14 rounded-full mx-auto mb-4 sm:mb-6 flex items-center justify-center">
+                <div className="about-page-values-icon w-6 h-6 sm:w-10 sm:h-10">
+                  <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                  </svg>
+                </div>
               </div>
-              <h3 className={`text-lg sm:text-xl font-bold text-white mb-2 sm:mb-4 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+              <h3 className={`about-page-text text-lg sm:text-xl font-semibold mb-2 sm:mb-4 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
                 {t('aboutPage.clientFocus')}
               </h3>
-              <p className={`text-sm sm:text-base text-white px-2 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+              <p className={`about-page-text text-sm sm:text-base px-2 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
                 {t('aboutPage.clientFocusDesc')}
               </p>
             </div>
@@ -130,17 +149,17 @@ export default function About() {
         </div>
       </section>
 
-      {/* CTA Section - keep bright aqua bar */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-aqua-neon">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className={`section-title-luxerie section-title-luxerie-large text-deep-forest mb-4 sm:mb-6 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+      {/* CTA Section - green #144552 bar */}
+      <section className="about-page-cta-section py-12 sm:py-16 lg:py-20">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
+          <h2 className={`about-page-title section-title-luxerie section-title-luxerie-large about-page-cta-title mb-4 sm:mb-6 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
             {t('aboutPage.ctaTitle')}
           </h2>
-          <p className={`text-base sm:text-lg text-deep-forest mb-6 sm:mb-8 px-2 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+          <p className={`about-page-text text-base sm:text-lg about-page-cta-text mb-6 sm:mb-8 px-2 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
             {t('aboutPage.ctaSubtitle')}
           </p>
-          <Link href="/contact">
-            <Button variant="secondary" className={`bg-deep-forest text-aqua-neon border-deep-forest hover:bg-white hover:text-deep-forest w-full sm:w-auto ${language === 'fa' ? 'sm:min-w-[calc(auto+15px)]' : ''}`}>
+          <Link href="/contact" className="flex justify-center">
+            <Button variant="secondary" className={`about-page-cta-btn bg-deep-forest border-deep-forest hover:bg-white hover:text-deep-forest w-full sm:w-auto ${language === 'fa' ? 'sm:min-w-[calc(auto+15px)]' : ''}`}>
               {t('aboutPage.scheduleConsultation')}
             </Button>
           </Link>

@@ -198,14 +198,28 @@ a {
   color: #144552 !important;
 }
 
-/* Contact form "Send Message" button: always dark green #144552 */
+/* Contact form "Send Message" button: same style as Book a Consultation (override .btn-primary when both present) */
+.main-gradient-bg .btn-contact-submit,
+.main-gradient-bg button.btn-contact-submit,
 .btn-contact-submit,
+.main-gradient-bg .btn-contact-submit *,
+.main-gradient-bg button.btn-contact-submit *,
 .btn-contact-submit * {
   background-color: #144552 !important;
   color: #ffffff !important;
   font-size: 16px !important;
+  font-family: var(--font-raleway), "Raleway", sans-serif !important;
+  font-weight: 500 !important;
+  min-height: 48px !important;
+  height: 48px !important;
+  padding: 0.5rem 1rem !important;
+  border-radius: 8px !important;
 }
+.main-gradient-bg .btn-contact-submit:hover,
+.main-gradient-bg button.btn-contact-submit:hover,
 .btn-contact-submit:hover,
+.main-gradient-bg .btn-contact-submit:hover *,
+.main-gradient-bg button.btn-contact-submit:hover *,
 .btn-contact-submit:hover * {
   background-color: var(--aqua-neon-hover) !important;
   color: #144552 !important;
@@ -327,6 +341,29 @@ nav .nav-link,
 .hero-cta-link:focus-visible * {
   color: inherit !important;
 }
+/* About page: same CTA style as hero but dark green on light gradient */
+.about-page .main-gradient-bg .hero-cta-link.about-page-cta,
+.about-page .main-gradient-bg .hero-cta-link.about-page-cta * {
+  color: #144552 !important;
+}
+.about-page .main-gradient-bg .hero-cta-link.about-page-cta:hover,
+.about-page .main-gradient-bg .hero-cta-link.about-page-cta:hover * {
+  color: var(--aqua-neon-hover) !important;
+}
+.about-page .main-gradient-bg .hero-cta-link.about-page-cta {
+  font-size: 16px !important;
+}
+.about-page .main-gradient-bg .hero-cta-link.about-page-cta .hero-cta-prefix {
+  font-size: 16px !important;
+}
+.about-page .main-gradient-bg .hero-cta-link.about-page-cta .hero-cta-arrow {
+  width: 20px;
+  height: 20px;
+}
+.about-page .main-gradient-bg .hero-cta-link.about-page-cta .hero-cta-arrow svg {
+  width: 100%;
+  height: 100%;
+}
 /* "Book a" = Raleway, "Consultation" = PP Editorial Old */
 .hero-cta-prefix {
   font-family: var(--font-raleway), "Raleway", sans-serif !important;
@@ -415,26 +452,21 @@ nav .nav-link,
   text-decoration: underline;
 }
 
-/* Left-align name, quote text, and stars on the same edge; quote mark is decorative and out of flow */
-.reviews-align {
-  padding-left: 4.5rem;
-}
+/* Reviews: name, quote (above text), review text, stars – all same left align */
 .reviews-quote-block {
-  position: relative;
+  display: block;
 }
-.reviews-quote-block .reviews-quote-mark {
-  position: absolute;
-  left: 0;
-  top: -0.15em;
+.reviews-quote-mark-wrap {
+  display: block;
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+.reviews-quote-mark-wrap .reviews-quote-mark {
   font-family: var(--font-space-grotesk), "Space Grotesk", sans-serif;
-  font-size: 4rem;
+  font-size: 2.5rem;
   line-height: 1;
   color: #D8AF86;
   user-select: none;
-  pointer-events: none;
-}
-.reviews-quote-block .reviews-quote-text {
-  padding-left: 0;
 }
 
 .reviews-quote-mark {
@@ -461,25 +493,12 @@ nav .nav-link,
 }
 
 .reviews-quote-text {
-  font-family: "PP Editorial Old", var(--font-playfair), Georgia, serif !important;
-}
-
-/* RTL: align name, quote, stars on the right */
-.reviews-carousel-slide[dir="rtl"] .reviews-align,
-[dir="rtl"] .reviews-align {
-  padding-left: 0;
-  padding-right: 4.5rem;
-}
-.reviews-carousel-slide[dir="rtl"] .reviews-quote-block .reviews-quote-mark,
-[dir="rtl"] .reviews-quote-block .reviews-quote-mark {
-  left: auto;
-  right: 0;
+  font-family: var(--font-raleway), "Raleway", sans-serif !important;
 }
 
 @media (max-width: 640px) {
-  .reviews-quote-mark,
-  .reviews-quote-block .reviews-quote-mark {
-    font-size: 3rem;
+  .reviews-quote-mark-wrap .reviews-quote-mark {
+    font-size: 2rem;
   }
 }
 
@@ -540,11 +559,369 @@ nav .nav-link,
   font-weight: 500 !important;
   color: #144552 !important;
 }
+/* About page: titles = PP Editorial Old italic, all other text = Raleway */
+.about-page .about-page-title,
+.main-gradient-bg .about-page .about-page-title {
+  font-family: "PP Editorial Old", var(--font-playfair), Georgia, serif !important;
+  font-style: italic !important;
+  font-weight: 500 !important;
+}
+.about-page .about-page-text,
+.main-gradient-bg .about-page .about-page-text {
+  font-family: var(--font-raleway), "Raleway", sans-serif !important;
+}
+.main-gradient-bg .about-page .about-page-title,
+.main-gradient-bg .about-page .about-page-text {
+  color: #144552 !important;
+}
+.about-page .main-gradient-bg .about-page-hero-subtitle {
+  color: #144552 !important;
+}
+
+/* About page Values section + CTA: green #144552 */
+.about-page .main-gradient-bg .about-page-values-highlight {
+  color: #144552 !important;
+}
+/* Match Services page: light icon circle background, outline icon #144552 */
+.about-page .main-gradient-bg .about-page-values-icon-wrap {
+  background-color: rgba(20, 69, 82, 0.12);
+}
+.about-page .main-gradient-bg .about-page-values-icon,
+.about-page .main-gradient-bg .about-page-values-icon svg {
+  color: #144552 !important;
+}
+/* Values cards: no box background, same as Services */
+.about-page .main-gradient-bg .about-page-values-card {
+  background: transparent;
+}
+/* Our Values section: force all text to #144552 (override any text-white) */
+.about-page .main-gradient-bg .about-page-values-heading,
+.about-page .main-gradient-bg .about-page-values-subtitle,
+.about-page .main-gradient-bg .about-page-values-card .about-page-text,
+.about-page .main-gradient-bg .about-page-values-card .about-page-title {
+  color: #144552 !important;
+}
+.about-page-cta-section {
+  background: #144552 !important;
+  background-color: #144552 !important;
+}
+/* Override about-page title/text when inside CTA bar so they're visible (#FFEFDF on #144552) */
+.about-page .main-gradient-bg .about-page-cta-section .about-page-cta-title,
+.about-page .main-gradient-bg .about-page-cta-section .about-page-title {
+  color: #FFEFDF !important;
+}
+.about-page .main-gradient-bg .about-page-cta-section .about-page-cta-text,
+.about-page .main-gradient-bg .about-page-cta-section .about-page-text {
+  color: #FFEFDF !important;
+}
+.about-page .main-gradient-bg .about-page-cta-section .about-page-cta-btn,
+.about-page .main-gradient-bg .about-page-cta-section .about-page-cta-btn * {
+  color: #ffffff !important;
+}
+.about-page .main-gradient-bg .about-page-cta-section .about-page-cta-btn {
+  background: #ffffff !important;
+  border-color: #ffffff !important;
+  color: #144552 !important;
+}
+.about-page .main-gradient-bg .about-page-cta-section .about-page-cta-btn * {
+  color: #144552 !important;
+}
+.about-page .main-gradient-bg .about-page-cta-section .about-page-cta-btn:hover {
+  background: rgba(255, 255, 255, 0.9) !important;
+  border-color: rgba(255, 255, 255, 0.9) !important;
+  color: #0f3239 !important;
+}
+.about-page .main-gradient-bg .about-page-cta-section .about-page-cta-btn:hover * {
+  color: #0f3239 !important;
+}
+
+/* Contact page: no black bg, PP Editorial Old italic titles, Raleway text, green #144552 */
+.contact-page .main-gradient-bg .contact-page-title {
+  font-family: "PP Editorial Old", var(--font-playfair), Georgia, serif !important;
+  font-style: italic !important;
+  font-weight: 500 !important;
+  color: #144552 !important;
+}
+.contact-page .main-gradient-bg .contact-page-text {
+  font-family: var(--font-raleway), "Raleway", sans-serif !important;
+  color: #144552 !important;
+}
+.contact-page .main-gradient-bg .contact-page-highlight {
+  color: #144552 !important;
+  font-family: "PP Editorial Old", var(--font-playfair), Georgia, serif !important;
+  font-style: italic !important;
+  font-weight: 500 !important;
+}
+.contact-page .main-gradient-bg .contact-page-icon-wrap {
+  background-color: rgba(20, 69, 82, 0.15);
+}
+.contact-page .main-gradient-bg .contact-page-icon,
+.contact-page .main-gradient-bg .contact-page-icon svg {
+  color: #144552 !important;
+}
+.contact-page .main-gradient-bg .contact-form-section .contact-page-title,
+.contact-page .main-gradient-bg .contact-form-section .contact-page-text,
+.contact-page .main-gradient-bg .contact-form-section .contact-page-highlight,
+.contact-page .main-gradient-bg .contact-form-section .contact-subtitle {
+  color: #144552 !important;
+}
+.contact-page .main-gradient-bg .contact-form-section .contact-page-title {
+  font-family: "PP Editorial Old", var(--font-playfair), Georgia, serif !important;
+  font-style: italic !important;
+}
+.contact-page .main-gradient-bg .contact-form-section .contact-page-text,
+.contact-page .main-gradient-bg .contact-form-section .contact-subtitle {
+  font-family: var(--font-raleway), "Raleway", sans-serif !important;
+}
+.contact-page .main-gradient-bg .contact-form-section label.contact-page-text {
+  color: #144552 !important;
+}
+.contact-page .main-gradient-bg .contact-form-section input.contact-field-line,
+.contact-page .main-gradient-bg .contact-form-section textarea.contact-field-line {
+  color: #144552 !important;
+  border-color: rgba(20, 69, 82, 0.5);
+}
+.contact-page .main-gradient-bg .contact-form-section input::placeholder,
+.contact-page .main-gradient-bg .contact-form-section textarea::placeholder {
+  color: rgba(20, 69, 82, 0.6);
+}
+
+/* Listings password protection: same look as rest of site (light gradient, Raleway, #144552) */
+.main-gradient-bg .password-protection-light .password-protection-card {
+  background: transparent;
+}
+.main-gradient-bg .password-protection-light .password-protection-title {
+  font-family: "PP Editorial Old", var(--font-playfair), Georgia, serif !important;
+  font-style: italic !important;
+  font-weight: 500 !important;
+  color: #144552 !important;
+}
+.main-gradient-bg .password-protection-light .password-protection-message,
+.main-gradient-bg .password-protection-light .password-protection-label,
+.main-gradient-bg .password-protection-light .password-protection-footer {
+  font-family: var(--font-raleway), "Raleway", sans-serif !important;
+  color: #144552 !important;
+}
+.main-gradient-bg .password-protection-light .password-protection-input,
+.main-gradient-bg .password-protection-light input.password-protection-input.contact-field-line {
+  color: #144552 !important;
+  border-color: rgba(20, 69, 82, 0.5);
+  background: transparent !important;
+}
+.main-gradient-bg .password-protection-light .password-protection-input::placeholder {
+  color: rgba(20, 69, 82, 0.6) !important;
+}
+.main-gradient-bg .password-protection-light .password-protection-submit,
+.main-gradient-bg .password-protection-light .password-protection-submit * {
+  font-family: var(--font-raleway), "Raleway", sans-serif !important;
+}
+.main-gradient-bg .password-protection-light button.password-protection-submit.btn-primary {
+  background: #144552 !important;
+  color: #ffffff !important;
+  font-size: 16px !important;
+  min-height: 48px !important;
+  height: 48px !important;
+  padding: 0.5rem 1.5rem !important;
+  border-radius: 8px !important;
+}
+.main-gradient-bg .password-protection-light button.password-protection-submit.btn-primary * {
+  color: #ffffff !important;
+}
+.main-gradient-bg .password-protection-light button.password-protection-submit.btn-primary:hover {
+  background: var(--aqua-neon-hover) !important;
+  color: #144552 !important;
+}
+.main-gradient-bg .password-protection-light button.password-protection-submit.btn-primary:hover * {
+  color: #144552 !important;
+}
+
+.contact-page .main-gradient-bg .contact-page-map-placeholder {
+  background-color: rgba(20, 69, 82, 0.06);
+}
+
+/* Contact Information block: enforce PP Editorial + Raleway + #144552 */
+.contact-page .main-gradient-bg .contact-page-contact-info .contact-page-title {
+  font-family: "PP Editorial Old", var(--font-playfair), Georgia, serif !important;
+  font-style: italic !important;
+  font-weight: 500 !important;
+  color: #144552 !important;
+}
+.contact-page .main-gradient-bg .contact-page-contact-info .contact-page-highlight {
+  font-family: "PP Editorial Old", var(--font-playfair), Georgia, serif !important;
+  font-style: italic !important;
+  font-weight: 500 !important;
+  color: #144552 !important;
+}
+.contact-page .main-gradient-bg .contact-page-contact-info .contact-page-text {
+  font-family: var(--font-raleway), "Raleway", sans-serif !important;
+  color: #144552 !important;
+}
+.contact-page .main-gradient-bg .contact-page-contact-info .contact-page-icon,
+.contact-page .main-gradient-bg .contact-page-contact-info .contact-page-icon svg {
+  color: #144552 !important;
+}
+.contact-page .main-gradient-bg .contact-page-contact-info .contact-page-icon-wrap {
+  background-color: rgba(20, 69, 82, 0.15);
+}
+
 .about-body,
 .main-gradient-bg .about-body {
   font-family: var(--font-raleway), "Raleway", sans-serif !important;
   color: #144552 !important;
 }
+/* Credentials section: all text Raleway */
+.credentials-section,
+.main-gradient-bg .credentials-section {
+  font-family: var(--font-raleway), "Raleway", sans-serif !important;
+}
+.credentials-section .section-title-luxerie,
+.main-gradient-bg .credentials-section .section-title-luxerie {
+  font-family: var(--font-raleway), "Raleway", sans-serif !important;
+}
+/* Credentials cards: dark green #144552, slightly larger text */
+.credentials-cards .credentials-title,
+.main-gradient-bg .credentials-cards .credentials-title {
+  color: #144552 !important;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+@media (min-width: 640px) {
+  .credentials-cards .credentials-title,
+  .main-gradient-bg .credentials-cards .credentials-title {
+    font-size: 1.25rem;
+  }
+}
+.credentials-cards .credentials-subtext,
+.main-gradient-bg .credentials-cards .credentials-subtext {
+  color: #144552 !important;
+  font-size: 0.9375rem;
+  font-weight: 500;
+}
+@media (min-width: 640px) {
+  .credentials-cards .credentials-subtext,
+  .main-gradient-bg .credentials-cards .credentials-subtext {
+    font-size: 1rem;
+  }
+}
+.credentials-cards .credentials-detail,
+.main-gradient-bg .credentials-cards .credentials-detail {
+  color: #144552 !important;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+@media (min-width: 640px) {
+  .credentials-cards .credentials-detail,
+  .main-gradient-bg .credentials-cards .credentials-detail {
+    font-size: 0.9375rem;
+  }
+}
+/* Credentials legal footer: dark green #144552 (Texas-Certified, license, brokerage, TREC link) */
+.credentials-legal-footer,
+.credentials-legal-footer span,
+.credentials-legal-footer a,
+.main-gradient-bg .credentials-legal-footer,
+.main-gradient-bg .credentials-legal-footer span,
+.main-gradient-bg .credentials-legal-footer a {
+  color: #144552 !important;
+}
+.credentials-legal-footer a:hover,
+.main-gradient-bg .credentials-legal-footer a:hover {
+  color: #0f3239 !important;
+}
+.credentials-legal-footer svg,
+.main-gradient-bg .credentials-legal-footer svg {
+  color: #144552 !important;
+}
+/* Documents section: Raleway */
+.documents-section,
+.main-gradient-bg .documents-section {
+  font-family: var(--font-raleway), "Raleway", sans-serif !important;
+}
+.documents-section .section-title-luxerie,
+.main-gradient-bg .documents-section .section-title-luxerie {
+  font-family: var(--font-raleway), "Raleway", sans-serif !important;
+}
+.documents-section .documents-title,
+.main-gradient-bg .documents-section .documents-title {
+  font-family: var(--font-raleway), "Raleway", sans-serif !important;
+}
+.documents-section .documents-subtitle,
+.main-gradient-bg .documents-section .documents-subtitle {
+  font-family: var(--font-raleway), "Raleway", sans-serif !important;
+}
+.documents-section .documents-download-btn,
+.main-gradient-bg .documents-section .documents-download-btn {
+  font-family: var(--font-raleway), "Raleway", sans-serif !important;
+  color: #144552 !important;
+}
+.documents-section .documents-download-btn:hover,
+.main-gradient-bg .documents-section .documents-download-btn:hover {
+  color: #0f3239 !important;
+}
+.documents-section .documents-download-btn svg,
+.main-gradient-bg .documents-section .documents-download-btn svg {
+  color: #144552 !important;
+}
+.documents-section .documents-download-btn:hover svg,
+.main-gradient-bg .documents-section .documents-download-btn:hover svg {
+  color: #0f3239 !important;
+}
+
+/* Services page: no black box, Raleway body, PP Editorial Old italic titles, green #144552 */
+.services-page .main-gradient-bg .services-page-title {
+  font-family: "PP Editorial Old", var(--font-playfair), Georgia, serif !important;
+  font-style: italic !important;
+  font-weight: 500 !important;
+  color: #144552 !important;
+}
+.services-page .main-gradient-bg .services-page-text {
+  font-family: var(--font-raleway), "Raleway", sans-serif !important;
+  color: #144552 !important;
+}
+.services-page .main-gradient-bg .services-page-highlight {
+  color: #144552 !important;
+}
+.services-page .services-page-icon,
+.services-page .services-page-icon svg,
+.services-page .main-gradient-bg .services-page-icon,
+.services-page .main-gradient-bg .services-page-icon svg {
+  color: #144552 !important;
+}
+.services-page .services-page-icon-wrap,
+.services-page .main-gradient-bg .services-page-icon-wrap {
+  background-color: rgba(20, 69, 82, 0.12);
+}
+.services-page .services-page-check,
+.services-page .main-gradient-bg .services-page-check {
+  color: #144552 !important;
+}
+.services-page .services-page-step-circle,
+.services-page .main-gradient-bg .services-page-step-circle {
+  background-color: rgba(20, 69, 82, 0.2);
+  border: 2px solid #144552;
+}
+.services-page .services-page-step-num,
+.services-page .main-gradient-bg .services-page-step-num {
+  color: #144552 !important;
+}
+.services-page-cta-bg {
+  background: #144552 !important;
+  background-color: #144552 !important;
+}
+.services-page-cta-bg .services-page-cta-title,
+.services-page-cta-bg .services-page-cta-text {
+  color: #FFEFDF !important;
+}
+.services-page-cta-bg .services-page-cta-btn {
+  background: #ffffff !important;
+  color: #144552 !important;
+  font-family: var(--font-raleway), "Raleway", sans-serif !important;
+}
+.services-page-cta-bg .services-page-cta-btn:hover {
+  background: rgba(255, 255, 255, 0.9) !important;
+  color: #0f3239 !important;
+}
+
 .about-read-more,
 .main-gradient-bg .about-read-more {
   font-family: "PP Editorial Old", var(--font-playfair), Georgia, serif !important;
@@ -554,10 +931,14 @@ nav .nav-link,
   color: var(--aqua-neon-hover) !important;
 }
 
-/* Contact section: subtitle under "Book a Consultation" = Raleway */
+/* Contact section: subtitle under "Book a Consultation" = Raleway + #144552 (homepage and contact page) */
 .contact-subtitle,
 .main-gradient-bg .contact-subtitle {
   font-family: var(--font-raleway), "Raleway", sans-serif !important;
+  color: #144552 !important;
+}
+.main-gradient-bg .contact-form-section .contact-subtitle {
+  color: #144552 !important;
 }
 
 .main-gradient-bg section .text-white {
@@ -566,17 +947,37 @@ nav .nav-link,
 .main-gradient-bg section label {
   color: #144552 !important;
 }
+/* Contact form + password: line-style fields (no filled background, underline only) */
 .main-gradient-bg input[type="text"],
 .main-gradient-bg input[type="email"],
 .main-gradient-bg input[type="tel"],
+.main-gradient-bg input[type="password"],
 .main-gradient-bg textarea {
-  color: #082C36 !important;
-  background: rgba(255, 255, 255, 0.9) !important;
-  border-color: rgba(20, 69, 82, 0.35) !important;
+  color: #144552 !important;
+  background: transparent !important;
+  border: none !important;
+  border-bottom: 2px solid rgba(20, 69, 82, 0.4) !important;
+  border-radius: 0 !important;
+  padding-top: 1rem !important;
+  padding-bottom: 0.5rem !important;
+  min-height: auto !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+}
+.main-gradient-bg input[type="text"]:focus,
+.main-gradient-bg input[type="email"]:focus,
+.main-gradient-bg input[type="tel"]:focus,
+.main-gradient-bg input[type="password"]:focus,
+.main-gradient-bg textarea:focus {
+  outline: none !important;
+  border-bottom-color: #144552 !important;
+  box-shadow: 0 2px 0 0 #144552 !important;
+}
+.main-gradient-bg textarea.contact-field-line {
+  min-height: 100px !important;
 }
 .main-gradient-bg input::placeholder,
 .main-gradient-bg textarea::placeholder {
-  color: rgba(8, 44, 54, 0.6) !important;
+  color: rgba(20, 69, 82, 0.5) !important;
 }
 .main-gradient-bg .backdrop-blur-sm.rounded-2xl,
 .main-gradient-bg .backdrop-blur-sm.rounded-3xl {
@@ -602,6 +1003,10 @@ nav .nav-link,
 }
 .main-gradient-bg footer a:hover {
   color: var(--aqua-neon-hover) !important;
+}
+.footer-contact-icon,
+.main-gradient-bg footer .footer-contact-icon {
+  color: #144552 !important;
 }
 .main-gradient-bg .text-white\/80 {
   color: rgba(20, 69, 82, 0.85) !important;

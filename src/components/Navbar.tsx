@@ -50,7 +50,7 @@ const Navbar: React.FC = () => {
 
   const navClasses = `fixed top-0 left-0 w-full z-50 nav-glass ${isScrolled ? 'nav-glass--scrolled' : ''}`;
   const innerPadding = 'px-6 sm:px-8 lg:pl-12 lg:pr-8';
-  const barHeight = 'h-14 sm:h-16';
+  const barHeight = 'h-16 min-h-[70px] sm:h-[72px]';
   // Keep logo visually aligned with toggles/nav: slightly smaller than the navbar height
   const logoHeightClass = 'h-10 sm:h-12';
 
@@ -81,77 +81,33 @@ const Navbar: React.FC = () => {
               <span className="sr-only">Haideh Bashash</span>
             </Link>
 
-            {/* Desktop: language toggle next to logo */}
-            <div className="hidden md:flex items-center gap-2 scale-[0.88] origin-left">
+            {/* Language toggle next to logo - always visible */}
+            <div className="flex items-center gap-2 scale-[0.88] origin-left">
               <LanguageToggle />
             </div>
           </div>
 
-          {/* Desktop Navigation */}
-          <div className="ml-auto hidden md:flex items-center space-x-4 lg:space-x-6">
-            <Link
-              href="/"
-              className={`nav-link nav-link-underline hover:text-aqua-neon transition-colors ${
-                isActive('/') ? 'nav-link-active' : ''
-              }`}
-            >
-              {t('nav.home')}
-            </Link>
-            <Link
-              href="/about"
-              className={`nav-link nav-link-underline hover:text-aqua-neon transition-colors ${
-                isActive('/about') ? 'nav-link-active' : ''
-              }`}
-            >
-              {t('nav.about')}
-            </Link>
-            <Link
-              href="/services"
-              className={`nav-link nav-link-underline hover:text-aqua-neon transition-colors ${
-                isActive('/services') ? 'nav-link-active' : ''
-              }`}
-            >
-              {t('nav.services')}
-            </Link>
-            <Link
-              href="/listings"
-              className={`nav-link nav-link-underline hover:text-aqua-neon transition-colors ${
-                isActive('/listings') ? 'nav-link-active' : ''
-              }`}
-            >
-              {t('nav.listings')}
-            </Link>
-            <Link
-              href="/contact"
-              className={`nav-link nav-link-underline hover:text-aqua-neon transition-colors ${
-                isActive('/contact') ? 'nav-link-active' : ''
-              }`}
-            >
-              {t('nav.contact')}
-            </Link>
-          </div>
-
-          {/* Mobile menu button */}
-          <div className="ml-auto md:hidden">
+          {/* Hamburger menu button - always visible on all screen sizes */}
+          <div className="ml-auto">
             <button
               onClick={toggleMenu}
-              className="p-3 text-white hover:text-aqua-neon focus:outline-none focus:text-aqua-neon"
-              aria-label="Open navigation menu"
+              className="p-1 text-white hover:text-aqua-neon focus:outline-none focus:text-aqua-neon flex items-center justify-center"
+              aria-label={isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
             >
-              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="h-[50px] w-[50px]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 {isMenuOpen ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                 ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
                 )}
               </svg>
             </button>
           </div>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Dropdown navigation - used on all screen sizes when hamburger is open */}
         {isMenuOpen && (
-          <div className="md:hidden fixed inset-0 top-14 z-40 bg-black/95">
+          <div className="fixed inset-0 top-16 sm:top-[72px] z-40 bg-black/95">
             <div className="h-full overflow-y-auto px-2 pt-4 pb-6 space-y-1 sm:px-3">
               <Link
                 href="/"

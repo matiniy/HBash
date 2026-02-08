@@ -222,17 +222,22 @@ export default function Listings() {
     return `$${price.toLocaleString()}`;
   };
 
-  // Show password protection if not authenticated
+  // Show password protection if not authenticated (same look as rest of site)
   if (!isAuthenticated) {
     return (
       <>
         <Navbar />
-        <PasswordProtection
-          correctPassword={LISTINGS_PASSWORD}
-          onSuccess={() => setIsAuthenticated(true)}
-          title={t('password.listingsTitle')}
-          message={t('password.listingsMessage')}
-        />
+        <GradientNoiseWrapper>
+          <div className="min-h-screen flex items-center justify-center px-4 py-24">
+            <PasswordProtection
+              correctPassword={LISTINGS_PASSWORD}
+              onSuccess={() => setIsAuthenticated(true)}
+              title={t('password.listingsTitle')}
+              message={t('password.listingsMessage')}
+              lightTheme
+            />
+          </div>
+        </GradientNoiseWrapper>
       </>
     );
   }

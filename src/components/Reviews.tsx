@@ -123,17 +123,19 @@ const Reviews: React.FC = () => {
                   onClick={(e) => e.stopPropagation()}
                 >
                   <p
-                    className={`reviews-author text-[#144552] font-semibold text-sm xs:text-base mb-2 reviews-align ${
+                    className={`reviews-author text-[#144552] font-semibold text-sm xs:text-base mb-2 ${
                       language === 'fa' ? 'font-sora' : ''
                     }`}
                     dir={language === 'fa' ? 'rtl' : 'ltr'}
                   >
                     {testimonial.author}
                   </p>
-                  <div className={`reviews-quote-block relative ${language === 'fa' ? 'text-right' : 'text-left'}`}>
-                    <QuoteMark />
+                  <div className={`reviews-quote-block ${language === 'fa' ? 'text-right' : 'text-left'}`}>
+                    <div className="reviews-quote-mark-wrap">
+                      <QuoteMark />
+                    </div>
                     <p
-                      className={`reviews-quote-text text-[#144552]/90 text-sm xs:text-base sm:text-lg leading-relaxed reviews-align ${
+                      className={`reviews-quote-text text-[#144552]/90 text-sm xs:text-base sm:text-lg leading-relaxed mt-1 ${
                         language === 'fa' ? 'font-sora' : ''
                       }`}
                       dir={language === 'fa' ? 'rtl' : 'ltr'}
@@ -141,7 +143,7 @@ const Reviews: React.FC = () => {
                       {testimonial.text}
                     </p>
                   </div>
-                  <div className="mt-4 reviews-align">
+                  <div className="mt-4">
                     <StarRating alignEnd={language === 'fa'} />
                   </div>
                 </a>
