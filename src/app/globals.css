@@ -21,7 +21,7 @@
 :root {
   --deep-forest: #000000;
   --aqua-neon: #144552;
-  --aqua-neon-hover: #00FFA3;
+  --aqua-neon-hover: #2B8097;
   --e-global-color-e0663ad: var(--aqua-neon);
   --white: #FFFFFF;
   --grey-light: #B3B3B3;
@@ -308,6 +308,12 @@ nav .nav-link,
   font-style: italic;
   margin-left: -0.06em; /* pull left so italic aligns with "Lighting the way Through" */
 }
+.hero-title-editorial .shiny-text,
+.hero-title-editorial .hero-shiny-text {
+  font-family: inherit;
+  font-size: inherit;
+  font-style: inherit;
+}
 
 /* Hero description: Raleway, line height 120.5%, one block */
 .hero-description {
@@ -434,22 +440,97 @@ nav .nav-link,
   font-size: clamp(1.25rem, 5vw, 1.625rem);
 }
 
-/* Reviews section title: "Clients" Raleway regular, "Stories" PP Editorial Old 45px #144552 */
+/* Reviews section title: "Clients" Raleway Light, "Stories" PP Editorial Old italic — same combo used site-wide for section titles */
+/* Reviews section background image */
+.reviews-section {
+  position: relative;
+}
+.reviews-section-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('/images/Background/background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+.main-gradient-bg .reviews-section-bg {
+  background-image: url('/images/Background/background.png');
+}
+
 .reviews-section-title {
   font-size: 0;
   letter-spacing: 0;
 }
 .reviews-title-clients {
   font-family: var(--font-raleway), "Raleway", sans-serif;
-  font-weight: 400;
-  font-size: clamp(1.75rem, 6vw, 2.8125rem); /* 28px to 45px */
+  font-weight: 300; /* Raleway Light */
+  font-size: 24px;
   color: #144552;
 }
 .reviews-title-stories {
   font-family: "PP Editorial Old", var(--font-playfair), Georgia, serif;
-  font-size: clamp(1.75rem, 6vw, 2.8125rem);
+  font-size: 24px;
   color: #144552;
   font-style: italic;
+}
+@media (min-width: 640px) {
+  .reviews-title-clients,
+  .reviews-title-stories {
+    font-size: 28px;
+  }
+}
+@media (min-width: 1024px) {
+  .reviews-title-clients,
+  .reviews-title-stories {
+    font-size: 32px;
+  }
+}
+
+/* Shared section title combo: Raleway Light + PP Editorial Old italic — same size as "Book a Consultation" */
+.title-combo-first {
+  font-family: var(--font-raleway), "Raleway", sans-serif !important;
+  font-weight: 300 !important;
+  font-size: 24px !important;
+  color: #144552 !important;
+  font-style: normal !important;
+}
+.title-combo-highlight {
+  font-family: "PP Editorial Old", var(--font-playfair), Georgia, serif !important;
+  font-style: italic !important;
+  font-size: 24px !important;
+  color: #144552 !important;
+}
+@media (min-width: 640px) {
+  .title-combo-first,
+  .title-combo-highlight {
+    font-size: 28px !important;
+  }
+}
+@media (min-width: 1024px) {
+  .title-combo-first,
+  .title-combo-highlight {
+    font-size: 32px !important;
+  }
+}
+.main-gradient-bg .title-combo-first,
+.main-gradient-bg .title-combo-highlight {
+  color: #144552 !important;
+}
+.contact-page .title-combo-first,
+.contact-page .title-combo-highlight,
+.contact-page .main-gradient-bg .title-combo-first,
+.contact-page .main-gradient-bg .title-combo-highlight {
+  color: #144552 !important;
+}
+.services-page-cta-bg .title-combo-first,
+.services-page-cta-bg .title-combo-highlight {
+  color: #FFEFDF !important;
+}
+/* About page story section: white title on dark area */
+.about-page h2.text-white .title-combo-first,
+.about-page h2.text-white .title-combo-highlight {
+  color: #fff !important;
 }
 
 .reviews-subtitle {
@@ -461,7 +542,7 @@ nav .nav-link,
 
 .reviews-read-more-link {
   font-family: var(--font-raleway), "Raleway", sans-serif !important;
-  color: #0d7488;
+  color: #2B8097;
 }
 .reviews-read-more-link:hover {
   color: var(--aqua-neon-hover) !important;
@@ -600,7 +681,7 @@ nav .nav-link,
 }
 /* Match Services page: light icon circle background, outline icon #144552 */
 .about-page .main-gradient-bg .about-page-values-icon-wrap {
-  background-color: rgba(20, 69, 82, 0.12);
+  background: transparent; /* custom shape image used instead of circle */
 }
 .about-page .main-gradient-bg .about-page-values-icon,
 .about-page .main-gradient-bg .about-page-values-icon svg {
@@ -635,16 +716,16 @@ nav .nav-link,
   color: #ffffff !important;
 }
 .about-page .main-gradient-bg .about-page-cta-section .about-page-cta-btn {
-  background: #ffffff !important;
-  border-color: #ffffff !important;
+  background: #FFEFDF !important;
+  border-color: #FFEFDF !important;
   color: #144552 !important;
 }
 .about-page .main-gradient-bg .about-page-cta-section .about-page-cta-btn * {
   color: #144552 !important;
 }
 .about-page .main-gradient-bg .about-page-cta-section .about-page-cta-btn:hover {
-  background: rgba(255, 255, 255, 0.9) !important;
-  border-color: rgba(255, 255, 255, 0.9) !important;
+  background: rgba(255, 239, 223, 0.9) !important;
+  border-color: rgba(255, 239, 223, 0.9) !important;
   color: #0f3239 !important;
 }
 .about-page .main-gradient-bg .about-page-cta-section .about-page-cta-btn:hover * {
@@ -848,38 +929,76 @@ nav .nav-link,
 .main-gradient-bg .credentials-legal-footer svg {
   color: #144552 !important;
 }
-/* Documents section: Raleway */
+/* Documents section: PP Editorial title + Raleway body (match image) */
 .documents-section,
 .main-gradient-bg .documents-section {
   font-family: var(--font-raleway), "Raleway", sans-serif !important;
 }
-.documents-section .section-title-luxerie,
-.main-gradient-bg .documents-section .section-title-luxerie {
-  font-family: var(--font-raleway), "Raleway", sans-serif !important;
+.documents-section .documents-title-prefix,
+.main-gradient-bg .documents-section .documents-title-prefix {
+  font-family: "PP Editorial Old", var(--font-playfair), Georgia, serif !important;
+  font-style: normal !important;
+  font-weight: 500 !important;
+  color: #144552 !important;
 }
-.documents-section .documents-title,
-.main-gradient-bg .documents-section .documents-title {
-  font-family: var(--font-raleway), "Raleway", sans-serif !important;
+.documents-section .documents-title-suffix,
+.main-gradient-bg .documents-section .documents-title-suffix {
+  font-family: "PP Editorial Old", var(--font-playfair), Georgia, serif !important;
+  font-style: italic !important;
+  font-weight: 500 !important;
+  color: #144552 !important;
+}
+.documents-section .documents-title-combo,
+.main-gradient-bg .documents-section .documents-title-combo {
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
 }
 .documents-section .documents-subtitle,
 .main-gradient-bg .documents-section .documents-subtitle {
   font-family: var(--font-raleway), "Raleway", sans-serif !important;
+  color: rgba(20, 69, 82, 0.75) !important;
 }
-.documents-section .documents-download-btn,
-.main-gradient-bg .documents-section .documents-download-btn {
+.documents-section .documents-fair-housing,
+.main-gradient-bg .documents-section .documents-fair-housing {
+  font-family: var(--font-raleway), "Raleway", sans-serif !important;
+  color: #144552 !important;
+  background-image: none !important;
+  background-clip: unset !important;
+  -webkit-background-clip: unset !important;
+}
+.documents-section .documents-disclosure-line,
+.main-gradient-bg .documents-section .documents-disclosure-line {
   font-family: var(--font-raleway), "Raleway", sans-serif !important;
   color: #144552 !important;
 }
-.documents-section .documents-download-btn:hover,
-.main-gradient-bg .documents-section .documents-download-btn:hover {
-  color: #0f3239 !important;
-}
-.documents-section .documents-download-btn svg,
-.main-gradient-bg .documents-section .documents-download-btn svg {
+.documents-section .documents-trec-link,
+.main-gradient-bg .documents-section .documents-trec-link {
+  font-family: var(--font-raleway), "Raleway", sans-serif !important;
   color: #144552 !important;
 }
-.documents-section .documents-download-btn:hover svg,
-.main-gradient-bg .documents-section .documents-download-btn:hover svg {
+.documents-section .documents-trec-link:hover,
+.main-gradient-bg .documents-section .documents-trec-link:hover {
+  color: #0f3239 !important;
+}
+.documents-section .documents-download-list,
+.main-gradient-bg .documents-section .documents-download-list {
+  font-family: var(--font-raleway), "Raleway", sans-serif !important;
+}
+.documents-section .documents-download-link,
+.main-gradient-bg .documents-section .documents-download-link {
+  color: #144552 !important;
+  text-decoration: none;
+}
+.documents-section .documents-download-link:hover,
+.main-gradient-bg .documents-section .documents-download-link:hover {
+  color: #0f3239 !important;
+  text-decoration: underline;
+}
+.documents-section .documents-download-icon,
+.main-gradient-bg .documents-section .documents-download-icon {
+  color: #144552 !important;
+}
+.documents-section .documents-download-link:hover .documents-download-icon,
+.main-gradient-bg .documents-section .documents-download-link:hover .documents-download-icon {
   color: #0f3239 !important;
 }
 
@@ -926,6 +1045,13 @@ nav .nav-link,
 }
 .services-page-cta-bg .services-page-cta-title,
 .services-page-cta-bg .services-page-cta-text {
+  color: #FFEFDF !important;
+}
+/* Override services-page title/text color when inside CTA box (dark teal bg) */
+.services-page .services-page-cta-bg .services-page-cta-title,
+.services-page .services-page-cta-bg .services-page-cta-text,
+.services-page .services-page-cta-bg .services-page-title,
+.services-page .services-page-cta-bg .services-page-text {
   color: #FFEFDF !important;
 }
 .services-page-cta-bg .services-page-cta-btn {
@@ -1013,17 +1139,31 @@ nav .nav-link,
 }
 
 /* Listings page: Raleway + PP Editorial, form field lines #144552 */
+/* Listings: PP Editorial + Raleway, light background (no black) */
 .listings-page .listings-hero-title,
 .listings-page .listings-hero-highlight {
   font-family: "PP Editorial Old", var(--font-playfair), Georgia, serif !important;
   font-style: italic !important;
   font-weight: 500 !important;
 }
-.listings-page .listings-hero-title { color: #ffffff !important; }
-.listings-page .listings-hero-highlight { color: #144552 !important; }
-.listings-page .listings-hero-subtitle {
+.main-gradient-bg .listings-hero-title { color: #144552 !important; }
+.main-gradient-bg .listings-hero-highlight { color: #144552 !important; }
+.listings-page .listings-hero-subtitle,
+.main-gradient-bg .listings-hero-subtitle {
   font-family: var(--font-raleway), "Raleway", sans-serif !important;
-  color: #ffffff !important;
+  color: #144552 !important;
+}
+.listings-hero-section {
+  background: transparent !important;
+}
+/* Search form: no box container, line-style fields only */
+.listings-search-inner {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+.listings-search-section {
+  background: transparent !important;
 }
 .listings-search-section .listings-form-text,
 .listings-search-section input,
@@ -1031,12 +1171,14 @@ nav .nav-link,
   font-family: var(--font-raleway), "Raleway", sans-serif !important;
   color: #144552 !important;
 }
+/* Line-style form fields (no box) - same as contact form */
 .listings-search-section input,
 .listings-search-section select {
   background: transparent !important;
   border: none !important;
   border-bottom: 2px solid rgba(20, 69, 82, 0.4) !important;
   border-radius: 0 !important;
+  box-shadow: none !important;
 }
 .listings-search-section input:focus,
 .listings-search-section select:focus {
@@ -1069,11 +1211,18 @@ nav .nav-link,
 .listing-detail-page .listing-detail-body {
   font-family: var(--font-raleway), "Raleway", sans-serif !important;
 }
+/* Footer: same font family and style as rest of site (Raleway, #144552) */
+.main-gradient-bg footer,
 .main-gradient-bg footer h3,
 .main-gradient-bg footer h4,
 .main-gradient-bg footer p,
 .main-gradient-bg footer a {
+  font-family: var(--font-raleway), "Raleway", sans-serif !important;
   color: #144552 !important;
+}
+.main-gradient-bg footer h3,
+.main-gradient-bg footer h4 {
+  font-weight: 600 !important;
 }
 .main-gradient-bg footer a:hover {
   color: var(--aqua-neon-hover) !important;
@@ -1081,6 +1230,9 @@ nav .nav-link,
 .footer-contact-icon,
 .main-gradient-bg footer .footer-contact-icon {
   color: #144552 !important;
+}
+.main-gradient-bg footer .border-t {
+  border-color: rgba(20, 69, 82, 0.25) !important;
 }
 .main-gradient-bg .text-white\/80 {
   color: rgba(20, 69, 82, 0.85) !important;
@@ -1093,7 +1245,7 @@ nav .nav-link,
 }
 
 .loader-green-gradient {
-  background: linear-gradient(90deg, #00FFA3 0%, #144552 100%);
+  background: linear-gradient(90deg, #2B8097 0%, #144552 100%);
 }
 
 .hero-title-farsi {
@@ -1205,6 +1357,20 @@ nav .nav-link-active,
   opacity: 0.9;
 }
 
+/* Nav social icons: match hamburger (cream over hero, teal when scrolled) */
+.nav-social-icon {
+  color: #FFEFDF !important;
+}
+.nav-social-icon:hover {
+  color: var(--aqua-neon-hover) !important;
+}
+.nav-glass--scrolled .nav-social-icon {
+  color: #144552 !important;
+}
+.nav-glass--scrolled .nav-social-icon:hover {
+  color: var(--aqua-neon-hover) !important;
+}
+
 /* When scrolled (e.g. over light background): hamburger green #144552 for visibility */
 .nav-glass--scrolled .nav-hamburger-btn,
 .nav-glass--scrolled .nav-hamburger-btn svg {
@@ -1263,7 +1429,7 @@ nav .nav-link-active,
 .review-progress {
   animation: review-progress 7000ms linear infinite;
   transform-origin: left;
-  background: linear-gradient(90deg, #144552 0%, #00FFA3 100%);
+  background: linear-gradient(90deg, #144552 0%, #2B8097 100%);
 }
 
 @keyframes review-progress {

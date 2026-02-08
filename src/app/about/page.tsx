@@ -42,7 +42,7 @@ export default function About() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
             <div>
               <h2 className={`about-page-title section-title-luxerie section-title-luxerie-large text-white mb-4 sm:mb-6 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
-                {t('aboutPage.sectionTitle')}
+                <span className="title-combo-first">{t('aboutPage.sectionTitlePrefix')}</span><span className="title-combo-highlight">{t('aboutPage.sectionTitleSuffix')}</span>
               </h2>
               <div className="space-y-4 sm:space-y-6 mb-6 sm:mb-8">
                 <p className={`about-page-text text-sm xs:text-base sm:text-lg text-white leading-relaxed ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
@@ -90,7 +90,7 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 sm:mb-12 lg:mb-16">
             <h2 className={`about-page-title about-page-values-heading section-title-luxerie section-title-luxerie-large mb-4 sm:mb-6 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
-              {t('aboutPage.valuesTitle')} <span className="about-page-values-highlight">{t('aboutPage.valuesTitleHighlight')}</span>
+              <span className="title-combo-first">{t('aboutPage.valuesTitle')}</span>{' '}<span className="about-page-values-highlight title-combo-highlight">{t('aboutPage.valuesTitleHighlight')}</span>
             </h2>
             <p className={`about-page-text about-page-values-subtitle text-base sm:text-lg max-w-3xl mx-auto px-2 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
               {t('aboutPage.valuesSubtitle')}
@@ -99,8 +99,9 @@ export default function About() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             <div className="about-page-values-card p-6 sm:p-8 text-center group">
-              <div className="about-page-values-icon-wrap w-10 h-10 sm:w-14 sm:h-14 rounded-full mx-auto mb-4 sm:mb-6 flex items-center justify-center">
-                <div className="about-page-values-icon w-6 h-6 sm:w-10 sm:h-10">
+              <div className="about-page-values-icon-wrap relative w-14 h-14 sm:w-16 sm:h-16 mx-auto mb-4 sm:mb-6 flex items-center justify-center">
+                <Image src="/images/icons%20background/image%20133.png" alt="" fill className="object-contain pointer-events-none" />
+                <div className="about-page-values-icon relative z-10 w-6 h-6 sm:w-10 sm:h-10">
                   <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
@@ -115,8 +116,9 @@ export default function About() {
             </div>
 
             <div className="about-page-values-card p-6 sm:p-8 text-center group">
-              <div className="about-page-values-icon-wrap w-10 h-10 sm:w-14 sm:h-14 rounded-full mx-auto mb-4 sm:mb-6 flex items-center justify-center">
-                <div className="about-page-values-icon w-6 h-6 sm:w-10 sm:h-10">
+              <div className="about-page-values-icon-wrap relative w-14 h-14 sm:w-16 sm:h-16 mx-auto mb-4 sm:mb-6 flex items-center justify-center">
+                <Image src="/images/icons%20background/image%20133.png" alt="" fill className="object-contain pointer-events-none" />
+                <div className="about-page-values-icon relative z-10 w-6 h-6 sm:w-10 sm:h-10">
                   <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
@@ -131,8 +133,9 @@ export default function About() {
             </div>
 
             <div className="about-page-values-card p-6 sm:p-8 text-center group">
-              <div className="about-page-values-icon-wrap w-10 h-10 sm:w-14 sm:h-14 rounded-full mx-auto mb-4 sm:mb-6 flex items-center justify-center">
-                <div className="about-page-values-icon w-6 h-6 sm:w-10 sm:h-10">
+              <div className="about-page-values-icon-wrap relative w-14 h-14 sm:w-16 sm:h-16 mx-auto mb-4 sm:mb-6 flex items-center justify-center">
+                <Image src="/images/icons%20background/image%20133.png" alt="" fill className="object-contain pointer-events-none" />
+                <div className="about-page-values-icon relative z-10 w-6 h-6 sm:w-10 sm:h-10">
                   <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                   </svg>

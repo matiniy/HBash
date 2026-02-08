@@ -66,8 +66,8 @@ const ContactForm: React.FC = () => {
       <div className="max-w-4xl mx-auto px-4 xs:px-5 sm:px-6 lg:px-8 w-full">
         <div className="text-center mb-8 sm:mb-12">
           <h2 className="contact-page-title section-title-luxerie section-title-luxerie-large mb-4 sm:mb-6" dir={language === 'fa' ? 'rtl' : 'ltr'}>
-            <span className="hero-cta-prefix">{t('contact.title')}</span>{' '}
-            <span className="contact-page-highlight hero-cta-suffix">{t('contact.consultation')}</span>
+            <span className="hero-cta-prefix title-combo-first">{t('contact.title')}</span>{' '}
+            <span className="contact-page-highlight hero-cta-suffix title-combo-highlight">{t('contact.consultation')}</span>
           </h2>
           <p className="contact-page-text contact-subtitle text-sm xs:text-base sm:text-lg lg:text-xl max-w-2xl mx-auto" dir={language === 'fa' ? 'rtl' : 'ltr'}>
             {t('contact.subtitle')}

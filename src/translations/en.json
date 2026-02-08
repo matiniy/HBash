@@ -48,10 +48,26 @@
     "titleStories": "Stories",
     "subtitle": "Real experiences from clients who felt supported,\ninformed, and cared for throughout their home journey."
   },
+  "credentials": {
+    "licensedRealtor": "Licensed Realtor",
+    "brokerage": "Brokerage",
+    "experience": "Experience",
+    "name": "Haideh Bashash",
+    "trecLicense": "TREC Verified License\n#0679262",
+    "homesmartStars": "HomeSmart Stars",
+    "operatingUnder": "Operating under\nHomeSmart Stars Realty",
+    "yearsExperience": "9+ Years",
+    "experienceDetail": "Proven Results in Dallas"
+  },
   "documents": {
-    "title": "Important Documents",
-    "subtitle": "Download important real estate documents and disclosures",
-    "download": "Download PDF"
+    "titlePrefix": "Important",
+    "titleSuffix": "Documents",
+    "subtitle": "Download Important Real Estate Documents And Disclosures",
+    "fairHousingStatement": "Haideh Bashash Fully Supports The Principles Of The Fair Housing Act And The Equal Opportunity Act.",
+    "disclosureLine": "IABS-2026 HomeSmart | Texas-Certified Realtor | TREC Consumer Protection Notice",
+    "viewFullDisclosure": "View Full Disclosure On TREC.Gov",
+    "downloadIabs": "IABS-2026 HomeSmart — Information About Brokerage Services",
+    "downloadTrec": "TREC Consumer Protection Notice"
   },
   "listings": {
     "featured": "Featured",
@@ -76,6 +92,38 @@
     "success": "Thank you! Your message has been sent successfully. We'll get back to you soon.",
     "error": "Sorry, there was an error sending your message. Please try again."
   },
+  "contactPage": {
+    "pageTitle": "Get In",
+    "pageTitleHighlight": "Touch",
+    "heroSubtitle": "Ready to start your real estate journey? We're here to help you every step of the way.",
+    "contactInfoTitle": "Contact",
+    "contactInfoHighlight": "Information",
+    "officeLocation": "Office Location",
+    "addressLine1": "5717 Legacy Dr Suite 250",
+    "addressLine2": "Plano, TX 75024, United States",
+    "phone": "Phone",
+    "phoneNumber": "+1 214-916-9778",
+    "phoneHours": "Available 9 AM - 6 PM, Mon-Fri",
+    "email": "Email",
+    "emailAddress": "info@haidehbashash.com",
+    "emailResponse": "We respond within 24 hours",
+    "officeHours": "Office Hours",
+    "hoursWeekday": "Monday - Friday: 9:00 AM - 6:00 PM",
+    "hoursSaturday": "Saturday: 10:00 AM - 4:00 PM",
+    "hoursSunday": "Sunday: By Appointment",
+    "mapTitle": "Haideh Bashash, Realtor - Office Location",
+    "faqTitle": "Frequently Asked",
+    "faqTitleHighlight": "Questions",
+    "faqSubtitle": "Common questions about our services and the real estate process.",
+    "faq1Question": "How long does the home buying process typically take?",
+    "faq1Answer": "The home buying process typically takes 30-45 days from contract to closing, depending on various factors like financing, inspections, and negotiations.",
+    "faq2Question": "Do you work with first-time homebuyers?",
+    "faq2Answer": "Absolutely! We specialize in helping first-time homebuyers navigate the process with education, guidance, and support every step of the way.",
+    "faq3Question": "What areas of Dallas do you serve?",
+    "faq3Answer": "We serve the entire Dallas metropolitan area, including Uptown, Highland Park, Lakewood, Bishop Arts, Victory Park, and surrounding neighborhoods.",
+    "faq4Question": "How do you determine the right price for my home?",
+    "faq4Answer": "We conduct a comprehensive market analysis, comparing your property to similar homes in the area, considering current market conditions, and your home's unique features."
+  },
   "footer": {
     "description": "Your trusted real estate partner in Dallas. Helping you find the perfect home with years of experience and personal attention.",
     "quickLinks": "Quick Links",
@@ -96,6 +144,8 @@
     "titleHighlight": "H Bashash",
     "subtitle": "Your trusted real estate partner in Dallas, bringing years of experience and personal attention to every client relationship.",
     "sectionTitle": "About Haideh Bashash",
+    "sectionTitlePrefix": "About Haideh ",
+    "sectionTitleSuffix": "Bashash",
     "paragraph1": "Haideh Bashash is a dedicated, full-time real estate professional with HomeSmart Stars brokerage. Whether buying, selling, or leasing a property, she works tirelessly to protect her clients' best interests and guide them through every step of the process.",
     "paragraph2": "Her business is built on dedication, clear communication, determination, and trust, with a strong belief in the philosophy of quality over quantity. Before transitioning into real estate, Haideh spent over 17 years working with the United Nations, where she gained invaluable experience interacting with people from diverse backgrounds.",
     "paragraph3": "This background strengthened her communication, negotiation, and interpersonal skills—assets she brings into her real estate practice today. Haideh is fluent in Persian and Turkish. Outside of work, she enjoys spending time with her family and friends.",
@@ -142,6 +192,8 @@
     "step4Title": "Results",
     "step4Desc": "Deliver exceptional outcomes that exceed your expectations.",
     "ctaTitle": "Ready to Get Started?",
+    "ctaTitlePrefix": "Ready to Get ",
+    "ctaTitleHighlight": "Started?",
     "ctaSubtitle": "Let's discuss how we can help you achieve your real estate goals.",
     "scheduleConsultation": "Schedule Consultation"
   }

@@ -3,83 +3,93 @@
 import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
+const TREC_DISCLOSURE_URL = 'https://www.trec.texas.gov/';
+
+const DOWNLOADS = [
+  { key: 'downloadTrec', href: '/images/document/TREC%20Consumer%20Protection%20Notice%209.1.2023.pdf', download: 'TREC-Consumer-Protection-Notice.pdf' },
+  { key: 'downloadIabs', href: '/images/document/IABS-2026_HomeSmart.pdf', download: 'IABS-2026_HomeSmart.pdf' },
+] as const;
+
+const DownloadIcon = ({ className }: { className?: string }) => (
+  <svg className={className} xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+    <polyline points="7 10 12 15 17 10" />
+    <line x1="12" y1="15" x2="12" y2="3" />
+  </svg>
+);
+
+const WebIcon = ({ className }: { className?: string }) => (
+  <svg className={className} xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+    <circle cx="12" cy="12" r="10" />
+    <line x1="2" y1="12" x2="22" y2="12" />
+    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+  </svg>
+);
+
 const Documents: React.FC = () => {
   const { t, language } = useLanguage();
 
-  const documents = [
-    {
-      title: 'IABS-2026 HomeSmart',
-      filename: 'IABS-2026_HomeSmart.pdf',
-      path: '/images/document/IABS-2026_HomeSmart.pdf',
-      description: 'Information About Brokerage Services'
-    },
-    {
-      title: 'TREC Consumer Protection Notice',
-      filename: 'TREC Consumer Protection Notice 9.1.2023.pdf',
-      path: '/images/document/TREC Consumer Protection Notice 9.1.2023.pdf',
-      description: 'Texas Real Estate Commission Consumer Protection Notice'
-    }
-  ];
-
   return (
     <section className="documents-section py-12 sm:py-14 lg:py-16 bg-transparent relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section Title */}
-        <div className="text-center mb-12">
-          <h2 className={`documents-title section-title-luxerie section-title-luxerie-large text-white mb-4 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
-            {t('documents.title')}
+      <div className="documents-container max-w-[946px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Section Title - PP Editorial: "Important" + "Documents" (italic) */}
+        <div className="text-center mb-10 sm:mb-12">
+          <h2 className={`documents-title documents-title-combo mb-4 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+            <span className="documents-title-prefix title-combo-first">{t('documents.titlePrefix')}</span>{' '}
+            <span className="documents-title-suffix title-combo-highlight">{t('documents.titleSuffix')}</span>
           </h2>
-          <p className={`documents-subtitle text-white text-sm xs:text-base sm:text-lg max-w-3xl mx-auto ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+          <p className={`documents-subtitle text-sm xs:text-base sm:text-lg max-w-3xl mx-auto ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
             {t('documents.subtitle')}
           </p>
         </div>
 
-        {/* Documents Grid - no box background */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto">
-          {documents.map((doc, index) => (
-            <div key={index} className="p-6 sm:p-8 text-center md:text-left">
-              <div className="flex flex-col md:flex-row items-center md:items-start">
-                {/* Document Info */}
-                <div className="flex-1 min-w-0">
-                  <h3 className={`text-lg sm:text-xl font-bold text-white mb-2 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
-                    {doc.title}
-                  </h3>
-                  <p className={`text-white/80 text-sm sm:text-base mb-4 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
-                    {doc.description}
-                  </p>
-                  <a
-                    href={doc.path}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    download={doc.filename}
-                    className="documents-download-btn inline-flex items-center justify-center gap-2 px-4 py-2 bg-aqua-neon/20 hover:bg-aqua-neon/30 rounded-lg font-semibold transition-all duration-300"
-                  >
-                    <svg
-                      className="w-4 h-4 flex-shrink-0"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
-                      />
-                    </svg>
-                    <span className={`text-sm sm:text-base ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
-                      {t('documents.download')}
-                    </span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          ))}
+        {/* Consolidated disclosure block - like the image */}
+        <div className="documents-disclosure-block text-center space-y-4">
+          <p
+            className={`documents-fair-housing font-medium text-base sm:text-lg ${language === 'fa' ? 'font-sora' : ''}`}
+            dir={language === 'fa' ? 'rtl' : 'ltr'}
+            style={{ color: '#144552' }}
+          >
+            {t('documents.fairHousingStatement')}
+          </p>
+          <p className={`documents-disclosure-line text-sm sm:text-base ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+            {t('documents.disclosureLine')}
+          </p>
         </div>
+
+        {/* View Full Disclosure on TREC.Gov - above downloads, with web icon */}
+        <div className={`documents-trec-row mt-8 sm:mt-10 flex items-center justify-center gap-2 sm:gap-3 text-center ${language === 'fa' ? 'flex-row-reverse' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+          <a
+            href={TREC_DISCLOSURE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="documents-trec-link documents-download-link inline-flex items-center gap-2 sm:gap-3 text-sm sm:text-base font-medium underline hover:opacity-85 transition-opacity"
+          >
+            <WebIcon className="documents-download-icon w-4 h-4 flex-shrink-0" />
+            <span className={language === 'fa' ? 'font-sora' : ''}>{t('documents.viewFullDisclosure')}</span>
+          </a>
+        </div>
+
+        {/* Download list - small icon + document name */}
+        <ul className="documents-download-list mt-3 sm:mt-4 space-y-3 text-center" role="list">
+          {DOWNLOADS.map(({ key, href, download }) => (
+            <li key={key} className={`documents-download-item flex items-center justify-center gap-2 sm:gap-3 ${language === 'fa' ? 'flex-row-reverse' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+              <a
+                href={href}
+                download={download}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="documents-download-link inline-flex items-center gap-2 sm:gap-3 text-sm sm:text-base font-medium hover:opacity-85 transition-opacity"
+              >
+                <DownloadIcon className="documents-download-icon w-4 h-4 flex-shrink-0" />
+                <span className={language === 'fa' ? 'font-sora' : ''}>{t(`documents.${key}`)}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );
 };
 
 export default Documents;
-

@@ -112,7 +112,7 @@ export default function Services() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className={`services-page-title section-title-luxerie section-title-luxerie-large mb-4 sm:mb-6 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
-              {t('servicesPage.title')} <span className="services-page-highlight">{t('servicesPage.titleHighlight')}</span>
+              <span className="title-combo-first">{t('servicesPage.title')}</span>{' '}<span className="services-page-highlight title-combo-highlight">{t('servicesPage.titleHighlight')}</span>
             </h1>
             <p className={`services-page-text text-base xs:text-lg sm:text-xl max-w-3xl mx-auto px-2 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
               {t('servicesPage.subtitle')}
@@ -159,7 +159,7 @@ export default function Services() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 sm:mb-12 lg:mb-16">
             <h2 className={`services-page-title section-title-luxerie section-title-luxerie-large mb-4 sm:mb-6 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
-              {t('servicesPage.processTitle')} <span className="services-page-highlight">{t('servicesPage.processTitleHighlight')}</span>
+              <span className="title-combo-first">{t('servicesPage.processTitle')}</span>{' '}<span className="services-page-highlight title-combo-highlight">{t('servicesPage.processTitleHighlight')}</span>
             </h2>
             <p className={`services-page-text text-base sm:text-lg max-w-3xl mx-auto px-2 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
               {t('servicesPage.processSubtitle')}
@@ -193,7 +193,7 @@ export default function Services() {
       <section className="py-12 sm:py-16 lg:py-20 services-page-cta-bg">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
           <h2 className={`services-page-title section-title-luxerie section-title-luxerie-large services-page-cta-title mb-4 sm:mb-6 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
-            {t('servicesPage.ctaTitle')}
+            <span className="title-combo-first">{t('servicesPage.ctaTitlePrefix')}</span><span className="title-combo-highlight">{t('servicesPage.ctaTitleHighlight')}</span>
           </h2>
           <p className={`services-page-text text-base sm:text-lg mb-6 sm:mb-8 px-2 services-page-cta-text ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
             {t('servicesPage.ctaSubtitle')}

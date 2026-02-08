@@ -43,7 +43,7 @@ export default function IABSPage() {
               <a
                 href="/documents/iabs/IABS-HomeSmart_2025 (1).jpg"
                 download="IABS-HomeSmart_2025.jpg"
-                className="inline-block px-6 py-3 bg-aqua-neon text-deep-forest rounded-full font-semibold hover:bg-[#00FFA3] transition-colors duration-300"
+                className="inline-block px-6 py-3 bg-aqua-neon text-deep-forest rounded-full font-semibold hover:bg-[#2B8097] transition-colors duration-300"
               >
                 Download IABS Document
               </a>

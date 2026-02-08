@@ -8,6 +8,7 @@ import About from '@/components/About';
 import ContactForm from '@/components/ContactForm';
 import Credentials from '@/components/Credentials';
 import Documents from '@/components/Documents';
+import SocialLogos from '@/components/SocialLogos';
 import Footer from '@/components/Footer';
 import PageLoader from '@/components/PageLoader';
 import GradientNoiseWrapper from '@/components/GradientNoiseWrapper';
@@ -63,6 +64,7 @@ export default function Home() {
           <ContactForm />
           <Credentials />
           <Documents />
+          <SocialLogos />
           <Footer />
         </GradientNoiseWrapper>
       </main>

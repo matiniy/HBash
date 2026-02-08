@@ -71,8 +71,9 @@ const Reviews: React.FC = () => {
   }, [currentTestimonial]);
 
   return (
-    <section className="py-16 sm:py-20 bg-transparent">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="reviews-section py-16 sm:py-20 relative overflow-hidden">
+      <div className="reviews-section-bg" aria-hidden />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div
           className={`text-center mb-8 sm:mb-12 ${language === 'fa' ? 'font-sora' : ''}`}
           dir={language === 'fa' ? 'rtl' : 'ltr'}
@@ -122,6 +123,9 @@ const Reviews: React.FC = () => {
                   className="block group"
                   onClick={(e) => e.stopPropagation()}
                 >
+                  <div className={`reviews-quote-mark-wrap mb-2 ${language === 'fa' ? 'text-right' : 'text-left'}`}>
+                    <QuoteMark />
+                  </div>
                   <p
                     className={`reviews-author text-[#144552] font-semibold text-sm xs:text-base mb-2 ${
                       language === 'fa' ? 'font-sora' : ''
@@ -130,19 +134,14 @@ const Reviews: React.FC = () => {
                   >
                     {testimonial.author}
                   </p>
-                  <div className={`reviews-quote-block ${language === 'fa' ? 'text-right' : 'text-left'}`}>
-                    <div className="reviews-quote-mark-wrap">
-                      <QuoteMark />
-                    </div>
-                    <p
-                      className={`reviews-quote-text text-[#144552]/90 text-sm xs:text-base sm:text-lg leading-relaxed mt-1 ${
-                        language === 'fa' ? 'font-sora' : ''
-                      }`}
-                      dir={language === 'fa' ? 'rtl' : 'ltr'}
-                    >
-                      {testimonial.text}
-                    </p>
-                  </div>
+                  <p
+                    className={`reviews-quote-text text-[#144552]/90 text-sm xs:text-base sm:text-lg leading-relaxed mt-1 ${
+                      language === 'fa' ? 'font-sora' : ''
+                    }`}
+                    dir={language === 'fa' ? 'rtl' : 'ltr'}
+                  >
+                    {testimonial.text}
+                  </p>
                   <div className="mt-4">
                     <StarRating alignEnd={language === 'fa'} />
                   </div>

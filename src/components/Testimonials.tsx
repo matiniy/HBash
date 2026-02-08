@@ -78,21 +78,19 @@ const Testimonials: React.FC = () => {
                   className="block cursor-pointer group"
                 >
                   <div className="bg-white/5 backdrop-blur-sm rounded-lg p-5 sm:p-8 border border-aqua-neon/10 group-hover:bg-white/10 group-hover:border-aqua-neon/30 transition-all duration-300">
-                    <div className="flex items-start space-x-4">
-                      <div className="flex-shrink-0 text-aqua-neon text-3xl sm:text-4xl lg:text-5xl font-bold">"</div>
-                      <div className="flex-1">
+                    <div className="flex flex-col">
+                      <div className="flex-shrink-0 text-aqua-neon text-3xl sm:text-4xl lg:text-5xl font-bold mb-2">"</div>
+                      <p className={`reviews-author text-aqua-neon text-base sm:text-lg font-semibold mb-3 group-hover:text-[#2B8097] transition-colors ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+                        {testimonial.author}
+                      </p>
+                      <p className={`text-white text-base sm:text-lg lg:text-xl leading-relaxed mb-4 group-hover:text-white transition-colors ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+                        {testimonial.text}
+                      </p>
+                      <div className="flex items-center justify-between mt-auto">
                         <StarRating />
-                        <p className={`text-white text-base sm:text-lg lg:text-xl leading-relaxed mb-4 group-hover:text-white transition-colors ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
-                          {testimonial.text}
-                        </p>
-                        <div className="flex items-center justify-between">
-                          <p className={`reviews-author text-white font-semibold ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
-                            — {testimonial.author}
-                          </p>
-                          <span className={`text-aqua-neon text-sm xs:text-base font-semibold group-hover:text-[#00FFA3] transition-colors ${language === 'fa' ? 'font-sora' : ''}`}>
-                            {t('about.readMoreReviews')}
-                          </span>
-                        </div>
+                        <span className={`text-aqua-neon text-sm xs:text-base font-semibold group-hover:text-[#2B8097] transition-colors ${language === 'fa' ? 'font-sora' : ''}`}>
+                          {t('about.readMoreReviews')}
+                        </span>
                       </div>
                     </div>
                   </div>

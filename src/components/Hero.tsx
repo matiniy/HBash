@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import HeroCarousel from './HeroCarousel';
+import ShinyText from './ShinyText';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const ArrowLeft = () => (
@@ -87,7 +88,18 @@ const Hero: React.FC = () => {
             {t('hero.primaryTitle')}
           </span>
           <span className="block whitespace-normal lg:whitespace-nowrap hero-title-editorial">
-            {t('hero.primaryHighlight')}
+            <ShinyText
+              text={t('hero.primaryHighlight')}
+              speed={5}
+              delay={0.5}
+              color="#FFEFDF"
+              shineColor="#F3D4B4"
+              spread={120}
+              direction="left"
+              yoyo={false}
+              pauseOnHover={true}
+              className="hero-shiny-text"
+            />
           </span>
         </h1>
         <p

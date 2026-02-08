@@ -1,11 +1,22 @@
+'use client';
+
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ContactForm from '@/components/ContactForm';
-import Button from '@/components/Button';
 import GradientNoiseWrapper from '@/components/GradientNoiseWrapper';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function Contact() {
+  const { t, language } = useLanguage();
+
+  const faqItems = [
+    { question: t('contactPage.faq1Question'), answer: t('contactPage.faq1Answer') },
+    { question: t('contactPage.faq2Question'), answer: t('contactPage.faq2Answer') },
+    { question: t('contactPage.faq3Question'), answer: t('contactPage.faq3Answer') },
+    { question: t('contactPage.faq4Question'), answer: t('contactPage.faq4Answer') }
+  ];
+
   return (
     <main className="contact-page min-h-screen overflow-x-hidden w-full max-w-[100vw]">
       <Navbar />
@@ -14,11 +25,11 @@ export default function Contact() {
       <section className="pt-24 sm:pt-28 md:pt-32 lg:pt-[150px] pb-8 sm:pb-12 lg:pb-[50px]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="contact-page-title text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-6">
-              Get In <span className="contact-page-highlight">Touch</span>
+            <h1 className={`contact-page-title text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-6 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+              <span className="title-combo-first">{t('contactPage.pageTitle')}</span>{' '}<span className="contact-page-highlight title-combo-highlight">{t('contactPage.pageTitleHighlight')}</span>
             </h1>
-            <p className="contact-page-text text-base xs:text-lg sm:text-xl max-w-3xl mx-auto px-2">
-              Ready to start your real estate journey? We're here to help you every step of the way.
+            <p className={`contact-page-text text-base xs:text-lg sm:text-xl max-w-3xl mx-auto px-2 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+              {t('contactPage.heroSubtitle')}
             </p>
           </div>
         </div>
@@ -32,13 +43,13 @@ export default function Contact() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-stretch">
             {/* Contact Information */}
-            <div className="flex flex-col">
-              <h2 className="contact-page-title text-2xl xs:text-3xl sm:text-3xl md:text-4xl font-bold mb-6 sm:mb-8">
-                Contact <span className="contact-page-highlight">Information</span>
+            <div className="flex flex-col" dir={language === 'fa' ? 'rtl' : 'ltr'}>
+              <h2 className={`contact-page-title text-2xl xs:text-3xl sm:text-3xl md:text-4xl font-bold mb-6 sm:mb-8 ${language === 'fa' ? 'font-sora' : ''}`}>
+                <span className="title-combo-first">{t('contactPage.contactInfoTitle')}</span>{' '}<span className="contact-page-highlight title-combo-highlight">{t('contactPage.contactInfoHighlight')}</span>
               </h2>
               
               <div className="space-y-6 sm:space-y-8">
-                <div className="flex items-start space-x-3 sm:space-x-4">
+                <div className="flex items-start gap-3 sm:gap-4">
                   <div className="contact-page-icon-wrap w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center flex-shrink-0">
                     <svg className="contact-page-icon w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -46,56 +57,56 @@ export default function Contact() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="contact-page-title text-lg sm:text-xl font-semibold mb-2">Office Location</h3>
-                    <p className="contact-page-text text-sm sm:text-base break-words">
-                      5717 Legacy Dr Suite 250<br />
-                      Plano, TX 75024, United States
+                    <h3 className={`contact-page-title text-lg sm:text-xl font-semibold mb-2 ${language === 'fa' ? 'font-sora' : ''}`}>{t('contactPage.officeLocation')}</h3>
+                    <p className={`contact-page-text text-sm sm:text-base break-words ${language === 'fa' ? 'font-sora' : ''}`}>
+                      {t('contactPage.addressLine1')}<br />
+                      {t('contactPage.addressLine2')}
                     </p>
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-3 sm:space-x-4">
+                <div className="flex items-start gap-3 sm:gap-4">
                   <div className="contact-page-icon-wrap w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center flex-shrink-0">
                     <svg className="contact-page-icon w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                     </svg>
                   </div>
                   <div>
-                    <h3 className="contact-page-title text-lg sm:text-xl font-semibold mb-2">Phone</h3>
-                    <p className="contact-page-text text-sm sm:text-base">
-                      +1 214-916-9778<br />
-                      Available 9 AM - 6 PM, Mon-Fri
+                    <h3 className={`contact-page-title text-lg sm:text-xl font-semibold mb-2 ${language === 'fa' ? 'font-sora' : ''}`}>{t('contactPage.phone')}</h3>
+                    <p className={`contact-page-text text-sm sm:text-base ${language === 'fa' ? 'font-sora' : ''}`}>
+                      {t('contactPage.phoneNumber')}<br />
+                      {t('contactPage.phoneHours')}
                     </p>
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-3 sm:space-x-4">
+                <div className="flex items-start gap-3 sm:gap-4">
                   <div className="contact-page-icon-wrap w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center flex-shrink-0">
                     <svg className="contact-page-icon w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
                   </div>
                   <div>
-                    <h3 className="contact-page-title text-lg sm:text-xl font-semibold mb-2">Email</h3>
-                    <p className="contact-page-text text-sm sm:text-base">
-                      info@haidehbashash.com<br />
-                      We respond within 24 hours
+                    <h3 className={`contact-page-title text-lg sm:text-xl font-semibold mb-2 ${language === 'fa' ? 'font-sora' : ''}`}>{t('contactPage.email')}</h3>
+                    <p className={`contact-page-text text-sm sm:text-base ${language === 'fa' ? 'font-sora' : ''}`}>
+                      {t('contactPage.emailAddress')}<br />
+                      {t('contactPage.emailResponse')}
                     </p>
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-3 sm:space-x-4">
+                <div className="flex items-start gap-3 sm:gap-4">
                   <div className="contact-page-icon-wrap w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center flex-shrink-0">
                     <svg className="contact-page-icon w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
                   <div>
-                    <h3 className="contact-page-title text-lg sm:text-xl font-semibold mb-2">Office Hours</h3>
-                    <p className="contact-page-text text-sm sm:text-base">
-                      Monday - Friday: 9:00 AM - 6:00 PM<br />
-                      Saturday: 10:00 AM - 4:00 PM<br />
-                      Sunday: By Appointment
+                    <h3 className={`contact-page-title text-lg sm:text-xl font-semibold mb-2 ${language === 'fa' ? 'font-sora' : ''}`}>{t('contactPage.officeHours')}</h3>
+                    <p className={`contact-page-text text-sm sm:text-base ${language === 'fa' ? 'font-sora' : ''}`}>
+                      {t('contactPage.hoursWeekday')}<br />
+                      {t('contactPage.hoursSaturday')}<br />
+                      {t('contactPage.hoursSunday')}
                     </p>
                   </div>
                 </div>
@@ -112,7 +123,7 @@ export default function Contact() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Haideh Bashash, Realtor - Office Location"
+                title={t('contactPage.mapTitle')}
                 className="w-full h-full min-h-[16rem] block"
               />
             </div>
@@ -124,36 +135,19 @@ export default function Contact() {
       <section className="py-12 sm:py-16 lg:py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-            <h2 className="contact-page-title text-2xl xs:text-3xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">
-              Frequently Asked <span className="contact-page-highlight">Questions</span>
+            <h2 className={`contact-page-title text-2xl xs:text-3xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+              <span className="title-combo-first">{t('contactPage.faqTitle')}</span>{' '}<span className="contact-page-highlight title-combo-highlight">{t('contactPage.faqTitleHighlight')}</span>
             </h2>
-            <p className="contact-page-text text-base sm:text-lg px-2">
-              Common questions about our services and the real estate process.
+            <p className={`contact-page-text text-base sm:text-lg px-2 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+              {t('contactPage.faqSubtitle')}
             </p>
           </div>
 
           <div className="space-y-4 sm:space-y-6">
-            {[
-              {
-                question: "How long does the home buying process typically take?",
-                answer: "The home buying process typically takes 30-45 days from contract to closing, depending on various factors like financing, inspections, and negotiations."
-              },
-              {
-                question: "Do you work with first-time homebuyers?",
-                answer: "Absolutely! We specialize in helping first-time homebuyers navigate the process with education, guidance, and support every step of the way."
-              },
-              {
-                question: "What areas of Dallas do you serve?",
-                answer: "We serve the entire Dallas metropolitan area, including Uptown, Highland Park, Lakewood, Bishop Arts, Victory Park, and surrounding neighborhoods."
-              },
-              {
-                question: "How do you determine the right price for my home?",
-                answer: "We conduct a comprehensive market analysis, comparing your property to similar homes in the area, considering current market conditions, and your home's unique features."
-              }
-            ].map((faq, index) => (
-              <div key={index} className="py-4 sm:py-5 border-b border-[#144552]/20">
-                <h3 className="contact-page-title text-base sm:text-lg font-semibold mb-2 sm:mb-3">{faq.question}</h3>
-                <p className="contact-page-text text-sm sm:text-base">{faq.answer}</p>
+            {faqItems.map((faq, index) => (
+              <div key={index} className="py-4 sm:py-5 border-b border-[#144552]/20" dir={language === 'fa' ? 'rtl' : 'ltr'}>
+                <h3 className={`contact-page-title text-base sm:text-lg font-semibold mb-2 sm:mb-3 ${language === 'fa' ? 'font-sora' : ''}`}>{faq.question}</h3>
+                <p className={`contact-page-text text-sm sm:text-base ${language === 'fa' ? 'font-sora' : ''}`}>{faq.answer}</p>
               </div>
             ))}
           </div>
