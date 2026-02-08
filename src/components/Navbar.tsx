@@ -80,21 +80,16 @@ const Navbar: React.FC = () => {
               )}
               <span className="sr-only">Haideh Bashash</span>
             </Link>
-
-            {/* Language toggle next to logo - always visible */}
-            <div className="flex items-center gap-2 scale-[0.88] origin-left">
-              <LanguageToggle />
-            </div>
           </div>
 
           {/* Hamburger menu button - always visible on all screen sizes */}
           <div className="ml-auto">
             <button
               onClick={toggleMenu}
-              className="p-1 text-white hover:text-aqua-neon focus:outline-none focus:text-aqua-neon flex items-center justify-center"
+              className="nav-hamburger-btn p-1 flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white/50"
               aria-label={isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
             >
-              <svg className="h-[50px] w-[50px]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <svg className="h-[35px] w-[35px]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 {isMenuOpen ? (
                   <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                 ) : (
@@ -105,60 +100,75 @@ const Navbar: React.FC = () => {
           </div>
         </div>
 
-        {/* Dropdown navigation - used on all screen sizes when hamburger is open */}
+        {/* Small dropdown panel - vertical nav, not full screen */}
         {isMenuOpen && (
-          <div className="fixed inset-0 top-16 sm:top-[72px] z-40 bg-black/95">
-            <div className="h-full overflow-y-auto px-2 pt-4 pb-6 space-y-1 sm:px-3">
-              <Link
-                href="/"
-                className={`block px-3 py-3 nav-link nav-link-underline hover:text-aqua-neon transition-colors ${
-                  isActive('/') ? 'nav-link-active' : ''
-                }`}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {t('nav.home')}
-              </Link>
-              <Link
-                href="/about"
-                className={`block px-3 py-3 nav-link nav-link-underline hover:text-aqua-neon transition-colors ${
-                  isActive('/about') ? 'nav-link-active' : ''
-                }`}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {t('nav.about')}
-              </Link>
-              <Link
-                href="/services"
-                className={`block px-3 py-3 nav-link nav-link-underline hover:text-aqua-neon transition-colors ${
-                  isActive('/services') ? 'nav-link-active' : ''
-                }`}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {t('nav.services')}
-              </Link>
-              <Link
-                href="/listings"
-                className={`block px-3 py-3 nav-link nav-link-underline hover:text-aqua-neon transition-colors ${
-                  isActive('/listings') ? 'nav-link-active' : ''
-                }`}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {t('nav.listings')}
-              </Link>
-              <div className="px-3 py-3">
-                <LanguageToggle />
+          <>
+            {/* Light backdrop - click to close */}
+            <div
+              className="fixed inset-0 z-40 bg-black/40"
+              aria-hidden="true"
+              onClick={() => setIsMenuOpen(false)}
+            />
+            <div
+              className={`nav-dropdown-panel fixed z-50 top-16 sm:top-[72px] w-64 max-h-[min(70vh,22rem)] overflow-y-auto rounded-xl shadow-2xl nav-glass py-2 ${
+                isFarsi ? 'left-4 sm:left-6 lg:left-12' : 'right-4 sm:right-6 lg:right-8'
+              }`}
+              role="dialog"
+              aria-label="Navigation menu"
+              dir={isFarsi ? 'rtl' : 'ltr'}
+            >
+              <div className="flex flex-col">
+                <Link
+                  href="/"
+                  className={`nav-menu-link block px-4 py-2.5 nav-link hover:text-aqua-neon transition-colors ${
+                    isActive('/') ? 'nav-link-active' : ''
+                  }`}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {t('nav.home')}
+                </Link>
+                <Link
+                  href="/about"
+                  className={`nav-menu-link block px-4 py-2.5 nav-link hover:text-aqua-neon transition-colors ${
+                    isActive('/about') ? 'nav-link-active' : ''
+                  }`}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {t('nav.about')}
+                </Link>
+                <Link
+                  href="/services"
+                  className={`nav-menu-link block px-4 py-2.5 nav-link hover:text-aqua-neon transition-colors ${
+                    isActive('/services') ? 'nav-link-active' : ''
+                  }`}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {t('nav.services')}
+                </Link>
+                <Link
+                  href="/listings"
+                  className={`nav-menu-link block px-4 py-2.5 nav-link hover:text-aqua-neon transition-colors ${
+                    isActive('/listings') ? 'nav-link-active' : ''
+                  }`}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {t('nav.listings')}
+                </Link>
+                <Link
+                  href="/contact"
+                  className={`nav-menu-link block px-4 py-2.5 nav-link hover:text-aqua-neon transition-colors ${
+                    isActive('/contact') ? 'nav-link-active' : ''
+                  }`}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {t('nav.contact')}
+                </Link>
+                <div className="px-4 py-2.5 border-t border-[#144552]/20 mt-1">
+                  <LanguageToggle />
+                </div>
               </div>
-              <Link
-                href="/contact"
-                className={`block px-3 py-3 nav-link nav-link-underline hover:text-aqua-neon transition-colors ${
-                  isActive('/contact') ? 'nav-link-active' : ''
-                }`}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {t('nav.contact')}
-              </Link>
             </div>
-          </div>
+          </>
         )}
       </div>
     </nav>
