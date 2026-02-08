@@ -34,6 +34,12 @@
   margin: 0;
 }
 
+html {
+  -webkit-text-size-adjust: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
 html,
 body {
   max-width: 100vw;
@@ -48,11 +54,20 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* Minimum 16px for readability and to prevent iOS zoom on input focus */
+  font-size: 16px;
 }
 
 a {
   color: inherit;
   text-decoration: none;
+}
+
+/* Responsive images and media */
+img,
+video {
+  max-width: 100%;
+  height: auto;
 }
 
 /* Custom scrollbar */
@@ -408,14 +423,15 @@ nav .nav-link,
   color: inherit;
 }
 
+/* Section titles: scale for readability on all screen sizes */
 .section-title-luxerie {
   font-family: var(--font-acme), "Acme", sans-serif;
-  font-size: 18px;
+  font-size: clamp(1rem, 4vw, 1.125rem);
   font-weight: 500;
 }
 
 .section-title-luxerie-large {
-  font-size: 26px;
+  font-size: clamp(1.25rem, 5vw, 1.625rem);
 }
 
 /* Reviews section title: "Clients" Raleway regular, "Stories" PP Editorial Old 45px #144552 */
@@ -426,12 +442,12 @@ nav .nav-link,
 .reviews-title-clients {
   font-family: var(--font-raleway), "Raleway", sans-serif;
   font-weight: 400;
-  font-size: 45px;
+  font-size: clamp(1.75rem, 6vw, 2.8125rem); /* 28px to 45px */
   color: #144552;
 }
 .reviews-title-stories {
   font-family: "PP Editorial Old", var(--font-playfair), Georgia, serif;
-  font-size: 45px;
+  font-size: clamp(1.75rem, 6vw, 2.8125rem);
   color: #144552;
   font-style: italic;
 }
@@ -993,7 +1009,65 @@ nav .nav-link,
   color: #144552 !important;
 }
 .main-gradient-bg .border-gray-700\/50 .text-aqua-neon {
-  color: #0d7488 !important;
+  color: #144552 !important;
+}
+
+/* Listings page: Raleway + PP Editorial, form field lines #144552 */
+.listings-page .listings-hero-title,
+.listings-page .listings-hero-highlight {
+  font-family: "PP Editorial Old", var(--font-playfair), Georgia, serif !important;
+  font-style: italic !important;
+  font-weight: 500 !important;
+}
+.listings-page .listings-hero-title { color: #ffffff !important; }
+.listings-page .listings-hero-highlight { color: #144552 !important; }
+.listings-page .listings-hero-subtitle {
+  font-family: var(--font-raleway), "Raleway", sans-serif !important;
+  color: #ffffff !important;
+}
+.listings-search-section .listings-form-text,
+.listings-search-section input,
+.listings-search-section select {
+  font-family: var(--font-raleway), "Raleway", sans-serif !important;
+  color: #144552 !important;
+}
+.listings-search-section input,
+.listings-search-section select {
+  background: transparent !important;
+  border: none !important;
+  border-bottom: 2px solid rgba(20, 69, 82, 0.4) !important;
+  border-radius: 0 !important;
+}
+.listings-search-section input:focus,
+.listings-search-section select:focus {
+  outline: none !important;
+  border-bottom-color: #144552 !important;
+  box-shadow: 0 2px 0 0 #144552 !important;
+}
+.listings-search-section input::placeholder {
+  color: rgba(20, 69, 82, 0.6) !important;
+}
+.listings-search-section .listings-results-num { color: #144552 !important; font-weight: 600 !important; }
+.listings-search-section .listings-filter-icon { color: #144552 !important; }
+
+/* Listing cards: Raleway, #144552 accents */
+.listing-card .listing-card-title {
+  font-family: "PP Editorial Old", var(--font-playfair), Georgia, serif !important;
+  font-style: italic !important;
+  font-weight: 500 !important;
+}
+.listing-card .listing-card-text { font-family: var(--font-raleway), "Raleway", sans-serif !important; }
+.listing-card .listing-card-price { background: #144552 !important; color: #ffffff !important; }
+
+/* Listing detail page: Raleway + PP Editorial, #144552 accents */
+.listing-detail-page .listing-detail-title {
+  font-family: "PP Editorial Old", var(--font-playfair), Georgia, serif !important;
+  font-style: italic !important;
+  font-weight: 500 !important;
+}
+.listing-detail-page .listing-detail-text,
+.listing-detail-page .listing-detail-body {
+  font-family: var(--font-raleway), "Raleway", sans-serif !important;
 }
 .main-gradient-bg footer h3,
 .main-gradient-bg footer h4,
@@ -1129,6 +1203,17 @@ nav .nav-link-active,
 .nav-hamburger-btn:hover svg {
   color: #FFEFDF !important;
   opacity: 0.9;
+}
+
+/* When scrolled (e.g. over light background): hamburger green #144552 for visibility */
+.nav-glass--scrolled .nav-hamburger-btn,
+.nav-glass--scrolled .nav-hamburger-btn svg {
+  color: #144552 !important;
+}
+.nav-glass--scrolled .nav-hamburger-btn:hover,
+.nav-glass--scrolled .nav-hamburger-btn:hover svg {
+  color: #144552 !important;
+  opacity: 0.85;
 }
 
 /* Hamburger dropdown panel: dark background so white nav links are readable */

@@ -201,7 +201,7 @@ const ListingDetailsClient: React.FC<ListingDetailsClientProps> = ({ id }) => {
   };
 
   return (
-    <div className="min-h-screen bg-deep-forest overflow-x-hidden w-full max-w-[100vw]">
+    <div className="listing-detail-page min-h-screen bg-deep-forest overflow-x-hidden w-full max-w-[100vw]">
       {/* Hero / Gallery Section */}
       <section className="relative h-[70vh] overflow-hidden">
         {/* Back Button */}
@@ -232,7 +232,7 @@ const ListingDetailsClient: React.FC<ListingDetailsClientProps> = ({ id }) => {
             <div className="bg-black/40 backdrop-blur-lg rounded-xl sm:rounded-2xl p-3 sm:p-4 lg:p-6 border border-white/10 max-w-[280px] sm:max-w-none">
               {/* Price */}
               <div className="text-right mb-3 sm:mb-4">
-                <div className="text-xl xs:text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-aqua-neon mb-1">
+                <div className="text-xl xs:text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-[#144552] mb-1">
                   {listing.price}
                 </div>
                 <div className="text-xs sm:text-sm text-white">Asking Price</div>
@@ -240,7 +240,7 @@ const ListingDetailsClient: React.FC<ListingDetailsClientProps> = ({ id }) => {
               
               {/* Property Type & Status */}
               <div className="flex flex-col sm:flex-row gap-1.5 sm:gap-2 mb-3 sm:mb-4">
-                <div className="bg-aqua-neon/20 text-aqua-neon px-2 sm:px-3 py-1 sm:py-1.5 rounded-full text-xs sm:text-sm font-semibold border border-aqua-neon/30 text-center">
+                <div className="bg-[#144552]/20 text-[#144552] px-2 sm:px-3 py-1 sm:py-1.5 rounded-full text-xs sm:text-sm font-semibold border border-[#144552]/30 text-center">
                   {listing.type}
                 </div>
                 <div className="bg-white/20 text-white px-2 sm:px-3 py-1 sm:py-1.5 rounded-full text-xs sm:text-sm font-semibold border border-white/30 text-center">
@@ -297,7 +297,7 @@ const ListingDetailsClient: React.FC<ListingDetailsClientProps> = ({ id }) => {
                     key={index}
                     onClick={() => setCurrentImageIndex(index)}
                     className={`w-12 h-8 sm:w-16 sm:h-12 rounded-lg overflow-hidden border-2 transition-all duration-300 flex-shrink-0 ${
-                      index === currentImageIndex ? 'border-aqua-neon' : 'border-white/50'
+                      index === currentImageIndex ? 'border-[#144552]' : 'border-white/50'
                     }`}
                   >
                     <div
@@ -332,31 +332,31 @@ const ListingDetailsClient: React.FC<ListingDetailsClientProps> = ({ id }) => {
             <section className="bg-gradient-to-br from-gray-800/60 to-gray-900/40 backdrop-blur-lg rounded-3xl p-6 sm:p-8 border border-gray-700/30 shadow-2xl">
               <div className="mb-8">
                 <h1 className="text-3xl xs:text-4xl sm:text-5xl font-bold text-white mb-3 leading-tight">{listing.title}</h1>
-                <div className="flex items-center gap-2 text-lg text-white">
-                  <svg className="w-5 h-5 text-aqua-neon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="flex items-start sm:items-center gap-2 text-base sm:text-lg text-white min-w-0">
+                  <svg className="w-5 h-5 text-[#144552] flex-shrink-0 mt-0.5 sm:mt-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
-                  {listing.address}
+                  <span className="break-words">{listing.address}</span>
                 </div>
               </div>
               
               {/* Enhanced Property Stats Grid */}
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-                <div className="bg-gradient-to-br from-aqua-neon/10 to-aqua-neon/5 rounded-2xl p-4 text-center border border-aqua-neon/20">
-                  <div className="text-2xl xs:text-3xl font-bold text-aqua-neon mb-1">{listing.beds}</div>
+                <div className="bg-gradient-to-br from-[#144552]/10 to-[#144552]/5 rounded-2xl p-4 text-center border border-[#144552]/20">
+                  <div className="text-2xl xs:text-3xl font-bold text-[#144552] mb-1">{listing.beds}</div>
                   <div className="text-sm text-white">Bedrooms</div>
                 </div>
-                <div className="bg-gradient-to-br from-aqua-neon/10 to-aqua-neon/5 rounded-2xl p-4 text-center border border-aqua-neon/20">
-                  <div className="text-2xl xs:text-3xl font-bold text-aqua-neon mb-1">{listing.baths}</div>
+                <div className="bg-gradient-to-br from-[#144552]/10 to-[#144552]/5 rounded-2xl p-4 text-center border border-[#144552]/20">
+                  <div className="text-2xl xs:text-3xl font-bold text-[#144552] mb-1">{listing.baths}</div>
                   <div className="text-sm text-white">Bathrooms</div>
                 </div>
-                <div className="bg-gradient-to-br from-aqua-neon/10 to-aqua-neon/5 rounded-2xl p-4 text-center border border-aqua-neon/20">
-                  <div className="text-2xl xs:text-3xl font-bold text-aqua-neon mb-1">{listing.sqft}</div>
+                <div className="bg-gradient-to-br from-[#144552]/10 to-[#144552]/5 rounded-2xl p-4 text-center border border-[#144552]/20">
+                  <div className="text-2xl xs:text-3xl font-bold text-[#144552] mb-1">{listing.sqft}</div>
                   <div className="text-sm text-white">Square Feet</div>
                 </div>
-                <div className="bg-gradient-to-br from-aqua-neon/10 to-aqua-neon/5 rounded-2xl p-4 text-center border border-aqua-neon/20">
-                  <div className="text-2xl xs:text-3xl font-bold text-aqua-neon mb-1">{listing.lotSize}</div>
+                <div className="bg-gradient-to-br from-[#144552]/10 to-[#144552]/5 rounded-2xl p-4 text-center border border-[#144552]/20">
+                  <div className="text-2xl xs:text-3xl font-bold text-[#144552] mb-1">{listing.lotSize}</div>
                   <div className="text-sm text-white">Lot Size</div>
                 </div>
               </div>
@@ -373,22 +373,22 @@ const ListingDetailsClient: React.FC<ListingDetailsClientProps> = ({ id }) => {
                 </div>
                 <div className="bg-white/5 rounded-xl p-4 border border-white/10">
                   <div className="text-sm text-white mb-1">Property Type</div>
-                  <div className="text-lg font-semibold text-aqua-neon">{listing.type}</div>
+                  <div className="text-lg font-semibold text-[#144552]">{listing.type}</div>
                 </div>
               </div>
             </section>
 
             {/* Property Description - Enhanced */}
             <section className="bg-gradient-to-br from-gray-800/60 to-gray-900/40 backdrop-blur-lg rounded-3xl p-6 sm:p-8 border border-gray-700/30 shadow-2xl">
-              <h2 className="text-2xl xs:text-3xl font-bold text-white mb-6 flex items-center gap-3">
-                <div className="w-1 h-8 bg-aqua-neon rounded-full"></div>
+              <h2 className="listing-detail-title text-2xl xs:text-3xl font-bold text-white mb-6 flex items-center gap-3">
+                <div className="w-1 h-8 bg-[#144552] rounded-full"></div>
                 About This Property
               </h2>
-              <p className="text-white leading-relaxed mb-8 text-lg">{listing.description}</p>
+              <p className="listing-detail-body text-white leading-relaxed mb-8 text-lg">{listing.description}</p>
               
-              <div className="bg-aqua-neon/10 rounded-2xl p-6 border border-aqua-neon/20">
+              <div className="bg-[#144552]/10 rounded-2xl p-6 border border-[#144552]/20">
                 <h3 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
-                  <svg className="w-5 h-5 text-aqua-neon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 text-[#144552]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                   Quick Highlights
@@ -396,7 +396,7 @@ const ListingDetailsClient: React.FC<ListingDetailsClientProps> = ({ id }) => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {listing.features.slice(0, 4).map((feature, index) => (
                     <div key={index} className="flex items-center text-white">
-                      <span className="text-aqua-neon mr-3 text-lg">✓</span>
+                      <span className="text-[#144552] mr-3 text-lg">✓</span>
                       <span className="text-white">{feature}</span>
                     </div>
                   ))}
@@ -407,14 +407,14 @@ const ListingDetailsClient: React.FC<ListingDetailsClientProps> = ({ id }) => {
             {/* Key Features - Enhanced */}
             <section className="bg-gradient-to-br from-gray-800/60 to-gray-900/40 backdrop-blur-lg rounded-3xl p-6 sm:p-8 border border-gray-700/30 shadow-2xl">
               <h2 className="text-2xl xs:text-3xl font-bold text-white mb-8 flex items-center gap-3">
-                <div className="w-1 h-8 bg-aqua-neon rounded-full"></div>
+                <div className="w-1 h-8 bg-[#144552] rounded-full"></div>
                 Key Features & Amenities
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {listing.features.map((feature, index) => (
-                  <div key={index} className="bg-white/5 rounded-xl p-4 border border-white/10 hover:border-aqua-neon/30 transition-all duration-300 group">
+                  <div key={index} className="bg-white/5 rounded-xl p-4 border border-white/10 hover:border-[#144552]/30 transition-all duration-300 group">
                     <div className="flex items-center text-white group-hover:text-white transition-colors">
-                      <span className="text-aqua-neon mr-3 text-lg group-hover:scale-110 transition-transform">✓</span>
+                      <span className="text-[#144552] mr-3 text-lg group-hover:scale-110 transition-transform">✓</span>
                       <span className="font-medium">{feature}</span>
                     </div>
                   </div>
@@ -424,13 +424,13 @@ const ListingDetailsClient: React.FC<ListingDetailsClientProps> = ({ id }) => {
 
             {/* Map & Neighborhood - Enhanced */}
             <section className="bg-gradient-to-br from-gray-800/60 to-gray-900/40 backdrop-blur-lg rounded-3xl p-6 sm:p-8 border border-gray-700/30 shadow-2xl">
-              <h2 className="text-2xl xs:text-3xl font-bold text-white mb-6 flex items-center gap-3">
-                <div className="w-1 h-8 bg-aqua-neon rounded-full"></div>
+              <h2 className="listing-detail-title text-2xl xs:text-3xl font-bold text-white mb-6 flex items-center gap-3">
+                <div className="w-1 h-8 bg-[#144552] rounded-full"></div>
                 Location & Neighborhood
               </h2>
-              <div className="bg-gradient-to-br from-aqua-neon/10 to-aqua-neon/5 h-64 rounded-2xl flex items-center justify-center border border-aqua-neon/20 mb-8">
+              <div className="bg-gradient-to-br from-[#144552]/10 to-[#144552]/5 h-64 rounded-2xl flex items-center justify-center border border-[#144552]/20 mb-8">
                 <div className="text-center">
-                  <svg className="w-16 h-16 text-aqua-neon mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-16 h-16 text-[#144552] mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
@@ -439,7 +439,7 @@ const ListingDetailsClient: React.FC<ListingDetailsClientProps> = ({ id }) => {
               </div>
               <div>
                 <h3 className="text-xl font-semibold text-white mb-6 flex items-center gap-2">
-                  <svg className="w-5 h-5 text-aqua-neon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 text-[#144552]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                   Nearby Attractions
@@ -448,25 +448,25 @@ const ListingDetailsClient: React.FC<ListingDetailsClientProps> = ({ id }) => {
                   <div className="bg-white/5 rounded-xl p-4 border border-white/10">
                     <div className="flex justify-between items-center">
                       <span className="text-white">Highland Park Village</span>
-                      <span className="text-aqua-neon font-semibold">5 min</span>
+                      <span className="text-[#144552] font-semibold">5 min</span>
                     </div>
                   </div>
                   <div className="bg-white/5 rounded-xl p-4 border border-white/10">
                     <div className="flex justify-between items-center">
                       <span className="text-white">Dallas Love Field Airport</span>
-                      <span className="text-aqua-neon font-semibold">12 min</span>
+                      <span className="text-[#144552] font-semibold">12 min</span>
                     </div>
                   </div>
                   <div className="bg-white/5 rounded-xl p-4 border border-white/10">
                     <div className="flex justify-between items-center">
                       <span className="text-white">University Park</span>
-                      <span className="text-aqua-neon font-semibold">8 min</span>
+                      <span className="text-[#144552] font-semibold">8 min</span>
                     </div>
                   </div>
                   <div className="bg-white/5 rounded-xl p-4 border border-white/10">
                     <div className="flex justify-between items-center">
                       <span className="text-white">Downtown Dallas</span>
-                      <span className="text-aqua-neon font-semibold">15 min</span>
+                      <span className="text-[#144552] font-semibold">15 min</span>
                     </div>
                   </div>
                 </div>
@@ -478,21 +478,21 @@ const ListingDetailsClient: React.FC<ListingDetailsClientProps> = ({ id }) => {
           <div className="lg:col-span-1">
             <div className="sticky top-8 bg-gradient-to-br from-gray-800/60 to-gray-900/40 backdrop-blur-lg rounded-3xl p-6 sm:p-8 border border-gray-700/30 shadow-2xl">
               <div className="text-center mb-8">
-                <div className="w-24 h-24 bg-gradient-to-br from-aqua-neon to-aqua-neon/80 rounded-full mx-auto mb-6 flex items-center justify-center shadow-lg">
+                <div className="w-24 h-24 bg-gradient-to-br from-[#144552] to-[#144552]/80 rounded-full mx-auto mb-6 flex items-center justify-center shadow-lg">
                   <span className="text-3xl font-bold text-deep-forest">H</span>
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-2">{listing.agent.name}</h3>
                 <p className="text-white text-lg">{listing.agent.title}</p>
-                <div className="mt-4 bg-aqua-neon/10 rounded-full px-4 py-2 inline-block">
-                  <span className="text-aqua-neon text-sm font-semibold">{listing.agent.license}</span>
+                <div className="mt-4 bg-[#144552]/10 rounded-full px-4 py-2 inline-block">
+                  <span className="text-[#144552] text-sm font-semibold">{listing.agent.license}</span>
                 </div>
               </div>
               
               <div className="space-y-4 mb-8">
-                <div className="bg-white/5 rounded-xl p-4 border border-white/10 hover:border-aqua-neon/30 transition-all duration-300">
+                <div className="bg-white/5 rounded-xl p-4 border border-white/10 hover:border-[#144552]/30 transition-all duration-300">
                   <div className="flex items-center text-white">
-                    <div className="w-10 h-10 bg-aqua-neon/20 rounded-full flex items-center justify-center mr-4">
-                      <svg className="w-5 h-5 text-aqua-neon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="w-10 h-10 bg-[#144552]/20 rounded-full flex items-center justify-center mr-4">
+                      <svg className="w-5 h-5 text-[#144552]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                       </svg>
                     </div>
@@ -502,10 +502,10 @@ const ListingDetailsClient: React.FC<ListingDetailsClientProps> = ({ id }) => {
                     </div>
                   </div>
                 </div>
-                <div className="bg-white/5 rounded-xl p-4 border border-white/10 hover:border-aqua-neon/30 transition-all duration-300">
+                <div className="bg-white/5 rounded-xl p-4 border border-white/10 hover:border-[#144552]/30 transition-all duration-300">
                   <div className="flex items-center text-white">
-                    <div className="w-10 h-10 bg-aqua-neon/20 rounded-full flex items-center justify-center mr-4">
-                      <svg className="w-5 h-5 text-aqua-neon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="w-10 h-10 bg-[#144552]/20 rounded-full flex items-center justify-center mr-4">
+                      <svg className="w-5 h-5 text-[#144552]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                       </svg>
                     </div>

@@ -47,7 +47,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="contact-page-title text-lg sm:text-xl font-semibold mb-2">Office Location</h3>
-                    <p className="contact-page-text text-sm sm:text-base">
+                    <p className="contact-page-text text-sm sm:text-base break-words">
                       5717 Legacy Dr Suite 250<br />
                       Plano, TX 75024, United States
                     </p>

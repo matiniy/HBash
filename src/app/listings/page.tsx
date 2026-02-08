@@ -243,25 +243,25 @@ export default function Listings() {
   }
 
   return (
-    <main className="min-h-screen bg-deep-forest overflow-x-hidden w-full max-w-[100vw]">
+    <main className="listings-page min-h-screen bg-deep-forest overflow-x-hidden w-full max-w-[100vw]">
       <Navbar />
       
       {/* Hero Section */}
       <section className="pt-20 sm:pt-24 pb-10 sm:pb-16 bg-deep-forest relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-20 left-10 w-32 h-32 border border-aqua-neon rounded-full"></div>
-          <div className="absolute top-40 right-20 w-24 h-24 border border-aqua-neon rounded-full"></div>
-          <div className="absolute bottom-32 left-1/4 w-16 h-16 border border-aqua-neon rounded-full"></div>
-          <div className="absolute bottom-20 right-1/3 w-20 h-20 border border-aqua-neon rounded-full"></div>
+          <div className="absolute top-20 left-10 w-32 h-32 border border-[#144552] rounded-full"></div>
+          <div className="absolute top-40 right-20 w-24 h-24 border border-[#144552] rounded-full"></div>
+          <div className="absolute bottom-32 left-1/4 w-16 h-16 border border-[#144552] rounded-full"></div>
+          <div className="absolute bottom-20 right-1/3 w-20 h-20 border border-[#144552] rounded-full"></div>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center">
-            <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6">
-              Property <span className="text-aqua-neon">Listings</span>
+            <h1 className="listings-hero-title text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6">
+              Property <span className="listings-hero-highlight">Listings</span>
             </h1>
-            <p className="text-base sm:text-lg lg:text-xl text-white max-w-3xl mx-auto px-1">
+            <p className="listings-hero-subtitle text-base sm:text-lg lg:text-xl max-w-3xl mx-auto px-1">
               Discover your perfect home in Dallas. Browse our curated selection of premium properties.
             </p>
           </div>
@@ -269,8 +269,8 @@ export default function Listings() {
       </section>
 
       <GradientNoiseWrapper>
-      {/* Search and Filter Section */}
-      <section className="py-12 bg-gray-900/50 backdrop-blur-sm border-b border-gray-700/50">
+      {/* Search and Filter Section - light bg, Raleway, form field lines #144552 */}
+      <section className="listings-search-section py-12 bg-gray-900/50 backdrop-blur-sm border-b border-gray-700/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Main Search Bar */}
           <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-gray-700/50 mb-6 sm:mb-8">
@@ -278,8 +278,8 @@ export default function Listings() {
               {/* Search Input */}
               <div className="flex-1 w-full">
                 <div className="relative">
-                  <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                    <svg className="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="absolute inset-y-0 left-0 pl-0 flex items-center pointer-events-none">
+                    <svg className="h-5 w-5 listings-filter-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                     </svg>
                   </div>
@@ -288,7 +288,7 @@ export default function Listings() {
                     placeholder="Search by location, features, or keywords..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="w-full pl-10 pr-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-xl text-white placeholder-grey-light focus:outline-none focus:ring-2 focus:ring-aqua-neon focus:border-transparent"
+                    className="listings-form-text w-full pl-8 pr-0 py-3 text-base min-h-[44px] focus:ring-0"
                   />
                 </div>
               </div>
@@ -298,7 +298,7 @@ export default function Listings() {
                 <select
                   value={selectedType}
                   onChange={(e) => setSelectedType(e.target.value)}
-                  className="w-full sm:w-auto px-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-aqua-neon min-w-0 sm:min-w-[140px]"
+                  className="listings-form-text w-full sm:w-auto pl-2 pr-8 py-3 text-base min-h-[44px] focus:ring-0 min-w-0 sm:min-w-[140px]"
                 >
                   {propertyTypes.map((type) => (
                     <option key={type.value} value={type.value}>
@@ -310,7 +310,7 @@ export default function Listings() {
                 <select
                   value={selectedPriceRange}
                   onChange={(e) => setSelectedPriceRange(e.target.value)}
-                  className="w-full sm:w-auto px-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-aqua-neon min-w-0 sm:min-w-[140px]"
+                  className="listings-form-text w-full sm:w-auto pl-2 pr-8 py-3 text-base min-h-[44px] focus:ring-0 min-w-0 sm:min-w-[140px]"
                 >
                   {priceRanges.map((range) => (
                     <option key={range.value} value={range.value}>
@@ -322,7 +322,7 @@ export default function Listings() {
                 <select
                   value={selectedBeds}
                   onChange={(e) => setSelectedBeds(e.target.value)}
-                  className="w-full sm:w-auto px-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-aqua-neon min-w-0 sm:min-w-[120px]"
+                  className="listings-form-text w-full sm:w-auto pl-2 pr-8 py-3 text-base min-h-[44px] focus:ring-0 min-w-0 sm:min-w-[120px]"
                 >
                   {bedOptions.map((option) => (
                     <option key={option.value} value={option.value}>
@@ -334,7 +334,7 @@ export default function Listings() {
                 <select
                   value={selectedBaths}
                   onChange={(e) => setSelectedBaths(e.target.value)}
-                  className="w-full sm:w-auto px-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-aqua-neon min-w-0 sm:min-w-[120px]"
+                  className="listings-form-text w-full sm:w-auto pl-2 pr-8 py-3 text-base min-h-[44px] focus:ring-0 min-w-0 sm:min-w-[120px]"
                 >
                   {bathOptions.map((option) => (
                     <option key={option.value} value={option.value}>
@@ -346,7 +346,7 @@ export default function Listings() {
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value)}
-                  className="w-full sm:w-auto px-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-aqua-neon min-w-0 sm:min-w-[160px]"
+                  className="listings-form-text w-full sm:w-auto pl-2 pr-8 py-3 text-base min-h-[44px] focus:ring-0 min-w-0 sm:min-w-[160px]"
                 >
                   {sortOptions.map((option) => (
                     <option key={option.value} value={option.value}>
@@ -360,11 +360,11 @@ export default function Listings() {
 
           {/* Results Summary */}
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-            <div className="text-white">
-              Showing <span className="text-aqua-neon font-semibold">{filteredListings.length}</span> of {allListings.length} properties
+            <div className="listings-form-text text-[#144552]">
+              Showing <span className="listings-results-num">{filteredListings.length}</span> of {allListings.length} properties
             </div>
-            <div className="flex items-center gap-2 text-sm text-white">
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="flex items-center gap-2 text-sm listings-form-text text-[#144552]">
+              <svg className="w-4 h-4 listings-filter-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
               </svg>
               Filters applied
@@ -418,10 +418,10 @@ export default function Listings() {
       {/* CTA Section */}
       <section className="py-20 bg-gray-900/50 backdrop-blur-sm border-t border-gray-700/50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+          <h2 className="listings-hero-title text-3xl md:text-4xl font-bold text-white mb-6">
             Don't See What You're Looking For?
           </h2>
-          <p className="text-lg text-white mb-8">
+          <p className="listings-hero-subtitle text-lg text-white mb-8">
             Our inventory is constantly updated. Let us know your specific requirements and we'll help you find the perfect property.
           </p>
           <Button variant="primary" className="w-full sm:w-auto">

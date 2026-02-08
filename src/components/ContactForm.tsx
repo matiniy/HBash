@@ -88,7 +88,7 @@ const ContactForm: React.FC = () => {
                   value={formData.fullName}
                   onChange={handleChange}
                   required
-                  className={`w-full px-0 text-base contact-field-line ${language === 'fa' ? 'font-sora text-right' : ''}`}
+                  className={`w-full px-0 py-3 text-base min-h-[44px] contact-field-line ${language === 'fa' ? 'font-sora text-right' : ''}`}
                   placeholder={t('contact.fullNamePlaceholder')}
                   dir={language === 'fa' ? 'rtl' : 'ltr'}
                 />
@@ -105,7 +105,7 @@ const ContactForm: React.FC = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className={`w-full px-0 text-base contact-field-line ${language === 'fa' ? 'font-sora text-right' : ''}`}
+                  className={`w-full px-0 py-3 text-base min-h-[44px] contact-field-line ${language === 'fa' ? 'font-sora text-right' : ''}`}
                   placeholder={t('contact.emailPlaceholder')}
                   dir={language === 'fa' ? 'rtl' : 'ltr'}
                 />
