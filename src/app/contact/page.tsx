@@ -118,7 +118,7 @@ export default function Contact() {
       </section>
 
       {/* FAQ Section - no box background */}
-      <section className="py-12 sm:py-16 lg:py-20">
+      <section className="contact-page-faq py-12 sm:py-16 lg:py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 sm:mb-12 lg:mb-16">
             <h2 className={`contact-page-title page-title-size font-bold mb-4 sm:mb-6 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>

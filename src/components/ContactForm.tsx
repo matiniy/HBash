@@ -1,8 +1,13 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Button from './Button';
 import { useLanguage } from '@/contexts/LanguageContext';
+
+const TYPING_SPEED_MS = 40;
+const PAUSE_AT_END_MS = 600;
+const ERASE_SPEED_MS = 25;
+const PAUSE_AFTER_ERASE_MS = 180;
 
 const ContactForm: React.FC = () => {
   const { t, language } = useLanguage();
@@ -14,6 +19,79 @@ const ContactForm: React.FC = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [messageFocused, setMessageFocused] = useState(false);
+  const [typingPlaceholder, setTypingPlaceholder] = useState('');
+  const phraseIndexRef = useRef(0);
+  const charIndexRef = useRef(0);
+  const isTypingRef = useRef(true);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const phrasesRef = useRef([
+    t('contact.messageExample1'),
+    t('contact.messageExample2'),
+    t('contact.messageExample3'),
+    t('contact.messageExample4'),
+    t('contact.messageExample5'),
+  ]);
+  phrasesRef.current = [
+    t('contact.messageExample1'),
+    t('contact.messageExample2'),
+    t('contact.messageExample3'),
+    t('contact.messageExample4'),
+    t('contact.messageExample5'),
+  ];
+
+  useEffect(() => {
+    if (formData.message || messageFocused) {
+      setTypingPlaceholder('');
+      return;
+    }
+
+    const phrases = phrasesRef.current;
+    const tick = () => {
+      if (formData.message || messageFocused) return;
+      const phrase = phrases[phraseIndexRef.current] || '';
+      if (isTypingRef.current) {
+        if (charIndexRef.current < phrase.length) {
+          charIndexRef.current += 1;
+          setTypingPlaceholder(phrase.slice(0, charIndexRef.current));
+          timeoutRef.current = setTimeout(tick, TYPING_SPEED_MS);
+        } else {
+          timeoutRef.current = setTimeout(() => {
+            isTypingRef.current = false;
+            tick();
+          }, PAUSE_AT_END_MS);
+        }
+      } else {
+        if (charIndexRef.current > 0) {
+          charIndexRef.current -= 1;
+          setTypingPlaceholder(phrase.slice(0, charIndexRef.current));
+          timeoutRef.current = setTimeout(tick, ERASE_SPEED_MS);
+        } else {
+          phraseIndexRef.current = (phraseIndexRef.current + 1) % phrases.length;
+          isTypingRef.current = true;
+          timeoutRef.current = setTimeout(tick, PAUSE_AFTER_ERASE_MS);
+        }
+      }
+    };
+
+    charIndexRef.current = 0;
+    phraseIndexRef.current = phraseIndexRef.current % phrases.length;
+    isTypingRef.current = true;
+    tick();
+
+    return () => {
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    };
+  }, [formData.message, messageFocused]);
+
+  useEffect(() => {
+    if (formData.message || messageFocused) {
+      phraseIndexRef.current = 0;
+      charIndexRef.current = 0;
+      isTypingRef.current = true;
+    }
+  }, [formData.message, messageFocused]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -137,10 +215,12 @@ const ContactForm: React.FC = () => {
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
+                onFocus={() => setMessageFocused(true)}
+                onBlur={() => setMessageFocused(false)}
                 required
                 rows={4}
                 className={`w-full px-0 py-2 text-base contact-field-line resize-none min-h-[100px] ${language === 'fa' ? 'font-sora text-right' : ''}`}
-                placeholder={t('contact.messagePlaceholder')}
+                placeholder={formData.message || messageFocused ? '' : typingPlaceholder}
                 dir={language === 'fa' ? 'rtl' : 'ltr'}
               />
             </div>

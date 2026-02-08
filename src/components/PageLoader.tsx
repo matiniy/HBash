@@ -127,12 +127,12 @@ const PageLoader: React.FC<PageLoaderProps> = ({ onComplete, imagesToPreload = [
   }, [currentMessages.length]);
 
   return (
-    <div className="fixed inset-0 z-[9999] bg-deep-forest flex items-center justify-center">
+    <div className="fixed inset-0 z-[9999] page-loader-bg flex items-center justify-center">
       <div className="w-full max-w-md px-8 text-center">
-        {/* Logo or Brand Name */}
+        {/* Logo — visible on light background */}
         <div className="mb-8">
           <div className="flex justify-center mb-4">
-            <span className="relative h-20 w-20 sm:h-24 sm:w-24 rounded-full overflow-hidden">
+            <span className="relative h-20 w-20 sm:h-24 sm:w-24 rounded-full overflow-hidden bg-white/80 shadow-sm">
               <Image
                 src="/images/Logo/logo.png"
                 alt="Haideh Bashash"
@@ -142,25 +142,25 @@ const PageLoader: React.FC<PageLoaderProps> = ({ onComplete, imagesToPreload = [
               />
             </span>
           </div>
-          <h1 className="hero-title-luxerie text-3xl sm:text-4xl font-bold mb-2 bg-gradient-to-r from-[#2B798D] to-[#031C23] bg-clip-text text-transparent">
-            Haideh Bashash
+          <h1 className="text-3xl sm:text-4xl font-bold mb-2 text-[#144552]" style={{ fontFamily: 'var(--font-raleway), Raleway, sans-serif' }}>
+            Haideh <span style={{ fontFamily: '"PP Editorial Old", var(--font-playfair), Georgia, serif', fontStyle: 'italic' }}>Bashash</span>
           </h1>
-          <p className="text-grey-light text-sm">
+          <p className="text-sm text-[#144552]" style={{ fontFamily: 'var(--font-raleway), Raleway, sans-serif' }}>
             {language === 'fa' ? 'مشاور املاک دالاس' : 'Dallas Realtor'}
           </p>
         </div>
 
-        {/* Progress Bar */}
+        {/* Progress Bar — F3D4B4 to 93B3BB */}
         <div className="mb-6">
-          <div className="w-full h-2 bg-black/30 rounded-full overflow-hidden">
+          <div className="w-full h-2 rounded-full overflow-hidden bg-[#93B3BB]/25">
             <div
               className="h-full rounded-full transition-all duration-300 ease-out relative loader-green-gradient"
               style={{ width: `${progress}%` }}
             >
-              <div className="absolute inset-0 loader-green-gradient opacity-50 animate-pulse"></div>
+              <div className="absolute inset-0 loader-green-gradient opacity-50 animate-pulse" />
             </div>
           </div>
-          <p className="text-aqua-neon text-sm mt-2 font-semibold">
+          <p className="text-sm mt-2 font-semibold text-[#144552]" style={{ fontFamily: 'var(--font-raleway), Raleway, sans-serif' }}>
             {Math.round(progress)}%
           </p>
         </div>
@@ -169,14 +169,13 @@ const PageLoader: React.FC<PageLoaderProps> = ({ onComplete, imagesToPreload = [
         <div className="min-h-[60px] flex items-center justify-center">
           <p
             key={currentMessage}
-            className={`text-white text-lg sm:text-xl font-medium transition-opacity duration-500 ${language === 'fa' ? 'font-sora' : ''}`}
+            className={`text-lg sm:text-xl font-medium text-[#144552] transition-opacity duration-500 ${language === 'fa' ? 'font-sora' : ''}`}
+            style={language !== 'fa' ? { fontFamily: 'var(--font-raleway), Raleway, sans-serif' } : undefined}
             dir={language === 'fa' ? 'rtl' : 'ltr'}
           >
             {currentMessages[currentMessage]}
           </p>
         </div>
-
-        {/* Loading Animation */}
       </div>
     </div>
   );

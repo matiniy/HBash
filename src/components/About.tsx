@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Button from './Button';
@@ -8,13 +8,28 @@ import { useLanguage } from '@/contexts/LanguageContext';
 
 const About: React.FC = () => {
   const { t, language } = useLanguage();
+  const sectionRef = useRef<HTMLElement>(null);
+  const [isInView, setIsInView] = useState(false);
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) setIsInView(true);
+      },
+      { threshold: 0.15, rootMargin: '0px 0px -40px 0px' }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <section className="py-14 sm:py-20 relative overflow-hidden">
+    <section ref={sectionRef} className="py-14 sm:py-20 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center py-8 lg:py-12">
-          {/* Left - Oval portrait with CTAs overlaid on image */}
-          <div className="relative w-full max-w-[92%] lg:max-w-[85%] mx-auto shrink-0">
+          {/* Left - Portrait only */}
+          <div className={`about-section-animate about-section-left relative w-full max-w-[92%] lg:max-w-[85%] mx-auto shrink-0 ${isInView ? 'about-section-visible' : ''}`}>
             <Image
               src="/images/Realtor/realtor-photo.png"
               alt="H Bashash - Dallas Realtor"
@@ -26,7 +41,21 @@ const About: React.FC = () => {
               placeholder="blur"
               blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
             />
-            <div className="absolute bottom-4 left-4 right-4 sm:left-6 sm:right-6 flex flex-row flex-wrap gap-3 sm:gap-4 items-center">
+          </div>
+
+          {/* Right - Title, bio with inline Read More, then buttons */}
+          <div className={`about-section-animate about-section-right space-y-4 sm:space-y-5 ${language === 'fa' ? 'font-sora' : ''} ${isInView ? 'about-section-visible' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+            <h2 className="about-heading text-3xl sm:text-4xl lg:text-[2.5rem] leading-tight">
+              <span className="about-heading-raleway title-combo-first">{t('about.headingPrefix')}</span>{' '}
+              <span className="about-heading-editorial title-combo-highlight">{t('about.headingName')}</span>
+            </h2>
+            <p className={`about-body text-sm xs:text-base sm:text-lg lg:text-xl leading-relaxed ${language === 'fa' ? 'text-right' : 'text-left'}`} style={{ fontFamily: 'var(--font-raleway), Raleway, sans-serif' }}>
+              {t('about.bioExcerpt')}{' '}
+              <Link href="/about" className="about-read-more font-semibold transition-colors duration-300">
+                {t('about.readMore')}
+              </Link>
+            </p>
+            <div className="flex flex-row flex-wrap gap-3 sm:gap-4 items-center pt-1">
               <Link href="/contact">
                 <Button variant="primary" className="min-h-[48px] h-12 min-w-[180px] sm:min-w-[200px] justify-center rounded-[10px]">
                   <span className="hero-cta-prefix">{t('hero.consultationPrefix')}</span>{' '}
@@ -42,20 +71,6 @@ const About: React.FC = () => {
                 </button>
               </Link>
             </div>
-          </div>
-
-          {/* Right - Title, bio and Read More on background (no box) */}
-          <div className={`space-y-4 sm:space-y-5 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
-            <h2 className="about-heading text-3xl sm:text-4xl lg:text-[2.5rem] leading-tight">
-              <span className="about-heading-raleway title-combo-first">{t('about.headingPrefix')}</span>{' '}
-              <span className="about-heading-editorial title-combo-highlight">{t('about.headingName')}</span>
-            </h2>
-            <p className={`about-body text-sm xs:text-base sm:text-lg lg:text-xl leading-relaxed whitespace-pre-line ${language === 'fa' ? 'text-right' : 'text-left'} line-clamp-4`} style={{ fontFamily: 'var(--font-raleway), Raleway, sans-serif' }}>
-              {t('about.bio')}
-            </p>
-            <Link href="/about" className="about-read-more inline-block font-semibold text-sm xs:text-base sm:text-lg transition-colors duration-300">
-              {t('about.readMore')}
-            </Link>
           </div>
         </div>
       </div>
