@@ -391,20 +391,40 @@ nav .nav-link,
 /* Hero CTA: link style, no background, Raleway */
 .hero-cta-link {
   font-family: var(--font-raleway), "Raleway", sans-serif;
-  background: none !important;
-  color: rgba(255, 239, 223, 1) !important;
   font-weight: 500;
   font-size: 1rem;
-  transition: color 0.2s ease, opacity 0.2s ease;
+  transition: color 0.2s ease, opacity 0.2s ease, background-color 0.2s ease;
 }
-.hero-section .hero-content .hero-cta-link:hover,
-.hero-cta-link:hover,
-.hero-cta-link:hover:visited,
-.hero-cta-link:focus-visible {
+/* Hero CTA as link only (e.g. about page) */
+.hero-cta-link:not(.hero-cta-btn) {
+  background: none !important;
+  color: rgba(255, 239, 223, 1) !important;
+}
+/* Hero CTA as button (hero section) */
+.hero-section .hero-content .hero-cta-link.hero-cta-btn,
+.hero-cta-link.hero-cta-btn {
+  background: #00FFA3 !important;
+  color: #000000 !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+.hero-section .hero-content .hero-cta-link.hero-cta-btn:hover,
+.hero-cta-link.hero-cta-btn:hover,
+.hero-cta-link.hero-cta-btn:focus-visible {
+  background: #2B8097 !important;
+  color: #ffffff !important;
+}
+.hero-cta-link.hero-cta-btn:hover *,
+.hero-cta-link.hero-cta-btn:focus-visible * {
+  color: inherit !important;
+}
+.hero-section .hero-content .hero-cta-link:not(.hero-cta-btn):hover,
+.hero-cta-link:not(.hero-cta-btn):hover,
+.hero-cta-link:not(.hero-cta-btn):hover:visited,
+.hero-cta-link:not(.hero-cta-btn):focus-visible {
   color: var(--aqua-neon-hover) !important;
 }
-.hero-cta-link:hover *,
-.hero-cta-link:focus-visible * {
+.hero-cta-link:not(.hero-cta-btn):hover *,
+.hero-cta-link:not(.hero-cta-btn):focus-visible * {
   color: inherit !important;
 }
 /* About page: same CTA style as hero but dark green on light gradient */
@@ -629,7 +649,7 @@ nav .nav-link,
 }
 .reviews-quote-mark-wrap .reviews-quote-mark {
   font-family: var(--font-space-grotesk), "Space Grotesk", sans-serif;
-  font-size: 2.5rem;
+  font-size: 5rem;
   line-height: 1;
   color: #D8AF86;
   user-select: none;
@@ -637,7 +657,7 @@ nav .nav-link,
 
 .reviews-quote-mark {
   font-family: var(--font-space-grotesk), "Space Grotesk", sans-serif;
-  font-size: 4rem;
+  font-size: 8rem;
   line-height: 1;
   color: #D8AF86;
   flex-shrink: 0;
@@ -660,11 +680,18 @@ nav .nav-link,
 
 .reviews-quote-text {
   font-family: var(--font-raleway), "Raleway", sans-serif !important;
+  /* Better line breaks: balance line lengths and hyphenate when needed */
+  text-wrap: balance;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  overflow-wrap: break-word;
+  word-break: normal;
 }
 
 @media (max-width: 640px) {
   .reviews-quote-mark-wrap .reviews-quote-mark {
-    font-size: 2rem;
+    font-size: 4rem;
   }
 }
 
@@ -682,7 +709,7 @@ nav .nav-link,
 
 /* Reviews carousel: centered slide in focus (100%), prev/next peek at 50% opacity */
 .reviews-carousel {
-  scroll-padding-inline: 8vw;
+  scroll-padding-inline: 0;
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE/Edge */
 }
@@ -690,7 +717,7 @@ nav .nav-link,
   display: none; /* Chrome, Safari, Opera */
 }
 .reviews-carousel-inner {
-  padding-inline: 8vw;
+  padding-inline: 0;
 }
 .reviews-carousel-slide {
   width: 84vw;

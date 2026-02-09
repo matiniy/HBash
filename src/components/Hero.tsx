@@ -124,7 +124,7 @@ const Hero: React.FC = () => {
 
         <Link
           href="/contact"
-          className={`hero-cta-link mt-6 sm:mt-8 inline-flex items-center gap-2 w-fit ${language === 'fa' ? 'flex-row-reverse' : ''}`}
+          className={`hero-cta-link hero-cta-btn mt-6 sm:mt-8 inline-flex items-center gap-2 w-fit min-h-[48px] min-w-[44px] px-4 xs:px-5 sm:px-6 py-3 rounded-[10px] font-medium text-sm xs:text-base bg-[#00FFA3] text-black hover:bg-[#2B8097] hover:text-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#00FFA3] active:scale-[0.98] ${language === 'fa' ? 'flex-row-reverse' : ''}`}
           style={{
             transform: `translateY(-${textOffset}px)`,
             opacity: textOpacity,

@@ -29,13 +29,13 @@ const About: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center py-8 lg:py-12">
           {/* Left - Portrait only */}
-          <div className={`about-section-animate about-section-left relative w-full max-w-[92%] lg:max-w-[85%] mx-auto shrink-0 ${isInView ? 'about-section-visible' : ''}`}>
+          <div className={`about-section-animate about-section-left relative w-full max-w-[95%] lg:max-w-[90%] mx-auto shrink-0 ${isInView ? 'about-section-visible' : ''}`}>
             <Image
               src="/images/Realtor/realtor-photo.png"
-              alt="H Bashash - Dallas Realtor"
+              alt="Haideh Bashash - Dallas Realtor"
               width={600}
               height={800}
-              className="w-full h-auto max-h-[55vh] sm:max-h-[60vh] md:max-h-[65vh] lg:max-h-[70vh] object-contain object-top"
+              className="w-full h-auto max-h-[60vh] sm:max-h-[65vh] md:max-h-[70vh] lg:max-h-[75vh] object-contain object-top"
               priority
               quality={85}
               placeholder="blur"

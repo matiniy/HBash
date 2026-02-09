@@ -96,9 +96,9 @@ const Reviews: React.FC = () => {
   return (
     <section className="reviews-section py-16 sm:py-20 relative overflow-hidden">
       <div className="reviews-section-bg" aria-hidden />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="w-full max-w-full px-0 relative z-10">
         <div
-          className={`text-center mb-8 sm:mb-12 ${language === 'fa' ? 'font-sora' : ''}`}
+          className={`text-center mb-8 sm:mb-12 px-4 sm:px-6 ${language === 'fa' ? 'font-sora' : ''}`}
           dir={language === 'fa' ? 'rtl' : 'ltr'}
         >
           <h2 className="reviews-section-title">
@@ -124,7 +124,7 @@ const Reviews: React.FC = () => {
 
         <div
           ref={carouselRef}
-          className="reviews-carousel overflow-x-auto overflow-y-visible pb-2 -mx-4 px-4 sm:mx-0 sm:px-0 scroll-smooth"
+          className="reviews-carousel overflow-x-auto overflow-y-visible pb-2 scroll-smooth"
           style={{ scrollSnapType: 'x mandatory' }}
         >
           <div className="reviews-carousel-inner flex gap-6 sm:gap-8">
@@ -158,7 +158,8 @@ const Reviews: React.FC = () => {
                     {testimonial.author}
                   </p>
                   <p
-                    className={`reviews-quote-text text-[#144552]/90 text-sm xs:text-base sm:text-lg leading-relaxed mt-1 ${
+                    lang={language === 'fa' ? 'fa' : 'en'}
+                    className={`reviews-quote-text text-[#144552]/90 text-sm xs:text-base sm:text-lg leading-relaxed mt-1 min-w-0 ${
                       language === 'fa' ? 'font-sora' : ''
                     }`}
                     dir={language === 'fa' ? 'rtl' : 'ltr'}
