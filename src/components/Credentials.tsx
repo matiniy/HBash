@@ -47,7 +47,7 @@ const Credentials: React.FC<CredentialsProps> = ({ inline = false }) => {
   );
 
   if (inline) {
-    return <div className="credentials-inline mt-4 sm:mt-5 mb-6 sm:mb-8">{grid}</div>;
+    return <div className="credentials-inline mt-4 sm:mt-5 mb-8 sm:mb-10 md:mb-12 lg:mb-14">{grid}</div>;
   }
 
   return (

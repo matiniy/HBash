@@ -21,10 +21,10 @@ const Documents: React.FC = () => {
   const { t, language } = useLanguage();
 
   return (
-    <section className="documents-section pt-12 sm:pt-14 lg:pt-16 pb-16 sm:pb-20 bg-transparent relative overflow-hidden">
-      <div className="documents-container max-w-[946px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section className="documents-section pt-10 sm:pt-14 lg:pt-16 pb-20 sm:pb-24 lg:pb-28 bg-transparent relative overflow-hidden">
+      <div className="documents-container max-w-[946px] mx-auto px-4 xs:px-5 sm:px-6 lg:px-8 relative z-10">
         {/* Section Title - Raleway + PP Editorial italic: "Licensing &" + "Disclosures" */}
-        <div className="text-center mb-6 sm:mb-8">
+        <div className="text-center mb-5 sm:mb-6 lg:mb-8">
           <h2 className={`documents-title documents-title-combo mb-2 sm:mb-3 ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
             <span className="documents-title-prefix title-combo-first">{t('documents.titlePrefix')}</span>{' '}
             <span className="documents-title-suffix title-combo-highlight">{t('documents.titleSuffix')}</span>
@@ -35,16 +35,16 @@ const Documents: React.FC = () => {
         <Credentials inline />
 
         {/* Download links - one line */}
-        <ul className="documents-download-list mt-4 sm:mt-5 flex flex-wrap items-center justify-center gap-x-4 sm:gap-x-6 gap-y-2 text-center" role="list">
+        <ul className="documents-download-list mt-8 sm:mt-10 lg:mt-12 flex flex-wrap items-center justify-center gap-x-3 xs:gap-x-4 sm:gap-x-6 gap-y-3 text-center" role="list">
           {DOWNLOADS.map(({ key, href, download }, index) => (
-            <li key={key} className={`documents-download-item flex items-center justify-center gap-2 sm:gap-3 ${language === 'fa' ? 'flex-row-reverse' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
-              {index > 0 && <span className="documents-download-sep text-[#144552] opacity-60" aria-hidden> • </span>}
+            <li key={key} className={`documents-download-item flex items-center justify-center gap-2 sm:gap-3 min-w-0 ${language === 'fa' ? 'flex-row-reverse' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+              {index > 0 && <span className="documents-download-sep text-[#144552] opacity-60 flex-shrink-0" aria-hidden> • </span>}
               <a
                 href={href}
                 download={download}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="documents-download-link inline-flex items-center gap-2 sm:gap-3 text-sm sm:text-base font-medium hover:opacity-85 transition-opacity"
+                className="documents-download-link inline-flex items-center gap-2 sm:gap-3 text-xs xs:text-sm sm:text-base font-medium hover:opacity-85 transition-opacity break-words"
               >
                 <DownloadIcon className="documents-download-icon w-4 h-4 flex-shrink-0" />
                 <span className={language === 'fa' ? 'font-sora' : ''}>{t(`documents.${key}`)}</span>
@@ -55,7 +55,7 @@ const Documents: React.FC = () => {
 
         {/* Fair Housing statement below downloads */}
         <p
-          className={`documents-fair-housing font-medium text-base sm:text-lg mt-3 sm:mt-4 text-center ${language === 'fa' ? 'font-sora' : ''}`}
+          className={`documents-fair-housing font-medium text-sm xs:text-base sm:text-lg mt-3 sm:mt-4 text-center px-1 max-w-3xl mx-auto ${language === 'fa' ? 'font-sora' : ''}`}
           dir={language === 'fa' ? 'rtl' : 'ltr'}
           style={{ color: '#144552' }}
         >
