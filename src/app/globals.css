@@ -403,9 +403,9 @@ nav .nav-link,
 /* Hero CTA as button (hero section) */
 .hero-section .hero-content .hero-cta-link.hero-cta-btn,
 .hero-cta-link.hero-cta-btn {
-  background: #00FFA3 !important;
-  color: #000000 !important;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  background: #FFEFDF !important;
+  color: #144552 !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
 }
 .hero-section .hero-content .hero-cta-link.hero-cta-btn:hover,
 .hero-cta-link.hero-cta-btn:hover,
