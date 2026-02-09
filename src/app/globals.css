@@ -761,7 +761,7 @@ nav .nav-link,
 .about-page .main-gradient-bg .about-page-values-highlight {
   color: #144552 !important;
 }
-/* About page Values section: "My Values" at 36px */
+/* About page Values section: "Our Values" at 36px */
 .about-page .about-page-values-heading,
 .about-page .about-page-values-heading .title-combo-first,
 .about-page .about-page-values-heading .about-page-values-highlight,
@@ -1026,12 +1026,16 @@ nav .nav-link,
 .main-gradient-bg .credentials-section .section-title-luxerie {
   font-family: var(--font-raleway), "Raleway", sans-serif !important;
 }
-/* Credentials cards: dark green #144552, slightly larger text */
+/* Credentials card titles: PP Editorial Old italic, regular weight (not bold) */
 .credentials-cards .credentials-title,
-.main-gradient-bg .credentials-cards .credentials-title {
+.main-gradient-bg .credentials-cards .credentials-title,
+.documents-section .credentials-cards .credentials-title,
+.main-gradient-bg .credentials-inline .credentials-title {
+  font-family: "PP Editorial Old", var(--font-playfair), Georgia, serif !important;
+  font-style: italic !important;
+  font-weight: 500 !important;
   color: #144552 !important;
   font-size: 1.125rem;
-  font-weight: 600;
 }
 @media (min-width: 640px) {
   .credentials-cards .credentials-title,
@@ -1162,6 +1166,50 @@ nav .nav-link,
 .documents-section .documents-download-link:hover .documents-download-icon,
 .main-gradient-bg .documents-section .documents-download-link:hover .documents-download-icon {
   color: #0f3239 !important;
+}
+
+/* TREC Notice page: light theme, Raleway + #144552 (match site style) */
+.trec-notice-page .main-gradient-bg .trec-notice-title {
+  font-family: var(--font-raleway), "Raleway", sans-serif !important;
+  color: #144552 !important;
+}
+.trec-notice-page .main-gradient-bg .trec-notice-highlight {
+  font-family: "PP Editorial Old", var(--font-playfair), Georgia, serif !important;
+  font-style: italic !important;
+  font-weight: 500 !important;
+  color: #144552 !important;
+}
+.trec-notice-page .main-gradient-bg .trec-notice-subtitle {
+  font-family: var(--font-raleway), "Raleway", sans-serif !important;
+  color: #144552 !important;
+}
+.trec-notice-content,
+.trec-notice-content .trec-notice-text,
+.trec-notice-content .trec-notice-id {
+  font-family: var(--font-raleway), "Raleway", sans-serif !important;
+  color: #144552 !important;
+}
+.trec-notice-content .trec-notice-strong {
+  font-family: var(--font-raleway), "Raleway", sans-serif !important;
+  font-weight: 600 !important;
+  color: #144552 !important;
+}
+.trec-notice-content .trec-notice-link {
+  color: #144552 !important;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+.trec-notice-content .trec-notice-link:hover {
+  color: #2B8097 !important;
+}
+.trec-notice-content .trec-notice-note {
+  background-color: rgba(20, 69, 82, 0.08);
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+  border: 1px solid rgba(20, 69, 82, 0.15);
+}
+.trec-notice-content .trec-notice-footer {
+  color: rgba(20, 69, 82, 0.8) !important;
 }
 
 /* Services page: match about section title — Raleway Light + PP Editorial italic, same size (24/28/32px), green #144552 */

@@ -6,7 +6,6 @@ import Hero from '@/components/Hero';
 import Reviews from '@/components/Reviews';
 import About from '@/components/About';
 import ContactForm from '@/components/ContactForm';
-import Credentials from '@/components/Credentials';
 import Documents from '@/components/Documents';
 import SocialLogos from '@/components/SocialLogos';
 import Footer from '@/components/Footer';
@@ -62,7 +61,6 @@ export default function Home() {
           <Reviews />
           <About />
           <ContactForm />
-          <Credentials />
           <Documents />
           <SocialLogos />
           <Footer />

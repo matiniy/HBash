@@ -61,14 +61,16 @@
     "experienceDetail": "Proven Results in Dallas"
   },
   "documents": {
-    "titlePrefix": "Important",
-    "titleSuffix": "Documents",
+    "titlePrefix": "Licensing &",
+    "titleSuffix": "Disclosures",
     "subtitle": "Download Important Real Estate Documents And Disclosures",
+    "line1": "TREC Information About Brokerage Services",
+    "line2": "General Information and Notice to Consumers",
     "fairHousingStatement": "Haideh Bashash Fully Supports The Principles Of The Fair Housing Act And The Equal Opportunity Act.",
     "disclosureLine": "IABS-2026 HomeSmart | Texas-Certified Realtor | TREC Consumer Protection Notice",
     "viewFullDisclosure": "View Full Disclosure On TREC.Gov",
-    "downloadIabs": "IABS-2026 HomeSmart — Information About Brokerage Services",
-    "downloadTrec": "TREC Consumer Protection Notice"
+    "downloadTrec": "TREC Information About Brokerage Services",
+    "downloadGeneralInfo": "General Information and Notice to Consumers"
   },
   "listings": {
     "featured": "Featured",
@@ -136,7 +138,8 @@
     "contactInfo": "Contact Info",
     "iabs": "IABS",
     "consumerProtection": "Consumer Protection Notice",
-    "copyright": "© 2025 Haideh Bashash Realtor. All rights reserved. | Designed by Metamatn Interactive.",
+    "copyright": "© 2025 Haideh Bashash Realtor. All rights reserved.",
+    "designedBy": "Designed by Metamatn Interactive.",
     "trecNotice": "Texas Real Estate Commission Consumer Protection Notice (TREC CN 1-5)"
   },
   "password": {
@@ -157,7 +160,7 @@
     "paragraph3": "This background strengthened her communication, negotiation, and interpersonal skills—assets she brings into her real estate practice today. Haideh is fluent in Persian and Turkish. Outside of work, she enjoys spending time with her family and friends.",
     "getInTouch": "Get In Touch",
     "licensedRealtor": "Licensed Realtor",
-    "valuesTitle": "My",
+    "valuesTitle": "Our",
     "valuesTitleHighlight": "Values",
     "valuesSubtitle": "The principles that guide everything we do and every relationship we build.",
     "integrity": "Integrity",

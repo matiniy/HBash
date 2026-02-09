@@ -61,14 +61,16 @@
     "experienceDetail": "نتایج اثبات‌شده در دالاس"
   },
   "documents": {
-    "titlePrefix": "اسناد",
-    "titleSuffix": "مهم",
+    "titlePrefix": "مجوزها و",
+    "titleSuffix": "افشای اطلاعات",
     "subtitle": "دانلود اسناد و افشای اطلاعات مهم املاک",
+    "line1": "اطلاعات TREC درباره خدمات بروکری",
+    "line2": "اطلاعات عمومی و اعلامیه به مصرف‌کنندگان",
     "fairHousingStatement": "هایده باشاش از اصول قانون مسکن عادلانه و قانون فرصت‌های برابر به طور کامل حمایت می‌کند.",
     "disclosureLine": "IABS-2026 HomeSmart | Texas-Certified Realtor | TREC Consumer Protection Notice",
     "viewFullDisclosure": "مشاهده افشای کامل در TREC.Gov",
-    "downloadIabs": "IABS-2026 HomeSmart — اطلاعات درباره خدمات بروکری",
-    "downloadTrec": "اعلامیه حمایت از مصرف‌کننده TREC"
+    "downloadTrec": "اطلاعات TREC درباره خدمات بروکری",
+    "downloadGeneralInfo": "اطلاعات عمومی و اعلامیه به مصرف‌کنندگان"
   },
   "listings": {
     "featured": "ویژه",
@@ -136,7 +138,8 @@
     "contactInfo": "اطلاعات تماس",
     "iabs": "IABS",
     "consumerProtection": "اعلامیه حمایت از مصرف‌کننده",
-    "copyright": "© ۲۰۲۵ هایده بشاش مشاور املاک. تمامی حقوق محفوظ است. | طراحی شده توسط Metamatn Interactive.",
+    "copyright": "© ۲۰۲۵ هایده بشاش مشاور املاک. تمامی حقوق محفوظ است.",
+    "designedBy": "طراحی شده توسط Metamatn Interactive.",
     "trecNotice": "اعلامیه حمایت از مصرف‌کننده کمیسیون املاک تگزاس (TREC CN 1-5)"
   },
   "password": {
@@ -158,7 +161,7 @@
     "getInTouch": "تماس با ما",
     "licensedRealtor": "مشاور املاک دارای مجوز",
     "valuesTitle": "ارزش‌های",
-    "valuesTitleHighlight": "من",
+    "valuesTitleHighlight": "ما",
     "valuesSubtitle": "اصولی که همه کارهای ما و هر رابطه‌ای که می‌سازیم را هدایت می‌کند.",
     "integrity": "صداقت",
     "integrityDesc": "ما معتقدیم که کار درست را انجام دهیم، حتی زمانی که کسی نگاه نمی‌کند. ارتباط صادقانه و روش‌های شفاف پایه و اساس کسب‌وکار ما است.",

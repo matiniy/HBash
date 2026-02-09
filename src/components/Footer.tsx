@@ -52,7 +52,16 @@ const Footer: React.FC = () => {
         <div className="border-t border-gray-800 mt-6 xs:mt-8 pt-6 xs:pt-8">
           <div className="text-center space-y-2">
             <p className={`text-xs xs:text-sm text-white ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
-              {t('footer.copyright')}
+              {t('footer.copyright')}{' '}
+              <span>| </span>
+              <a
+                href="https://www.metamatn.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline hover:text-[#2B8097] transition-colors"
+              >
+                {t('footer.designedBy')}
+              </a>
             </p>
             <p className={`text-xs xs:text-sm text-white ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
               <Link href="/trec-notice" className="text-aqua-neon hover:text-[#2B8097] underline transition-colors">
