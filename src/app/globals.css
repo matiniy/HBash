@@ -1351,11 +1351,13 @@ nav .nav-link,
 }
 .about-telegram-btn,
 .about-telegram-btn svg {
-  color: #FFEFDF !important;
+  background: #F3D4B4 !important;
+  color: #144552 !important;
 }
 .about-telegram-btn:hover,
 .about-telegram-btn:hover svg {
-  color: #FFEFDF !important;
+  background: #93B3BB !important;
+  color: #ffffff !important;
 }
 
 /* Contact section: subtitle under "Book a Consultation" = Raleway + #144552 (homepage and contact page) */
