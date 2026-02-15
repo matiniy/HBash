@@ -1552,6 +1552,12 @@ nav .nav-link,
   font-family: var(--font-raleway), "Raleway", sans-serif !important;
 }
 
+/* Listings AI chat: request form submit button – white text */
+.listings-ai-chat .listings-ai-chat-request-btn,
+.listings-ai-chat .listings-ai-chat-request-btn .listings-ai-chat-request-btn-text {
+  color: #ffffff !important;
+}
+
 /* Listings AI chat: sparkle icon (AI-style stars) in #144552, slow rotation */
 .listings-ai-chat .listings-ai-chat-sparkle-icon,
 .listings-ai-chat .listings-ai-chat-sparkle-icon path {

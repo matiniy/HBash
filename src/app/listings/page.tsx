@@ -316,38 +316,67 @@ export default function Listings() {
       {/* Search and Filter Section - minimal: one trigger, panel has search + checkboxes + radios */}
       <section className="listings-search-section py-8 sm:py-10 border-b border-[#144552]/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap items-center justify-between gap-4">
-            <button
-              type="button"
-              onClick={() => setSearchAndFiltersOpen((open) => !open)}
-              className="listings-form-text listings-search-filters-trigger flex items-center gap-2 py-2 px-0 border-0 border-b-2 border-transparent hover:border-[#144552]/40 focus:ring-0 focus:outline-none cursor-pointer bg-transparent text-[#144552] text-base"
-              aria-expanded={searchAndFiltersOpen}
-              aria-controls="listings-search-filters-panel"
-            >
-              <svg className="w-4 h-4 listings-filter-icon flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-              </svg>
-              <span>Search & filters</span>
-              {appliedFiltersCount > 0 && (
-                <span className="listings-filters-badge min-w-[1.25rem] h-5 px-1.5 rounded-full bg-[#144552] text-white text-xs font-medium flex items-center justify-center">
-                  {appliedFiltersCount}
-                </span>
+          <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center sm:justify-between gap-3 sm:gap-4">
+            <div className="flex flex-col gap-1 min-w-0">
+              <button
+                type="button"
+                onClick={() => setSearchAndFiltersOpen((open) => !open)}
+                className="listings-form-text listings-search-filters-trigger flex items-center gap-2 py-2 px-0 border-0 border-b-2 border-transparent hover:border-[#144552]/40 focus:ring-0 focus:outline-none cursor-pointer bg-transparent text-[#144552] text-base w-fit"
+                aria-expanded={searchAndFiltersOpen}
+                aria-controls="listings-search-filters-panel"
+                title="Open search and filter options"
+              >
+                <svg className="w-4 h-4 listings-filter-icon flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+                <span>Search & filters</span>
+                {appliedFiltersCount > 0 && (
+                  <span className="listings-filters-badge min-w-[1.25rem] h-5 px-1.5 rounded-full bg-[#144552] text-white text-xs font-medium flex items-center justify-center">
+                    {appliedFiltersCount}
+                  </span>
+                )}
+                <svg className={`w-4 h-4 transition-transform flex-shrink-0 ${searchAndFiltersOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              {!searchAndFiltersOpen && (
+                <p className="listings-form-text text-[#144552]/70 text-xs">
+                  Click to search by keyword and filter by type, price, beds & baths
+                </p>
               )}
-              <svg className={`w-4 h-4 transition-transform flex-shrink-0 ${searchAndFiltersOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
-            <div className="listings-form-text text-[#144552] text-sm">
-              Showing <span className="listings-results-num">{filteredListings.length}</span> of {allListings.length} properties
+            </div>
+            <div className="listings-form-text text-[#144552] text-xs sm:text-sm flex flex-wrap items-center gap-2 sm:gap-3">
+              <span className="whitespace-nowrap">
+                Showing <span className="listings-results-num">{filteredListings.length}</span> of {allListings.length} properties
+              </span>
+              {appliedFiltersCount > 0 && (
+                <button
+                  type="button"
+                  onClick={() => {
+                    setSearchTerm('');
+                    setSelectedTypes([]);
+                    setSelectedPriceRanges([]);
+                    setSelectedBeds([]);
+                    setSelectedBaths([]);
+                    setSortBy('price-asc');
+                  }}
+                  className="text-xs font-medium text-[#2B8097] hover:underline focus:outline-none"
+                >
+                  Clear all
+                </button>
+              )}
             </div>
           </div>
 
           <div
             id="listings-search-filters-panel"
-            className={`listings-search-filters-panel overflow-hidden transition-[max-height,opacity] duration-300 ease-out ${searchAndFiltersOpen ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'}`}
+            className={`listings-search-filters-panel overflow-hidden overflow-y-auto transition-[max-height,opacity] duration-300 ease-out ${searchAndFiltersOpen ? 'max-h-[85vh] sm:max-h-[600px] opacity-100' : 'max-h-0 opacity-0'}`}
             aria-hidden={!searchAndFiltersOpen}
           >
             <div className="pt-6 pb-2 space-y-6">
+              <p className="listings-form-text text-[#144552]/80 text-sm mb-2">
+                Select one or more options in each category. Results update automatically.
+              </p>
               {/* Search - only visible when panel open */}
               <div className="listings-filter-group">
                 <label className="listings-filter-group-label block text-sm font-medium text-[#144552] mb-2">Search</label>
@@ -370,9 +399,9 @@ export default function Listings() {
               {/* Property type - checkboxes */}
               <div className="listings-filter-group">
                 <span className="listings-filter-group-label block text-sm font-medium text-[#144552] mb-2">Property type</span>
-                <div className="flex flex-wrap gap-x-6 gap-y-2">
+                <div className="flex flex-wrap gap-x-4 sm:gap-x-6 gap-y-3 sm:gap-y-2">
                   {propertyTypeOptions.map((opt) => (
-                    <label key={opt.value} className="listings-filter-checkbox-label flex items-center gap-2 cursor-pointer text-[#144552] text-sm">
+                    <label key={opt.value} className="listings-filter-checkbox-label flex items-center gap-2 cursor-pointer text-[#144552] text-sm min-h-[44px] sm:min-h-0">
                       <input
                         type="checkbox"
                         checked={selectedTypes.includes(opt.value)}
@@ -388,9 +417,9 @@ export default function Listings() {
               {/* Price - checkboxes */}
               <div className="listings-filter-group">
                 <span className="listings-filter-group-label block text-sm font-medium text-[#144552] mb-2">Price</span>
-                <div className="flex flex-wrap gap-x-6 gap-y-2">
+                <div className="flex flex-wrap gap-x-4 sm:gap-x-6 gap-y-3 sm:gap-y-2">
                   {priceRanges.map((opt) => (
-                    <label key={opt.value} className="listings-filter-checkbox-label flex items-center gap-2 cursor-pointer text-[#144552] text-sm">
+                    <label key={opt.value} className="listings-filter-checkbox-label flex items-center gap-2 cursor-pointer text-[#144552] text-sm min-h-[44px] sm:min-h-0">
                       <input
                         type="checkbox"
                         checked={opt.value === 'all' ? selectedPriceRanges.length === 0 : selectedPriceRanges.includes(opt.value)}
@@ -406,9 +435,9 @@ export default function Listings() {
               {/* Beds - checkboxes */}
               <div className="listings-filter-group">
                 <span className="listings-filter-group-label block text-sm font-medium text-[#144552] mb-2">Beds</span>
-                <div className="flex flex-wrap gap-x-6 gap-y-2">
+                <div className="flex flex-wrap gap-x-4 sm:gap-x-6 gap-y-3 sm:gap-y-2">
                   {bedOptions.map((opt) => (
-                    <label key={opt.value} className="listings-filter-checkbox-label flex items-center gap-2 cursor-pointer text-[#144552] text-sm">
+                    <label key={opt.value} className="listings-filter-checkbox-label flex items-center gap-2 cursor-pointer text-[#144552] text-sm min-h-[44px] sm:min-h-0">
                       <input
                         type="checkbox"
                         checked={opt.value === 'all' ? selectedBeds.length === 0 : selectedBeds.includes(opt.value)}
@@ -424,9 +453,9 @@ export default function Listings() {
               {/* Baths - checkboxes */}
               <div className="listings-filter-group">
                 <span className="listings-filter-group-label block text-sm font-medium text-[#144552] mb-2">Baths</span>
-                <div className="flex flex-wrap gap-x-6 gap-y-2">
+                <div className="flex flex-wrap gap-x-4 sm:gap-x-6 gap-y-3 sm:gap-y-2">
                   {bathOptions.map((opt) => (
-                    <label key={opt.value} className="listings-filter-checkbox-label flex items-center gap-2 cursor-pointer text-[#144552] text-sm">
+                    <label key={opt.value} className="listings-filter-checkbox-label flex items-center gap-2 cursor-pointer text-[#144552] text-sm min-h-[44px] sm:min-h-0">
                       <input
                         type="checkbox"
                         checked={opt.value === 'all' ? selectedBaths.length === 0 : selectedBaths.includes(opt.value)}
@@ -442,9 +471,9 @@ export default function Listings() {
               {/* Sort - radio */}
               <div className="listings-filter-group">
                 <span className="listings-filter-group-label block text-sm font-medium text-[#144552] mb-2">Sort by</span>
-                <div className="flex flex-wrap gap-x-6 gap-y-2">
+                <div className="flex flex-wrap gap-x-4 sm:gap-x-6 gap-y-3 sm:gap-y-2">
                   {sortOptions.map((opt) => (
-                    <label key={opt.value} className="listings-filter-radio-label flex items-center gap-2 cursor-pointer text-[#144552] text-sm">
+                    <label key={opt.value} className="listings-filter-radio-label flex items-center gap-2 cursor-pointer text-[#144552] text-sm min-h-[44px] sm:min-h-0">
                       <input
                         type="radio"
                         name="sort"
@@ -483,7 +512,7 @@ export default function Listings() {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {filteredListings.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
               {filteredListings.map((listing) => (
                 <ListingCard
                   key={listing.id}
@@ -499,9 +528,9 @@ export default function Listings() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
               </div>
-              <h3 className="listings-hero-title text-2xl font-bold text-[#144552] mb-4">No Properties Found</h3>
+              <h3 className="listings-hero-title text-2xl font-bold text-[#144552] mb-4">No properties match your filters</h3>
               <p className="listings-hero-subtitle text-[#144552] mb-8 max-w-md mx-auto">
-                Try adjusting your search criteria or filters to find more properties.
+                Open <strong>Search & filters</strong> above to change criteria, or clear filters to see all properties.
               </p>
               <Button 
                 variant="secondary" 

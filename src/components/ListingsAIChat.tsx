@@ -129,9 +129,47 @@ export default function ListingsAIChat({ listings, formatPrice }: ListingsAIChat
   const [response, setResponse] = useState('');
   const [matchedListings, setMatchedListings] = useState<ListingForChat[]>([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [requestForm, setRequestForm] = useState({ fullName: '', email: '', phone: '', extraNotes: '' });
+  const [requestStatus, setRequestStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [requestSubmitting, setRequestSubmitting] = useState(false);
   const displayedText = useTypewriter(response, !!response && isLoading === false, 16);
   const responseContainerRef = useRef<HTMLDivElement>(null);
   const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const isNoResultsResponse =
+    response.includes("We don't have any listings that match") || response.includes("don't have any listings that match");
+  const showRequestForm =
+    !!response &&
+    !isLoading &&
+    input.trim().length > 0 &&
+    (matchedListings.length === 0 || isNoResultsResponse);
+
+  const handleRequestSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setRequestSubmitting(true);
+    setRequestStatus('idle');
+    const message = `[Listing request]\n\nI'm looking for: ${input.trim()}\n\n${requestForm.extraNotes.trim() ? `Additional details: ${requestForm.extraNotes.trim()}` : ''}`.trim();
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          fullName: requestForm.fullName,
+          email: requestForm.email,
+          phone: requestForm.phone,
+          message,
+        }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || 'Failed to send');
+      setRequestStatus('success');
+      setRequestForm({ fullName: '', email: '', phone: '', extraNotes: '' });
+    } catch {
+      setRequestStatus('error');
+    } finally {
+      setRequestSubmitting(false);
+    }
+  };
 
   // Live search: debounced search as user types
   useEffect(() => {
@@ -168,13 +206,31 @@ export default function ListingsAIChat({ listings, formatPrice }: ListingsAIChat
     if (el) el.scrollTop = el.scrollHeight;
   }, [displayedText]);
 
+  // When no-results form appears, scroll it into view so user sees it
+  useEffect(() => {
+    if (!showRequestForm) return;
+    const formEl = responseContainerRef.current?.querySelector('.listings-ai-chat-request');
+    if (formEl) {
+      formEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  }, [showRequestForm]);
+
+  const examplePrompts = [
+    'Condo under $500K',
+    'Pool or backyard',
+    'Uptown or Downtown Dallas',
+  ];
+
   return (
-    <div className="listings-ai-chat mt-8 sm:mt-10 flex flex-col items-center">
+    <div className="listings-ai-chat mt-6 sm:mt-10 flex flex-col items-center w-full max-w-xl mx-auto px-2 xs:px-3 sm:px-0 min-w-0">
       <div className="listings-ai-chat-label text-sm font-medium text-[#144552]/80 mb-2 text-center">
         Ask about our listings
       </div>
-      <form onSubmit={handleSubmit} className="flex flex-col gap-4 w-full max-w-xl mx-auto items-center">
-        <div className="relative w-full max-w-xl">
+      <p className="listings-ai-chat-sublabel text-xs text-[#144552]/70 text-center mb-3 max-w-md px-1">
+        Describe what you&apos;re looking for in plain language—suggestions update as you type.
+      </p>
+      <form onSubmit={handleSubmit} className="flex flex-col gap-4 w-full max-w-xl mx-auto items-center min-w-0">
+        <div className="relative w-full max-w-xl min-w-0">
           <div className="absolute inset-y-0 left-0 pl-0 flex items-center pointer-events-none text-[#144552]">
             <svg
               className="h-11 w-11 listings-ai-chat-sparkle-icon flex-shrink-0"
@@ -202,43 +258,132 @@ export default function ListingsAIChat({ listings, formatPrice }: ListingsAIChat
             placeholder="e.g. condo under $500K, pool, Uptown Dallas..."
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            className="listings-form-text listings-ai-chat-input w-full pl-14 pr-0 py-3 text-base min-h-[44px] focus:ring-0"
+            className="listings-form-text listings-ai-chat-input w-full pl-12 sm:pl-14 pr-2 sm:pr-0 py-3 text-sm sm:text-base min-h-[44px] focus:ring-0"
             aria-label="Ask AI about listings"
           />
         </div>
         <span className="listings-ai-chat-hint text-xs text-[#144552]/70 text-center block">
           {isLoading ? 'Searching…' : 'Suggestions update as you type'}
         </span>
+        <div className="flex flex-wrap justify-center gap-2 mt-1">
+          <span className="text-xs text-[#144552]/60 mr-1 self-center">Try:</span>
+          {examplePrompts.map((prompt) => (
+            <button
+              key={prompt}
+              type="button"
+              onClick={() => setInput(prompt)}
+              className="listings-ai-chat-example px-3 py-2 sm:py-1.5 text-xs font-medium text-[#144552] rounded-full border border-[#144552]/30 hover:bg-[#144552]/10 hover:border-[#144552]/50 transition-colors focus:outline-none focus:ring-2 focus:ring-[#144552]/30 min-h-[44px] sm:min-h-0"
+            >
+              {prompt}
+            </button>
+          ))}
+        </div>
       </form>
 
       {(response || isLoading) && (
         <div
           ref={responseContainerRef}
-          className="listings-ai-chat-response mt-4 p-4 w-full max-w-xl mx-auto min-h-[120px] max-h-[280px] overflow-y-auto rounded border border-[#144552]/15 bg-[#144552]/[0.03]"
+          className="listings-ai-chat-response mt-4 w-full max-w-xl mx-auto min-w-0 rounded border border-[#144552]/15 bg-[#144552]/[0.03] overflow-visible"
           aria-live="polite"
         >
-          {isLoading && !displayedText && (
-            <span className="listings-ai-chat-response-text text-[#144552]/70">
-              Finding matches…
-            </span>
-          )}
-          <div className="listings-ai-chat-response-text text-[#144552] whitespace-pre-wrap break-words font-[inherit] text-[15px] leading-relaxed">
-            {displayedText}
-            {!!response && displayedText.length < response.length && (
-              <span className="listings-ai-chat-cursor" aria-hidden />
+          <div
+            className={`p-4 min-h-[80px] ${showRequestForm ? 'max-h-none overflow-visible' : 'max-h-[280px] overflow-y-auto'}`}
+          >
+            {isLoading && !displayedText && (
+              <span className="listings-ai-chat-response-text text-[#144552]/70">
+                Finding matches…
+              </span>
+            )}
+            <div className="listings-ai-chat-response-text text-[#144552] whitespace-pre-wrap break-words font-[inherit] text-sm sm:text-[15px] leading-relaxed">
+              {displayedText}
+              {!!response && displayedText.length < response.length && (
+                <span className="listings-ai-chat-cursor" aria-hidden />
+              )}
+            </div>
+            {matchedListings.length > 0 && (
+              <div className="mt-3 flex flex-wrap gap-2">
+                {matchedListings.map((listing) => (
+                  <Link
+                    key={listing.id}
+                    href={`/listings/${listing.id}`}
+                    className="text-sm font-medium text-[#2B8097] hover:underline"
+                  >
+                    {listing.title}
+                  </Link>
+                ))}
+              </div>
             )}
           </div>
-          {matchedListings.length > 0 && (
-            <div className="mt-3 flex flex-wrap gap-2">
-              {matchedListings.map((listing) => (
-                <Link
-                  key={listing.id}
-                  href={`/listings/${listing.id}`}
-                  className="text-sm font-medium text-[#2B8097] hover:underline"
-                >
-                  {listing.title}
-                </Link>
-              ))}
+          {showRequestForm && (
+            <div className="listings-ai-chat-request border-t border-[#144552]/15 p-3 sm:p-4 bg-[#144552]/[0.06] rounded-b">
+          <h3 className="text-sm font-semibold text-[#144552] mb-2">We can find what you&apos;re looking for</h3>
+          <p className="text-xs text-[#144552]/80 mb-4">
+            Submit this form with your specifics and we&apos;ll help find listings that match.
+          </p>
+          <form onSubmit={handleRequestSubmit} className="space-y-3">
+            <div>
+              <label htmlFor="request-fullName" className="block text-xs font-medium text-[#144552] mb-1">Name *</label>
+              <input
+                id="request-fullName"
+                type="text"
+                required
+                value={requestForm.fullName}
+                onChange={(e) => setRequestForm((f) => ({ ...f, fullName: e.target.value }))}
+                className="listings-form-text listings-ai-chat-input w-full px-0 py-2 text-sm min-h-[40px] border-b-2 border-[#144552]/40 focus:border-[#144552] bg-transparent"
+                placeholder="Your name"
+              />
+            </div>
+            <div>
+              <label htmlFor="request-email" className="block text-xs font-medium text-[#144552] mb-1">Email *</label>
+              <input
+                id="request-email"
+                type="email"
+                required
+                value={requestForm.email}
+                onChange={(e) => setRequestForm((f) => ({ ...f, email: e.target.value }))}
+                className="listings-form-text listings-ai-chat-input w-full px-0 py-2 text-sm min-h-[40px] border-b-2 border-[#144552]/40 focus:border-[#144552] bg-transparent"
+                placeholder="your@email.com"
+              />
+            </div>
+            <div>
+              <label htmlFor="request-phone" className="block text-xs font-medium text-[#144552] mb-1">Phone</label>
+              <input
+                id="request-phone"
+                type="tel"
+                value={requestForm.phone}
+                onChange={(e) => setRequestForm((f) => ({ ...f, phone: e.target.value }))}
+                className="listings-form-text listings-ai-chat-input w-full px-0 py-2 text-sm min-h-[40px] border-b-2 border-[#144552]/40 focus:border-[#144552] bg-transparent"
+                placeholder="Optional"
+              />
+            </div>
+            <div>
+              <label htmlFor="request-extraNotes" className="block text-xs font-medium text-[#144552] mb-1">Additional details (optional)</label>
+              <textarea
+                id="request-extraNotes"
+                value={requestForm.extraNotes}
+                onChange={(e) => setRequestForm((f) => ({ ...f, extraNotes: e.target.value }))}
+                rows={2}
+                className="listings-form-text w-full px-0 py-2 text-sm border-b-2 border-[#144552]/40 focus:border-[#144552] bg-transparent resize-none"
+                placeholder="Bedrooms, budget, area, etc."
+              />
+            </div>
+            <p className="text-xs text-[#144552]/60">
+              Your search &quot;{input.trim()}&quot; will be included so we know what to look for.
+            </p>
+            {requestStatus === 'success' && (
+              <p className="text-sm font-medium text-green-700">Request sent. The realtor will get in touch.</p>
+            )}
+            {requestStatus === 'error' && (
+              <p className="text-sm font-medium text-red-600">Something went wrong. Please try again or contact us directly.</p>
+            )}
+            <button
+              type="submit"
+              disabled={requestSubmitting}
+              className="listings-ai-chat-request-btn w-full py-2.5 text-sm font-medium bg-[#144552] rounded-lg hover:bg-[#144552]/90 disabled:opacity-70 focus:outline-none focus:ring-2 focus:ring-[#144552] focus:ring-offset-2"
+            >
+              <span className="listings-ai-chat-request-btn-text">{requestSubmitting ? 'Sending…' : 'Submit to realtor'}</span>
+            </button>
+          </form>
             </div>
           )}
         </div>
