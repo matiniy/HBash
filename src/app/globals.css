@@ -1526,6 +1526,81 @@ nav .nav-link,
 .listings-search-section .listings-results-num { color: #144552 !important; font-weight: 600 !important; }
 .listings-search-section .listings-filter-icon { color: #144552 !important; }
 
+/* Minimal Search & filters trigger */
+.listings-search-section .listings-search-filters-trigger[aria-expanded="true"] {
+  border-bottom-color: rgba(20, 69, 82, 0.4) !important;
+}
+.listings-search-section .listings-search-filters-trigger:focus {
+  border-bottom-color: #144552 !important;
+  box-shadow: 0 2px 0 0 #144552 !important;
+}
+
+/* Search & filters panel: checkboxes and radios in #144552 */
+.listings-search-section .listings-filter-group-label {
+  font-family: var(--font-raleway), "Raleway", sans-serif !important;
+}
+.listings-search-section .listings-filter-checkbox,
+.listings-search-section .listings-filter-radio {
+  accent-color: #144552;
+}
+.listings-search-section .listings-filter-checkbox:focus,
+.listings-search-section .listings-filter-radio:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(20, 69, 82, 0.3);
+}
+.listings-search-section .listings-filter-clear {
+  font-family: var(--font-raleway), "Raleway", sans-serif !important;
+}
+
+/* Listings AI chat: sparkle icon (AI-style stars) in #144552, slow rotation */
+.listings-ai-chat .listings-ai-chat-sparkle-icon,
+.listings-ai-chat .listings-ai-chat-sparkle-icon path {
+  color: #144552 !important;
+  fill: #144552 !important;
+}
+.listings-ai-chat .listings-ai-chat-sparkle-icon {
+  animation: listings-ai-sparkle-rotate 10s linear infinite;
+  transform-origin: center;
+}
+@keyframes listings-ai-sparkle-rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Listings AI chat: same line-style input and teal typography */
+.listings-ai-chat .listings-ai-chat-input {
+  background: transparent !important;
+  border: none !important;
+  border-bottom: 2px solid rgba(20, 69, 82, 0.4) !important;
+  border-radius: 0 !important;
+  color: #144552 !important;
+  font-family: var(--font-raleway), "Raleway", sans-serif !important;
+}
+.listings-ai-chat .listings-ai-chat-input:focus {
+  outline: none !important;
+  border-bottom-color: #144552 !important;
+  box-shadow: 0 2px 0 0 #144552 !important;
+}
+.listings-ai-chat .listings-ai-chat-input::placeholder {
+  color: rgba(20, 69, 82, 0.6) !important;
+}
+.listings-ai-chat .listings-ai-chat-response-text {
+  font-family: var(--font-raleway), "Raleway", sans-serif !important;
+}
+/* Subtle typewriter cursor */
+.listings-ai-chat-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1.1em;
+  margin-left: 2px;
+  vertical-align: text-bottom;
+  background: #144552;
+  animation: listings-ai-cursor-blink 0.9s step-end infinite;
+}
+@keyframes listings-ai-cursor-blink {
+  50% { opacity: 0; }
+}
+
 /* Listing cards: Raleway, #144552 accents */
 .listing-card .listing-card-title {
   font-family: "PP Editorial Old", var(--font-playfair), Georgia, serif !important;

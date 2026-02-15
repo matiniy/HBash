@@ -4,6 +4,7 @@ import React, { useState, useMemo, useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ListingCard from '@/components/ListingCard';
+import ListingsAIChat from '@/components/ListingsAIChat';
 import Button from '@/components/Button';
 import PasswordProtection from '@/components/PasswordProtection';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -22,11 +23,12 @@ export default function Listings() {
     return false;
   });
   const [searchTerm, setSearchTerm] = useState('');
-  const [selectedType, setSelectedType] = useState('all');
-  const [selectedPriceRange, setSelectedPriceRange] = useState('all');
-  const [selectedBeds, setSelectedBeds] = useState('all');
-  const [selectedBaths, setSelectedBaths] = useState('all');
+  const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
+  const [selectedPriceRanges, setSelectedPriceRanges] = useState<string[]>([]);
+  const [selectedBeds, setSelectedBeds] = useState<string[]>([]);
+  const [selectedBaths, setSelectedBaths] = useState<string[]>([]);
   const [sortBy, setSortBy] = useState('price-asc');
+  const [searchAndFiltersOpen, setSearchAndFiltersOpen] = useState(false);
 
   const allListings = [
     {
@@ -117,8 +119,7 @@ export default function Listings() {
     { label: 'Over $2M', value: 'over-2m' }
   ];
 
-  const propertyTypes = [
-    { label: 'All Types', value: 'all' },
+  const propertyTypeOptions = [
     { label: 'Single Family', value: 'single-family' },
     { label: 'Condo', value: 'condo' },
     { label: 'Townhome', value: 'townhome' },
@@ -151,6 +152,52 @@ export default function Listings() {
     { label: 'Smallest First', value: 'size-asc' }
   ];
 
+  const appliedFiltersCount =
+    selectedTypes.length +
+    selectedPriceRanges.filter((v) => v !== 'all').length +
+    selectedBeds.length +
+    selectedBaths.length +
+    (searchTerm.trim() ? 1 : 0);
+
+  const togglePropertyType = (value: string) => {
+    setSelectedTypes((prev) =>
+      prev.includes(value) ? prev.filter((t) => t !== value) : [...prev, value]
+    );
+  };
+  const togglePriceRange = (value: string) => {
+    if (value === 'all') {
+      setSelectedPriceRanges([]);
+      return;
+    }
+    setSelectedPriceRanges((prev) =>
+      prev.includes(value)
+        ? prev.filter((v) => v !== value)
+        : [...prev.filter((v) => v !== 'all'), value]
+    );
+  };
+  const toggleBeds = (value: string) => {
+    if (value === 'all') {
+      setSelectedBeds([]);
+      return;
+    }
+    setSelectedBeds((prev) =>
+      prev.includes(value)
+        ? prev.filter((v) => v !== value)
+        : [...prev.filter((v) => v !== 'all'), value]
+    );
+  };
+  const toggleBaths = (value: string) => {
+    if (value === 'all') {
+      setSelectedBaths([]);
+      return;
+    }
+    setSelectedBaths((prev) =>
+      prev.includes(value)
+        ? prev.filter((v) => v !== value)
+        : [...prev.filter((v) => v !== 'all'), value]
+    );
+  };
+
   // Filter and search logic
   const filteredListings = useMemo(() => {
     let filtered = allListings.filter(listing => {
@@ -161,33 +208,38 @@ export default function Listings() {
         listing.features.some(feature => feature.toLowerCase().includes(searchTerm.toLowerCase())) ||
         listing.keywords.some(keyword => keyword.toLowerCase().includes(searchTerm.toLowerCase()));
 
-      // Property type filter
-      const typeMatch = selectedType === 'all' || listing.type === selectedType;
+      // Property type filter (checkboxes: empty = all)
+      const typeMatch = selectedTypes.length === 0 || selectedTypes.includes(listing.type);
 
-      // Price range filter
+      // Price range filter (checkboxes: empty or 'all' = any; else listing in any selected range)
       let priceMatch = true;
-      if (selectedPriceRange !== 'all') {
-        switch (selectedPriceRange) {
-          case 'under-500k':
-            priceMatch = listing.price < 500000;
-            break;
-          case '500k-1m':
-            priceMatch = listing.price >= 500000 && listing.price <= 1000000;
-            break;
-          case '1m-2m':
-            priceMatch = listing.price > 1000000 && listing.price <= 2000000;
-            break;
-          case 'over-2m':
-            priceMatch = listing.price > 2000000;
-            break;
-        }
+      const activePriceRanges = selectedPriceRanges.filter((v) => v !== 'all');
+      if (activePriceRanges.length > 0) {
+        priceMatch = activePriceRanges.some((range) => {
+          switch (range) {
+            case 'under-500k':
+              return listing.price < 500000;
+            case '500k-1m':
+              return listing.price >= 500000 && listing.price <= 1000000;
+            case '1m-2m':
+              return listing.price > 1000000 && listing.price <= 2000000;
+            case 'over-2m':
+              return listing.price > 2000000;
+            default:
+              return false;
+          }
+        });
       }
 
-      // Beds filter
-      const bedsMatch = selectedBeds === 'all' || listing.beds >= parseInt(selectedBeds);
+      // Beds filter (checkboxes: empty = any; else listing.beds >= min(selected))
+      const bedsMatch =
+        selectedBeds.length === 0 ||
+        Math.min(...selectedBeds.map((b) => parseInt(b, 10))) <= listing.beds;
 
-      // Baths filter
-      const bathsMatch = selectedBaths === 'all' || listing.baths >= parseInt(selectedBaths);
+      // Baths filter (checkboxes: empty = any; else listing.baths >= min(selected))
+      const bathsMatch =
+        selectedBaths.length === 0 ||
+        Math.min(...selectedBaths.map((b) => parseInt(b, 10))) <= listing.baths;
 
       return searchMatch && typeMatch && priceMatch && bedsMatch && bathsMatch;
     });
@@ -211,7 +263,7 @@ export default function Listings() {
     });
 
     return filtered;
-  }, [searchTerm, selectedType, selectedPriceRange, selectedBeds, selectedBaths, sortBy]);
+  }, [searchTerm, selectedTypes, selectedPriceRanges, selectedBeds, selectedBaths, sortBy]);
 
   const formatPrice = (price: number) => {
     if (price >= 1000000) {
@@ -257,108 +309,171 @@ export default function Listings() {
               Discover your perfect home in Dallas. Browse our curated selection of premium properties.
             </p>
           </div>
+          <ListingsAIChat listings={allListings} formatPrice={formatPrice} />
         </div>
       </section>
 
-      {/* Search and Filter Section - line-style fields, Raleway, #144552 */}
-      <section className="listings-search-section py-12 border-b border-[#144552]/10">
+      {/* Search and Filter Section - minimal: one trigger, panel has search + checkboxes + radios */}
+      <section className="listings-search-section py-8 sm:py-10 border-b border-[#144552]/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Main Search Bar - no box, line-style inputs only */}
-          <div className="listings-search-inner mb-6 sm:mb-8">
-            <div className="flex flex-col lg:flex-row gap-4 items-center">
-              {/* Search Input */}
-              <div className="flex-1 w-full">
-                <div className="relative">
+          <div className="flex flex-wrap items-center justify-between gap-4">
+            <button
+              type="button"
+              onClick={() => setSearchAndFiltersOpen((open) => !open)}
+              className="listings-form-text listings-search-filters-trigger flex items-center gap-2 py-2 px-0 border-0 border-b-2 border-transparent hover:border-[#144552]/40 focus:ring-0 focus:outline-none cursor-pointer bg-transparent text-[#144552] text-base"
+              aria-expanded={searchAndFiltersOpen}
+              aria-controls="listings-search-filters-panel"
+            >
+              <svg className="w-4 h-4 listings-filter-icon flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+              <span>Search & filters</span>
+              {appliedFiltersCount > 0 && (
+                <span className="listings-filters-badge min-w-[1.25rem] h-5 px-1.5 rounded-full bg-[#144552] text-white text-xs font-medium flex items-center justify-center">
+                  {appliedFiltersCount}
+                </span>
+              )}
+              <svg className={`w-4 h-4 transition-transform flex-shrink-0 ${searchAndFiltersOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div className="listings-form-text text-[#144552] text-sm">
+              Showing <span className="listings-results-num">{filteredListings.length}</span> of {allListings.length} properties
+            </div>
+          </div>
+
+          <div
+            id="listings-search-filters-panel"
+            className={`listings-search-filters-panel overflow-hidden transition-[max-height,opacity] duration-300 ease-out ${searchAndFiltersOpen ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'}`}
+            aria-hidden={!searchAndFiltersOpen}
+          >
+            <div className="pt-6 pb-2 space-y-6">
+              {/* Search - only visible when panel open */}
+              <div className="listings-filter-group">
+                <label className="listings-filter-group-label block text-sm font-medium text-[#144552] mb-2">Search</label>
+                <div className="relative max-w-md">
                   <div className="absolute inset-y-0 left-0 pl-0 flex items-center pointer-events-none">
-                    <svg className="h-5 w-5 listings-filter-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="h-4 w-4 listings-filter-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                     </svg>
                   </div>
                   <input
                     type="text"
-                    placeholder="Search by location, features, or keywords..."
+                    placeholder="Location, features, keywords..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="listings-form-text w-full pl-8 pr-0 py-3 text-base min-h-[44px] focus:ring-0"
+                    className="listings-form-text w-full pl-7 pr-0 py-2.5 text-sm min-h-[40px] focus:ring-0 border-b-2 border-[#144552]/40 focus:border-[#144552] bg-transparent"
                   />
                 </div>
               </div>
 
-              {/* Filter Dropdowns */}
-              <div className="flex flex-wrap gap-3">
-                <select
-                  value={selectedType}
-                  onChange={(e) => setSelectedType(e.target.value)}
-                  className="listings-form-text w-full sm:w-auto pl-2 pr-8 py-3 text-base min-h-[44px] focus:ring-0 min-w-0 sm:min-w-[140px]"
-                >
-                  {propertyTypes.map((type) => (
-                    <option key={type.value} value={type.value}>
-                      {type.label}
-                    </option>
+              {/* Property type - checkboxes */}
+              <div className="listings-filter-group">
+                <span className="listings-filter-group-label block text-sm font-medium text-[#144552] mb-2">Property type</span>
+                <div className="flex flex-wrap gap-x-6 gap-y-2">
+                  {propertyTypeOptions.map((opt) => (
+                    <label key={opt.value} className="listings-filter-checkbox-label flex items-center gap-2 cursor-pointer text-[#144552] text-sm">
+                      <input
+                        type="checkbox"
+                        checked={selectedTypes.includes(opt.value)}
+                        onChange={() => togglePropertyType(opt.value)}
+                        className="listings-filter-checkbox h-4 w-4 rounded border-[#144552]/50 text-[#144552] focus:ring-[#144552] focus:ring-offset-0"
+                      />
+                      {opt.label}
+                    </label>
                   ))}
-                </select>
-
-                <select
-                  value={selectedPriceRange}
-                  onChange={(e) => setSelectedPriceRange(e.target.value)}
-                  className="listings-form-text w-full sm:w-auto pl-2 pr-8 py-3 text-base min-h-[44px] focus:ring-0 min-w-0 sm:min-w-[140px]"
-                >
-                  {priceRanges.map((range) => (
-                    <option key={range.value} value={range.value}>
-                      {range.label}
-                    </option>
-                  ))}
-                </select>
-
-                <select
-                  value={selectedBeds}
-                  onChange={(e) => setSelectedBeds(e.target.value)}
-                  className="listings-form-text w-full sm:w-auto pl-2 pr-8 py-3 text-base min-h-[44px] focus:ring-0 min-w-0 sm:min-w-[120px]"
-                >
-                  {bedOptions.map((option) => (
-                    <option key={option.value} value={option.value}>
-                      {option.label}
-                    </option>
-                  ))}
-                </select>
-
-                <select
-                  value={selectedBaths}
-                  onChange={(e) => setSelectedBaths(e.target.value)}
-                  className="listings-form-text w-full sm:w-auto pl-2 pr-8 py-3 text-base min-h-[44px] focus:ring-0 min-w-0 sm:min-w-[120px]"
-                >
-                  {bathOptions.map((option) => (
-                    <option key={option.value} value={option.value}>
-                      {option.label}
-                    </option>
-                  ))}
-                </select>
-
-                <select
-                  value={sortBy}
-                  onChange={(e) => setSortBy(e.target.value)}
-                  className="listings-form-text w-full sm:w-auto pl-2 pr-8 py-3 text-base min-h-[44px] focus:ring-0 min-w-0 sm:min-w-[160px]"
-                >
-                  {sortOptions.map((option) => (
-                    <option key={option.value} value={option.value}>
-                      {option.label}
-                    </option>
-                  ))}
-                </select>
+                </div>
               </div>
-            </div>
-          </div>
 
-          {/* Results Summary */}
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-            <div className="listings-form-text text-[#144552]">
-              Showing <span className="listings-results-num">{filteredListings.length}</span> of {allListings.length} properties
-            </div>
-            <div className="flex items-center gap-2 text-sm listings-form-text text-[#144552]">
-              <svg className="w-4 h-4 listings-filter-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
-              </svg>
-              Filters applied
+              {/* Price - checkboxes */}
+              <div className="listings-filter-group">
+                <span className="listings-filter-group-label block text-sm font-medium text-[#144552] mb-2">Price</span>
+                <div className="flex flex-wrap gap-x-6 gap-y-2">
+                  {priceRanges.map((opt) => (
+                    <label key={opt.value} className="listings-filter-checkbox-label flex items-center gap-2 cursor-pointer text-[#144552] text-sm">
+                      <input
+                        type="checkbox"
+                        checked={opt.value === 'all' ? selectedPriceRanges.length === 0 : selectedPriceRanges.includes(opt.value)}
+                        onChange={() => togglePriceRange(opt.value)}
+                        className="listings-filter-checkbox h-4 w-4 rounded border-[#144552]/50 text-[#144552] focus:ring-[#144552] focus:ring-offset-0"
+                      />
+                      {opt.label}
+                    </label>
+                  ))}
+                </div>
+              </div>
+
+              {/* Beds - checkboxes */}
+              <div className="listings-filter-group">
+                <span className="listings-filter-group-label block text-sm font-medium text-[#144552] mb-2">Beds</span>
+                <div className="flex flex-wrap gap-x-6 gap-y-2">
+                  {bedOptions.map((opt) => (
+                    <label key={opt.value} className="listings-filter-checkbox-label flex items-center gap-2 cursor-pointer text-[#144552] text-sm">
+                      <input
+                        type="checkbox"
+                        checked={opt.value === 'all' ? selectedBeds.length === 0 : selectedBeds.includes(opt.value)}
+                        onChange={() => toggleBeds(opt.value)}
+                        className="listings-filter-checkbox h-4 w-4 rounded border-[#144552]/50 text-[#144552] focus:ring-[#144552] focus:ring-offset-0"
+                      />
+                      {opt.label}
+                    </label>
+                  ))}
+                </div>
+              </div>
+
+              {/* Baths - checkboxes */}
+              <div className="listings-filter-group">
+                <span className="listings-filter-group-label block text-sm font-medium text-[#144552] mb-2">Baths</span>
+                <div className="flex flex-wrap gap-x-6 gap-y-2">
+                  {bathOptions.map((opt) => (
+                    <label key={opt.value} className="listings-filter-checkbox-label flex items-center gap-2 cursor-pointer text-[#144552] text-sm">
+                      <input
+                        type="checkbox"
+                        checked={opt.value === 'all' ? selectedBaths.length === 0 : selectedBaths.includes(opt.value)}
+                        onChange={() => toggleBaths(opt.value)}
+                        className="listings-filter-checkbox h-4 w-4 rounded border-[#144552]/50 text-[#144552] focus:ring-[#144552] focus:ring-offset-0"
+                      />
+                      {opt.label}
+                    </label>
+                  ))}
+                </div>
+              </div>
+
+              {/* Sort - radio */}
+              <div className="listings-filter-group">
+                <span className="listings-filter-group-label block text-sm font-medium text-[#144552] mb-2">Sort by</span>
+                <div className="flex flex-wrap gap-x-6 gap-y-2">
+                  {sortOptions.map((opt) => (
+                    <label key={opt.value} className="listings-filter-radio-label flex items-center gap-2 cursor-pointer text-[#144552] text-sm">
+                      <input
+                        type="radio"
+                        name="sort"
+                        checked={sortBy === opt.value}
+                        onChange={() => setSortBy(opt.value)}
+                        className="listings-filter-radio h-4 w-4 border-[#144552]/50 text-[#144552] focus:ring-[#144552] focus:ring-offset-0"
+                      />
+                      {opt.label}
+                    </label>
+                  ))}
+                </div>
+              </div>
+
+              {appliedFiltersCount > 0 && (
+                <button
+                  type="button"
+                  onClick={() => {
+                    setSearchTerm('');
+                    setSelectedTypes([]);
+                    setSelectedPriceRanges([]);
+                    setSelectedBeds([]);
+                    setSelectedBaths([]);
+                    setSortBy('price-asc');
+                  }}
+                  className="listings-filter-clear text-sm text-[#144552] border-b border-[#144552]/50 hover:border-[#144552] pb-0.5"
+                >
+                  Clear all
+                </button>
+              )}
             </div>
           </div>
         </div>
@@ -392,10 +507,10 @@ export default function Listings() {
                 variant="secondary" 
                 onClick={() => {
                   setSearchTerm('');
-                  setSelectedType('all');
-                  setSelectedPriceRange('all');
-                  setSelectedBeds('all');
-                  setSelectedBaths('all');
+                  setSelectedTypes([]);
+                  setSelectedPriceRanges([]);
+                  setSelectedBeds([]);
+                  setSelectedBaths([]);
                   setSortBy('price-asc');
                 }}
               >
