@@ -742,7 +742,7 @@ nav .nav-link,
 }
 .main-gradient-bg .about-heading-raleway {
   font-family: var(--font-raleway), "Raleway", sans-serif !important;
-  font-style: italic !important;
+  font-style: normal !important; /* "About" in regular (non-italic) */
   font-weight: 300 !important; /* Raleway Light for "About" */
   color: #144552 !important;
 }
