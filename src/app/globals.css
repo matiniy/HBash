@@ -638,7 +638,7 @@ nav .nav-link,
   text-decoration: underline;
 }
 
-/* Reviews: name, quote (above text), review text, stars – all same left align */
+/* Reviews: name, quote (above text), review text, stars – center aligned */
 .reviews-quote-block {
   display: block;
 }

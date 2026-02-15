@@ -31,9 +31,10 @@ const GOOGLE_REVIEWS_URL = 'https://maps.app.goo.gl/NTTL8uiUqwZL3enEA';
 /** Duplicate testimonials so carousel has left/right siblings and can loop. */
 const loopedTestimonials = [...testimonials, ...testimonials];
 
-const StarRating: React.FC<{ alignEnd?: boolean }> = ({ alignEnd }) => {
+const StarRating: React.FC<{ alignEnd?: boolean; alignCenter?: boolean }> = ({ alignEnd, alignCenter }) => {
+  const justify = alignCenter ? 'justify-center' : alignEnd ? 'justify-end' : 'justify-start';
   return (
-    <div className={`flex items-center gap-1 reviews-stars ${alignEnd ? 'justify-end' : 'justify-start'}`}>
+    <div className={`flex items-center gap-1 reviews-stars ${justify}`}>
       {[...Array(5)].map((_, i) => (
         <svg
           key={i}
@@ -134,7 +135,7 @@ const Reviews: React.FC = () => {
                 ref={(el) => { slideRefs.current[index] = el; }}
                 onClick={() => setCurrentTestimonial(index)}
                 dir={language === 'fa' ? 'rtl' : 'ltr'}
-                className={`reviews-carousel-slide flex-shrink-0 text-left transition-opacity duration-500 ease-in-out cursor-pointer px-3 sm:px-6 min-w-[260px] xs:min-w-[280px] sm:min-w-[320px] lg:min-w-[360px] ${language === 'fa' ? 'text-right' : ''} ${
+                className={`reviews-carousel-slide flex-shrink-0 text-center transition-opacity duration-500 ease-in-out cursor-pointer px-3 sm:px-6 min-w-[260px] xs:min-w-[280px] sm:min-w-[320px] lg:min-w-[360px] ${
                   index === currentTestimonial ? 'opacity-100' : 'opacity-50'
                 }`}
                 style={{ scrollSnapAlign: 'center' }}
@@ -146,7 +147,7 @@ const Reviews: React.FC = () => {
                   className="block group"
                   onClick={(e) => e.stopPropagation()}
                 >
-                  <div className={`reviews-quote-mark-wrap mb-2 ${language === 'fa' ? 'text-right' : 'text-left'}`}>
+                  <div className="reviews-quote-mark-wrap mb-2 text-center">
                     <QuoteMark />
                   </div>
                   <p
@@ -166,8 +167,8 @@ const Reviews: React.FC = () => {
                   >
                     {testimonial.text}
                   </p>
-                  <div className="mt-4">
-                    <StarRating alignEnd={language === 'fa'} />
+                  <div className="mt-4 flex justify-center">
+                    <StarRating alignCenter />
                   </div>
                 </a>
               </div>
