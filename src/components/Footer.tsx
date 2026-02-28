@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import Link from 'next/link';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const Footer: React.FC = () => {
@@ -62,11 +61,6 @@ const Footer: React.FC = () => {
               >
                 {t('footer.designedBy')}
               </a>
-            </p>
-            <p className={`text-xs xs:text-sm text-white ${language === 'fa' ? 'font-sora' : ''}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
-              <Link href="/trec-notice" className="text-aqua-neon hover:text-[#2B8097] underline transition-colors">
-                {t('footer.trecNotice')}
-              </Link>
             </p>
           </div>
         </div>
