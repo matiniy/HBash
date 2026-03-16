@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter, Space_Grotesk, Sora, Oxygen, Acme, Playfair_Display, Raleway } from 'next/font/google'
 import './globals.css'
 import { LanguageProvider } from '@/contexts/LanguageContext'
+import { Analytics } from '@vercel/analytics/react'
 
 const inter = Inter({ subsets: ['latin'] })
 const spaceGrotesk = Space_Grotesk({ 
@@ -64,6 +65,7 @@ export default function RootLayout({
         <LanguageProvider>
           {children}
         </LanguageProvider>
+        <Analytics />
       </body>
     </html>
   )
