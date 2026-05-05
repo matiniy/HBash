@@ -27,16 +27,16 @@ export default function SEOLandingPage({
   faqs,
 }: SEOLandingPageProps) {
   return (
-    <main className="min-h-screen overflow-x-hidden w-full max-w-[100vw]">
+    <main className="services-page min-h-screen overflow-x-hidden w-full max-w-[100vw]">
       <Navbar />
       <GradientNoiseWrapper>
         <section className="pt-24 sm:pt-28 md:pt-32 lg:pt-[150px] pb-8 sm:pb-10 lg:pb-12">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto text-center">
-              <h1 className="section-title-luxerie page-title-size mb-4">
+              <h1 className="services-page-title section-title-luxerie page-title-size mb-4">
                 <span className="title-combo-first">{h1}</span>
               </h1>
-              <p className="text-sm xs:text-base sm:text-lg text-white leading-relaxed">{intro}</p>
+              <p className="services-page-text text-sm xs:text-base sm:text-lg leading-relaxed">{intro}</p>
               <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
                 <Link href="/listings" className="services-page-cta-btn inline-block px-5 py-3 rounded-[8px] font-semibold text-sm xs:text-base">
                   Browse Listings
