@@ -13,6 +13,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/iabs',
     '/trec-notice',
     '/land2',
+    '/dallas-new-construction-homes',
+    '/how-to-buy-a-house-in-dallas',
+    '/first-time-homebuyer-programs-dallas',
   ];
 
   return routes.map((route) => ({
