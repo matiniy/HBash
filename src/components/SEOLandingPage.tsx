@@ -4,6 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import About from '@/components/About';
 import ContactForm from '@/components/ContactForm';
 import GradientNoiseWrapper from '@/components/GradientNoiseWrapper';
 
@@ -115,6 +116,7 @@ export default function SEOLandingPage({
           </div>
         </section>
 
+        <About />
         <ContactForm />
         <Footer />
       </GradientNoiseWrapper>
