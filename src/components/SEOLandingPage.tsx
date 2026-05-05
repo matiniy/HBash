@@ -38,10 +38,16 @@ export default function SEOLandingPage({
               </h1>
               <p className="services-page-text text-sm xs:text-base sm:text-lg leading-relaxed">{intro}</p>
               <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
-                <Link href="/listings" className="services-page-cta-btn inline-block px-5 py-3 rounded-[8px] font-semibold text-sm xs:text-base">
+                <Link
+                  href="/listings"
+                  className="services-page-cta-btn inline-block px-5 py-3 rounded-[8px] font-semibold text-sm xs:text-base bg-[#F3D4B4] text-[#144552] hover:bg-[#e8c9a8] transition-all duration-300"
+                >
                   Browse Listings
                 </Link>
-                <Link href="/services" className="services-page-cta-btn inline-block px-5 py-3 rounded-[8px] font-semibold text-sm xs:text-base">
+                <Link
+                  href="/services"
+                  className="services-page-cta-btn inline-block px-5 py-3 rounded-[8px] font-semibold text-sm xs:text-base bg-[#F3D4B4] text-[#144552] hover:bg-[#e8c9a8] transition-all duration-300"
+                >
                   See Services
                 </Link>
               </div>
