@@ -43,7 +43,55 @@ export const viewport = {
 
 export const metadata: Metadata = {
   title: 'Haideh Bashash Realtor - Dallas, TX',
-  description: 'Professional real estate services in Dallas, TX. Luxury listings, consultation booking, and expert guidance.',
+  description: 'Professional real estate services in Dallas, TX. Luxury listings, home buying and selling consultation, and expert local guidance.',
+  keywords: [
+    'Dallas realtor',
+    'Dallas real estate agent',
+    'luxury homes Dallas',
+    'buy a home in Dallas',
+    'sell my home in Dallas',
+    'Dallas TX real estate',
+    'Texas realtor',
+    'listing agent Dallas',
+    'buyer agent Dallas',
+    'relocation services Dallas',
+    'investment properties Dallas',
+    'Haideh Bashash Realtor',
+    'Iranian realtor in texas',
+    'Iranian realtor in Dallas',
+    'Iranian agent in Dallas',
+    'Dallas Fort Worth agent',
+    'Persian realtor Texas',
+    'Farsi speaking realtor',
+    'مشاور ایرانی در تگزاس',
+    'مشاور املاک در دالاس',
+    'بهترین مشاور',
+    'خرید خانه',
+    'فروش خانه',
+    'سرمایه گذاری در تگزاس'
+  ],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+      'max-video-preview': -1
+    }
+  },
+  openGraph: {
+    title: 'Haideh Bashash Realtor - Dallas, TX',
+    description: 'Dallas real estate services for luxury listings, home buying, home selling, and relocation support.',
+    type: 'website',
+    locale: 'en_US'
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Haideh Bashash Realtor - Dallas, TX',
+    description: 'Dallas real estate services for luxury listings, home buying, home selling, and relocation support.'
+  },
   icons: {
     icon: [
       { url: '/images/Logo/logo.svg', type: 'image/svg+xml' },
