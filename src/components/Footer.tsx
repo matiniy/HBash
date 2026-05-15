@@ -29,7 +29,7 @@ const Footer: React.FC = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
-                5717 Legacy Dr Suite 250, Plano, TX 75024, United States
+                5550 Granite Parkway, Suite 120, Plano, TX 75204, USA
               </p>
               <p className="flex items-center text-sm gap-2">
                 <svg className="footer-contact-icon w-3 h-3 xs:w-4 xs:h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">

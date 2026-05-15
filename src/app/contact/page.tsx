@@ -99,10 +99,10 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* Google Maps embed - Haideh Bashash, Realtor (HomeSmart Stars) */}
+            {/* Google Maps embed - office location */}
             <div className="contact-page-map-placeholder rounded-2xl overflow-hidden min-h-[16rem] lg:min-h-0 lg:h-full">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3343.165708982293!2d-96.8229998!3d33.0784248!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864c1347d46c4e0b%3A0xad3cc48ad72e63ce!2sHaideh%20Bashash%2C%20Realtor%20(HomeSmart%20Stars)!5e0!3m2!1sen!2sae!4v1770535548222!5m2!1sen!2sae"
+                src="https://maps.google.com/maps?q=5550+Granite+Parkway,+Suite+120,+Plano,+TX+75204,+USA&hl=en&z=15&output=embed"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
